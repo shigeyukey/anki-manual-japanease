@@ -1,5 +1,5 @@
-# env:
-#   cname: docs.ankiweb.net
+env:
+  cname: ankimanual-jp
 
 name: github pages
 
