@@ -1,9 +1,10 @@
+
 [book]
 authors = ["Ankitects Pty Ltd and contributors"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Anki マニュアル"
+title = "Anki Manual"
 
 [build]
 create-missing = true
@@ -13,11 +14,24 @@ command = "mdbook-toc"
 renderer = ["html"]
 
 [output.html]
-git-repository-url = "https://github.com/shigeyukey/anki-manual-japanease"
-
+git-repository-url = "https://github.com/ankitects/anki-manual/"
+cname = "docs.ankiweb.net"
+additional-css = ["css/misc.css", "css/kbd.css"]
 
 [output.linkcheck]
 optional = true
 warning-policy = "warn"
 follow-web-links = true
-exclude = [ 'forums.ankiweb.net' ]
+exclude = [
+  'microsoft.com',
+  'twitter.com',
+  'stackexchange.com',
+  'stackoverflow.com',
+  'https://github.com/open-spaced-repetition/fsrs4anki#add-on-compatibility',
+  'support.google.com',
+  'wikiwiki.jp',
+]
+
+[output.html.fold]
+enable = true
+level = 0
