@@ -1,7 +1,7 @@
 
 [book]
 authors = ["Ankitects Pty Ltd and contributors"]
-language = "en"
+language = "ja"
 multilingual = false
 src = "src"
 title = "Ankiマニュアル"
