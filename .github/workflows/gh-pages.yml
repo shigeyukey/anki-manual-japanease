@@ -15,15 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
-      - name: Install mdbook
-        run: cargo install mdbook
-
       - name: Build
         run: .github/workflows/build.sh
 
@@ -38,15 +29,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
-      - name: Install mdbook
-        run: cargo install mdbook
 
       - name: Build
         run: CHECK=1 .github/workflows/build.sh
