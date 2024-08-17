@@ -10,7 +10,8 @@
 # mdbook-linkcheck ﾌﾟﾗｸﾞｲﾝをｲﾝｽﾄｰﾙ
 (cd && \
   curl -LO https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v0.7.7/mdbook-linkcheck.x86_64-unknown-linux-gnu.zip && \
-   unzip mdbook-linkcheck.x86_64-unknown-linux-gnu.zip )
+  unzip mdbook-linkcheck.x86_64-unknown-linux-gnu.zip && \
+  chmod +x mdbook-linkcheck)
 
 export PATH="$HOME:$PATH"
 if [ "$CHECK" = "" ]; then
