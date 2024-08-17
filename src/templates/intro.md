@@ -1,56 +1,27 @@
-# Card Templates
+# カードテンプレート
 
-Card templates tell Anki which fields should appear on the front and back of your card,
-and control which cards will be generated when certain fields have text in them.
-By adjusting your card templates, you can alter the design and styling of many of your
-cards at once.
+カードテンプレートは、Ankiにどのフィールドをカードの表と裏に表示するかを指示し、特定のフィールドにテキストが含まれている場合に生成されるカードを制御します。カードテンプレートを調整することで、多くのカードのデザインやスタイリングを一度に変更することができます。
 
-Card templates are covered in some of the intro videos:
+カードテンプレートについては、いくつかの紹介ビデオで説明されています：
 
-- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [カードの順序を変更する](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
-- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [カードのスタイリング](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
-- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [答えを入力する](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-## The Templates Screen
+## テンプレート画面
 
-You can modify card templates by clicking the "Cards..." button inside the
-editing screen.
+カードテンプレートを変更するには、編集画面内の「カード...」ボタンをクリックします。
 
-For older Anki versions, on the top left is the front template, on the bottom left is the back
-template, and in between them is the card styling section. For Anki versions
-2.1.28+ the front, back, and styling are no longer shown at the same time.
-You can switch between them with <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>Ctrl</kbd>+<kbd>2</kbd>, and <kbd>Ctrl</kbd>+<kbd>3</kbd>.
+古いAnkiバージョンでは、左上に表テンプレート、左下に裏テンプレートがあり、その間にカードのスタイリングセクションがあります。Ankiバージョン2.1.28以降では、表、裏、およびスタイリングは同時に表示されなくなりました。<kbd>Ctrl</kbd>+<kbd>1</kbd>、<kbd>Ctrl</kbd>+<kbd>2</kbd>、<kbd>Ctrl</kbd>+<kbd>3</kbd>でそれらを切り替えることができます。
 
-In Anki, templates are written in HTML, which is the language that web
-pages are written in. The styling section is CSS, which is the language
-used for styling web pages.
+Ankiでは、テンプレートはウェブページの作成に使用される言語であるHTMLで書かれています。スタイリングセクションは、ウェブページのスタイリングに使用される言語であるCSSです。
 
-On the right is a preview of the front and back of the currently
-selected card. If you opened the window while adding notes, the preview
-will be based on the text you had typed into the Add Notes window. If
-you opened the window while editing a note, the preview will be based on
-the content of that note. If you opened the window from Tools → Manage
-Note Types, Anki will display each field’s name in parentheses in place
-of content.
+右側には、現在選択されているカードの表と裏のプレビューが表示されます。ノートを追加しているときにウィンドウを開いた場合、プレビューは「ノートを追加」ウィンドウに入力したテキストに基づいています。ノートを編集しているときにウィンドウを開いた場合、プレビューはそのノートの内容に基づいています。ツール → ノートタイプの管理からウィンドウを開いた場合、Ankiは内容の代わりに各フィールドの名前を括弧内に表示します。
 
-At the top right of the window is an Options button that gives you
-options to rename or reorder the cards, as well as the following two
-options:
+ウィンドウの右上にはオプションボタンがあり、カードの名前を変更したり順序を変更したりするオプションのほか、次の2つのオプションがあります：
 
-- The 'Deck Override' option allows you to change the deck that cards
-  generated from the current card type will be placed into. By
-  default, cards are placed into the deck you provide in the Add Notes
-  window. If you set a deck here, that card type will be placed into
-  the deck you specified, instead of the deck listed in the Add Notes
-  window. This can be useful if you want to separate cards into
-  different decks (for instance, when studying a language, to put
-  production cards in one deck and recognition cards in another). You
-  can check which deck the cards are currently going to by choosing
-  Deck Override again.
+- 「デッキの上書き」オプションを使用すると、現在のカードタイプから生成されたカードが配置されるデッキを変更できます。デフォルトでは、カードは「ノートを追加」ウィンドウで指定したデッキに配置されます。ここでデッキを設定すると、そのカードタイプは「ノートを追加」ウィンドウに表示されるデッキの代わりに、指定したデッキに配置されます。これは、カードを異なるデッキに分けたい場合に便利です（例えば、言語を学習する際に、生成カードを1つのデッキに、認識カードを別のデッキに入れる場合）。デッキの上書きを再度選択することで、カードが現在どのデッキに配置されるかを確認できます。
 
-- The 'Browser Appearance' option allows you to set different (perhaps
-  simplified) templates for display in the Question and Answer columns
-  of the browser; see [browser appearance](styling.md#browser-appearance) for more
-  information.
+- 「ブラウザの外観」オプションを使用すると、ブラウザの質問と回答の列に表示される異なる（おそらく簡略化された）テンプレートを設定できます。詳細については、[ブラウザの外観](styling.md#ブラウザの外観)を参照してください。

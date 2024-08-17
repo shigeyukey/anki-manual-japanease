@@ -1,28 +1,25 @@
-# Display Issues on macOS
+# macOSでの表示の問題
 
 <!-- toc -->
 
-## Qt6 Video Driver
+## Qt6ビデオドライバ
 
-If you're experiencing display issues or crashes in Anki 23.10+, you can try
-changing the video driver in the preferences screen, then restarting Anki.
+Anki 23.10+で表示の問題やクラッシュが発生している場合は、設定画面でビデオドライバを変更し、Ankiを再起動してみてください。
 
-Older Anki versions did not provide an option in the preferences, but allowed
-you to adjust the driver by opening Terminal.app, then pasting the following and hit enter:
+以前のAnkiバージョンでは設定画面にオプションがありませんでしたが、Terminal.appを開き、以下を貼り付けてEnterキーを押すことでドライバを調整できました：
 
 ```
 echo software > ~/Library/Application\ Support/Anki2/gldriver6
 ```
 
-It will not print anything. You can then start Anki again.
+何も表示されません。その後、再度Ankiを起動できます。
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+デフォルトに戻したい場合は、「software」を「auto」に変更するか、そのファイルを削除してください。
 
-## eGPUs
+## eGPU
 
-If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click "Get Info", and enable the "prefer eGPU" option.
+Macで外部グラフィックスカードを使用しているときに画面が空白になる場合は、Ankiアプリをcontrolキーを押しながらクリックし、「情報を見る」をクリックして、「eGPUを優先する」オプションを有効にします。
 
-## Monitors with different resolutions
+## 異なる解像度のモニター
 
-Please see [this forum post](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331).
+[このフォーラムの投稿](https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331)を参照してください。

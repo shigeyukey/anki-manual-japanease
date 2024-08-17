@@ -1,14 +1,14 @@
-# Blank Main Window
+# メインウィンドウが空白
 
-Some Linux distros have recently updated glibc. Recent versions break the web toolkit that Anki is built on, causing Anki's main window to appear blank.
+最近、一部のLinuxディストリビューションがglibcを更新しました。最近のバージョンはAnkiが使用しているウェブツールキットを壊してしまい、Ankiのメインウィンドウが空白になる原因となっています。
 
-There are two ways to work around this:
+これを回避する方法は2つあります：
 
-1. Install the latest Qt6 version of Anki, which uses an updated toolkit:
+1. 更新されたツールキットを使用する最新のQt6バージョンのAnkiをインストールする：
 
 <https://apps.ankiweb.net>
 
-2. Use one of the workarounds posted on the following threads:
+2. 以下のスレッドに投稿された回避策のいずれかを使用する：
 
 - <https://forums.ankiweb.net/t/another-blank-main-window-solution-for-linux/32835>
 - <https://forums.ankiweb.net/t/please-use-file-import-popup-on-startup/14695>

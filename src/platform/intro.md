@@ -1,4 +1,3 @@
-# Platform Notes
+# プラットフォームに関する注意事項
 
-The way Anki is installed, and the possible problems you may encounter, depend
-on the type of computer you are using.
+Ankiのインストール方法や遭遇する可能性のある問題は、使用しているコンピュータの種類によって異なります。

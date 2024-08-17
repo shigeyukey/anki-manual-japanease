@@ -1,19 +1,18 @@
-# Windows startup issues
+# Windowsの起動問題
 
 <!-- toc -->
 
-## No error, but app does not appear
+## エラーはないがアプリが表示されない
 
-Recently there have been some reports of Anki failing to appear, without
-any error message showing up. If you run into this situation, you can either:
+最近、エラーメッセージが表示されずにAnkiが表示されないという報告がいくつかあります。この状況に遭遇した場合、以下のいずれかを試してください：
 
-- Install the [latest Anki version](https://apps.ankiweb.net/) (try both qt6 and qt5)
-- Or you can try [adjusting your decimal separator](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75) if it is not a period.
-- Or you can try the old 2.1.35-alternate build of Anki.
+- [最新のAnkiバージョン](https://apps.ankiweb.net/)をインストールする（qt6とqt5の両方を試してください）
+- 小数点区切りがピリオドでない場合は、[小数点区切りを調整する](https://forums.ankiweb.net/t/windows-update-broke-anki/1822/75)ことを試してください。
+- 古いAnkiの2.1.35-alternateビルドを試してください。
 
-## Windows updates
+## Windowsアップデート
 
-When starting Anki, you may receive a message like the following:
+Ankiを起動すると、次のようなメッセージが表示されることがあります：
 
 - _Error loading Python DLL_
 - _The program can't start because api-ms-win.... is missing_
@@ -21,71 +20,54 @@ When starting Anki, you may receive a message like the following:
 - _Failed to execute script pyi_rth_multiprocessing_
 - _Failed to execute script pyi_rth_win32comgenpy_
 
-These errors are usually because your computer is missing a Windows update
-or Windows library.
+これらのエラーは、通常、コンピュータにWindowsの更新プログラムやWindowsライブラリが不足しているために発生します。
 
-Please open Windows update, and ensure your system has all updates installed.
-If any needed to be installed, please restart your device after installing.
+Windowsアップデートを開き、システムにすべての更新プログラムがインストールされていることを確認してください。必要な更新プログラムがインストールされた場合は、インストール後にデバイスを再起動してください。
 
 ## Windows 7/8
 
-On Windows 7/8, you may need to manually install extra updates. Please try:
+Windows 7/8では、追加の更新プログラムを手動でインストールする必要がある場合があります。以下を試してください：
 
 - <https://www.microsoft.com/en-us/download/details.aspx?id=48234>
 - <https://aka.ms/vs/15/release/vc_redist.x64.exe>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4474419>
 - <http://www.catalog.update.microsoft.com/Search.aspx?q=kb4490628>
 
-## Video driver issues
+## ビデオドライバの問題
 
-Please see [display issues](./display-issues.md).
+[表示の問題](./display-issues.md)を参照してください。
 
-## Multiple displays
+## 複数のディスプレイ
 
-If you get a _LoadLibrary failed with error 126_, this may be caused by the
-toolkit Anki is built on having trouble with [multiple displays](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967).
+_エラー126でLoadLibraryに失敗しました_ というエラーが発生する場合、Ankiが使用しているツールキットが[複数のディスプレイ](https://forums.ankiweb.net/t/error-126-on-open-anki-desktop/13967)に問題を抱えている可能性があります。
 
-## Antivirus/firewall software
+## アンチウイルス/ファイアウォールソフトウェア
 
-Third-party software on your machine may prevent Anki from loading. You can
-try adding an exception to Anki, or temporarily disabling your antivirus/firewall
-to see if it helps.
+サードパーティ製のソフトウェアがAnkiの読み込みを妨げることがあります。Ankiを例外として追加するか、アンチウイルス/ファイアウォールを一時的に無効にして、問題が解決するか確認してください。
 
-## Admin access
+## 管理者権限
 
-Some users have reported that Anki did not run for them until they right-clicked
-on the Anki icon and chose "Run as administrator". Anki stores all of its data in
-your user folder, and should not need administrator privileges, but it's something
-you can try if you've exhausted other options.
+一部のユーザーは、Ankiのアイコンを右クリックして「管理者として実行」を選択するまでAnkiが実行されなかったと報告しています。Ankiはすべてのデータをユーザーフォルダに保存するため、管理者権限は必要ないはずですが、他のオプションを試しても解決しない場合は試してみてください。
 
-## Multiple Anki installations present after updating
+## 更新後に複数のAnkiインストールが存在する場合
 
-If the update process leaves you with multiple Anki installs (such as within
-`C:\Program Files\Anki` and `C:\Program Files (x86)\Anki`), they may be left in a
-non-working state, and Anki may refuse to start without showing an error message.
+更新プロセスの後に複数のAnkiインストール（例えば、`C:\Program Files\Anki` と `C:\Program Files (x86)\Anki` 内）が残っている場合、それらは動作しない状態で残されることがあり、エラーメッセージを表示せずにAnkiが起動しないことがあります。
 
-Try uninstalling all copies - you may be able to do so with the Windows `Apps & features` settings menu, or by running `uninstall.exe` in each Anki program
-folder. Afterward, install Anki again.
+すべてのコピーをアンインストールしてみてください。Windowsの「アプリと機能」設定メニューを使用するか、各Ankiプログラムフォルダ内の `uninstall.exe` を実行することでアンインストールできるかもしれません。その後、再度Ankiをインストールしてください。
 
-## Debugging
+## デバッグ
 
-Starting Anki from a terminal may reveal a bit more information about some
-errors. After installing the latest Anki version and ensuring all Windows
-updates are installed, instead of running Anki directly, use Start>Run
-and type cmd.exe. When a console window appears, type
+ターミナルからAnkiを起動すると、一部のエラーについてもう少し情報が得られる場合があります。最新のAnkiバージョンをインストールし、すべてのWindowsアップデートがインストールされていることを確認した後、直接Ankiを実行するのではなく、スタート > 実行 で cmd.exe と入力します。コンソールウィンドウが表示されたら、次のように入力します：
 
 ```bat
 cd \program files\anki & anki-console
 ```
 
-Presumably Anki will fail to open like before, but it may reveal something about
-what is causing the problem.
+おそらくAnkiは以前と同じように開かないでしょうが、問題の原因について何かが明らかになるかもしれません。
 
-## If all else fails
+## それでも解決しない場合
 
-If you are unable to start Anki after trying the above workarounds, you have
-two remaining options:
+上記の回避策を試してもAnkiを起動できない場合、次の2つのオプションがあります：
 
-- You can try [running from Python](https://faqs.ankiweb.net/running-from-python.html).
-- You can try an older Anki version built with an older toolkit, such as
-  2.1.35-alternate, and 2.1.15.
+- [Pythonから実行する](https://faqs.ankiweb.net/running-from-python.html)ことを試すことができます。
+- 古いツールキットでビルドされた古いAnkiバージョン（例：2.1.35-alternateや2.1.15）を試すことができます。

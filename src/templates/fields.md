@@ -1,27 +1,22 @@
-# Field Replacements
+# フィールド置換
 
 <!-- toc -->
 
-## Basic Replacements
+## 基本的な置換
 
-The most basic template looks something like this:
+最も基本的なテンプレートは次のようになります：
 
     {{Front}}
 
-When you place text within curly brackets, Anki looks for a field by
-that name, and replaces the text with the actual content of the field.
+中括弧内にテキストを配置すると、Ankiはその名前のフィールドを探し、フィールドの実際の内容でテキストを置き換えます。
 
-Field names are case sensitive. If you have a field named `Front`,
-writing `{{front}}` will not work properly.
+フィールド名は大文字と小文字を区別します。`Front`というフィールドがある場合、`{{front}}`と書いても正しく動作しません。
 
-Your templates are not limited to a list of fields. You can also include
-arbitrary text on your templates. For example, if you’re studying
-capital cities, and you’ve created a note type with a “Country” field,
-you might create a front template like this:
+テンプレートはフィールドのリストに限定されません。テンプレートに任意のテキストを含めることもできます。例えば、首都を学習していて、「Country」というフィールドを持つノートタイプを作成した場合、次のような表テンプレートを作成するかもしれません：
 
-    What's the capital city of {{Country}}?
+    {{Country}}の首都はどこですか？
 
-The default back template will look something like this:
+デフォルトの裏テンプレートは次のようになります：
 
     {{FrontSide}}
 
@@ -29,174 +24,131 @@ The default back template will look something like this:
 
     {{Back}}
 
-This means “show me the text that’s on the front side, then a divider
-line, and then the Back field”.
+これは「表側のテキストを表示し、その後に区切り線を表示し、次に裏フィールドを表示する」という意味です。
 
-The 'id=answer' part tells Anki where the divider is between the
-question and the answer. This allows Anki to automatically scroll to the
-spot where the answer starts when you press 'show answer' on a long card
-(especially useful on mobile devices with small screens). If you don’t
-want a horizontal line at the beginning of the answer, you can use
-another HTML element such as a paragraph or div instead.
+'id=answer' の部分は、質問と回答の間の区切りがどこにあるかをAnkiに伝えます。これにより、長いカードで「回答を表示」ボタンを押したときに、Ankiが自動的に回答が始まる場所までスクロールすることができます（特に小さな画面のモバイルデバイスで便利です）。回答の最初に水平線を表示したくない場合は、段落やdivなどの別のHTML要素を使用することもできます。
 
-## Newlines
+## 改行
 
-Card templates are like web pages, which means a special command is required
-to create a new line. For example, if you wrote the following in the template:
+カードテンプレートはウェブページのようなもので、新しい行を作成するには特別なコマンドが必要です。例えば、テンプレートに次のように書いた場合：
 
     one
     two
 
-In the preview, you’d actually see:
+プレビューでは実際には次のように表示されます：
 
     one two
 
-To add a new line, you need to add a &lt;br&gt; code to the end of a
-line, like so:
+新しい行を追加するには、行の末尾に&lt;br&gt;コードを追加する必要があります。次のように：
 
     one<br>
     two
 
-The br code stands for "(line) br(eak)".
+brコードは「(行) br(eak)」を意味します。
 
-The same applies for fields. If you want to display two fields, one on
-each line, you would use
+フィールドにも同じことが当てはまります。2つのフィールドを表示し、それぞれを別の行に表示したい場合は、次のようにします：
 
     {{Field 1}}<br>
     {{Field 2}}
 
-## Text to Speech for individual fields
+## 個別フィールドのテキスト読み上げ
 
-This feature requires Anki 2.1.20, AnkiMobile 2.0.56 or AnkiDroid 2.17.
+この機能を使用するには、Anki 2.1.20、AnkiMobile 2.0.56、または AnkiDroid 2.17 が必要です。
 
-To have Anki read the Front field in a US English voice, you can place
-the following in your card template:
+US 英語の音声で Front フィールドを読み上げるには、カードテンプレートに次のように記述します：
 
     {{tts en_US:Front}}
 
-On Windows, macOS, and iOS, Anki will use the OS’s built in voices. On
-Linux, no voices are built in, but voices can be provided by add-ons,
-such as [this one](https://ankiweb.net/shared/info/391644525).
+Windows、macOS、および iOS では、Anki は OS に組み込まれている音声を使用します。Linux では、組み込みの音声はありませんが、[このアドオン](https://ankiweb.net/shared/info/391644525)などのアドオンによって音声を提供できます。
 
-To see a list of all available languages/voices, place the following on
-your card template:
+利用可能なすべての言語/音声のリストを表示するには、カードテンプレートに次のように記述します：
 
     {{tts-voices:}}
 
-If there are multiple voices that support your chosen language, you can
-specify desired voices in a list, and Anki will choose the first
-available voice. For example:
+選択した言語をサポートする音声が複数ある場合、希望する音声をリストで指定でき、Anki は最初に利用可能な音声を選択します。例えば：
 
     {{tts ja_JP voices=Apple_Otoya,Microsoft_Haruka:Field}}
 
-This would use Otoya when on an Apple device, and Haruka when on a
-Windows PC.
+これは、Apple デバイスでは Otoya を、Windows PC では Haruka を使用します。
 
-Specifying a different speed is possible in some TTS implementations:
+一部の TTS 実装では、異なる速度を指定することも可能です：
 
     {{tts fr_FR speed=0.8:SomeField}}
 
-Both speed and voices are optional, but the language must be included.
+速度と音声はどちらもオプションですが、言語は必須です。
 
-On a Mac, you can customize the available voices:
+Mac では、利用可能な音声をカスタマイズできます：
 
-- Open the System Preferences screen.
+- システム環境設定を開きます。
 
-- Click on Accessibility.
+- アクセシビリティをクリックします。
 
-- Click on Speech.
+- スピーチをクリックします。
 
-- Click on the system voice dropdown, and choose Customize.
+- システム音声のドロップダウンをクリックし、カスタマイズを選択します。
 
-Some voices sound better than others, so experiment to choose the one
-you prefer. Please note that the Siri voice can only be used by Apple
-apps. Once you’ve installed new voices, you’ll need to restart Anki for
-the new voices to become available.
+音声によっては他のものよりも良い音がするものもあるので、好みのものを選ぶために試してみてください。Siri の音声は Apple のアプリでのみ使用できることに注意してください。新しい音声をインストールした後、Anki を再起動する必要があります。
 
-On Windows, some voices like Cortana can not be selected, as Microsoft
-does not make those voices available to other applications.
+Windows では、Cortana などの一部の音声は選択できません。これは、Microsoft がこれらの音声を他のアプリケーションに提供していないためです。
 
-On a cloze note type, you can make Anki read only the elided sections
-using the `cloze-only` filter, like so:
+クロズノートタイプでは、`cloze-only` フィルターを使用して、Anki に省略された部分のみを読み上げさせることができます。例えば：
 
     {{tts en_US:cloze-only:Text}}
 
-The cloze-only filter is supported in Anki 2.1.29+, AnkiMobile 2.0.65+, and AnkiDroid 2.17+.
+`cloze-only` フィルターは Anki 2.1.29+、AnkiMobile 2.0.65+、および AnkiDroid 2.17+ でサポートされています。
 
-## Text to Speech for multiple fields and static text
+## 複数のフィールドと静的テキストの音声読み上げ
 
-This feature requires Anki 2.1.50+, AnkiMobile 2.0.84+, or AnkiDroid 2.17+.
+この機能を使用するには、Anki 2.1.50+、AnkiMobile 2.0.84+、または AnkiDroid 2.17+ が必要です。
 
-If you want TTS to read multiple fields or static text included in the template, you can use the following:
+テンプレートに含まれる複数のフィールドや静的テキストを TTS に読み上げさせたい場合、次のように記述できます：
 
 ```
-[anki:tts lang=en_US] This text should be read. Here is {{Field1}} and {{Field2}}[/anki:tts]
+[anki:tts lang=en_US] このテキストは読み上げられるべきです。ここに {{Field1}} と {{Field2}} があります[/anki:tts]
 
-This is other text on the template. It is outside of the tags so it should not be read.
+これはテンプレート上の他のテキストです。タグの外にあるため、読み上げられるべきではありません。
 ```
 
-## Special Fields
+## 特殊フィールド
 
-There are some special fields you can include in your templates:
+テンプレートに含めることができる特殊フィールドがいくつかあります：
 
-    The note's tags: {{Tags}}
+    ノートのタグ: {{Tags}}
 
-    The type of note: {{Type}}
+    ノートの種類: {{Type}}
 
-    The card's deck: {{Deck}}
+    カードのデッキ: {{Deck}}
 
-    The card's subdeck: {{Subdeck}}
+    カードのサブデッキ: {{Subdeck}}
 
-    The card's flag: {{CardFlag}}
+    カードのフラグ: {{CardFlag}}
 
-    The type of card ("Forward", etc): {{Card}}
+    カードの種類（「正面」など）: {{Card}}
 
-    The content of the front template
-    (only valid in back template): {{FrontSide}}
+    表テンプレートの内容
+    （裏テンプレートでのみ有効）: {{FrontSide}}
 
-FrontSide will not automatically play any audio that was on the front side
-of the card. If you wish to have the same audio play automatically on both
-the front and back of the card, you’ll need to manually include the audio
-fields on the back as well.
+FrontSide はカードの表側にあった音声を自動的に再生しません。カードの表と裏の両方で同じ音声を自動的に再生したい場合は、裏側にも音声フィールドを手動で含める必要があります。
 
-As with other fields, special field names are case sensitive - you must use
-`{{Tags}}` rather than `{{tags}}` for example.
+他のフィールドと同様に、特殊フィールド名は大文字と小文字を区別します。例えば、`{{tags}}` ではなく `{{Tags}}` を使用する必要があります。
 
-## Hint Fields
+## ヒントフィールド
 
-It’s possible to add a field to the front or back of a card, but make it
-hidden until you explicitly show it. We call this a 'hint field'. Before
-adding a hint, please bear in mind that the easier you make it to answer
-a question in Anki, the less likely you are to remember that question
-when you encounter it in real life. Please have a read about the
-'minimum information principle' on
-<https://super-memory.com/articles/20rules.htm> before proceeding.
+カードの表または裏にフィールドを追加することができますが、それを明示的に表示するまで隠しておくことができます。これを「ヒントフィールド」と呼びます。ヒントを追加する前に、Ankiで質問に答えるのを簡単にするほど、実際にその質問に遭遇したときに覚えている可能性が低くなることを覚えておいてください。進める前に、<https://super-memory.com/articles/20rules.htm> にある「最小情報の原則」について読んでください。
 
-First, you’ll need to add a field to store the hint in if you have not
-already. Please see the [fields](../editing.md#customizing-fields) section if you’re not sure how
-to do this.
+まず、まだ追加していない場合は、ヒントを保存するフィールドを追加する必要があります。これを行う方法がわからない場合は、[フィールド](../editing.md#フィールドのカスタマイズ)セクションを参照してください。
 
-Assuming you’ve created a field called MyField, you can tell Anki to
-include it on the card but hide it by default by adding the following to
-your template:
+MyFieldというフィールドを作成したと仮定すると、次のようにテンプレートに追加することで、Ankiにそのフィールドをカードに含めるがデフォルトでは隠すように指示できます：
 
     {{hint:MyField}}
 
-This will show a link labeled “show hint”; when you click it, the
-content of the field will be displayed on the card. (If MyField is
-empty, nothing will be shown.)
+これにより、「ヒントを表示」というラベルのリンクが表示されます。クリックすると、そのフィールドの内容がカードに表示されます。（MyFieldが空の場合、何も表示されません。）
 
-If you show the hint on the question and then reveal the answer, the
-hint will be hidden again. If you want to have the hint always revealed
-when the answer is shown, you will need to remove `{{FrontSide}}` from
-your back template and manually add the fields you wish to appear.
+質問にヒントを表示してから回答を表示すると、ヒントは再び隠されます。回答が表示されたときに常にヒントを表示したい場合は、裏テンプレートから `{{FrontSide}}` を削除し、表示したいフィールドを手動で追加する必要があります。
 
-It is not currently possible to use a hint field for audio — the audio
-will play regardless of whether you’ve clicked on the hint link.
+現在、音声に対してヒントフィールドを使用することはできません。音声はヒントリンクをクリックしたかどうかに関係なく再生されます。
 
-If you want to customize the appearance or behaviour, you’ll need to
-implement the hint field yourself. We can not provide any support for
-doing so, but the following code should get you started:
+外観や動作をカスタマイズしたい場合は、ヒントフィールドを自分で実装する必要があります。サポートは提供できませんが、以下のコードが開始点になるでしょう：
 
     {{#Back}}
     ﻿<a class=hint href="#"
@@ -204,132 +156,93 @@ doing so, but the following code should get you started:
     Show Back</a><div id="hint4753594160" class=hint style="display: none">{{Back}}</div>
     {{/Back}}
 
-## Dictionary Links
+## 辞書リンク
 
-You can also use field replacement to create dictionary links. Imagine
-you’re studying a language and your favourite online dictionary allows
-you to search for text using a web URL like:
+フィールド置換を使用して辞書リンクを作成することもできます。例えば、あなたが言語を学習していて、お気に入りのオンライン辞書が次のようなウェブURLを使用してテキストを検索できるとします：
 
     http://example.com/search?q=myword
 
-You could add an automatic link by doing the following in your template:
+テンプレートに次のように記述することで、自動リンクを追加できます：
 
     {{Expression}}
 
-    <a href="http://example.com/search?q={{Expression}}">check in dictionary</a>
+    <a href="http://example.com/search?q={{Expression}}">辞書で確認</a>
 
-The template above would allow you to search for each note’s expression
-by clicking on the link while reviewing. There is a caveat however, so
-please see the next section.
+上記のテンプレートは、レビュー中にリンクをクリックすることで各ノートの表現を検索できるようにします。ただし、注意点があるので、次のセクションを参照してください。
 
-## HTML Stripping
+## HTMLの除去
 
-Like templates, fields are stored in HTML. In the dictionary link
-example above, if the expression contained the word "myword" without any
-formatting, then the HTML would be the same: "myword". But when you
-include formatting in your fields, extra HTML is included. If "myword"
-was bolded for example, the actual HTML would be
-"&lt;b&gt;myword&lt;/b&gt;".
+テンプレートと同様に、フィールドはHTMLで保存されます。上記の辞書リンクの例では、表現がフォーマットなしで「myword」という単語を含んでいる場合、HTMLも同じく「myword」になります。しかし、フィールドにフォーマットを含めると、追加のHTMLが含まれます。例えば、「myword」が太字の場合、実際のHTMLは「&lt;b&gt;myword&lt;/b&gt;」になります。
 
-This can present a problem for things like dictionary links. In the
-above example, the dictionary link would end up being:
+これは、辞書リンクのようなものに問題を引き起こす可能性があります。上記の例では、辞書リンクは次のようになります：
 
-    <a href="http://example.com/search?q=<b>myword</b>">check in dictionary</a>
+    <a href="http://example.com/search?q=<b>myword</b>">辞書で確認</a>
 
-The extra characters in the link would likely confuse the dictionary
-site, and you’re likely not to get any matches.
+リンク内の余分な文字は辞書サイトを混乱させる可能性があり、マッチしない可能性が高くなります。
 
-To solve this, Anki provides the ability to strip formatting from fields
-when they are replaced. If you prefix a field name with text:, Anki will
-not include any formatting. So a dictionary link that worked even with
-formatted text would be:
+これを解決するために、Ankiはフィールドが置換されるときにフォーマットを除去する機能を提供します。フィールド名の前にtext:を付けると、Ankiはフォーマットを含めません。したがって、フォーマットされたテキストでも機能する辞書リンクは次のようになります：
 
-    <a href="http://example.com/search?q={{text:Expression}}">check in dictionary</a>
+    <a href="http://example.com/search?q={{text:Expression}}">辞書で確認</a>
 
-## Right To Left Text
+## 右から左へのテキスト
 
-If you’re using a language that reads from right to left, you’ll need
-to adjust the template like so:
+右から左に読む言語を使用している場合、テンプレートを次のように調整する必要があります：
 
     <div dir=rtl>{{FieldThatHasRTLTextInIt}}</div>
 
-## Ruby Characters
+## ルビ文字
 
-Some languages commonly use annotations above the text to display the
-pronunciation of characters. These annotations are known as
-[ruby characters](https://en.wikipedia.org/wiki/Ruby_character).
-In Japanese, these are known as [furigana](https://en.wikipedia.org/wiki/Furigana).
+一部の言語では、文字の発音を表示するためにテキストの上に注釈を付けることが一般的です。これらの注釈は[ルビ文字](https://en.wikipedia.org/wiki/Ruby_character)として知られています。日本語では、これらは[ふりがな](https://en.wikipedia.org/wiki/Furigana)として知られています。
 
-In Anki, you can display ruby characters by using the following syntax:
+Ankiでは、次の構文を使用してルビ文字を表示できます：
 
     Text[Ruby]
 
-Suppose the text above is written in MyField. By default, if you simply use
-`{{Myfield}}`, the field will be displayed as is. To properly position the
-ruby characters above the text, use the `furigana` filter in the templates
-like so:
+上記のテキストが MyField に書かれているとします。デフォルトでは、単に `{{MyField}}` を使用すると、フィールドはそのまま表示されます。ルビ文字をテキストの上に適切に配置するには、テンプレートで `furigana` フィルターを次のように使用します：
 
     {{furigana:MyField}}
 
-Here are some examples:
+いくつかの例を示します：
 
 <!-- prettier-ignore -->
-| Raw Text            | Rendered Text                                                                             |
+| 生のテキスト       | 表示されたテキスト                                                                       |
 | ------------------- | ----------------------------------------------------------------------------------------- |
 | `Text[Ruby]`        | <ruby><rb>Text</rb><rt>Ruby</rt></ruby>                                                   |
 | `日本語[にほんご]`  | <ruby><rb>日本語</rb><rt>にほんご</rt></ruby>                                             |
 | `世[よ]の 中[なか]` | <ruby><rb>世</rb><rt>よ</rt></ruby>の<ruby><rb>中</rb><rt>なか</rt></ruby>                |
-| `世[よ]の中[なか]`  | <ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> _(incorrect!)_ |
+| `世[よ]の中[なか]`  | <ruby><rb>世</rb><rt>よ</rt></ruby><ruby><rb>の中</rb><rt>なか</rt></ruby> _(誤り!)_     |
 
-Notice how the third example has a space before the 中 character. This is
-necessary to specify that the ruby text applies only to that character.
-If there was no space, the ruby text will be misplaced above the の character,
-as shown in the fourth example.
+3番目の例では、中文字の前にスペースがあることに注意してください。これは、ルビテキストがその文字にのみ適用されることを指定するために必要です。スペースがない場合、ルビテキストはの文字の上に誤って配置されます。4番目の例で示されているように。
 
-### Additional Ruby Character Filters
+### 追加のルビ文字フィルター
 
-In addition to the `furigana` filter, you can also only show certain parts
-of the ruby text, with the `kana` and `kanji` filters. The `kana` filter will
-only show the ruby text, while the `kanji` filter removes the ruby text
-entirely.
+`furigana` フィルターに加えて、`kana` および `kanji` フィルターを使用してルビテキストの特定の部分のみを表示することもできます。`kana` フィルターはルビテキストのみを表示し、`kanji` フィルターはルビテキストを完全に削除します。
 
 <!-- prettier-ignore -->
-| Raw Text           | Field Filter           | Rendered Text                                 |
+| 生のテキスト       | フィールドフィルター       | 表示されたテキスト                             |
 | ------------------ | ---------------------- | --------------------------------------------- |
 | `日本語[にほんご]` | `{{furigana:MyField}}` | <ruby><rb>日本語</rb><rt>にほんご</rt></ruby> |
 | `日本語[にほんご]` | `{{kana:MyField}}`     | にほんご                                      |
 | `日本語[にほんご]` | `{{kanji:MyField}}`    | 日本語                                        |
 
-These names are, again, borrowed from Japanese.
-The term [kana](https://en.wikipedia.org/wiki/Kana) represents the phonetic
-system used to describe how words are pronounced, whereas the term
-[kanji](https://en.wikipedia.org/wiki/Kanji) represents its Chinese characters.
+これらの名前は再び日本語から借用されています。
+[kana](https://en.wikipedia.org/wiki/Kana) という用語は、単語の発音を説明するために使用される音節文字を表し、[kanji](https://en.wikipedia.org/wiki/Kanji) という用語はその漢字を表します。
 
-## Media & LaTeX
+## メディアと LaTeX
 
-Anki does not scan templates for media references, because it is slow to
-do so. This has implications for including media on the template.
+Anki はテンプレートをメディア参照のためにスキャンしません。なぜなら、それは遅いからです。これは、テンプレートにメディアを含めることに影響を与えます。
 
-### Static Sounds/Images
+### 静的な音声/画像
 
-If you wish to include images or sounds on your cards that are the same
-for every card (eg, a company logo at the top of each card):
+すべてのカードで同じ画像や音声（例：各カードの上部に会社のロゴ）を含めたい場合：
 
-1. Rename the file so it starts with an underscore, e.g "\_logo.jpg".
-   The underscore tells Anki that the file is used by the template and
-   it should be exported when sharing the deck.
+1. ファイル名をアンダースコアで始まるように変更します。例："\_logo.jpg"。アンダースコアは、そのファイルがテンプレートによって使用され、デッキを共有する際にエクスポートされるべきであることを Anki に伝えます。
 
-2. Add a reference to the media on your front or back template, like:
+2. 表または裏のテンプレートにメディアへの参照を追加します。例：
 
-<!-- -->
+### フィールド参照
 
-    <img src="_logo.jpg">
-
-### Field References
-
-Media references to fields are not supported. They may or may not display
-during review, and will not work when checking for unused media,
-importing/exporting, and so on. Examples that won’t work:
+フィールドへのメディア参照はサポートされていません。レビュー中に表示されるかもしれませんし、されないかもしれません。また、未使用メディアのチェック、インポート/エクスポートなどの際には機能しません。機能しない例：
 
     <img src="{{Expression}}.jpg">
 
@@ -337,19 +250,15 @@ importing/exporting, and so on. Examples that won’t work:
 
     [latex]{{Field 1}}[/latex]
 
-Instead, you should include the media references in the field. Please
-see the [importing section](../importing/text-files.md#importing-media) for more information.
+代わりに、メディア参照をフィールドに含めるべきです。詳細については、[インポートセクション](../importing/text-files.md#メディアのインポート)を参照してください。
 
-## Checking Your Answer
+## 答えの確認
 
-You can watch [a video about this feature](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on) on
-YouTube.
+この機能についての[ビデオ](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)をYouTubeで見ることができます。
 
-The easiest way to check your answer is to click "Basic" at the top
-left of the card adding screen, and select "Basic (type in the answer)".
+答えを確認する最も簡単な方法は、カード追加画面の左上にある「Basic」をクリックし、「Basic (type in the answer)」を選択することです。
 
-If you have downloaded a shared deck and would like to type in the answer
-with it, you can modify its card template. If it has a template like:
+共有デッキをダウンロードして、そのデッキで答えを入力して確認したい場合は、そのカードテンプレートを変更できます。テンプレートが次のようになっている場合：
 
     {{Native Word}}
 
@@ -359,66 +268,43 @@ with it, you can modify its card template. If it has a template like:
 
     {{Foreign Word}}
 
-To type in the foreign word and check if you are correct, you need to
-edit your front template so that it looks like this:
+外国語の単語を入力して正しいかどうかを確認するには、フロントテンプレートを次のように編集する必要があります：
 
     {{Native Word}}
     {{type:Foreign Word}}
 
-Note that we have added `type:` in front of the field we want to
-compare. Since FrontSide is on the back of the card, the type answer box
-will appear on the back as well.
+比較したいフィールドの前に `type:` を追加したことに注意してください。FrontSide がカードの裏側にあるため、入力ボックスも裏側に表示されます。
 
-When reviewing, Anki will display a text box where you can type in the
-answer, and upon hitting <kbd>Enter</kbd> or showing the answer, Anki will show you
-which parts you got right and which parts you got wrong. The text box’s
-font size will be the size you configured for that field (via the
-“Fields” button when editing).
+レビュー時に、Ankiはテキストボックスを表示し、そこに答えを入力できます。<kbd>Enter</kbd>キーを押すか答えを表示すると、Ankiはどの部分が正解でどの部分が間違っているかを表示します。テキストボックスのフォントサイズは、そのフィールドに対して設定したサイズ（編集時に「フィールド」ボタンを介して）になります。
 
-This feature does not change how the cards are answered, so it’s still
-up to you to decide how well you remembered or not.
+この機能はカードの回答方法を変更しないため、覚えていたかどうかを決定するのはあなた次第です。
 
-Only one typing comparison can be used on a card. If you add the above
-text multiple times, it will not work. It also only supports a single
-line, so it is not useful for comparing against a field that is
-comprised of multiple lines.
+カードには1つの入力比較のみを使用できます。上記のテキストを複数回追加しても機能しません。また、単一行のみをサポートするため、複数行で構成されるフィールドとの比較には適していません。
 
-Anki uses a monospaced font for the answer comparison so that the
-“provided” and “correct” sections line up. If you wish to override the
-font for the answer comparison, you can put the following at the bottom
-of your styling section:
+Ankiは、提供された部分と正解の部分が揃うように、答えの比較には等幅フォントを使用します。答えの比較に使用するフォントを上書きしたい場合は、スタイリングセクションの下部に次のように記述できます：
 
     code#typeans { font-family: "myfontname"; }
 
-Which will affect the following HTML for the answer comparison:
+これにより、答えの比較に使用される次のHTMLに影響を与えます：
 
     <code id=typeans>...</code>
 
-Advanced users can override the default type-answer colors with the css
-classes 'typeGood', 'typeBad' and 'typeMissed'. AnkiMobile supports
-'typeGood' and 'typeBad', but not 'typeMissed'.
+上級ユーザーは、CSSクラス 'typeGood'、'typeBad'、'typeMissed' を使用してデフォルトのタイプアンサーの色を上書きできます。AnkiMobileは 'typeGood' と 'typeBad' をサポートしていますが、'typeMissed' はサポートしていません。
 
-If you wish to override the size of the typing box and don’t want to
-change the font in the Fields dialog, you can override the default
-inline style using `!important`, like so:
+入力ボックスのサイズを上書きしたいが、フィールドダイアログでフォントを変更したくない場合は、`!important` を使用してデフォルトのインラインスタイルを上書きできます。例えば：
 
     #typeans { font-size: 50px !important; }
 
-It is also possible to type in the answer for cloze deletion cards. To
-do this, add `{{type:cloze:Text}}` to both the front and back
-template, so the back looks something like this:
+クロズ削除カードに対しても答えを入力することが可能です。これを行うには、`{{type:cloze:Text}}` を表と裏のテンプレートの両方に追加します。裏側は次のようになります：
 
     {{cloze:Text}}
     {{type:cloze:Text}}
     {{Extra}}
 
-Note that since the cloze type does not use FrontSide, this must be
-added to both sides on a cloze note type.
+クロズタイプはFrontSideを使用しないため、クロズノートタイプではこれを両面に追加する必要があります。
 
-If there are multiple sections elided, you can separate the answers in
-the text box with a comma.
+複数のセクションが省略されている場合、テキストボックス内の答えをカンマで区切ることができます。
 
-Type answer boxes will not appear in the ["preview" dialog](intro.md) in the browser. When you review or look at
-the preview in the card types window, they will display.
+入力ボックスはブラウザの「プレビュー」ダイアログには表示されません。カードタイプウィンドウでレビューまたはプレビューを見ると表示されます。
 
-Type answer boxes will not be displayed when you review your cards on [ankiweb.net](../syncing.md).
+入力ボックスは [ankiweb.net](../syncing.md) でカードをレビューする際には表示されません。

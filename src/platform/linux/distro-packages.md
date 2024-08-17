@@ -1,22 +1,10 @@
-# Packages Distributed by Linux Distributions
+# Linuxディストリビューションによって配布されるパッケージ
 
-We have seen a lot of issues caused by the customized versions of Anki
-distributed by Linux distributions:
+LinuxディストリビューションによってカスタマイズされたAnkiのバージョンが原因で、多くの問題が発生していることが確認されています：
 
-- Anki depends on third-party libraries like Qt, and Linux distributions often
-  substitute different versions of those libraries, without testing the impact
-  of those changes.
-- Sometimes the version of Anki they distribute is years old, or is an
-  alpha/beta version not intended for stable release. Distributions will often
-  disable the built-in update check as well, to prevent you from being notified
-  of newer versions.
+- AnkiはQtのようなサードパーティライブラリに依存していますが、Linuxディストリビューションはこれらのライブラリの異なるバージョンをテストせずに置き換えることがよくあります。
+- 配布されるAnkiのバージョンが数年前のものであったり、安定版リリースを意図していないアルファ/ベータ版であることがあります。ディストリビューションは、内蔵のアップデートチェックを無効にして、新しいバージョンの通知を防ぐこともよくあります。
 
-Compiled builds of Anki are available on <https://apps.ankiweb.net>. Most of the
-necessary libraries are included, and Anki has been tested to work with these
-library versions. If you're experiencing issues with your distro's version, the
-first thing you should try is switching to the latest packaged version we
-provide.
+Ankiのコンパイル済みビルドは<https://apps.ankiweb.net>で入手可能です。必要なライブラリのほとんどが含まれており、これらのライブラリバージョンで動作することがテストされています。ディストリビューションのバージョンで問題が発生している場合、まず試すべきことは、提供されている最新のパッケージバージョンに切り替えることです。
 
-You are welcome to continue using your distro's version of Anki if you prefer,
-but if you run into any issues, you will need to report them to your
-distribution's package maintainers.
+お好みでディストリビューションのバージョンを引き続き使用することもできますが、問題が発生した場合は、ディストリビューションのパッケージメンテナに報告する必要があります。

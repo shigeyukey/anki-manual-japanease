@@ -187,7 +187,7 @@ Anki 2.1.20 / AnkiMobile 2.0.56 / AnkiDroid 2.13以降、この回避策は不�
 
     {{c1::[$]\frac{foo}{\frac{bar}{baz}<!-- -->}[/$] blah blah blah.}}
 
-クローズ削除されたテキスト内で`::`文字列を使用する必要がある場合、どちらの回避策も使用できます。次のノートテキストに対して生成される最初のカードは「[type] in C++ is a type-safe union」となります：
+クローズ削除されたテキスト内で`::`文字列を使用する必要がある場合、どちらの回避策も使用できます。次のノートテキストに対して生成される最初のカードは`[type] in C++ is a type-safe union`となります：
 
     {{c1::std:<!-- -->:variant::~type~}} in C++ is a {{c2::type-safe union}}
 

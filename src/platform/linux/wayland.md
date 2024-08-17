@@ -1,9 +1,6 @@
 # Wayland
 
-From Anki 2.1.48, you can force Anki to use Wayland by defining ANKI_WAYLAND=1
-before starting Anki. Wayland may give you better rendering across multiple
-displays, but it is currently off by default, due to the following issues:
+Anki 2.1.48から、Ankiを起動する前にANKI_WAYLAND=1を定義することで、AnkiにWaylandを使用させることができます。Waylandは複数のディスプレイでより良いレンダリングを提供する場合がありますが、以下の問題があるため、現在はデフォルトでオフになっています：
 
-- On some distros, windows are rendered without borders.
-- Bringing windows to the front is not possible, so for example, clicking on Add
-  to reveal an existing Add Cards window will not work.
+- 一部のディストリビューションでは、ウィンドウが枠なしでレンダリングされます。
+- ウィンドウを前面に持ってくることができないため、例えば、既存の「カードを追加」ウィンドウを表示するために「追加」をクリックしても機能しません。

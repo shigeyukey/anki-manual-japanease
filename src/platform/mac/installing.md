@@ -1,60 +1,51 @@
-# Installing & Upgrading Anki on macOS
+# macOSへのAnkiのインストールとアップグレード
 
 <!-- toc -->
 
-## Requirements
+## 必要条件
 
-Recent Anki releases require a Mac running macOS 10.13.4 or later.
+最近のAnkiリリースは、macOS 10.13.4以降を実行しているMacが必要です。
 
-The last Anki release that supported macOS 10.10 to 10.13.3 was [Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35). If you're on an old machine, you can obtain the old version from the [releases page](https://github.com/ankitects/anki/releases).
+macOS 10.10から10.13.3をサポートした最後のAnkiリリースは[Anki 2.1.35-alternate](https://github.com/ankitects/anki/releases/tag/2.1.35)です。古いマシンを使用している場合は、[リリースページ](https://github.com/ankitects/anki/releases)から古いバージョンを取得できます。
 
-## Installing
+## インストール
 
-1. Download Anki from <https://apps.ankiweb.net>. See the next section
-   for how to choose between -qt5 and -qt6.
-2. Save the file to your desktop or downloads folder.
-3. Open it, and drag Anki to your Applications folder or desktop.
-4. Double-click on Anki in the location you placed it.
+1. <https://apps.ankiweb.net> からAnkiをダウンロードします。-qt5と-qt6のどちらを選ぶかについては次のセクションを参照してください。
+2. ファイルをデスクトップまたはダウンロードフォルダに保存します。
+3. ファイルを開き、Ankiをアプリケーションフォルダまたはデスクトップにドラッグします。
+4. 配置した場所でAnkiをダブルクリックします。
 
 ## Qt5 vs. Qt6
 
-Recent Anki versions come in separate Qt5 and Qt6 variants. The Qt6 version
-is recommended for most users.
+最近のAnkiバージョンは、Qt5とQt6の別々のバリアントで提供されています。ほとんどのユーザーにはQt6バージョンが推奨されます。
 
-Advantages of the Qt6 version:
+Qt6バージョンの利点：
 
-- Native support for recent Apple Silicon Macs (faster, better battery life).
-- Various bugfixes, including things like better support for less common languages.
-- Security updates. Support for the Qt5 library was discontinued in Nov 2020,
-  meaning that any security flaws discovered since then will remain unfixed.
+- 最近のApple Silicon Macをネイティブサポート（高速化、バッテリー寿命の向上）。
+- 様々なバグ修正、例えば、あまり一般的でない言語のサポートの向上。
+- セキュリティアップデート。Qt5ライブラリのサポートは2020年11月に終了しており、それ以降に発見されたセキュリティの欠陥は修正されません。
 
-Disadvantages of the Qt6 version:
+Qt6バージョンの欠点：
 
-- Tabbed windows (e.g in full screen) are no longer possible.
-- Some Mac users have reported that the Intel Qt5 version was faster and
-  more reliable for them.
-- Some add-ons currently only work with the Qt5 version.
+- タブ付きウィンドウ（フルスクリーンなど）が使用できなくなります。
+- 一部のMacユーザーは、Intel版のQt5の方が高速で信頼性が高いと報告しています。
+- 一部のアドオンは現在Qt5バージョンでのみ動作します。
 
-## Upgrading
+## アップグレード
 
-To upgrade, close Anki if it is open, and then follow the steps above. Drag
-the Anki icon into the same location you previously stored it, and when prompted,
-overwrite the old version. Your card data will be preserved.
+アップグレードするには、Ankiが開いている場合は閉じてから、上記の手順に従ってください。Ankiのアイコンを以前に保存した場所にドラッグし、上書きするように求められたら、古いバージョンを上書きしてください。カードデータは保持されます。
 
 ## Homebrew
 
-[Homebrew](https://brew.sh/) users can install Anki using
-`brew install --cask anki` in their preferred Terminal application.
+[Homebrew](https://brew.sh/) ユーザーは、好みのターミナルアプリケーションで `brew install --cask anki` を使用してAnkiをインストールできます。
 
-Upgrading can be done using `brew upgrade`, and for uninstalling: `brew uninstall --cask anki`
+アップグレードは `brew upgrade` を使用して行い、アンインストールは `brew uninstall --cask anki` で行います。
 
-## Add-on Compatibility
+## アドオンの互換性
 
-Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the [releases page](https://github.com/ankitects/anki/releases).
+一部のアドオンは最新のAnkiリリースで常に動作するとは限りません。最新のAnkiバージョンにアップグレードして、どうしても必要なアドオンが動作しなくなった場合は、[リリースページ](https://github.com/ankitects/anki/releases)から古いAnkiバージョンをダウンロードできます。
 
-## Problems
+## 問題
 
-If you encounter any issues when installing or starting Anki, please see:
-- [Display Issues](display-issues.md)
+Ankiのインストールや起動時に問題が発生した場合は、以下のページを参照してください：
+- [表示の問題](display-issues.md)

@@ -1,248 +1,153 @@
-# Text Files
+# テキストファイル
 
 <!-- toc -->
 
-Any **plain text** file that contains fields separated by commas,
-semicolons or tabs can be imported into Anki, provided some conditions
-are met.
+いくつかの条件を満たせば、フィールドがカンマ、セミコロン、またはタブで区切られた**プレーンテキスト**ファイルをAnkiにインポートできます。
 
-- The files must be plain text (myfile.txt). Other formats like
-  myfile.xls, myfile.rtf, myfile.doc must be saved as a plain text
-  file first.
+- ファイルはプレーンテキスト（myfile.txt）でなければなりません。myfile.xls、myfile.rtf、myfile.docなどの他の形式は、まずプレーンテキストファイルとして保存する必要があります。
 
-- The files must be in UTF-8 format (see below).
+- ファイルはUTF-8形式でなければなりません（以下参照）。
 
-- The first line also defines the separating character – if Anki finds
-  a ';' on the first line it will use that, if it finds a comma it’ll
-  use that, etc.
+- 最初の行も区切り文字を定義します。Ankiが最初の行で ';' を見つけた場合はそれを使用し、カンマを見つけた場合はそれを使用するなどです。
 
-- Anki determines the number of fields in the file by looking at the first
-  (non-commented) line. If some of the later records in the file contain fewer
-  fields, Anki will treat the missing fields as if they were blank. If some of your
-  records contain extra fields, the extra content will not be imported.
+- Ankiはファイル内のフィールド数を最初の（コメントされていない）行を見て決定します。ファイル内の後のレコードにフィールドが少ない場合、Ankiは欠けているフィールドを空白として扱います。レコードに余分なフィールドが含まれている場合、余分な内容はインポートされません。
 
-Fields in your text file can be mapped to any field in your notes,
-including the tags field. You can choose which field in the text file
-corresponds to which field in the note when you import.
+テキストファイル内のフィールドは、タグフィールドを含むノート内の任意のフィールドにマッピングできます。インポート時に、テキストファイルのどのフィールドがノートのどのフィールドに対応するかを選択できます。
 
-When you import a text file, you can choose what deck to put the cards
-in. Keep in mind that if you have the deck override option set for one
-or more of your templates, the cards will go to that deck rather than
-the one you’ve selected.
+テキストファイルをインポートする際、カードをどのデッキに入れるかを選択できます。ただし、テンプレートの1つ以上にデッキオーバーライドオプションが設定されている場合、カードは選択したデッキではなく、そのデッキに移動します。
 
-This is an example of a valid file with three fields:
+以下は3つのフィールドを持つ有効なファイルの例です：
 
     apple;banana;grape
     some text;other text;yet more text
 
-There are two ways to include newlines or the field separator in fields.
+フィールド内に改行やフィールド区切り文字を含める方法は2つあります。
 
-**Escape the characters by placing the contents of the field in
-quotation marks**:
+**フィールドの内容を引用符で囲むことで文字をエスケープする**：
 
     hello;"this is
     a two line answer"
     two;this is a one line field
     "this includes a ; (semicolon)";another field
 
-Because quotes are used to mark where a field begins and ends, if you
-wish to include them inside your field, you need to replace a single
-doublequote with two doublequotes to "escape" them from the regular
-handling, like so:
+引用符はフィールドの開始と終了を示すため、フィールド内に引用符を含めたい場合は、単一のダブルクォートを2つのダブルクォートに置き換えて、通常の処理から「エスケープ」する必要があります。例えば：
 
     field one;"field two with ""escaped quotes"" inside it"
 
-When you use a spreadsheet program like Libreoffice to create the CSV
-file for you, it will automatically take care of escaping double quotes.
+LibreOfficeのようなスプレッドシートプログラムを使用してCSVファイルを作成する場合、ダブルクォートのエスケープは自動的に処理されます。
 
-**Use HTML new lines**:
+**HTMLの改行を使用する**：
 
     hello; this is<br>a two line answer
     two; this is a one line one
 
-You need to turn on the "allow HTML in fields" checkbox in the import
-dialog for HTML newlines to work.
+HTMLの改行を機能させるには、インポートダイアログで「フィールド内のHTMLを許可する」チェックボックスをオンにする必要があります。
 
-Escaped multi-lines will not work correctly if you are using cloze
-deletions that span multiple lines. In this case, please use HTML
-newlines instead.
+エスケープされた複数行は、複数行にまたがるクローズ削除を使用している場合、正しく動作しません。この場合、HTMLの改行を使用してください。
 
-You can also include tags in another field and select it as a tags field
-in the import dialog:
+別のフィールドにタグを含め、それをインポートダイアログでタグフィールドとして選択することもできます：
 
     first field;second field;tags
 
-This is an example of a valid file where the first line is ignored (\#):
+最初の行が無視される（\#）有効なファイルの例は次のとおりです：
 
     # this is a comment and is ignored
     foo bar;bar baz;baz quux
     field1;field2;field3
 
-## Spreadsheets and UTF-8
+## スプレッドシートとUTF-8
 
-If you have non-Latin characters in your file (such as accents, Japanese
-and so on), Anki expects files to be saved in a 'UTF-8 encoding'. The
-easiest way to do this is to use the free LibreOffice spreadsheet
-program instead of Excel to edit your file, as it supports UTF-8 easily,
-and also exports multi-line content properly, unlike Excel. If you wish
-to keep using Excel, please see [this forum post](https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing)
-for more information.
+ファイルにアクセント記号や日本語などの非ラテン文字が含まれている場合、Ankiはファイルが「UTF-8エンコーディング」で保存されていることを期待します。これを行う最も簡単な方法は、Excelの代わりに無料のLibreOfficeスプレッドシートプログラムを使用してファイルを編集することです。LibreOfficeはUTF-8を簡単にサポートし、Excelとは異なり、複数行のコンテンツも正しくエクスポートします。Excelを使い続けたい場合は、[このフォーラム投稿](https://docs.google.com/document/d/12YE_FS6A9ANLTESJNtPP116ti4nNmCBghyoJBRtno_k/edit?usp=sharing)を参照してください。
 
-To save your spreadsheet to a file Anki can read with LibreOffice, go to
-File&gt;Save As, and then select CSV for the type of file. After
-accepting the default options, LibreOffice will save the file and you
-can then import the saved file into Anki.
+LibreOfficeを使用してAnkiが読み取れるファイルにスプレッドシートを保存するには、ファイル > 名前を付けて保存 を選択し、ファイルの種類としてCSVを選択します。デフォルトのオプションを受け入れると、LibreOfficeはファイルを保存し、その後保存されたファイルをAnkiにインポートできます。
 
 ## HTML
 
-Anki can treat text imported from text files as HTML (the language used
-for web pages). This means that text with bold, italics and other
-formatting can be exported to a text file and imported again. If you
-want to include HTML formatting, you can check the "allow HTML in
-fields" checkbox when importing. You may wish to turn this off if you’re
-trying to import cards whose content contains angle brackets or other
-HTML syntax.
+Ankiは、テキストファイルからインポートされたテキストをHTML（ウェブページで使用される言語）として扱うことができます。これにより、太字、斜体などのフォーマットを含むテキストをテキストファイルにエクスポートし、再度インポートすることができます。HTMLフォーマットを含めたい場合は、インポート時に「フィールド内のHTMLを許可する」チェックボックスをオンにすることができます。カードの内容に山括弧やその他のHTML構文が含まれている場合は、これをオフにすることをお勧めします。
 
-If you wish to use HTML for formatting your file but also wish to
-include angle brackets or ampersands, you may use the following replacements:
+ファイルのフォーマットにHTMLを使用したいが、山括弧やアンパサンドも含めたい場合は、次の置換を使用できます：
 
-| Character | Replacement |
-| --------- | ----------- |
-| &lt;      | `&lt;`      |
-| &gt;      | `&gt;`      |
-| &amp;     | `&amp;`     |
+| 文字      | 置換         |
+| --------- | ------------ |
+| &lt;      | `&lt;`       |
+| &gt;      | `&gt;`       |
+| &amp;     | `&amp;`      |
 
-## Importing Media
+## メディアのインポート
 
-If you want to include audio and pictures from a text file import, copy
-the files into the [collection.media folder](../files.md). **Do not put
-subdirectories in the media folder, or some features will not work.**
+テキストファイルのインポートに音声や画像を含めたい場合は、ファイルを[コレクションのメディアフォルダ](../files.md)にコピーします。**メディアフォルダにサブディレクトリを作成しないでください。一部の機能が動作しなくなります。**
 
-After you’ve copied the files, change one of the fields in your text
-file as follows.
+ファイルをコピーした後、テキストファイルのフィールドの1つを次のように変更します。
 
     <img src="myimage.jpg">
 
-or
+または
 
     [sound:myaudio.mp3]
 
-Alternatively, you can use the [find and replace](../browsing.md) feature
-in the browse screen to update all the fields at once. If each field
-contains text like "myaudio", and you wish to make it play a sound,
-you’d search for (.\*) and replace it with "\[sound:\\1.mp3\]", with the
-'regular expressions' option enabled.
+または、ブラウズ画面で[検索と置換](../browsing.md)機能を使用して、すべてのフィールドを一度に更新することもできます。各フィールドに「myaudio」のようなテキストが含まれていて、それを音声として再生したい場合は、(.*)を検索し、\[sound:\\1.mp3\]に置換します。「正規表現」オプションを有効にしてください。
 
-When importing a text file with these references, you must make sure to
-enable the "Allow HTML" option.
+これらの参照を含むテキストファイルをインポートする際には、「HTMLを許可する」オプションを有効にする必要があります。
 
-You might be tempted to do this in a template, like:
+テンプレートで次のようにすることを考えるかもしれません：
 
-    <img src="{{field name}}">
+    <img src="{{フィールド名}}">
 
-Anki doesn’t support this for two reasons: searching for used media is
-expensive, as each card has to be rendered, and such functionality isn’t
-obvious to shared deck users. Please use the find & replace technique
-instead.
+Ankiはこれをサポートしていません。理由は2つあります。使用されているメディアを検索するのにコストがかかるため（各カードをレンダリングする必要があります）、およびそのような機能は共有デッキのユーザーには明らかではないためです。代わりに検索と置換の手法を使用してください。
 
-## Bulk Media
+## 大量のメディア
 
-Another option for importing large amounts of media at once is to use
-the [media import add-on](https://ankiweb.net/shared/info/1531997860).
-This add-on will automatically create notes for all files in a folder
-you select, with the filenames on the front (minus the file extension,
-so if you have a file named apple.jpg, the front would say 'apple') and
-the images or audio on the back. If you would like a different
-arrangement of media and filenames, you can [change the note type](../browsing.md) of the created cards afterwards.
+大量のメディアを一度にインポートする別の方法として、[メディアインポートアドオン](https://ankiweb.net/shared/info/1531997860)を使用することができます。このアドオンは、選択したフォルダ内のすべてのファイルに対して自動的にノートを作成します。ファイル名が表側に表示され（ファイル拡張子は除外されるため、例えばapple.jpgというファイルがある場合、表側には「apple」と表示されます）、画像や音声が裏側に表示されます。メディアとファイル名の配置を変更したい場合は、後で作成されたカードの[ノートタイプを変更](../browsing.md)することができます。
 
-## Adding Tags
+## タグの追加
 
-If you want to add 'tag1' and 'tag2' to every line you’re importing, add
-the following to the top of the text file:
+インポートするすべての行に「tag1」と「tag2」を追加したい場合は、次の内容をテキストファイルの先頭に追加します：
 
     tags:tag1 tag2
 
-## Duplicates and Updating
+## 重複と更新
 
-When importing text files, Anki uses the first field to determine if a
-note is unique. By default, if the file you are importing has a first
-field that matches one of the existing notes in your collection and that
-existing note is the same type as the type you’re importing, the
-existing note’s other fields will be updated based on content of the
-imported file. A drop-down box in the import screen allows you to change
-this behaviour, to either ignore duplicates completely, or import them
-as new notes instead of updating existing ones.
+テキストファイルをインポートする際、Ankiは最初のフィールドを使用してノートが一意かどうかを判断します。デフォルトでは、インポートするファイルの最初のフィールドがコレクション内の既存のノートと一致し、その既存のノートがインポートするノートと同じタイプである場合、既存のノートの他のフィールドはインポートされたファイルの内容に基づいて更新されます。インポート画面のドロップダウンボックスでこの動作を変更し、重複を完全に無視するか、既存のノートを更新する代わりに新しいノートとしてインポートすることができます。
 
-The 'match scope' setting controls how duplicates are identified. When
-'notetype' is selected, Anki will identify a duplicate if another note
-with the same notetype has the same first field. When set to 'notetype and deck',
-a duplicate will only be flagged if the existing note also happens to be
-in the deck you are importing into.
+「一致範囲」設定は、重複がどのように識別されるかを制御します。「ノートタイプ」が選択されている場合、Ankiは同じノートタイプを持つ他のノートが同じ最初のフィールドを持っている場合に重複を識別します。「ノートタイプとデッキ」に設定されている場合、既存のノートがインポート先のデッキにある場合にのみ重複がフラグされます。
 
-If you have updating turned on and older versions of the notes you’re
-importing are already in your collection, they will be updated in place
-(in their current decks) rather than being moved to the deck you have
-set in the import dialog. If notes are updated in place, the existing
-scheduling information on all their cards will be preserved.
+更新がオンになっていて、インポートするノートの古いバージョンがすでにコレクションに含まれている場合、それらはインポートダイアログで設定したデッキに移動されるのではなく、現在のデッキにそのまま更新されます。ノートがその場で更新される場合、すべてのカードの既存のスケジューリング情報は保持されます。
 
-For info on how duplicates are handled in .apkg files, please see the
-[Deck Packages](../exporting.md#packaged-decks) section.
+.apkgファイルで重複がどのように処理されるかについては、[パッケージ化されたデッキ](../exporting.md#パッケージ化されたデッキ)セクションを参照してください。
 
-## File Headers
+## ファイルヘッダー
 
-Anki 2.1.54+ supports certain headers that can be included in the text file to
-make importing more powerful or convenient. They consist of `#key:value` pairs
-and must be listed in separate lines at the top of the file, though the [tags line](#adding-tags)
-may precede them. Since header lines start with the comment character `#`, earlier
-Anki clients will just ignore them.
+Anki 2.1.54以降では、インポートをより強力かつ便利にするために、テキストファイルに含めることができる特定のヘッダーをサポートしています。これらは `#key:value` ペアで構成され、ファイルの先頭に別々の行として記載する必要がありますが、[タグ行](#タグの追加)がそれらに先行することもあります。ヘッダー行はコメント文字 `#` で始まるため、以前のAnkiクライアントはそれらを無視します。
 
-You must enable the new importing option in the preferences screen to use this on
-2.1.54. On 2.1.55, the new importing path is the default.
+この機能を使用するには、2.1.54の設定画面で新しいインポートオプションを有効にする必要があります。2.1.55では、新しいインポートパスがデフォルトになっています。
 
-| Key               | Allowed Values                                                                             | Behaviour                                                                                                       |
+| キー               | 許可される値                                                                              | 動作                                                                                                            |
 | ----------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `separator`       | `Comma`, `Semicolon`, `Tab`, `Space`, `Pipe`, `Colon`, or the according literal characters | Determines the field separator.                                                                                 |
-| `html`            | `true`, `false`                                                                            | Determines whether the file is treated as HTML.                                                                 |
-| `tags`            | List of tags, separated by spaces                                                          | Same as [the old syntax](#adding-tags).                                                                         |
-| `columns`         | List of names, separated by the previously set separator                                   | Determines the number of columns and shows their given names when importing.                                    |
-| `notetype`        | Notetype name or id                                                                        | Presets the notetype, if it exists.                                                                             |
-| `deck`            | Deck name or id                                                                            | Presets the deck, if it exists.                                                                                 |
-| `notetype column` | `1`, `2`, `3`, ...                                                                         | Determines which column contains the notetype name or id of each note, see [Notetype Column](#notetype-column). |
-| `deck column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the deck name or id of each note, see [Deck Column](#deck-column).             |
-| `tags column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the tags of each note.                                                         |
-| `guid column`     | `1`, `2`, `3`, ...                                                                         | Determines which column contains the GUID of each note, see [GUID Column](#guid-column).                        |
+| `separator`       | `Comma`、`Semicolon`、`Tab`、`Space`、`Pipe`、`Colon`、または対応するリテラル文字           | フィールドの区切り文字を決定します。                                                                            |
+| `html`            | `true`、`false`                                                                            | ファイルがHTMLとして扱われるかどうかを決定します。                                                              |
+| `tags`            | スペースで区切られたタグのリスト                                                            | [旧構文](#タグの追加)と同じです。                                                                              |
+| `columns`         | 以前に設定された区切り文字で区切られた名前のリスト                                          | 列の数を決定し、インポート時にその名前を表示します。                                                            |
+| `notetype`        | ノートタイプの名前またはID                                                                  | ノートタイプが存在する場合、それを事前設定します。                                                               |
+| `deck`            | デッキの名前またはID                                                                        | デッキが存在する場合、それを事前設定します。                                                                     |
+| `notetype column` | `1`、`2`、`3`、...                                                                          | 各ノートのノートタイプ名またはIDが含まれる列を決定します。[ノートタイプ列](#ノートタイプ列)を参照してください。 |
+| `deck column`     | `1`、`2`、`3`、...                                                                          | 各ノートのデッキ名またはIDが含まれる列を決定します。[デッキ列](#デッキ列)を参照してください。                 |
+| `tags column`     | `1`、`2`、`3`、...                                                                          | 各ノートのタグが含まれる列を決定します。                                                                         |
+| `guid column`     | `1`、`2`、`3`、...                                                                          | 各ノートのGUIDが含まれる列を決定します。[GUID列](#GUID列)を参照してください。                               |
 
-Some headers have further implications.
+いくつかのヘッダーにはさらなる影響があります。
 
-### Notetype Column
+### ノートタイプ列
 
-Usually, all notes from a file will be mapped to a single notetype, and you may
-choose which column should be mapped to which field of that notetype.
+通常、ファイル内のすべてのノートは単一のノートタイプにマッピングされ、そのノートタイプのどのフィールドにどの列をマッピングするかを選択できます。
 
-That changes, if there is a column with notetype names or ids. This allows to
-import notes with different notetypes, and their fields will be mapped implicitly:
-The first regular column is used for the first field of any note regardless of
-its notetype, the second regular column for the second field, and so on.
-A 'regular column' here being a column that does not contain special information
-like decks, tags, notetypes or GUIDs.
+ノートタイプ名またはIDを含む列がある場合は、この動作が変わります。これにより、異なるノートタイプのノートをインポートでき、それらのフィールドは暗黙的にマッピングされます。最初の通常の列は、ノートタイプに関係なく、すべてのノートの最初のフィールドに使用され、2番目の通常の列は2番目のフィールドに使用される、という具合です。ここで「通常の列」とは、デッキ、タグ、ノートタイプ、またはGUIDのような特別な情報を含まない列を指します。
 
-### Deck Column
+### デッキ列
 
-Usually, any new cards created as a result of importing a text file will be placed
-in a single deck of your choice. If the file contains a deck column, however, new
-cards of a note will be placed in its specified deck instead. If the deck does not
-exist, a deck with the given name will be created.
+通常、テキストファイルのインポートによって作成された新しいカードは、選択した単一のデッキに配置されます。しかし、ファイルにデッキ列が含まれている場合、そのノートの新しいカードは指定されたデッキに配置されます。デッキが存在しない場合、指定された名前のデッキが作成されます。
 
-### GUID Column
+### GUID列
 
-GUID stands for _Globally Unique Identifier_. When you create notes in Anki, Anki
-assigns each note a unique ID, which can be used for duplicate checking. If you
-export your notes with the GUID included, you can make changes to the notes, and
-as long as you do not modify the GUID field, you'll be able to import the notes back
-in to update the existing notes.
+GUIDは「グローバル一意識別子」を意味します。Ankiでノートを作成すると、Ankiは各ノートに一意のIDを割り当て、重複チェックに使用します。GUIDを含めてノートをエクスポートすると、ノートに変更を加えても、GUIDフィールドを変更しない限り、既存のノートを更新するためにノートをインポートできます。
 
-Please note that the GUID is intended to be created by Anki. If you are creating
-your own IDs, such as MYNOTE0001, then it's recommended that you place the IDs
-in the first field, instead of assigning them to Anki's internal GUID. When importing,
-Anki is able to use the first field for duplicate checking as well, so you do not
-need to make IDs a GUID in order to be able to update your notes.
+GUIDはAnkiによって作成されることを意図しています。例えば、MYNOTE0001のような独自のIDを作成している場合、それらのIDをAnkiの内部GUIDに割り当てるのではなく、最初のフィールドに配置することをお勧めします。インポート時に、Ankiは重複チェックのために最初のフィールドも使用できるため、ノートを更新できるようにするためにIDをGUIDにする必要はありません。

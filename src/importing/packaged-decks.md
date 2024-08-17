@@ -1,75 +1,48 @@
-# Packaged Decks
+# パッケージデッキ
 
 <!-- toc -->
 
-Anki packages (.apkg files) enable you to import decks, notes, notetypes, and cards from
-other users. They are commonly shared on [AnkiWeb](https://ankiweb.net/shared/decks).
+Ankiパッケージ（.apkgファイル）を使用すると、他のユーザーからデッキ、ノート、ノートタイプ、およびカードをインポートできます。これらは通常、[AnkiWeb](https://ankiweb.net/shared/decks)で共有されています。
 
-## Scheduling
+## スケジューリング
 
-Anki packages may also contain scheduling information, which is useful if you want to
-transfer decks between devices or profiles. However, when importing
-a deck shared by someone else, you typically do not want to adopt their card intervals
-or review history.
+Ankiパッケージにはスケジューリング情報も含まれている場合があり、デバイスやプロファイル間でデッキを転送したい場合に便利です。ただし、他の人が共有したデッキをインポートする場合、通常はその人のカード間隔やレビュー履歴を採用したくないでしょう。
 
-If you encounter imported cards with unexpectedly large intevals, the deck author may
-accidentally have included their scheduling information. You can use the
-[Set Due Date feature](../browsing.md#cards) to reset the imported cards. On Anki
-23.10 and later, you can remove any scheduling information during the import process.
+インポートしたカードに予想外に長い間隔がある場合、デッキの作成者が誤ってスケジューリング情報を含めてしまった可能性があります。[期日設定機能](../browsing.md#カード)を使用してインポートしたカードをリセットできます。Anki 23.10以降では、インポートプロセス中にスケジューリング情報を削除することができます。
 
-## Updating
+## 更新
 
-When you import an .apkg file, Anki will identify any notes in it that are
-already in your collection due to a previous import. If the notes in the file
-are newer than your local copy, the notes will be updated with the contents of
-the file by default.
+.apkgファイルをインポートすると、Ankiは以前のインポートによって既にコレクションに含まれているノートを識別します。ファイル内のノートがローカルコピーより新しい場合、デフォルトでファイルの内容に基づいてノートが更新されます。
 
-This updating process is generally not possible if the notetype is changed (e.g if either
-you or the deck author do things like add an extra field to the notetype).
-You will still be able to import any missing notes from the file, but
-notes you have imported previously will not be updated if the deck author
-has made changes.
+この更新プロセスは、ノートタイプが変更された場合（例えば、あなたやデッキの作成者がノートタイプにフィールドを追加するなど）には通常は不可能です。この場合でも、ファイルから欠落しているノートをインポートすることはできますが、デッキの作成者が変更を加えた場合、以前にインポートしたノートは更新されません。
 
-### Anki 23.10 and Later
+### Anki 23.10以降
 
-Anki 23.10 introduced more flexibility: You can choose to unconditionally
-update notes and notetypes, always overwriting your modifications,
-or, on the other hand, never update existing objects.
+Anki 23.10では、より柔軟なオプションが導入されました。ノートやノートタイプを無条件に更新し、あなたの変更を常に上書きするか、既存のオブジェクトを一切更新しないかを選択できます。
 
-Also, if both you and the deck author modified the same notetype, you can now decide to
-_merge_ the two versions. This will preserve all templates and fields contained in
-either one, but will require a full sync, and may mark other existing notes as modified.
+また、あなたとデッキの作成者の両方が同じノートタイプを変更した場合、2つのバージョンをマージすることもできます。これにより、どちらか一方に含まれるすべてのテンプレートとフィールドが保持されますが、完全な同期が必要となり、他の既存のノートが変更されたとマークされる場合があります。
 
-#### Note to Deck Authors
+#### デッキ作成者への注意
 
-Merging relies on template and field ids, which were introduced in Anki 2.1.67.
-If a template or field lacks an id, because it has been created with an earlier
-release, Anki attempts to find an equivalent by comparing names.
+マージはAnki 2.1.67で導入されたテンプレートおよびフィールドIDに依存しています。テンプレートやフィールドにIDがない場合（以前のリリースで作成されたため）、Ankiは名前を比較して同等のものを見つけようとします。
 
-See this [this add-on](https://ankiweb.net/shared/info/2063785767) for why it is
-advantageous to share notetypes with field and template ids, and how to add them to
-existing ones.
+フィールドおよびテンプレートIDを持つノートタイプを共有することの利点と、既存のノートタイプにそれらを追加する方法については、[このアドオン](https://ankiweb.net/shared/info/2063785767)を参照してください。
 
-### Workaround for Anki 2.1.66 and Earlier
+### Anki 2.1.66以前の回避策
 
-If you know the deck author has made changes and you wish to gain access to
-them, changing the notetype back is possible, but rather difficult. You'll need
-to do the following:
+デッキ作成者が変更を加えたことを知っていて、それらにアクセスしたい場合、ノートタイプを元に戻すことは可能ですが、かなり難しいです。以下の手順を実行する必要があります：
 
-- Create a new profile, and import the .apkg file into it.
-- Locate one of the notes that failed to update in the Browse screen and select it.
-- Use the Fields & Cards buttons to check the field names and card template names,
-  and note them down.
-- Use the [debug console](https://docs.ankiweb.net/misc.html#debug-console) to determine the notetype id.
-  It will be the number on the last line.
+- 新しいプロファイルを作成し、そのプロファイルに .apkg ファイルをインポートします。
+- ブラウズ画面で更新に失敗したノートの1つを見つけて選択します。
+- フィールドとカードボタンを使用してフィールド名とカードテンプレート名を確認し、それらをメモします。
+- [デバッグコンソール](https://docs.ankiweb.net/misc.html#debug-console)を使用してノートタイプIDを確認します。それは最後の行に表示される番号です。
 
 ```
 nt = bcard().note().note_type()
 print("notetype", nt["name"], "has id", nt["id"])
 ```
 
-- Return to your normal profile, locate the same card, and select it. Run the following
-  in the debug console, replacing `xxx` with the ID you got above:
+- 通常のプロファイルに戻り、同じカードを見つけて選択します。デバッグコンソールで次のコマンドを実行し、上記で取得したIDを `xxx` に置き換えます：
 
 ```
 nt = bcard().note().note_type()
@@ -78,9 +51,6 @@ nt = mw.col.models.get(xxx)
 print("desired:", nt["name"], "has id", nt["id"])
 ```
 
-- If it prints two different notetype names, you will need to use the Change Notetype
-  action to change the notetype of your existing notes to the desired one.
+- もし2つの異なるノートタイプ名が表示された場合、既存のノートのノートタイプを希望するものに変更するために「ノートタイプの変更」アクションを使用する必要があります。
 
-- You then need to use the Fields and Cards buttons to check the field and template
-  names match the one in your test profile. They must match exactly - there should be no
-  more or less, and the spelling should be identical.
+- 次に、「フィールド」と「カード」ボタンを使用して、フィールド名とテンプレート名がテストプロファイルのものと一致するか確認する必要があります。これらは完全に一致する必要があります。多すぎても少なすぎてもいけませんし、スペルも同一でなければなりません。

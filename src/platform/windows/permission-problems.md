@@ -1,38 +1,30 @@
-# Windows permission problems
+# Windowsの権限の問題
 
 <!-- toc -->
 
-## Permission Problems
+## 権限の問題
 
-If you receive "access denied" messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.
+「アクセス拒否」のメッセージが表示される場合、Ankiのファイルの一部が読み取り専用モードに設定されている可能性があります。これは、Ankiがそれらのファイルに書き込めないことを意味します。
 
-To fix the problem, you can do the following:
+問題を解決するには、次の手順を実行します：
 
-- in the search area of the start bar, type cmd.exe and hit enter
-- in the window that opens, type the following and hit enter to see your username:
+- スタートバーの検索エリアに「cmd.exe」と入力してEnterキーを押します。
+- 開いたウィンドウで、次のコマンドを入力してEnterキーを押し、ユーザー名を確認します：
 
 whoami
 
-- type the following, hitting enter after each line, and replacing ____ (and keeping the :F part) with your username from the previous command
+- 次のコマンドを入力し、各行の後にEnterキーを押します。前のコマンドで確認したユーザー名を____に置き換え、:F部分はそのままにします。
 
 cd %APPDATA%
 
 icacls Anki2 /grant ____:F /t
 
-That command should fix the permissions on Anki's data folder, and you should now be able to start the program.
+このコマンドはAnkiのデータフォルダの権限を修正し、プログラムを起動できるようにするはずです。
 
-## Antivirus/Firewall/Anti-Malware
+## アンチウイルス/ファイアウォール/アンチマルウェア
 
-Some users have experienced "permission denied" or "readonly" errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.
+一部のユーザーは、マシンにインストールされているセキュリティソフトウェアが原因で「権限拒否」や「読み取り専用」エラーが発生することを経験しています。Ankiの例外を追加するか、一時的にソフトウェアを無効にして原因を特定する必要があるかもしれません。単にソフトウェアをオフにするだけでは問題が解決しないことがあり、その場合はAnkiの例外を追加するか、ソフトウェアをアンインストールする必要があります。
 
-## Debugging Permission Problems
+## 権限問題のデバッグ
 
-If problems persist after you've ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don't use OneDrive, please run the following commands in cmd.exe, pressing enter after each one.
-
-whoami
-
-cd %APPDATA%
-
-icacls Anki2 /t
-
-Then please copy & paste or screenshot what you see, and post it to us in a support ticket.
+アンチウイルスや関連プログラムを除外し、上記の手順を実行して権限を修正し、OneDriveを使

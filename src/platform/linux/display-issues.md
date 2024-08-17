@@ -1,30 +1,20 @@
-## Display Issues on Linux
+## Linuxでの表示の問題
 
 ### Qt5
 
-Hardware acceleration defaults to off. Enabling it in the preferences screen and
-restarting Anki may make Anki’s interface more responsive, but some users may
-experience missing menubars, blank windows or crashes when it is enabled.
-(Blank windows may also be caused by [this problem](./blank-window.md).)
+ハードウェアアクセラレーションはデフォルトでオフになっています。設定画面で有効にしてAnkiを再起動すると、インターフェースがより応答性を持つようになる場合がありますが、有効にするとメニューバーが消えたり、ウィンドウが空白になったり、クラッシュしたりすることがあります。（空白のウィンドウは[この問題](./blank-window.md)によっても引き起こされる可能性があります。）
 
-You can adjust the display driver in Anki's Preferences screen. We
-recommend you try both settings, and see which one works best for you.
+Ankiの設定画面で表示ドライバを調整できます。両方の設定を試して、どちらが最適か確認することをお勧めします。
 
-If you're unable to open Anki, you can adjust the driver in a terminal, by
-writing either `auto` or `software` into `~/.local/share/Anki2/gldriver`. Please
-note that if you’re using nouveau, it is known to be buggy, and it only supports
-software mode.
+Ankiを開くことができない場合は、ターミナルでドライバを調整できます。`~/.local/share/Anki2/gldriver`に`auto`または`software`と書き込んでください。nouveauを使用している場合、バグが多いことが知られており、ソフトウェアモードのみをサポートしていることに注意してください。
 
 ### Qt6
 
-Hardware acceleration defaults to on. If you experience blank screens
-or display issues, you can try enabling software rendering using the terminal:
-
+ハードウェアアクセラレーションはデフォルトでオンになっています。画面が空白になったり表示の問題が発生した場合は、ターミナルを使用してソフトウェアレンダリングを有効にしてみてください：
 ```
 echo software > ~/.local/share/Anki2/gldriver6
 ```
 
-If you wish to switch back to the default, change `software` to `auto`, or
-remove that file.
+デフォルトに戻したい場合は、「software」を「auto」に変更するか、そのファイルを削除してください。
 
-In Anki 23.10+, you can also change the graphics driver from preferences screen.
+Anki 23.10+ では、設定画面からグラフィックドライバを変更することもできます。

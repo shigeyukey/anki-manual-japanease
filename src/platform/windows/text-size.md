@@ -1,21 +1,14 @@
-# Text Size
+# テキストサイズ
 
-If you find the text is the wrong size, there are two environmental
-variables you can try:
+テキストのサイズが適切でない場合、以下の環境変数を試すことができます：
 
-- ANKI_NOHIGHDPI=1 will turn off some of Qt’s high dpi support
+- ANKI_NOHIGHDPI=1 はQtの高DPIサポートの一部をオフにします。
 
-- ANKI_WEBSCALE=1 will alter the scale of Anki’s web views (like the
-  deck list, study screen, etc), while leaving interface elements like
-  the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
-  0.75.
+- ANKI_WEBSCALE=1 は、メニューバーのようなインターフェース要素をそのままにして、Ankiのウェブビュー（デッキリスト、学習画面など）のスケールを変更します。1を1.5や0.75など、希望するスケールに置き換えてください。
 
-On Windows you can add these to a batch file to make it easier to start
-Anki. For example, create a file called startanki.bat on your desktop
-with the following text:
+Windowsでは、これらをバッチファイルに追加してAnkiを起動しやすくすることができます。例えば、デスクトップにstartanki.batというファイルを作成し、次のテキストを入力します：
 
     set ANKI_WEBSCALE=0.75
     start "Anki" "C:\Program Files\Anki\anki"
 
-After saving, you can double click on the file to start Anki with that
-setting.
+保存後、そのファイルをダブルクリックすると、その設定でAnkiを起動できます。

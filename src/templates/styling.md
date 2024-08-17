@@ -1,52 +1,33 @@
-# Styling & HTML
+# スタイリングとHTML
 
 <!-- toc -->
 
-## Card Styling
+## カードのスタイリング
 
-You can watch [a video about styling cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on) on YouTube.
-The video shows Anki 2.0’s interface, but the concepts are largely the
-same.
+YouTubeで[カードのスタイリングについてのビデオ](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)を見ることができます。このビデオはAnki 2.0のインターフェースを示していますが、概念はほぼ同じです。
 
-The styling section of the Cards screen can be accessed by clicking the
-"Styling" button next to the "Back Template" button. In that section,
-you can change the background color of the card, the default font, the
-text alignment, and so on.
+カード画面のスタイリングセクションには、「裏テンプレート」ボタンの隣にある「スタイリング」ボタンをクリックしてアクセスできます。そのセクションでは、カードの背景色、デフォルトフォント、テキストの配置などを変更できます。
 
-The standard options available to you are:
+利用可能な標準オプションは次のとおりです：
 
 **font-family**\
-The name of the font to use on the card. If your font has spaces in it
-like "MS Unicode", then you need to surround the font name in double
-quotes as in this sentence. It is also possible to use multiple fonts on
-one card; for information on that, please see below.
+カードで使用するフォントの名前。フォント名に「MS Unicode」のようにスペースが含まれている場合は、この文のようにフォント名を二重引用符で囲む必要があります。1つのカードで複数のフォントを使用することも可能です。その情報については、以下を参照してください。
 
 **font-size**\
-The size of the font in pixels. When changing it, make sure you leave px
-at the end.
+フォントのサイズをピクセル単位で指定します。変更する際には、末尾にpxを付けることを忘れないでください。
 
 **text-align**\
-Whether the text should be aligned in the center, left, or right.
+テキストを中央、左、または右に揃えるかどうかを指定します。
 
 **color**\
-The color of the text. Simple color names like 'blue', 'lightyellow',
-and so on will work, or you can use HTML color codes to select arbitrary
-colors. Please see [this webpage](https://htmlcolorcodes.com/) for more
-information.
+テキストの色。'blue'、'lightyellow'などの簡単な色名が使用できます。また、任意の色を選択するためにHTMLカラーコードを使用することもできます。詳細については、[このウェブページ](https://htmlcolorcodes.com/)を参照してください。
 
 **background-color**\
-The color of the card background.
+カードの背景色。
 
-Any CSS can be placed in the styling section – advanced users may wish
-to do things like add a background image or gradient, for example. If
-you’re wondering how to get some particular formatting, please search
-the web for information about how to do it in CSS, as there is a great
-deal of documentation available.
+スタイリングセクションには任意のCSSを配置できます。上級ユーザーは、例えば背景画像やグラデーションを追加するなどの操作を行うことができます。特定のフォーマット方法について知りたい場合は、CSSに関する情報をウェブで検索してください。多くのドキュメントが利用可能です。
 
-The styling is shared between all cards, which means that when you make
-an adjustment it will affect all cards for that note type. It is also
-possible to specify card-specific styling, however. The following
-example will use a yellow background on all cards except the first one:
+スタイリングはすべてのカードで共有されるため、調整を行うとそのノートタイプのすべてのカードに影響します。ただし、カードごとに特定のスタイリングを指定することも可能です。次の例では、最初のカードを除くすべてのカードに黄色の背景を使用します：
 
 ```css
 .card {
@@ -57,11 +38,9 @@ example will use a yellow background on all cards except the first one:
 }
 ```
 
-## Image Resizing
+## 画像のリサイズ
 
-Anki shrinks images to fit the screen by default. You can change this by adding
-the following to the bottom of your styling section (outside of the default
-`.card { ... }`):
+Ankiはデフォルトで画像を画面に収まるように縮小します。これを変更するには、スタイリングセクションの一番下に次のコードを追加します（デフォルトの `.card { ... }` の外側に追加してください）：
 
 ```css
 img {
@@ -69,12 +48,7 @@ img {
   max-height: none;
 }
 ```
-
-AnkiDroid sometimes has [trouble scaling images to fit the
-screen](https://github.com/ankidroid/Anki-Android/issues/3612). Setting maximum
-image dimensions using css should fix this, but seems to be ignored as of
-AnkiDroid 2.9. A fix is to append `!important` to each style directive, for
-example:
+AnkiDroidは時々[画像を画面に合わせてスケーリングするのに問題があります](https://github.com/ankidroid/Anki-Android/issues/3612)。CSSを使用して画像の最大寸法を設定することでこれを修正できるはずですが、AnkiDroid 2.9では無視されるようです。修正方法として、各スタイル指示に `!important` を追加することが挙げられます。例えば：
 
 ```css
 img {
@@ -83,9 +57,7 @@ img {
 }
 ```
 
-If you try to change the style for images and find that the star that
-appears on marked cards is affected (for instance, it becomes way too
-large), you can target it with the following:
+画像のスタイルを変更しようとして、マークされたカードに表示される星が影響を受ける（例えば、星が非常に大きくなる）場合は、次のコードでターゲットにできます：
 
 ```css
 img#star {
@@ -93,56 +65,45 @@ img#star {
 }
 ```
 
-You can explore the styling of cards interactively by using Chrome:
+Chromeを使用してカードのスタイリングをインタラクティブに調査できます：
 
 <https://addon-docs.ankiweb.net/porting2.0.html#webview-changes>
 
-Anki 2.1.50+ supports image resizing within the editor natively.
+Anki 2.1.50+ はエディタ内での画像リサイズをネイティブにサポートしています。
 
-## Field Styling
+## フィールドのスタイリング
 
-The default styling applies to the whole card. You can also make certain
-fields or part of the card use a different font, color, and so on. This
-is particularly important when studying foreign languages, as Anki will
-sometimes be unable to correctly display characters unless an
-appropriate font has been chosen.
+デフォルトのスタイリングはカード全体に適用されますが、特定のフィールドやカードの一部に異なるフォントや色などを使用することもできます。これは特に外国語を学習する際に重要です。適切なフォントが選択されていないと、Ankiが文字を正しく表示できない場合があるためです。
 
-Say you have an “Expression” field, and you want to give it the OSX Thai
-font “Ayuthaya”. Imagine your template already reads:
+例えば、「Expression」フィールドがあり、それにOSXのタイフォント「Ayuthaya」を適用したいとします。テンプレートがすでに次のようになっているとします：
 
     What is {{Expression}}?
 
     {{Notes}}
 
-What we need to do is wrap the text we want to style in some HTML. We
-will put the following in front of the text:
+スタイルを適用したいテキストをHTMLで囲む必要があります。テキストの前に次のように記述します：
 
     <div class=mystyle1>
 
-And the following behind it:
+そして、テキストの後ろに次のように記述します：
 
     </div>
 
-By wrapping the text like the above, we tell Anki to style the wrapped
-text with a custom style called “mystyle1”, which we will create later.
+このようにテキストを囲むことで、Ankiに「mystyle1」というカスタムスタイルを使用して囲まれたテキストをスタイリングするよう指示します。このカスタムスタイルは後で作成します。
 
-Thus if we wanted the entire “What is …​?” expression to use the Thai
-font, we would use:
+したがって、「What is …​?」という表現全体にタイフォントを使用したい場合は、次のようにします：
 
     <div class=mystyle1>What is {{Expression}}?</div>
 
     {{Notes}}
 
-And if we wanted only the expression field itself to use the Thai font,
-we’d use:
+そして、表現フィールド自体にのみタイフォントを使用したい場合は、次のようにします：
 
     What is <div class=mystyle1>{{Expression}}</div>?
 
     {{Notes}}
 
-After we’ve edited the template, we now need to move to the Styling
-section between the templates. Before editing it, it should look
-something like:
+テンプレートを編集した後、テンプレート間のスタイリングセクションに移動する必要があります。編集する前は次のようになっているはずです：
 
 ```css
 .card {
@@ -154,7 +115,7 @@ something like:
 }
 ```
 
-Add your new style to the bottom, so it looks like:
+新しいスタイルを下部に追加し、次のようにします：
 
 ```css
 .card {
@@ -170,9 +131,7 @@ Add your new style to the bottom, so it looks like:
 }
 ```
 
-You can include any styling you want in the style. If you wanted to
-increase the font size too, you’d change the mystyle1 section to look
-like:
+スタイルには任意のスタイリングを含めることができます。フォントサイズも大きくしたい場合は、mystyle1セクションを次のように変更します：
 
 ```css
 .mystyle1 {
@@ -181,20 +140,15 @@ like:
 }
 ```
 
-It’s also possible to bundle custom fonts with your deck, so you don’t
-need to install them on your computer or mobile device. Please see the
-[installing fonts](#installing-fonts) section for more info.
+カスタムフォントをデッキにバンドルすることも可能ですので、コンピュータやモバイルデバイスにインストールする必要はありません。詳細については、[フォントのインストール](#フォントのインストール)セクションを参照してください。
 
-## Audio Replay Buttons
+## オーディオ再生ボタン
 
-When audio or text to speech is included on your cards, Anki will show
-buttons you can click on to replay the audio.
+カードにオーディオやテキスト読み上げが含まれている場合、Ankiはオーディオを再生するためのボタンを表示します。
 
-If you prefer not to see the buttons, you can hide them in the
-preferences screen.
+ボタンを表示したくない場合は、設定画面で非表示にすることができます。
 
-You can customize their appearance in your card styling, for example, to
-make them smaller and colored, you could use the following:
+カードのスタイリングでボタンの外観をカスタマイズすることもできます。例えば、ボタンを小さくして色を付けるには、次のようにします：
 
 ```css
 .replay-button svg {
@@ -210,10 +164,9 @@ make them smaller and colored, you could use the following:
 }
 ```
 
-## Text Direction
+## テキストの方向
 
-If you use a language that is written right-to-left, such as Arabic or Hebrew,
-you can add the CSS `direction` property to the .card section for correct display during review:
+アラビア語やヘブライ語など、右から左に書かれる言語を使用する場合、レビュー中に正しく表示されるようにするために、.cardセクションにCSSの`direction`プロパティを追加できます：
 
 ```css
 .card {
@@ -221,40 +174,25 @@ you can add the CSS `direction` property to the .card section for correct displa
 }
 ```
 
-This will change the direction of the entire card. You can change the direction
-of only certain fields by wrapping their references in some HTML:
+これにより、カード全体の方向が変更されます。特定のフィールドの方向だけを変更するには、フィールドの参照をHTMLで囲みます：
 
     <div dir="rtl">{{Front}}</div>
 
-To change the direction of fields in the editor, please see
-the [editing](../editing.md#customizing-fields) section.
+エディタ内でフィールドの方向を変更する方法については、[編集](../editing.md#フィールドのカスタマイズ)セクションを参照してください。
 
-## Other HTML
+## その他のHTML
 
-Your templates can contain arbitrary HTML, which means that all the
-layout possibilities used on internet web pages can also be used on your
-cards. Things like tables, lists, images, links to external pages and so
-on are all supported. With tables for example, you could change the
-layout so that the front and back of a card appear on the left and right
-instead of the top and bottom.
+テンプレートには任意のHTMLを含めることができるため、インターネットのウェブページで使用されるすべてのレイアウトをカードにも使用できます。例えば、表、リスト、画像、外部ページへのリンクなどがすべてサポートされています。表を使用すると、カードの表と裏を上下ではなく左右に表示するようにレイアウトを変更することもできます。
 
-Covering all of HTML’s features is outside the scope of this manual, but
-there are plenty of good introductory guides to HTML available on the
-web if you’d like to learn more.
+HTMLのすべての機能を網羅することはこのマニュアルの範囲外ですが、HTMLについてもっと学びたい場合は、ウェブ上にたくさんの良い入門ガイドがあります。
 
-## Browser Appearance
+## ブラウザの外観
 
-If your card templates are complex, it may be difficult to read the
-question and answer columns (called "Front" and "Back") in the [card list](../browsing.md#cardnote-table). The "browser appearance" option allows you to define a
-custom template to be used only in the browser, so you can include only
-the important fields and change the order if you desire. The syntax is
-the same as in standard card templates.
+カードテンプレートが複雑な場合、[カードリスト](../browsing.md#カード･ノートテーブル)の質問と回答の列（「Front」と「Back」と呼ばれる）を読みづらくなることがあります。「ブラウザの外観」オプションを使用すると、ブラウザ内でのみ使用されるカスタムテンプレートを定義できます。これにより、重要なフィールドのみを含めたり、順序を変更したりすることができます。構文は標準のカードテンプレートと同じです。
 
-## Platform-Specific CSS
+## プラットフォーム固有のCSS
 
-Anki defines some special CSS classes that allow you to define different
-styling for different platforms. The example below shows how to vary the
-font depending on where you’re reviewing:
+Ankiは、異なるプラットフォームごとに異なるスタイリングを定義できる特別なCSSクラスを定義しています。以下の例は、レビューしている場所に応じてフォントを変更する方法を示しています：
 
 ```css
 /* Windows */
@@ -288,48 +226,33 @@ font depending on where you’re reviewing:
 }
 ```
 
-And in the template:
+テンプレートでは次のようにします：
 
 ```html
 <div class="example">{{Field}}</div>
 ```
 
-You can also use properties like .gecko, .opera, and .ie to select
-particular browsers when using AnkiWeb. Please see
-<http://rafael.adm.br/css_browser_selector/> for a full list of options.
+AnkiWebを使用する際に特定のブラウザを選択するために、.gecko、.opera、および.ieのようなプロパティを使用することもできます。オプションの全リストについては、<http://rafael.adm.br/css_browser_selector/>を参照してください。
 
-## Installing Fonts
+## フォントのインストール
 
-If you’re using Anki on a work or school computer where you don’t have
-permission to install new fonts, or you’re using Anki on a mobile
-device, it’s possible to add fonts directly to Anki.
+新しいフォントをインストールする権限がない職場や学校のコンピュータでAnkiを使用している場合や、モバイルデバイスでAnkiを使用している場合、フォントを直接Ankiに追加することが可能です。
 
-To add a font to Anki, it must be in the TrueType format. TrueType fonts
-have a filename ending in .ttf, such as "Arial.ttf". Once you’ve located
-a TrueType font, we’ll need to add it to the media folder:
+Ankiにフォントを追加するには、TrueType形式である必要があります。TrueTypeフォントは、"Arial.ttf"のようにファイル名が.ttfで終わります。TrueTypeフォントを見つけたら、メディアフォルダに追加する必要があります：
 
-1. Rename the file, adding an underscore at the start, so it becomes
-   like "\_arial.ttf". Adding an underscore will tell Anki that this
-   file will be used on a template, and should not be deleted when
-   checking for unused media.
+1. ファイル名の先頭にアンダースコアを追加して、"\_arial.ttf"のように名前を変更します。アンダースコアを追加することで、このファイルがテンプレートで使用されることをAnkiに知らせ、未使用のメディアをチェックする際に削除されないようにします。
 
-2. In your computer’s file browser, go to your [Anki Folder](../files.md),
-   and then a folder called "User 1" (or your profile name if you’ve
-   renamed/added profiles).
+2. コンピュータのファイルブラウザで[Ankiフォルダ](../files.md)に移動し、「User 1」（またはプロファイル名を変更/追加した場合はそのプロファイル名）のフォルダに移動します。
 
-3. Inside the folder, you should see a folder called collection.media.
-   Drag the renamed file to that folder.
+3. フォルダ内にcollection.mediaというフォルダがあるはずです。名前を変更したファイルをそのフォルダにドラッグします。
 
-After that, we need to update the template:
+その後、テンプレートを更新する必要があります：
 
-1. Click **Add** at the top of the main screen, and then select the
-   note type you want to change with the top left button.
+1. メイン画面の上部にある**追加**をクリックし、左上のボタンで変更したいノートタイプを選択します。
 
-2. Click **Cards**.
+2. **カード**をクリックします。
 
-3. In the styling section, add the following text to the bottom (after
-   the last "}" character), replacing "\_arial.ttf" with the name of
-   the file you copied into your media folder:
+3. スタイリングセクションで、最後の"}"文字の後に次のテキストを追加し、メディアフォルダにコピーしたファイルの名前に"\_arial.ttf"を置き換えます：
 
 ```css
 @font-face {
@@ -338,25 +261,17 @@ After that, we need to update the template:
 }
 ```
 
-Only change the "arial" part, not the "myfont" part.
+「myfont」部分ではなく、「arial」部分のみを変更してください。
 
-After that, you can either change the font for the entire card, or for
-individual fields. To change the font for the entire card, simply locate
-the font-family: line in the .card section and change the font to
-"myfont". To change the font for only certain fields, please see the
-[Field Styling](#field-styling) instructions above.
+その後、カード全体のフォントを変更するか、個々のフィールドのフォントを変更するかを選択できます。カード全体のフォントを変更するには、.cardセクションのfont-family:行を見つけて、フォントを「myfont」に変更します。特定のフィールドのみのフォントを変更するには、上記の[フィールドのスタイリング](#フィールドのスタイリング)の指示を参照してください。
 
-Please make sure the filenames match exactly. If the file is called
-arial.TTF and you write arial.ttf in your card templates, it will not
-work.
+ファイル名が正確に一致していることを確認してください。ファイル名がarial.TTFで、カードテンプレートにarial.ttfと書かれている場合、動作しません。
 
-## Night Mode
+## ナイトモード
 
-You can customize the way templates appear when night mode is enabled in
-the preferences screen.
+ナイトモードが有効になっているときのテンプレートの表示方法を、設定画面でカスタマイズできます。
 
-If you wanted a lighter grey background, you could use
-something like:
+例えば、背景をより明るいグレーにしたい場合は、次のようにします：
 
 ```css
 .card.nightMode {
@@ -364,8 +279,7 @@ something like:
 }
 ```
 
-If you have a 'myclass' style, the following would show the text in
-yellow when night mode is enabled:
+「myclass」スタイルがある場合、ナイトモードが有効になっているときにテキストを黄色で表示するには、次のようにします：
 
 ```css
 .nightMode .myclass {
@@ -373,16 +287,11 @@ yellow when night mode is enabled:
 }
 ```
 
-## Fading and Scrolling
+## フェードインとスクロール
 
-Anki will automatically scroll to the answer by default. It looks for an
-HTML element with id=answer, and scrolls to that. You can place the id
-on a different element to adjust the scrolling position, or remove the
-id=answer to turn off scrolling.
+Ankiはデフォルトで自動的に答えまでスクロールします。id=answerを持つHTML要素を探し、それにスクロールします。スクロール位置を調整するために異なる要素にidを配置するか、id=answerを削除してスクロールをオフにすることができます。
 
-The question side of a card fades in by default. If you wish to adjust
-this delay, you can place the following at the top of your front card
-template:
+カードの質問側はデフォルトでフェードインします。この遅延を調整したい場合は、次のコードを表側のカードテンプレートの先頭に配置します：
 
 ```html
 <script>
@@ -391,34 +300,14 @@ template:
 </script>
 ```
 
-100 (milliseconds) is the default; set to 0 to disable fading.
+100（ミリ秒）がデフォルトです。フェードを無効にするには0に設定します。
 
 ## Javascript
 
-As Anki cards are treated like webpages, it is possible to embed some
-Javascript on your cards via the card template. For a good reference
-please read [this post](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756)
-in the forums.
+Ankiカードはウェブページのように扱われるため、カードテンプレートにJavascriptを埋め込むことが可能です。良い参考資料として、フォーラムの[この投稿](https://forums.ankiweb.net/t/card-templates-user-input-101-buttons-keyboard-shortcuts-etc-guide/13756)を読んでください。
 
-Because Javascript is an advanced feature and so many things can go
-wrong, **Javascript functionality is provided without any support or
-warranty**. We can not provide any assistance with writing Javascript,
-and can not guarantee any code you have written will continue to work
-without modification in future Anki updates. If you are not comfortable
-addressing any issues you encounter on your own, then please avoid using
-Javascript.
+Javascriptは高度な機能であり、多くの問題が発生する可能性があるため、**Javascriptの機能はサポートや保証なしで提供されます**。Javascriptの記述に関する支援は提供できず、将来のAnkiのアップデートでコードが変更なしに動作し続けることを保証できません。問題に対処する自信がない場合は、Javascriptの使用を避けてください。
 
-Each Anki client may implement card display differently, so you will
-need to test the behaviour across platforms. A number of clients are
-implemented by keeping a long running webpage and dynamically updating
-parts of it as cards are reviewed, so your Javascript will need to
-update sections of the document using things like
-document.getElementById() rather than doing things like
-document.write().
+各Ankiクライアントはカード表示を異なる方法で実装しているため、プラットフォーム間で動作をテストする必要があります。いくつかのクライアントは、長時間実行されるウェブページを保持し、カードがレビューされるときにその一部を動的に更新することで実装されています。そのため、Javascriptはdocument.write()のような操作ではなく、document.getElementById()のようなものでドキュメントのセクションを更新する必要があります。
 
-Functions like window.alert are also not available. Anki will write
-javascript errors to the terminal, so if you’re running on a Mac or
-Windows computer, you’ll need to manually catch the errors and write
-them to the document to see them. There is no debugger available, so to
-figure out problems you’ll need to break down your code until you
-discover which parts are causing problems.
+window.alertのような関数も使用できません。AnkiはJavascriptのエラーをターミナルに書き込みますので、MacやWindowsのコンピュータを使用している場合は、エラーを手動でキャッチしてドキュメントに書き込む必要があります。デバッガは利用できないため、問題を解決するにはコードを分解して、どの部分が問題を引き起こしているかを特定する必要があります。

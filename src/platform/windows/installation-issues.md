@@ -1,20 +1,17 @@
-# Windows installation issues
+# Windowsインストールの問題
 
-Some error messages you may encounter when installing Anki:
+Ankiのインストール時に遭遇する可能性のあるエラーメッセージ：
 
 <!-- toc -->
 
-Please also see [startup issues](./startup-issues.md).
+[起動の問題](./startup-issues.md)も参照してください。
 
-## "Error opening file for writing"
+## 「書き込み用ファイルを開くエラー」
 
-If closing Anki and your browser does not help, please try restarting your
-computer, then running the installer again.
+Ankiとブラウザを閉じても解決しない場合は、コンピュータを再起動してから再度インストーラーを実行してください。
 
-## "Windows protected your PC"
+## 「WindowsがPCを保護しました」
 
-When a new Anki version is released, Windows may display a scary-looking message
-until it has seen enough people using the new version. To be able to proceed
-with app installation, please use [Run anyway](https://www.tekrevue.com/tip/windows-protected-your-pc-disable-smartscreen/).
+新しいAnkiバージョンがリリースされると、Windowsは新しいバージョンを使用する人が十分に増えるまで、警告メッセージを表示することがあります。アプリのインストールを続行するには、[とにかく実行](https://www.tekrevue.com/tip/windows-protected-your-pc-disable-smartscreen/)を使用してください。
 
-Antivirus programs may sometimes also report a [false positive](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html).
+アンチウイルスプログラムが[誤検知](https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html)を報告することもあります。

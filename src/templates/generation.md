@@ -1,86 +1,52 @@
-# Card Generation
+# カード生成
 
 <!-- toc -->
 
-## Reverse Cards
+## リバースカード
 
-You can watch [a video about reversing cards](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on) on YouTube.
+YouTubeで[リバースカードについてのビデオ](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)を見ることができます。
 
-If you want to create cards that go in both directions (e.g., both
-“ookii”→“big” and “big”→“ookii”), you have several options. The simplest
-is to select the “Basic (and reversed card)” built-in note type. This
-will generate two cards, one in each direction.
+カードを両方向に進むように作成したい場合（例：「ookii」→「big」と「big」→「ookii」）、いくつかのオプションがあります。最も簡単なのは、「Basic (and reversed card)」という組み込みのノートタイプを選択することです。これにより、各方向に1枚ずつ、合計2枚のカードが生成されます。
 
-If you want to generate reverse cards for only some of your material
-(perhaps you only want to take the time to study reverses for the most
-important material, or some of your cards don’t make sense reversed),
-you can select the “Basic (optional reversed card)” note type. This note
-type generates a forward-only card when you fill in only the first two
-fields; if you additionally enter something in the “Add Reverse” field
-(like a 'y'), Anki will generate a reverse card as well. The contents of
-this field will never be displayed on a card.
+教材の一部に対してのみリバースカードを生成したい場合（例えば、最も重要な教材に対してのみリバースカードを学習したい場合や、一部のカードが逆にすると意味をなさない場合）、"Basic (optional reversed card)" ノートタイプを選択できます。このノートタイプは、最初の2つのフィールドにのみ記入すると、順方向のカードのみを生成します。さらに「Add Reverse」フィールドに何か（例えば 'y'）を入力すると、Ankiはリバースカードも生成します。このフィールドの内容はカードには表示されません。
 
-## Card Generation & Deletion
+## カードの生成と削除
 
-Anki will not create cards with empty front sides. Thus if “My Field”
-was empty, and one card’s front template included only that field, the
-card would not be created.
+Ankiは、表側が空のカードを作成しません。したがって、「My Field」が空であり、カードの表テンプレートにそのフィールドのみが含まれている場合、そのカードは作成されません。
 
-When you edit a previously added note, Anki will automatically create
-extra cards if they were previously blank but no longer are. If your
-edits have made some cards blank when they previously were not, however,
-Anki will not delete them immediately, as that could lead to accidental
-data loss. To remove the empty cards, go to Tools → Empty Cards in the
-main window. You will be shown a list of empty cards and be given the
-option to delete them.
+以前に追加したノートを編集すると、Ankiは以前は空だったが現在は空でなくなったカードを自動的に作成します。しかし、編集によって以前は空でなかったカードが空になった場合、Ankiはそれらをすぐには削除しません。これは、誤ってデータを失う可能性があるためです。空のカードを削除するには、メインウィンドウで「ツール」→「空のカード」を選択します。空のカードのリストが表示され、削除するオプションが提供されます。
 
-Because of the way that card generation works, it is not possible to
-manually delete individual cards, as they would just end up being recreated
-the next time the note was edited. Instead, you should make the
-relevant conditional replacement fields empty and then use the Empty
-Cards option.
+カード生成の仕組みのため、個々のカードを手動で削除することはできません。ノートを編集するたびに再生成されてしまうからです。代わりに、関連する条件付き置換フィールドを空にしてから、空のカードオプションを使用する必要があります。
 
-Anki does not consider special fields or non-field text for the purposes
-of card generation. Thus if your front template looked like the
-following, no card would be generated if Country was empty:
+Ankiは、カード生成の目的で特殊フィールドやフィールド以外のテキストを考慮しません。したがって、表テンプレートが次のようになっている場合、Countryが空であればカードは生成されません：
 
     Where is {{Country}} on the map?
 
-## Selective Card Generation
+## 選択的なカード生成
 
-Sometimes you may want to generate extra cards for only some of your
-material, such as testing your ability to recall the most important
-words of a set. You can accomplish this by adding an extra field to your
-note, and adding some text into it (such as "1") on the notes you want
-the extra card. Then in the card template, you can make the card’s
-creation depend on that field being non-empty. For more information on
-this, please see the conditional replacement section below.
+時々、セットの中で最も重要な単語を思い出す能力をテストするなど、一部の教材に対してのみ追加のカードを生成したい場合があります。これを実現するには、ノートに追加のフィールドを追加し、追加のカードが欲しいノートにテキスト（例えば「1」）を入力します。次に、カードテンプレートで、そのフィールドが空でない場合にカードが生成されるように設定できます。詳細については、以下の条件付き置換セクションを参照してください。
 
-## Conditional Replacement
+## 条件付き置換
 
-It is possible to include certain text, fields, or HTML on your cards
-only if a field is empty or not empty. An example:
+フィールドが空であるか空でないかに応じて、特定のテキスト、フィールド、またはHTMLをカードに含めることができます。例：
 
-    This text is always shown.
+    このテキストは常に表示されます。
 
     {{#FieldName}}
-        This text is only shown if FieldName has text in it
+        このテキストはFieldNameにテキストが含まれている場合にのみ表示されます
     {{/FieldName}}
 
     {{^FieldName}}
-        This text is only shown if FieldName is empty
+        このテキストはFieldNameが空の場合にのみ表示されます
     {{/FieldName}}
 
-A real life example is only showing a label if the field is not empty:
+実際の例として、フィールドが空でない場合にラベルを表示する方法：
 
     {{#Tags}}
-        Tags: {{Tags}}
+        タグ: {{Tags}}
     {{/Tags}}
 
-Or say you want to display a specific field in blue on the front of your
-card if there are extra notes on the back (perhaps the fact that there
-are notes serves as a reminder that you should spend more time thinking
-about the answer). You can style the field as follows:
+または、カードの裏に追加のノートがある場合に、カードの表に特定のフィールドを青色で表示したい場合（ノートがあることが、答えを考えるのにもっと時間をかけるべきだというリマインダーとして機能するかもしれません）。次のようにフィールドをスタイル設定できます：
 
     {{#Notes}}
         <span style="color:blue;">
@@ -92,25 +58,19 @@ about the answer). You can style the field as follows:
         </span>
     {{/Notes}}
 
-You can also use conditional replacement to control which cards are
-generated. This works since Anki will not generate
-cards which would have a blank front side. For
-example, consider a card with two fields on the front:
+条件付き置換を使用して、生成されるカードを制御することもできます。これは、Ankiが表側が空のカードを生成しないために機能します。例えば、表に2つのフィールドがあるカードを考えてみましょう：
 
     {{Expression}}
     {{Notes}}
 
-Normally a card would be generated if either the expression or notes
-field had text in it. If you only wanted a card generated if expression
-was not empty, then you could change the template to this:
+通常、表現フィールドまたはノートフィールドにテキストが含まれていればカードが生成されます。表現フィールドが空でない場合にのみカードを生成したい場合は、テンプレートを次のように変更できます：
 
     {{#Expression}}
         {{Expression}}
         {{Notes}}
     {{/Expression}}
 
-And if you wanted to require both fields, you could use two conditional
-replacements:
+両方のフィールドが必要な場合は、2つの条件付き置換を使用できます：
 
     {{#Expression}}
         {{#Notes}}
@@ -119,66 +79,52 @@ replacements:
         {{/Notes}}
     {{/Expression}}
 
-Keep in mind that this only works when you place the
-conditional replacement code on the _front_ of the card; if you do this
-on the back, you will simply end up with cards with a blank back side.
-Similarly, since this works by checking if the front field would be
-empty, it is important to make sure you wrap the 'entire' front side in
-the conditional replacement; for instance, the following would not work
-as expected:
+この方法が機能するのは、条件付き置換コードをカードの「表側」に配置した場合のみであることに注意してください。これを裏側に配置すると、裏側が空白のカードが生成されるだけです。同様に、これは表フィールドが空であるかどうかを確認することで機能するため、表側全体を条件付き置換で囲むことが重要です。例えば、次のようにすると期待通りに動作しません：
 
     {{#Expression}}
         {{Expression}}
     {{/Expression}}
     {{Notes}}
 
-## Blank Back Sides
+## 裏面が空白の場合
 
-Card generation only looks at the front side of the card. For example, if you have a
-front template:
+カード生成はカードの表側のみを確認します。例えば、次のような表テンプレートがある場合：
 
     {{Field 1}}
 
-and a back template:
+そして裏テンプレートが次のようになっている場合：
 
     {{Field 2}}
 
-Then a card will be generated if Field 1 is non-empty. If Field 2 is empty, the card
-will still be generated, and you will get a blank back side.
+Field 1が空でない場合、カードが生成されます。Field 2が空の場合でも、カードは生成され、裏面が空白になります。
 
-If you wish to avoid a blank back side, you will need to place a required field
-on the front template as a conditional, like so:
+裏面が空白になるのを避けたい場合は、表テンプレートに条件付きで必須フィールドを配置する必要があります。例えば、次のようにします：
 
     {{#Field 2}}
         {{Field 1}}
     {{/Field 2}}
 
-This will ensure the card is generated only if both Field 2 and Field 1 are non-empty.
+これにより、Field 2とField 1の両方が空でない場合にのみカードが生成されるようになります。
 
-## Limitations in Older Anki Versions
+## 古いAnkiバージョンの制限
 
-The following limitations do not apply to Anki 2.1.28+ and AnkiMobile 2.0.64+.
+以下の制限は、Anki 2.1.28+およびAnkiMobile 2.0.64+には適用されません。
 
-Older Anki versions cannot use negated conditionals for card generation.
-For example, on Anki 2.1.28, the following would add a card if a field
-called AddIfEmpty is empty, and Front is non-empty:
+古いAnkiバージョンでは、カード生成に否定条件を使用できません。例えば、Anki 2.1.28では、次のように記述すると、AddIfEmptyというフィールドが空であり、Frontが空でない場合にカードが追加されます：
 
     {{^AddIfEmpty}}
         {{Front}}
     {{/AddIfEmpty}}
 
-On earlier Anki versions, the negated conditional is ignored, and card
-generation will depend only on Front being non-empty.
+以前のAnkiバージョンでは、否定条件が無視され、カード生成はFrontが空でないかどうかにのみ依存します。
 
-Mixing **AND** and **OR** conditions can also cause problems on older versions.
-For example, the following ("add the card if A **OR** B **OR** C is non-empty")
-is fine:
+**AND**条件と**OR**条件を混在させることも、古いバージョンでは問題を引き起こす可能性があります。例えば、次のように記述すると（「A**または**B**または**Cが空でない場合にカードを追加」）、問題ありません：
 
     {{A}}
     {{B}}
     {{C}}
 
-And the following ("add the card if A **AND** B **AND** C are non-empty") is fine:
+次のように記述すると（「A**かつ**B**かつ**Cが空でない場合にカードを追加」）、問題ありません：
 
     {{#A}}
         {{#B}}
@@ -188,7 +134,7 @@ And the following ("add the card if A **AND** B **AND** C are non-empty") is fin
         {{/B}}
     {{/A}}
 
-But the following ("add the card if A **OR** (B **AND** C) are non-empty") will not work properly:
+しかし、次のように記述すると（「A**または**（B**かつ**C）が空でない場合にカードを追加」）、正しく動作しません：
 
     {{A}}
     {{#B}}
@@ -197,45 +143,29 @@ But the following ("add the card if A **OR** (B **AND** C) are non-empty") will 
         {{/C}}
     {{/B}}
 
-## Adding Empty Notes
+## 空のノートの追加
 
-When you add a new note in Anki 2.1.28+ and AnkiMobile 2.0.64+, if the card
-templates and note fields combine to produce no cards, a blank card will be
-created using the first template. This allows you to add material even if it's
-incomplete, and modify it or the template later to make it valid. If you don't
-wish to keep an empty note, you can remove it with the Empty Cards function.
+Anki 2.1.28+ および AnkiMobile 2.0.64+ で新しいノートを追加する際に、カードテンプレートとノートフィールドが組み合わさってカードが生成されない場合、最初のテンプレートを使用して空のカードが作成されます。これにより、内容が不完全であっても素材を追加し、後でそれを修正したりテンプレートを変更したりして有効にすることができます。空のノートを保持したくない場合は、空のカード機能を使用して削除できます。
 
-On older Anki versions, Anki refuses to add or import a note if no cards
-would be generated.
+古いAnkiバージョンでは、カードが生成されない場合、Ankiはノートの追加やインポートを拒否します。
 
-## Cloze Templates
+## クロズテンプレート
 
-Please see the [cloze deletion](../editing.md#cloze-deletion) section for background info.
+背景情報については、[クローズ削除](../editing.md#クローズ削除)セクションを参照してください。
 
-The cloze note type functions differently from regular note types.
-Instead of a customizable number of card types, it has a single type
-which is shared by all cloze deletions on a note.
+クロズノートタイプは通常のノートタイプとは異なる機能を持ちます。カスタマイズ可能なカードタイプの数の代わりに、ノート上のすべてのクロズ削除で共有される単一のタイプを持ちます。
 
-As mentioned in the card generation section above, generation of regular
-cards depends on one or more fields on the question being non-empty.
-Cloze deletion note types are generated differently:
+上記のカード生成セクションで述べたように、通常のカードの生成は質問の1つ以上のフィールドが空でないことに依存します。クロズ削除ノートタイプは異なる方法で生成されます：
 
-- Anki looks on the front template for one or more cloze replacements,
-  like {{cloze:FieldName}}.
+- Ankiは表テンプレートで1つ以上のクロズ置換（例：{{cloze:FieldName}}）を探します。
 
-- It then looks in the FieldName field for all cloze references, like
-  {{c1::text}}.
+- 次に、FieldNameフィールド内のすべてのクロズ参照（例：{{c1::テキスト}}）を探します。
 
-- For each separate number, a card will be generated.
+- 異なる番号ごとにカードが生成されます。
 
-Because card generation functions differently for cloze deletion cards,
-{{cloze:…​}} tags can not be used with a regular note type - they
-will only function properly when used with a cloze note type.
+カード生成がクロズ削除カードに対して異なる方法で機能するため、{{cloze:…​}}タグは通常のノートタイプでは使用できません。これらはクロズノートタイプで使用する場合にのみ正しく機能します。
 
-Conditional generation provides a special field so you can check which
-card you are rendering. If you wanted to display the "hint1" field on
-the first cloze, and "hint2" field on the second cloze for example, you
-could use the following template:
+条件付き生成は、レンダリングしているカードを確認するための特別なフィールドを提供します。例えば、最初のクロズに「hint1」フィールドを表示し、2番目のクロズに「hint2」フィールドを表示したい場合、次のテンプレートを使用できます：
 
     {{cloze:Text}}
 
