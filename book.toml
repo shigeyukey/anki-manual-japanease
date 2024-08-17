@@ -36,4 +36,4 @@ enable = true
 level = 0
 
 [dependencies]
-mdbook-anchors = "0.1.0"
+mdbook-anchors = { git = "https://github.com/badboy/mdbook-anchors.git" }
