@@ -34,3 +34,6 @@ exclude = [
 [output.html.fold]
 enable = true
 level = 0
+
+[dependencies]
+mdbook-anchors = "0.1.0"
