@@ -13,6 +13,9 @@ create-missing = true
 command = "mdbook-toc"
 renderer = ["html"]
 
+[preprocessor.linkcheck]
+command = "mdbook-linkcheck"
+
 [output.html]
 git-repository-url = "https://github.com/shigeyukey/anki-manual-jp"
 additional-css = ["css/misc.css", "css/kbd.css"]
@@ -34,6 +37,3 @@ exclude = [
 [output.html.fold]
 enable = true
 level = 0
-
-[dependencies]
-mdbook-anchors = { git = "https://github.com/badboy/mdbook-anchors.git" }
