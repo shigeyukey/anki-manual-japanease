@@ -1,18 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="ja" class="sidebar-visible no-js light">
+<html lang="ja" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Ankiマニュアル</title>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex">
 
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -35,15 +34,16 @@
         <link rel="stylesheet" href="css/kbd.css">
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -59,50 +59,81 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item affix "><a href="intro.html">はじめに</a></li><li class="chapter-item "><a href="background.html"><strong aria-hidden="true">1.</strong> 背景</a></li><li class="chapter-item "><a href="platform/intro.html"><strong aria-hidden="true">2.</strong> プラットフォームノート</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.</strong> Windows</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/windows/installing.html"><strong aria-hidden="true">2.1.1.</strong> インストールとアップグレード</a></li><li class="chapter-item "><a href="platform/windows/installation-issues.html"><strong aria-hidden="true">2.1.2.</strong> インストールの問題</a></li><li class="chapter-item "><a href="platform/windows/startup-issues.html"><strong aria-hidden="true">2.1.3.</strong> 起動の問題</a></li><li class="chapter-item "><a href="platform/windows/display-issues.html"><strong aria-hidden="true">2.1.4.</strong> 表示の問題</a></li><li class="chapter-item "><a href="platform/windows/copy-and-paste.html"><strong aria-hidden="true">2.1.5.</strong> コピー＆ペーストの問題</a></li><li class="chapter-item "><a href="platform/windows/text-size.html"><strong aria-hidden="true">2.1.6.</strong> テキストサイズ</a></li><li class="chapter-item "><a href="platform/windows/permission-problems.html"><strong aria-hidden="true">2.1.7.</strong> 権限の問題</a></li></ol></li><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.</strong> macOS</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/mac/installing.html"><strong aria-hidden="true">2.2.1.</strong> インストールとアップグレード</a></li><li class="chapter-item "><a href="platform/mac/display-issues.html"><strong aria-hidden="true">2.2.2.</strong> 表示の問題</a></li></ol></li><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform/linux/installing.html"><strong aria-hidden="true">2.3.1.</strong> インストールとアップグレード</a></li><li class="chapter-item "><a href="platform/linux/missing-libraries.html"><strong aria-hidden="true">2.3.2.</strong> ライブラリが見つからない</a></li><li class="chapter-item "><a href="platform/linux/display-issues.html"><strong aria-hidden="true">2.3.3.</strong> 表示の問題</a></li><li class="chapter-item "><a href="platform/linux/blank-window.html"><strong aria-hidden="true">2.3.4.</strong> メインウィンドウが空白</a></li><li class="chapter-item "><a href="platform/linux/distro-packages.html"><strong aria-hidden="true">2.3.5.</strong> Linuxディストロパッケージ</a></li><li class="chapter-item "><a href="platform/linux/gtk-theme.html"><strong aria-hidden="true">2.3.6.</strong> GTKテーマが正しくない</a></li><li class="chapter-item "><a href="platform/linux/wayland.html"><strong aria-hidden="true">2.3.7.</strong> Wayland</a></li><li class="chapter-item "><a href="platform/linux/input-methods.html"><strong aria-hidden="true">2.3.8.</strong> 入力方法</a></li></ol></li></ol></li><li class="chapter-item "><a href="getting-started.html"><strong aria-hidden="true">3.</strong> はじめに</a></li><li class="chapter-item "><a href="getting-help.html"><strong aria-hidden="true">4.</strong> ヘルプの取得</a></li><li class="chapter-item "><a href="studying.html"><strong aria-hidden="true">5.</strong> 学習</a></li><li class="chapter-item "><a href="editing.html"><strong aria-hidden="true">6.</strong> 追加/編集</a></li><li class="chapter-item "><a href="templates/intro.html"><strong aria-hidden="true">7.</strong> カードテンプレート</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="templates/fields.html"><strong aria-hidden="true">7.1.</strong> フィールド置換</a></li><li class="chapter-item "><a href="templates/generation.html"><strong aria-hidden="true">7.2.</strong> カード生成</a></li><li class="chapter-item "><a href="templates/styling.html"><strong aria-hidden="true">7.3.</strong> スタイリングとHTML</a></li><li class="chapter-item "><a href="templates/errors.html"><strong aria-hidden="true">7.4.</strong> チェックとエラー</a></li></ol></li><li class="chapter-item "><a href="preferences.html"><strong aria-hidden="true">8.</strong> 設定</a></li><li class="chapter-item "><a href="deck-options.html"><strong aria-hidden="true">9.</strong> デッキオプション</a></li><li class="chapter-item "><a href="syncing.html"><strong aria-hidden="true">10.</strong> AnkiWebと同期</a></li><li class="chapter-item "><a href="profiles.html"><strong aria-hidden="true">11.</strong> プロファイル</a></li><li class="chapter-item "><a href="browsing.html"><strong aria-hidden="true">12.</strong> ブラウザ</a></li><li class="chapter-item "><a href="filtered-decks.html"><strong aria-hidden="true">13.</strong> フィルターデッキ</a></li><li class="chapter-item "><a href="searching.html"><strong aria-hidden="true">14.</strong> 検索</a></li><li class="chapter-item "><a href="importing/intro.html"><strong aria-hidden="true">15.</strong> インポート</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="importing/text-files.html"><strong aria-hidden="true">15.1.</strong> テキストファイル</a></li><li class="chapter-item "><a href="importing/packaged-decks.html"><strong aria-hidden="true">15.2.</strong> パッケージデッキ</a></li></ol></li><li class="chapter-item "><a href="exporting.html"><strong aria-hidden="true">16.</strong> エクスポート</a></li><li class="chapter-item "><a href="backups.html"><strong aria-hidden="true">17.</strong> バックアップ</a></li><li class="chapter-item "><a href="files.html"><strong aria-hidden="true">18.</strong> ファイル管理</a></li><li class="chapter-item "><a href="stats.html"><strong aria-hidden="true">19.</strong> 統計</a></li><li class="chapter-item "><a href="media.html"><strong aria-hidden="true">20.</strong> メディア</a></li><li class="chapter-item "><a href="math.html"><strong aria-hidden="true">21.</strong> 数式と記号</a></li><li class="chapter-item "><a href="leeches.html"><strong aria-hidden="true">22.</strong> リーチ</a></li><li class="chapter-item "><a href="addons.html"><strong aria-hidden="true">23.</strong> アドオン</a></li><li class="chapter-item "><a href="troubleshooting.html"><strong aria-hidden="true">24.</strong> トラブルシューティング</a></li><li class="chapter-item "><a href="sync-server.html"><strong aria-hidden="true">25.</strong> 同期サーバー</a></li><li class="chapter-item "><a href="misc.html"><strong aria-hidden="true">26.</strong> その他</a></li><li class="chapter-item affix "><a href="contrib.html">貢献</a></li><li class="chapter-item affix "><a href="faqs.html">FAQs</a></li><li class="chapter-item affix "><a href="resources.html">リソース</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -138,7 +169,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -172,12 +203,7 @@
 </ul>
 <p>マニュアルの翻訳を手伝いたい場合は、<a href="https://translating.ankiweb.net/anki/manual.html">翻訳ドキュメント</a>を参照してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="背景"><a class="header" href="#背景">背景</a></h1>
-<ul>
-<li><a href="background.html#%E3%83%86%E3%82%B9%E3%83%88%E5%8A%B9%E6%9E%9C%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%86%E3%82%B9%E3%83%88">テスト効果(アクティブ･リコール･テスト)</a></li>
-<li><a href="background.html#%E4%BD%BF%E3%82%8F%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E5%BF%98%E3%82%8C%E3%82%8B">使わなければ忘れる</a></li>
-<li><a href="background.html#%E5%88%86%E6%95%A3%E5%AD%A6%E7%BF%92%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%83%89%E3%83%AA%E3%83%94%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">分散学習(スペースド・リピテーション)</a></li>
-<li><a href="background.html#%E3%81%AA%E3%81%9Canki">なぜAnki？</a></li>
-</ul>
+<!-- toc -->
 <p>Ankiは、ものごとを覚えることを簡単にするプログラムです。従来の学習法よりも効率的なので、学習にかかる時間を大幅に減らすか、あるいは学ぶ量を大幅に増やすことができます。</p>
 <p>習慣的にものごとを覚える必要がある人は、Ankiを利用することでメリットが得られます。画像、音声、動画、科学的なマークアップ（LaTeX）などをサポートしているので、学習できる内容の可能性は無限大です。
 たとえば､</p>
@@ -381,14 +407,7 @@ SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetitio
 <p>The way Anki is installed, and the possible problems you may encounter, depend
 on the type of computer you are using.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-windows"><a class="header" href="#installing--upgrading-anki-on-windows">Installing &amp; Upgrading Anki on Windows</a></h1>
-<ul>
-<li><a href="platform/windows/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/windows/installing.html#installing">Installing</a></li>
-<li><a href="platform/windows/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/windows/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/windows/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/windows/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
 <p>Recent Anki releases require a computer running the 64 bit version of Windows
 10 or 11.</p>
@@ -446,14 +465,7 @@ following pages:</p>
 <li><a href="https://docs.ankiweb.net/platform/windows/startup-issues.html">Startup Issues</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-windows-1"><a class="header" href="#installing--upgrading-anki-on-windows-1">Installing &amp; Upgrading Anki on Windows</a></h1>
-<ul>
-<li><a href="platform/windows/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/windows/installing.html#installing">Installing</a></li>
-<li><a href="platform/windows/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/windows/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/windows/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/windows/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements-1"><a class="header" href="#requirements-1">Requirements</a></h2>
 <p>Recent Anki releases require a computer running the 64 bit version of Windows
 10 or 11.</p>
@@ -512,32 +524,18 @@ following pages:</p>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="windows-installation-issues"><a class="header" href="#windows-installation-issues">Windows installation issues</a></h1>
 <p>Some error messages you may encounter when installing Anki:</p>
-<ul>
-<li><a href="platform/windows/installation-issues.html#error-opening-file-for-writing">&quot;Error opening file for writing&quot;</a></li>
-<li><a href="platform/windows/installation-issues.html#windows-protected-your-pc">&quot;Windows protected your PC&quot;</a></li>
-</ul>
+<!-- toc -->
 <p>Please also see <a href="platform/windows/./startup-issues.html">startup issues</a>.</p>
-<h2 id="error-opening-file-for-writing"><a class="header" href="#error-opening-file-for-writing">&quot;Error opening file for writing&quot;</a></h2>
+<h2 id="error-opening-file-for-writing"><a class="header" href="#error-opening-file-for-writing">"Error opening file for writing"</a></h2>
 <p>If closing Anki and your browser does not help, please try restarting your
 computer, then running the installer again.</p>
-<h2 id="windows-protected-your-pc"><a class="header" href="#windows-protected-your-pc">&quot;Windows protected your PC&quot;</a></h2>
+<h2 id="windows-protected-your-pc"><a class="header" href="#windows-protected-your-pc">"Windows protected your PC"</a></h2>
 <p>When a new Anki version is released, Windows may display a scary-looking message
 until it has seen enough people using the new version. To be able to proceed
 with app installation, please use <a href="https://www.tekrevue.com/tip/windows-protected-your-pc-disable-smartscreen/">Run anyway</a>.</p>
 <p>Antivirus programs may sometimes also report a <a href="https://faqs.ankiweb.net/my-antivirus-program-says-anki-is-infected.html">false positive</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="windows-startup-issues"><a class="header" href="#windows-startup-issues">Windows startup issues</a></h1>
-<ul>
-<li><a href="platform/windows/startup-issues.html#no-error-but-app-does-not-appear">No error, but app does not appear</a></li>
-<li><a href="platform/windows/startup-issues.html#windows-updates">Windows updates</a></li>
-<li><a href="platform/windows/startup-issues.html#windows-78">Windows 7/8</a></li>
-<li><a href="platform/windows/startup-issues.html#video-driver-issues">Video driver issues</a></li>
-<li><a href="platform/windows/startup-issues.html#multiple-displays">Multiple displays</a></li>
-<li><a href="platform/windows/startup-issues.html#antivirusfirewall-software">Antivirus/firewall software</a></li>
-<li><a href="platform/windows/startup-issues.html#admin-access">Admin access</a></li>
-<li><a href="platform/windows/startup-issues.html#multiple-anki-installations-present-after-updating">Multiple Anki installations present after updating</a></li>
-<li><a href="platform/windows/startup-issues.html#debugging">Debugging</a></li>
-<li><a href="platform/windows/startup-issues.html#if-all-else-fails">If all else fails</a></li>
-</ul>
+<!-- toc -->
 <h2 id="no-error-but-app-does-not-appear"><a class="header" href="#no-error-but-app-does-not-appear">No error, but app does not appear</a></h2>
 <p>Recently there have been some reports of Anki failing to appear, without
 any error message showing up. If you run into this situation, you can either:</p>
@@ -578,7 +576,7 @@ try adding an exception to Anki, or temporarily disabling your antivirus/firewal
 to see if it helps.</p>
 <h2 id="admin-access"><a class="header" href="#admin-access">Admin access</a></h2>
 <p>Some users have reported that Anki did not run for them until they right-clicked
-on the Anki icon and chose &quot;Run as administrator&quot;. Anki stores all of its data in
+on the Anki icon and chose "Run as administrator". Anki stores all of its data in
 your user folder, and should not need administrator privileges, but it's something
 you can try if you've exhausted other options.</p>
 <h2 id="multiple-anki-installations-present-after-updating"><a class="header" href="#multiple-anki-installations-present-after-updating">Multiple Anki installations present after updating</a></h2>
@@ -605,11 +603,7 @@ two remaining options:</p>
 2.1.35-alternate, and 2.1.15.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="windows-display-issues"><a class="header" href="#windows-display-issues">Windows display issues</a></h1>
-<ul>
-<li><a href="platform/windows/display-issues.html#qt5">Qt5</a></li>
-<li><a href="platform/windows/display-issues.html#qt6">Qt6</a></li>
-<li><a href="platform/windows/display-issues.html#full-screen">Full screen</a></li>
-</ul>
+<!-- toc -->
 <p>On Windows, there are three ways of content being displayed on screen. The
 default is <em>software</em>, which is slower, but the most compatible. There are two
 other options that are faster: <em>OpenGL</em> and <em>ANGLE</em>. They are faster, but they
@@ -669,18 +663,14 @@ the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
 Anki. For example, create a file called startanki.bat on your desktop
 with the following text:</p>
 <pre><code>set ANKI_WEBSCALE=0.75
-start &quot;Anki&quot; &quot;C:\Program Files\Anki\anki&quot;
+start "Anki" "C:\Program Files\Anki\anki"
 </code></pre>
 <p>After saving, you can double click on the file to start Anki with that
 setting.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="windows-permission-problems"><a class="header" href="#windows-permission-problems">Windows permission problems</a></h1>
-<ul>
-<li><a href="platform/windows/permission-problems.html#permission-problems">Permission Problems</a></li>
-<li><a href="platform/windows/permission-problems.html#antivirusfirewallanti-malware">Antivirus/Firewall/Anti-Malware</a></li>
-<li><a href="platform/windows/permission-problems.html#debugging-permission-problems">Debugging Permission Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="permission-problems"><a class="header" href="#permission-problems">Permission Problems</a></h2>
-<p>If you receive &quot;access denied&quot; messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.</p>
+<p>If you receive "access denied" messages, some of Anki's files may be set to read only mode, meaning Anki is not able to write to them.</p>
 <p>To fix the problem, you can do the following:</p>
 <ul>
 <li>in the search area of the start bar, type cmd.exe and hit enter</li>
@@ -694,7 +684,7 @@ setting.</p>
 <p>icacls Anki2 /grant ____:F /t</p>
 <p>That command should fix the permissions on Anki's data folder, and you should now be able to start the program.</p>
 <h2 id="antivirusfirewallanti-malware"><a class="header" href="#antivirusfirewallanti-malware">Antivirus/Firewall/Anti-Malware</a></h2>
-<p>Some users have experienced &quot;permission denied&quot; or &quot;readonly&quot; errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.</p>
+<p>Some users have experienced "permission denied" or "readonly" errors that were caused by security software installed on their machine. You may need to add an exception for Anki, or try temporarily disabling the software to rule it out as the cause. Some users have reported that simply turning off their software did not fix the problem, and they either had to add an exception for Anki or uninstall the software.</p>
 <h2 id="debugging-permission-problems"><a class="header" href="#debugging-permission-problems">Debugging Permission Problems</a></h2>
 <p>If problems persist after you've ruled out Antivirus and related programs, have performed the steps above to fix permissions, and don't use OneDrive, please run the following commands in cmd.exe, pressing enter after each one.</p>
 <p>whoami</p>
@@ -702,15 +692,7 @@ setting.</p>
 <p>icacls Anki2 /t</p>
 <p>Then please copy &amp; paste or screenshot what you see, and post it to us in a support ticket.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-macos"><a class="header" href="#installing--upgrading-anki-on-macos">Installing &amp; Upgrading Anki on macOS</a></h1>
-<ul>
-<li><a href="platform/mac/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/mac/installing.html#installing">Installing</a></li>
-<li><a href="platform/mac/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/mac/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/mac/installing.html#homebrew">Homebrew</a></li>
-<li><a href="platform/mac/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/mac/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements-2"><a class="header" href="#requirements-2">Requirements</a></h2>
 <p>Recent Anki releases require a Mac running macOS 10.13.4 or later.</p>
 <p>The last Anki release that supported macOS 10.10 to 10.13.3 was <a href="https://github.com/ankitects/anki/releases/tag/2.1.35">Anki 2.1.35-alternate</a>. If you're on an old machine, you can obtain the old version from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
@@ -757,15 +739,7 @@ you can download older Anki versions from the <a href="https://github.com/ankite
 <li><a href="platform/mac/display-issues.html">Display Issues</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-macos-1"><a class="header" href="#installing--upgrading-anki-on-macos-1">Installing &amp; Upgrading Anki on macOS</a></h1>
-<ul>
-<li><a href="platform/mac/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/mac/installing.html#installing">Installing</a></li>
-<li><a href="platform/mac/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/mac/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/mac/installing.html#homebrew">Homebrew</a></li>
-<li><a href="platform/mac/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/mac/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements-3"><a class="header" href="#requirements-3">Requirements</a></h2>
 <p>Recent Anki releases require a Mac running macOS 10.13.4 or later.</p>
 <p>The last Anki release that supported macOS 10.10 to 10.13.3 was <a href="https://github.com/ankitects/anki/releases/tag/2.1.35">Anki 2.1.35-alternate</a>. If you're on an old machine, you can obtain the old version from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
@@ -812,11 +786,7 @@ you can download older Anki versions from the <a href="https://github.com/ankite
 <li><a href="platform/mac/display-issues.html">Display Issues</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="display-issues-on-macos"><a class="header" href="#display-issues-on-macos">Display Issues on macOS</a></h1>
-<ul>
-<li><a href="platform/mac/display-issues.html#qt6-video-driver">Qt6 Video Driver</a></li>
-<li><a href="platform/mac/display-issues.html#egpus">eGPUs</a></li>
-<li><a href="platform/mac/display-issues.html#monitors-with-different-resolutions">Monitors with different resolutions</a></li>
-</ul>
+<!-- toc -->
 <h2 id="qt6-video-driver"><a class="header" href="#qt6-video-driver">Qt6 Video Driver</a></h2>
 <p>If you're experiencing display issues or crashes in Anki 23.10+, you can try
 changing the video driver in the preferences screen, then restarting Anki.</p>
@@ -828,18 +798,11 @@ you to adjust the driver by opening Terminal.app, then pasting the following and
 <p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
 remove that file.</p>
 <h2 id="egpus"><a class="header" href="#egpus">eGPUs</a></h2>
-<p>If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click &quot;Get Info&quot;, and enable the &quot;prefer eGPU&quot; option.</p>
+<p>If you experience blank screens when using an external graphics card on a Mac, you can ctrl+click on the Anki app, click "Get Info", and enable the "prefer eGPU" option.</p>
 <h2 id="monitors-with-different-resolutions"><a class="header" href="#monitors-with-different-resolutions">Monitors with different resolutions</a></h2>
 <p>Please see <a href="https://forums.ankiweb.net/t/mac-known-issues-wording-suggestion/7331">this forum post</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-linux"><a class="header" href="#installing--upgrading-anki-on-linux">Installing &amp; Upgrading Anki on Linux</a></h1>
-<ul>
-<li><a href="platform/linux/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/linux/installing.html#installing">Installing</a></li>
-<li><a href="platform/linux/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/linux/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/linux/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/linux/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements-4"><a class="header" href="#requirements-4">Requirements</a></h2>
 <p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
 libraries like libwayland-client and systemd. If you are on a different
@@ -912,14 +875,7 @@ following pages:</p>
 <li><a href="https://docs.ankiweb.net/platform/linux/input-methods.html">Input Methods</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installing--upgrading-anki-on-linux-1"><a class="header" href="#installing--upgrading-anki-on-linux-1">Installing &amp; Upgrading Anki on Linux</a></h1>
-<ul>
-<li><a href="platform/linux/installing.html#requirements">Requirements</a></li>
-<li><a href="platform/linux/installing.html#installing">Installing</a></li>
-<li><a href="platform/linux/installing.html#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="platform/linux/installing.html#upgrading">Upgrading</a></li>
-<li><a href="platform/linux/installing.html#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="platform/linux/installing.html#problems">Problems</a></li>
-</ul>
+<!-- toc -->
 <h2 id="requirements-5"><a class="header" href="#requirements-5">Requirements</a></h2>
 <p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
 libraries like libwayland-client and systemd. If you are on a different
@@ -1059,8 +1015,8 @@ distribution's package maintainers.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="anki-not-picking-up-gtk-theme-on-gnomelinux"><a class="header" href="#anki-not-picking-up-gtk-theme-on-gnomelinux">Anki not picking up GTK theme on Gnome/Linux</a></h1>
 <p>You can work around this issue by explicitly telling Anki what the GTK theme is. Run the following commands in a terminal:</p>
 <pre><code class="language-shell">theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-echo &quot;gtk-theme-name=$theme&quot; &gt;&gt; ~/.gtkrc-2.0
-echo &quot;export GTK2_RC_FILES=$HOME/.gtkrc-2.0&quot; &gt;&gt; ~/.profile
+echo "gtk-theme-name=$theme" &gt;&gt; ~/.gtkrc-2.0
+echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" &gt;&gt; ~/.profile
 </code></pre>
 <p>Then log out and log back into your computer, and Anki should pick up the GTK theme.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="wayland"><a class="header" href="#wayland">Wayland</a></h1>
@@ -1079,25 +1035,7 @@ all distributions. If you are unable to use fcitx, you may want to run
 Anki from <a href="https://betas.ankiweb.net/#via-pypipip">Python wheels</a>
 instead.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="はじめに-1"><a class="header" href="#はじめに-1">はじめに</a></h1>
-<ul>
-<li><a href="getting-started.html#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%A8%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">インストールとアップグレード</a></li>
-<li><a href="getting-started.html#%E3%83%93%E3%83%87%E3%82%AA">ビデオ</a></li>
-<li><a href="getting-started.html#%E9%87%8D%E8%A6%81%E3%81%AA%E6%A6%82%E5%BF%B5">重要な概念</a>
-<ul>
-<li><a href="getting-started.html#%E3%82%AB%E3%83%BC%E3%83%89">カード</a>
-<ul>
-<li><a href="getting-started.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%A8%AE%E9%A1%9E">カードの種類</a></li>
-</ul>
-</li>
-<li><a href="getting-started.html#%E3%83%87%E3%83%83%E3%82%AD">デッキ</a></li>
-<li><a href="getting-started.html#%E3%83%8E%E3%83%BC%E3%83%88%E3%81%A8%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89">ノートとフィールド</a></li>
-<li><a href="getting-started.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%82%BF%E3%82%A4%E3%83%97">カードタイプ</a></li>
-<li><a href="getting-started.html#%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97">ノートタイプ</a></li>
-<li><a href="getting-started.html#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">コレクション</a></li>
-</ul>
-</li>
-<li><a href="getting-started.html#%E5%85%B1%E6%9C%89%E3%83%87%E3%83%83%E3%82%AD">共有デッキ</a></li>
-</ul>
+<!-- toc -->
 <h2 id="インストールとアップグレード"><a class="header" href="#インストールとアップグレード">インストールとアップグレード</a></h2>
 <p>お使いのコンピュータに応じた手順をご覧ください：</p>
 <ul>
@@ -1312,20 +1250,7 @@ Googleでエラーを検索しましたが、有用な情報が見つかりま�
 <h2 id="プライベートな質問"><a class="header" href="#プライベートな質問">プライベートな質問</a></h2>
 <p>セキュリティレポートやビジネスに関する問い合わせについては、<a href="https://anki.tenderapp.com/discussions/private">こちら</a>からプライベートチケットを投稿できます。Anki、AnkiWeb、または AnkiDroid に関する質問がある場合は、代わりに<a href="https://forums.ankiweb.net">ユーザーフォーラム</a>を使用してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="学習"><a class="header" href="#学習">学習</a></h1>
-<ul>
-<li><a href="studying.html#%E3%83%87%E3%83%83%E3%82%AD">デッキ</a></li>
-<li><a href="studying.html#%E5%AD%A6%E7%BF%92%E6%A6%82%E8%A6%81">学習概要</a></li>
-<li><a href="studying.html#%E8%B3%AA%E5%95%8F">質問</a></li>
-<li><a href="studying.html#%E5%AD%A6%E7%BF%92%E5%86%8D%E5%AD%A6%E7%BF%92%E3%82%AB%E3%83%BC%E3%83%89">学習/再学習カード</a></li>
-<li><a href="studying.html#%E5%BE%A9%E7%BF%92%E3%82%AB%E3%83%BC%E3%83%89">復習カード</a></li>
-<li><a href="studying.html#%E4%BA%88%E5%AE%9A%E6%95%B0">予定数</a></li>
-<li><a href="studying.html#%E3%83%95%E3%82%A1%E3%82%BA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%BC">ファズファクター</a></li>
-<li><a href="studying.html#%E7%B7%A8%E9%9B%86%E3%81%A8%E3%81%9D%E3%81%AE%E4%BB%96">編集とその他</a></li>
-<li><a href="studying.html#%E8%A1%A8%E7%A4%BA%E9%A0%86%E5%BA%8F">表示順序</a></li>
-<li><a href="studying.html#%E5%85%84%E5%BC%9F%E3%82%AB%E3%83%BC%E3%83%89%E3%81%A8%E5%9F%8B%E3%82%81%E3%82%8B">兄弟カードと埋める</a></li>
-<li><a href="studying.html#%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88">キーボードショートカット</a></li>
-<li><a href="studying.html#%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%8C%E9%81%85%E3%82%8C%E3%82%8B%E5%A0%B4%E5%90%88">レビューが遅れる場合</a></li>
-</ul>
+<!-- toc -->
 <p>気に入ったデッキを見つけた場合や、いくつかのノートを入力した場合は、学習を始める時です。</p>
 <h2 id="デッキ-1"><a class="header" href="#デッキ-1">デッキ</a></h2>
 <p>Ankiでの学習は、現在選択されているデッキおよびそのサブデッキに限定されます。</p>
@@ -1488,38 +1413,7 @@ Googleでエラーを検索しましたが、有用な情報が見つかりま�
 <p>遅延したレビューの順序を変更したい場合は、<a href="filtered-decks.html">フィルターデッキ</a>を作成することで可能です。</p>
 <p>長い間待っていたカードに回答するとき、Ankiは次にカードを表示する時間を決定する際にその遅延を考慮に入れます。詳細については、Ankiの間隔反復<a href="https://faqs.ankiweb.net/due-times-after-a-break.html">アルゴリズム</a>に関するセクションを参照してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="追加編集"><a class="header" href="#追加編集">追加/編集</a></h1>
-<ul>
-<li><a href="editing.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%A8%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AE%E8%BF%BD%E5%8A%A0">カードとノートの追加</a>
-<ul>
-<li><a href="editing.html#%E9%87%8D%E8%A4%87%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF">重複チェック</a></li>
-<li><a href="editing.html#%E5%8A%B9%E6%9E%9C%E7%9A%84%E3%81%AA%E5%AD%A6%E7%BF%92">効果的な学習</a></li>
-</ul>
-</li>
-<li><a href="editing.html#%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E8%BF%BD%E5%8A%A0">ノートタイプの追加</a></li>
-<li><a href="editing.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">フィールドのカスタマイズ</a></li>
-<li><a href="editing.html#%E3%83%87%E3%83%83%E3%82%AD%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E5%A4%89%E6%9B%B4">デッキ/ノートタイプの変更</a></li>
-<li><a href="editing.html#%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AE%E6%95%B4%E7%90%86">コンテンツの整理</a>
-<ul>
-<li><a href="editing.html#%E3%83%87%E3%83%83%E3%82%AD%E3%81%AE%E9%81%A9%E5%88%87%E3%81%AA%E4%BD%BF%E7%94%A8-using-decks-appropriately">デッキの適切な使用 {#using-decks-appropriately}</a></li>
-<li><a href="editing.html#%E3%82%BF%E3%82%B0%E3%81%AE%E4%BD%BF%E7%94%A8">タグの使用</a></li>
-<li><a href="editing.html#%E3%83%95%E3%83%A9%E3%82%B0%E3%81%AE%E4%BD%BF%E7%94%A8">フラグの使用</a></li>
-<li><a href="editing.html#%E3%83%9E%E3%83%BC%E3%82%AF%E6%B8%88%E3%81%BF%E3%82%BF%E3%82%B0">「マーク済み」タグ</a></li>
-<li><a href="editing.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E4%BD%BF%E7%94%A8">フィールドの使用</a></li>
-<li><a href="editing.html#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E5%AD%A6%E7%BF%92%E3%81%A8%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%E3%83%87%E3%83%83%E3%82%AD">カスタム学習とフィルターデッキ</a></li>
-</ul>
-</li>
-<li><a href="editing.html#%E7%B7%A8%E9%9B%86%E6%A9%9F%E8%83%BD">編集機能</a></li>
-<li><a href="editing.html#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E5%89%8A%E9%99%A4">クローズ削除</a></li>
-<li><a href="editing.html#%E7%94%BB%E5%83%8F%E3%82%AA%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">画像オクルージョン</a>
-<ul>
-<li><a href="editing.html#%E7%94%BB%E5%83%8F%E3%81%AE%E8%BF%BD%E5%8A%A0">画像の追加</a></li>
-<li><a href="editing.html#io%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E8%BF%BD%E5%8A%A0">IOカードの追加</a></li>
-</ul>
-</li>
-<li><a href="editing.html#io%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AE%E7%B7%A8%E9%9B%86">IOノートの編集</a></li>
-<li><a href="editing.html#%E5%A4%96%E5%9B%BD%E8%AA%9E%E6%96%87%E5%AD%97%E3%81%A8%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%88%E3%81%AE%E5%85%A5%E5%8A%9B">外国語文字とアクセントの入力</a></li>
-<li><a href="editing.html#unicode%E6%AD%A3%E8%A6%8F%E5%8C%96">Unicode正規化</a></li>
-</ul>
+<!-- toc -->
 <h2 id="カードとノートの追加"><a class="header" href="#カードとノートの追加">カードとノートの追加</a></h2>
 <p><a href="getting-started.html">基本</a>から思い出してください。Ankiではカードではなくノートを追加し、Ankiがカードを作成します。<a href="studying.html#decks">メインウィンドウ</a>で「追加」をクリックすると、「ノートの追加」ウィンドウが表示されます。</p>
 <p><img src="media/add_screen.png" alt="追加画面" /></p>
@@ -1580,7 +1474,7 @@ Googleでエラーを検索しましたが、有用な情報が見つかりま�
 <h2 id="デッキノートタイプの変更"><a class="header" href="#デッキノートタイプの変更">デッキ/ノートタイプの変更</a></h2>
 <p>追加中に、左上のボタンをクリックしてノートタイプを変更し、右上のボタンをクリックしてデッキを変更できます。開いたウィンドウでは、デッキやノートタイプを選択するだけでなく、新しいデッキを追加したり、ノートタイプを管理したりすることもできます。</p>
 <h2 id="コンテンツの整理"><a class="header" href="#コンテンツの整理">コンテンツの整理</a></h2>
-<h3 id="デッキの適切な使用-using-decks-appropriately"><a class="header" href="#デッキの適切な使用-using-decks-appropriately">デッキの適切な使用 {#using-decks-appropriately}</a></h3>
+<h3 id="using-decks-appropriately"><a class="header" href="#using-decks-appropriately">デッキの適切な使用</a></h3>
 <p><a href="getting-started.html#decks">デッキ</a>は、英語、地理など、別々に学習したい広範なカテゴリにコンテンツを分割するために設計されています。コンテンツを整理するために「地理の教科書第1章」や「食べ物の動詞」などの小さなデッキをたくさん作成したくなるかもしれませんが、以下の理由からこれは推奨されません：</p>
 <ul>
 <li>
@@ -1603,7 +1497,7 @@ Googleでエラーを検索しましたが、有用な情報が見つかりま�
 <p>Ankiは「marked」というタグを特別に扱います。レビュー画面とブラウズ画面には、「marked」タグを追加および削除するオプションがあります。レビュー画面では、現在のカードのノートにそのタグがある場合、星が表示されます。また、ノートがマークされている場合、ブラウズ画面ではカードが異なる色で表示されます。</p>
 <p>注意: マーキングは主に古いAnkiバージョンとの互換性のために残されています。ほとんどのユーザーは<a href="editing.html#using-flags">フラグ</a>を使用することをお勧めします。</p>
 <h3 id="フィールドの使用"><a class="header" href="#フィールドの使用">フィールドの使用</a></h3>
-<p>非常に整理整頓が好きな人のために、ノートに「book」や「page」などのフィールドを追加してコンテンツを分類することができます。Ankiは特定のフィールドでの検索をサポートしているため、<code>&quot;book:my book&quot; page:63</code>のように検索して、すぐに探しているものを見つけることができます。</p>
+<p>非常に整理整頓が好きな人のために、ノートに「book」や「page」などのフィールドを追加してコンテンツを分類することができます。Ankiは特定のフィールドでの検索をサポートしているため、<code>"book:my book" page:63</code>のように検索して、すぐに探しているものを見つけることができます。</p>
 <h3 id="カスタム学習とフィルターデッキ"><a class="header" href="#カスタム学習とフィルターデッキ">カスタム学習とフィルターデッキ</a></h3>
 <p><a href="filtered-decks.html">カスタム学習とフィルターデッキ</a>を使用すると、検索用語から一時的なデッキを作成できます。これにより、ほとんどの時間は単一のデッキでコンテンツを混ぜてレビューできます（最適な記憶のため）。しかし、テスト前など特定の資料に集中する必要がある場合には、一時的なデッキを作成することができます。一般的なルールとして、常に別々に学習したいコンテンツがある場合は、それを通常のデッキに入れるべきです。時々別々に学習する必要がある場合（テスト前、バックログがあるときなど）は、タグ、フラグ、マーク、またはフィールドから作成されたフィルターデッキの方が適しています。</p>
 <h2 id="編集機能"><a class="header" href="#編集機能">編集機能</a></h2>
@@ -1720,7 +1614,7 @@ Text2フィールド: {{c2::Canberra}} was founded in 1913
 <p><code>á</code>のようなテキストは、特定のコードを使用してそのシンボルを表現する方法や、標準の<code>a</code>を使用してその上にアクセントのコードを追加する方法など、コンピュータ上で複数の方法で表現できます。異なるソースからの入力を混ぜたり、異なるコンピュータを使用したりすると問題が発生します。コンピュータがキーボード入力を一つの形式で処理し、コンテンツが別の形式で保存されている場合、結果が同じに見えても検索時に一致しません。</p>
 <p>検索でコンテンツが簡単に見つかるようにするために、Ankiはテキストを標準形式に正規化します。ほとんどのユーザーにとって、このプロセスは透明ですが、古代の日本語シンボルのような特定の資料を学んでいる場合、正規化プロセスがそれらをより現代的な同等物に変換することがあります。</p>
 <p>文字のバリアントを保持したい場合は、<a href="./misc.html">デバッグコンソール</a>で次のコマンドを実行して正規化をオフにします：</p>
-<pre><code class="language-python">mw.col.conf[&quot;normalize_note_text&quot;] = False
+<pre><code class="language-python">mw.col.conf["normalize_note_text"] = False
 </code></pre>
 <p>その後に追加されたコンテンツは変更されません。その代わりに、オペレーティングシステム間で切り替えたり、混合ソースからコンテンツを貼り付けたりする場合、コンテンツの検索が難しくなる可能性があります。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="card-templates"><a class="header" href="#card-templates">Card Templates</a></h1>
@@ -1741,7 +1635,7 @@ cards at once.</p>
 </li>
 </ul>
 <h2 id="the-templates-screen"><a class="header" href="#the-templates-screen">The Templates Screen</a></h2>
-<p>You can modify card templates by clicking the &quot;Cards...&quot; button inside the
+<p>You can modify card templates by clicking the "Cards..." button inside the
 editing screen.</p>
 <p>For older Anki versions, on the top left is the front template, on the bottom left is the back
 template, and in between them is the card styling section. For Anki versions
@@ -1781,29 +1675,7 @@ information.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="field-replacements"><a class="header" href="#field-replacements">Field Replacements</a></h1>
-<ul>
-<li><a href="templates/fields.html#basic-replacements">Basic Replacements</a></li>
-<li><a href="templates/fields.html#newlines">Newlines</a></li>
-<li><a href="templates/fields.html#text-to-speech-for-individual-fields">Text to Speech for individual fields</a></li>
-<li><a href="templates/fields.html#text-to-speech-for-multiple-fields-and-static-text">Text to Speech for multiple fields and static text</a></li>
-<li><a href="templates/fields.html#special-fields">Special Fields</a></li>
-<li><a href="templates/fields.html#hint-fields">Hint Fields</a></li>
-<li><a href="templates/fields.html#dictionary-links">Dictionary Links</a></li>
-<li><a href="templates/fields.html#html-stripping">HTML Stripping</a></li>
-<li><a href="templates/fields.html#right-to-left-text">Right To Left Text</a></li>
-<li><a href="templates/fields.html#ruby-characters">Ruby Characters</a>
-<ul>
-<li><a href="templates/fields.html#additional-ruby-character-filters">Additional Ruby Character Filters</a></li>
-</ul>
-</li>
-<li><a href="templates/fields.html#media--latex">Media &amp; LaTeX</a>
-<ul>
-<li><a href="templates/fields.html#static-soundsimages">Static Sounds/Images</a></li>
-<li><a href="templates/fields.html#field-references">Field References</a></li>
-</ul>
-</li>
-<li><a href="templates/fields.html#checking-your-answer">Checking Your Answer</a></li>
-</ul>
+<!-- toc -->
 <h2 id="basic-replacements"><a class="header" href="#basic-replacements">Basic Replacements</a></h2>
 <p>The most basic template looks something like this:</p>
 <pre><code>{{Front}}
@@ -1847,7 +1719,7 @@ line, like so:</p>
 <pre><code>one&lt;br&gt;
 two
 </code></pre>
-<p>The br code stands for &quot;(line) br(eak)&quot;.</p>
+<p>The br code stands for "(line) br(eak)".</p>
 <p>The same applies for fields. If you want to display two fields, one on
 each line, you would use</p>
 <pre><code>{{Field 1}}&lt;br&gt;
@@ -1922,7 +1794,7 @@ The card's subdeck: {{Subdeck}}
 
 The card's flag: {{CardFlag}}
 
-The type of card (&quot;Forward&quot;, etc): {{Card}}
+The type of card ("Forward", etc): {{Card}}
 
 The content of the front template
 (only valid in back template): {{FrontSide}}
@@ -1962,9 +1834,9 @@ will play regardless of whether you’ve clicked on the hint link.</p>
 implement the hint field yourself. We can not provide any support for
 doing so, but the following code should get you started:</p>
 <pre><code>{{#Back}}
-﻿&lt;a class=hint href=&quot;#&quot;
-onclick=&quot;this.style.display='none';document.getElementById('hint4753594160').style.display='inline-block';return false;&quot;&gt;
-Show Back&lt;/a&gt;&lt;div id=&quot;hint4753594160&quot; class=hint style=&quot;display: none&quot;&gt;{{Back}}&lt;/div&gt;
+﻿&lt;a class=hint href="#"
+onclick="this.style.display='none';document.getElementById('hint4753594160').style.display='inline-block';return false;"&gt;
+Show Back&lt;/a&gt;&lt;div id="hint4753594160" class=hint style="display: none"&gt;{{Back}}&lt;/div&gt;
 {{/Back}}
 </code></pre>
 <h2 id="dictionary-links"><a class="header" href="#dictionary-links">Dictionary Links</a></h2>
@@ -1976,21 +1848,21 @@ you to search for text using a web URL like:</p>
 <p>You could add an automatic link by doing the following in your template:</p>
 <pre><code>{{Expression}}
 
-&lt;a href=&quot;http://example.com/search?q={{Expression}}&quot;&gt;check in dictionary&lt;/a&gt;
+&lt;a href="http://example.com/search?q={{Expression}}"&gt;check in dictionary&lt;/a&gt;
 </code></pre>
 <p>The template above would allow you to search for each note’s expression
 by clicking on the link while reviewing. There is a caveat however, so
 please see the next section.</p>
 <h2 id="html-stripping"><a class="header" href="#html-stripping">HTML Stripping</a></h2>
 <p>Like templates, fields are stored in HTML. In the dictionary link
-example above, if the expression contained the word &quot;myword&quot; without any
-formatting, then the HTML would be the same: &quot;myword&quot;. But when you
-include formatting in your fields, extra HTML is included. If &quot;myword&quot;
+example above, if the expression contained the word "myword" without any
+formatting, then the HTML would be the same: "myword". But when you
+include formatting in your fields, extra HTML is included. If "myword"
 was bolded for example, the actual HTML would be
-&quot;&lt;b&gt;myword&lt;/b&gt;&quot;.</p>
+"&lt;b&gt;myword&lt;/b&gt;".</p>
 <p>This can present a problem for things like dictionary links. In the
 above example, the dictionary link would end up being:</p>
-<pre><code>&lt;a href=&quot;http://example.com/search?q=&lt;b&gt;myword&lt;/b&gt;&quot;&gt;check in dictionary&lt;/a&gt;
+<pre><code>&lt;a href="http://example.com/search?q=&lt;b&gt;myword&lt;/b&gt;"&gt;check in dictionary&lt;/a&gt;
 </code></pre>
 <p>The extra characters in the link would likely confuse the dictionary
 site, and you’re likely not to get any matches.</p>
@@ -1998,7 +1870,7 @@ site, and you’re likely not to get any matches.</p>
 when they are replaced. If you prefix a field name with text:, Anki will
 not include any formatting. So a dictionary link that worked even with
 formatted text would be:</p>
-<pre><code>&lt;a href=&quot;http://example.com/search?q={{text:Expression}}&quot;&gt;check in dictionary&lt;/a&gt;
+<pre><code>&lt;a href="http://example.com/search?q={{text:Expression}}"&gt;check in dictionary&lt;/a&gt;
 </code></pre>
 <h2 id="right-to-left-text"><a class="header" href="#right-to-left-text">Right To Left Text</a></h2>
 <p>If you’re using a language that reads from right to left, you’ll need
@@ -2056,7 +1928,7 @@ do so. This has implications for including media on the template.</p>
 for every card (eg, a company logo at the top of each card):</p>
 <ol>
 <li>
-<p>Rename the file so it starts with an underscore, e.g &quot;_logo.jpg&quot;.
+<p>Rename the file so it starts with an underscore, e.g "_logo.jpg".
 The underscore tells Anki that the file is used by the template and
 it should be exported when sharing the deck.</p>
 </li>
@@ -2065,13 +1937,13 @@ it should be exported when sharing the deck.</p>
 </li>
 </ol>
 <!-- -->
-<pre><code>&lt;img src=&quot;_logo.jpg&quot;&gt;
+<pre><code>&lt;img src="_logo.jpg"&gt;
 </code></pre>
 <h3 id="field-references"><a class="header" href="#field-references">Field References</a></h3>
 <p>Media references to fields are not supported. They may or may not display
 during review, and will not work when checking for unused media,
 importing/exporting, and so on. Examples that won’t work:</p>
-<pre><code>&lt;img src=&quot;{{Expression}}.jpg&quot;&gt;
+<pre><code>&lt;img src="{{Expression}}.jpg"&gt;
 
 [sound:{{Word}}]
 
@@ -2082,8 +1954,8 @@ see the <a href="templates/../importing/text-files.html#importing-media">importi
 <h2 id="checking-your-answer"><a class="header" href="#checking-your-answer">Checking Your Answer</a></h2>
 <p>You can watch <a href="http://www.youtube.com/watch?v=5tYObQ3ocrw&amp;yt:cc=on">a video about this feature</a> on
 YouTube.</p>
-<p>The easiest way to check your answer is to click &quot;Basic&quot; at the top
-left of the card adding screen, and select &quot;Basic (type in the answer)&quot;.</p>
+<p>The easiest way to check your answer is to click "Basic" at the top
+left of the card adding screen, and select "Basic (type in the answer)".</p>
 <p>If you have downloaded a shared deck and would like to type in the answer
 with it, you can modify its card template. If it has a template like:</p>
 <pre><code>{{Native Word}}
@@ -2117,7 +1989,7 @@ comprised of multiple lines.</p>
 “provided” and “correct” sections line up. If you wish to override the
 font for the answer comparison, you can put the following at the bottom
 of your styling section:</p>
-<pre><code>code#typeans { font-family: &quot;myfontname&quot;; }
+<pre><code>code#typeans { font-family: "myfontname"; }
 </code></pre>
 <p>Which will affect the following HTML for the answer comparison:</p>
 <pre><code>&lt;code id=typeans&gt;...&lt;/code&gt;
@@ -2141,20 +2013,11 @@ template, so the back looks something like this:</p>
 added to both sides on a cloze note type.</p>
 <p>If there are multiple sections elided, you can separate the answers in
 the text box with a comma.</p>
-<p>Type answer boxes will not appear in the <a href="templates/intro.html">&quot;preview&quot; dialog</a> in the browser. When you review or look at
+<p>Type answer boxes will not appear in the <a href="templates/intro.html">"preview" dialog</a> in the browser. When you review or look at
 the preview in the card types window, they will display.</p>
 <p>Type answer boxes will not be displayed when you review your cards on <a href="templates/../syncing.html">ankiweb.net</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="card-generation"><a class="header" href="#card-generation">Card Generation</a></h1>
-<ul>
-<li><a href="templates/generation.html#reverse-cards">Reverse Cards</a></li>
-<li><a href="templates/generation.html#card-generation--deletion">Card Generation &amp; Deletion</a></li>
-<li><a href="templates/generation.html#selective-card-generation">Selective Card Generation</a></li>
-<li><a href="templates/generation.html#conditional-replacement">Conditional Replacement</a></li>
-<li><a href="templates/generation.html#blank-back-sides">Blank Back Sides</a></li>
-<li><a href="templates/generation.html#limitations-in-older-anki-versions">Limitations in Older Anki Versions</a></li>
-<li><a href="templates/generation.html#adding-empty-notes">Adding Empty Notes</a></li>
-<li><a href="templates/generation.html#cloze-templates">Cloze Templates</a></li>
-</ul>
+<!-- toc -->
 <h2 id="reverse-cards"><a class="header" href="#reverse-cards">Reverse Cards</a></h2>
 <p>You can watch <a href="http://www.youtube.com/watch?v=DnbKwHEQ1mA&amp;yt:cc=on">a video about reversing cards</a> on YouTube.</p>
 <p>If you want to create cards that go in both directions (e.g., both
@@ -2194,7 +2057,7 @@ following, no card would be generated if Country was empty:</p>
 <p>Sometimes you may want to generate extra cards for only some of your
 material, such as testing your ability to recall the most important
 words of a set. You can accomplish this by adding an extra field to your
-note, and adding some text into it (such as &quot;1&quot;) on the notes you want
+note, and adding some text into it (such as "1") on the notes you want
 the extra card. Then in the card template, you can make the card’s
 creation depend on that field being non-empty. For more information on
 this, please see the conditional replacement section below.</p>
@@ -2221,7 +2084,7 @@ card if there are extra notes on the back (perhaps the fact that there
 are notes serves as a reminder that you should spend more time thinking
 about the answer). You can style the field as follows:</p>
 <pre><code>{{#Notes}}
-    &lt;span style=&quot;color:blue;&quot;&gt;
+    &lt;span style="color:blue;"&gt;
 {{/Notes}}
 
 {{FieldToFormat}}
@@ -2295,13 +2158,13 @@ called AddIfEmpty is empty, and Front is non-empty:</p>
 <p>On earlier Anki versions, the negated conditional is ignored, and card
 generation will depend only on Front being non-empty.</p>
 <p>Mixing <strong>AND</strong> and <strong>OR</strong> conditions can also cause problems on older versions.
-For example, the following (&quot;add the card if A <strong>OR</strong> B <strong>OR</strong> C is non-empty&quot;)
+For example, the following ("add the card if A <strong>OR</strong> B <strong>OR</strong> C is non-empty")
 is fine:</p>
 <pre><code>{{A}}
 {{B}}
 {{C}}
 </code></pre>
-<p>And the following (&quot;add the card if A <strong>AND</strong> B <strong>AND</strong> C are non-empty&quot;) is fine:</p>
+<p>And the following ("add the card if A <strong>AND</strong> B <strong>AND</strong> C are non-empty") is fine:</p>
 <pre><code>{{#A}}
     {{#B}}
         {{#C}}
@@ -2310,7 +2173,7 @@ is fine:</p>
     {{/B}}
 {{/A}}
 </code></pre>
-<p>But the following (&quot;add the card if A <strong>OR</strong> (B <strong>AND</strong> C) are non-empty&quot;) will not work properly:</p>
+<p>But the following ("add the card if A <strong>OR</strong> (B <strong>AND</strong> C) are non-empty") will not work properly:</p>
 <pre><code>{{A}}
 {{#B}}
     {{#C}}
@@ -2351,8 +2214,8 @@ like {{cloze:FieldName}}.</p>
 {{cloze:…​}} tags can not be used with a regular note type - they
 will only function properly when used with a cloze note type.</p>
 <p>Conditional generation provides a special field so you can check which
-card you are rendering. If you wanted to display the &quot;hint1&quot; field on
-the first cloze, and &quot;hint2&quot; field on the second cloze for example, you
+card you are rendering. If you wanted to display the "hint1" field on
+the first cloze, and "hint2" field on the second cloze for example, you
 could use the following template:</p>
 <pre><code>{{cloze:Text}}
 
@@ -2365,32 +2228,19 @@ could use the following template:</p>
 {{/c2}}
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling--html"><a class="header" href="#styling--html">Styling &amp; HTML</a></h1>
-<ul>
-<li><a href="templates/styling.html#card-styling">Card Styling</a></li>
-<li><a href="templates/styling.html#image-resizing">Image Resizing</a></li>
-<li><a href="templates/styling.html#field-styling">Field Styling</a></li>
-<li><a href="templates/styling.html#audio-replay-buttons">Audio Replay Buttons</a></li>
-<li><a href="templates/styling.html#text-direction">Text Direction</a></li>
-<li><a href="templates/styling.html#other-html">Other HTML</a></li>
-<li><a href="templates/styling.html#browser-appearance">Browser Appearance</a></li>
-<li><a href="templates/styling.html#platform-specific-css">Platform-Specific CSS</a></li>
-<li><a href="templates/styling.html#installing-fonts">Installing Fonts</a></li>
-<li><a href="templates/styling.html#night-mode">Night Mode</a></li>
-<li><a href="templates/styling.html#fading-and-scrolling">Fading and Scrolling</a></li>
-<li><a href="templates/styling.html#javascript">Javascript</a></li>
-</ul>
+<!-- toc -->
 <h2 id="card-styling"><a class="header" href="#card-styling">Card Styling</a></h2>
 <p>You can watch <a href="http://www.youtube.com/watch?v=F1j1Zx0mXME&amp;yt:cc=on">a video about styling cards</a> on YouTube.
 The video shows Anki 2.0’s interface, but the concepts are largely the
 same.</p>
 <p>The styling section of the Cards screen can be accessed by clicking the
-&quot;Styling&quot; button next to the &quot;Back Template&quot; button. In that section,
+"Styling" button next to the "Back Template" button. In that section,
 you can change the background color of the card, the default font, the
 text alignment, and so on.</p>
 <p>The standard options available to you are:</p>
 <p><strong>font-family</strong><br />
 The name of the font to use on the card. If your font has spaces in it
-like &quot;MS Unicode&quot;, then you need to surround the font name in double
+like "MS Unicode", then you need to surround the font name in double
 quotes as in this sentence. It is also possible to use multiple fonts on
 one card; for information on that, please see below.</p>
 <p><strong>font-size</strong><br />
@@ -2546,7 +2396,7 @@ you can add the CSS <code>direction</code> property to the .card section for cor
 </code></pre>
 <p>This will change the direction of the entire card. You can change the direction
 of only certain fields by wrapping their references in some HTML:</p>
-<pre><code>&lt;div dir=&quot;rtl&quot;&gt;{{Front}}&lt;/div&gt;
+<pre><code>&lt;div dir="rtl"&gt;{{Front}}&lt;/div&gt;
 </code></pre>
 <p>To change the direction of fields in the editor, please see
 the <a href="templates/../editing.html#customizing-fields">editing</a> section.</p>
@@ -2562,7 +2412,7 @@ there are plenty of good introductory guides to HTML available on the
 web if you’d like to learn more.</p>
 <h2 id="browser-appearance"><a class="header" href="#browser-appearance">Browser Appearance</a></h2>
 <p>If your card templates are complex, it may be difficult to read the
-question and answer columns (called &quot;Front&quot; and &quot;Back&quot;) in the <a href="templates/../browsing.html#cardnote-table">card list</a>. The &quot;browser appearance&quot; option allows you to define a
+question and answer columns (called "Front" and "Back") in the <a href="templates/../browsing.html#cardnote-table">card list</a>. The "browser appearance" option allows you to define a
 custom template to be used only in the browser, so you can include only
 the important fields and change the order if you desire. The syntax is
 the same as in standard card templates.</p>
@@ -2572,36 +2422,36 @@ styling for different platforms. The example below shows how to vary the
 font depending on where you’re reviewing:</p>
 <pre><code class="language-css">/* Windows */
 .win .example {
-  font-family: &quot;Example1&quot;;
+  font-family: "Example1";
 }
 /* macOS */
 .mac .example {
-  font-family: &quot;Example2&quot;;
+  font-family: "Example2";
 }
 /* Linux desktops */
 .linux:not(.android) .example {
-  font-family: &quot;Example3&quot;;
+  font-family: "Example3";
 }
 /* both Linux desktops, and Android devices */
 .linux .example {
-  font-family: &quot;Example4&quot;;
+  font-family: "Example4";
 }
 /* both Android and iOS */
 .mobile .example {
-  font-family: &quot;Example5&quot;;
+  font-family: "Example5";
 }
 /* iOS */
 .iphone .example,
 .ipad .example {
-  font-family: &quot;Example6&quot;;
+  font-family: "Example6";
 }
 /* Android */
 .android .example {
-  font-family: &quot;Example7&quot;;
+  font-family: "Example7";
 }
 </code></pre>
 <p>And in the template:</p>
-<pre><code class="language-html">&lt;div class=&quot;example&quot;&gt;{{Field}}&lt;/div&gt;
+<pre><code class="language-html">&lt;div class="example"&gt;{{Field}}&lt;/div&gt;
 </code></pre>
 <p>You can also use properties like .gecko, .opera, and .ie to select
 particular browsers when using AnkiWeb. Please see
@@ -2611,18 +2461,18 @@ particular browsers when using AnkiWeb. Please see
 permission to install new fonts, or you’re using Anki on a mobile
 device, it’s possible to add fonts directly to Anki.</p>
 <p>To add a font to Anki, it must be in the TrueType format. TrueType fonts
-have a filename ending in .ttf, such as &quot;Arial.ttf&quot;. Once you’ve located
+have a filename ending in .ttf, such as "Arial.ttf". Once you’ve located
 a TrueType font, we’ll need to add it to the media folder:</p>
 <ol>
 <li>
 <p>Rename the file, adding an underscore at the start, so it becomes
-like &quot;_arial.ttf&quot;. Adding an underscore will tell Anki that this
+like "_arial.ttf". Adding an underscore will tell Anki that this
 file will be used on a template, and should not be deleted when
 checking for unused media.</p>
 </li>
 <li>
 <p>In your computer’s file browser, go to your <a href="templates/../files.html">Anki Folder</a>,
-and then a folder called &quot;User 1&quot; (or your profile name if you’ve
+and then a folder called "User 1" (or your profile name if you’ve
 renamed/added profiles).</p>
 </li>
 <li>
@@ -2641,20 +2491,20 @@ note type you want to change with the top left button.</p>
 </li>
 <li>
 <p>In the styling section, add the following text to the bottom (after
-the last &quot;}&quot; character), replacing &quot;_arial.ttf&quot; with the name of
+the last "}" character), replacing "_arial.ttf" with the name of
 the file you copied into your media folder:</p>
 </li>
 </ol>
 <pre><code class="language-css">@font-face {
   font-family: myfont;
-  src: url(&quot;_arial.ttf&quot;);
+  src: url("_arial.ttf");
 }
 </code></pre>
-<p>Only change the &quot;arial&quot; part, not the &quot;myfont&quot; part.</p>
+<p>Only change the "arial" part, not the "myfont" part.</p>
 <p>After that, you can either change the font for the entire card, or for
 individual fields. To change the font for the entire card, simply locate
 the font-family: line in the .card section and change the font to
-&quot;myfont&quot;. To change the font for only certain fields, please see the
+"myfont". To change the font for only certain fields, please see the
 <a href="templates/styling.html#field-styling">Field Styling</a> instructions above.</p>
 <p>Please make sure the filenames match exactly. If the file is called
 arial.TTF and you write arial.ttf in your card templates, it will not
@@ -2684,7 +2534,7 @@ this delay, you can place the following at the top of your front card
 template:</p>
 <pre><code class="language-html">&lt;script&gt;
   qFade = 100;
-  if (typeof anki !== &quot;undefined&quot;) anki.qFade = qFade;
+  if (typeof anki !== "undefined") anki.qFade = qFade;
 &lt;/script&gt;
 </code></pre>
 <p>100 (milliseconds) is the default; set to 0 to disable fading.</p>
@@ -2714,18 +2564,7 @@ them to the document to see them. There is no debugger available, so to
 figure out problems you’ll need to break down your code until you
 discover which parts are causing problems.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checks-and-errors"><a class="header" href="#checks-and-errors">Checks and Errors</a></h1>
-<ul>
-<li><a href="templates/errors.html#basics">Basics</a></li>
-<li><a href="templates/errors.html#specific-issues">Specific Issues</a>
-<ul>
-<li><a href="templates/errors.html#template-syntax-error">Template Syntax Error</a></li>
-<li><a href="templates/errors.html#identical-front-sides">Identical Front Sides</a></li>
-<li><a href="templates/errors.html#no-field-replacement-on-front-side">No Field Replacement on Front Side</a></li>
-<li><a href="templates/errors.html#cloze-filter-outside-cloze-notetype">Cloze Filter Outside Cloze Notetype</a></li>
-<li><a href="templates/errors.html#no-cloze-filter-on-cloze-notetype">No Cloze Filter on Cloze Notetype</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <p>When you save changes to a notetype or export a deck, Anki 2.1.45+ checks
 for some common errors. These errors will cause issues later on when anyone studies
 the affected cards, so Anki won't let you proceed before you have fixed them.</p>
@@ -2777,36 +2616,7 @@ like the Closet add-on provides some alternatives.</p>
 filter. If one is missing, you will need to add it back so that Anki can create cloze cards
 correctly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="設定"><a class="header" href="#設定">設定</a></h1>
-<ul>
-<li><a href="preferences.html#%E5%A4%96%E8%A6%B3">外観</a>
-<ul>
-<li><a href="preferences.html#%E4%B8%80%E8%88%AC">一般</a></li>
-<li><a href="preferences.html#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9">ユーザーインターフェース</a></li>
-<li><a href="preferences.html#%E6%B0%97%E3%82%92%E6%95%A3%E3%82%89%E3%81%99%E8%A6%81%E7%B4%A0%E3%81%AE%E5%89%8A%E6%B8%9B">気を散らす要素の削減</a></li>
-</ul>
-</li>
-<li><a href="preferences.html#%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC">レビュー</a>
-<ul>
-<li><a href="preferences.html#%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%A9%E3%83%BC">スケジューラー</a></li>
-<li><a href="preferences.html#%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC-1">レビュー</a></li>
-</ul>
-</li>
-<li><a href="preferences.html#%E7%B7%A8%E9%9B%86">編集</a>
-<ul>
-<li><a href="preferences.html#%E7%B7%A8%E9%9B%86-1">編集</a></li>
-<li><a href="preferences.html#%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B8%E3%83%B3%E3%82%B0">ブラウジング</a></li>
-<li><a href="preferences.html#%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88">インポート/エクスポート</a></li>
-</ul>
-</li>
-<li><a href="preferences.html#%E5%90%8C%E6%9C%9F">同期</a>
-<ul>
-<li><a href="preferences.html#%E5%90%8C%E6%9C%9F-1">同期</a></li>
-<li><a href="preferences.html#ankiweb%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88">AnkiWebアカウント</a></li>
-<li><a href="preferences.html#%E8%87%AA%E5%B7%B1%E3%83%9B%E3%82%B9%E3%83%88%E5%9E%8B%E5%90%8C%E6%9C%9F%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC">自己ホスト型同期サーバー</a></li>
-</ul>
-</li>
-<li><a href="preferences.html#%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">バックアップ</a></li>
-</ul>
+<!-- toc -->
 <p>設定は、Windows/Linuxではツールメニューから、MacではAnkiメニューからアクセスできます。</p>
 <h2 id="外観"><a class="header" href="#外観">外観</a></h2>
 <h3 id="一般"><a class="header" href="#一般">一般</a></h3>
@@ -2892,69 +2702,7 @@ v1/v2スケジューラーが有効な場合にのみ表示されます。この
 <h2 id="バックアップ"><a class="header" href="#バックアップ">バックアップ</a></h2>
 <p>自動バックアップの詳細については、マニュアルの<a href="backups.html#automatic-backups">こちら</a>のセクションを参照してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="デッキオプション"><a class="header" href="#デッキオプション">デッキオプション</a></h1>
-<ul>
-<li><a href="deck-options.html#%E3%83%97%E3%83%AA%E3%82%BB%E3%83%83%E3%83%88">プリセット</a></li>
-<li><a href="deck-options.html#%E3%82%B5%E3%83%96%E3%83%87%E3%83%83%E3%82%AD">サブデッキ</a></li>
-<li><a href="deck-options.html#%E6%97%A5%E6%AC%A1%E5%88%B6%E9%99%90">日次制限</a>
-<ul>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89%E6%97%A5">新しいカード/日</a></li>
-<li><a href="deck-options.html#1%E6%97%A5%E3%81%AE%E6%9C%80%E5%A4%A7%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E6%95%B0">1日の最大レビュー数</a></li>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89%E3%81%8C%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E5%88%B6%E9%99%90%E3%82%92%E7%84%A1%E8%A6%96">新しいカードがレビュー制限を無視</a></li>
-<li><a href="deck-options.html#%E3%83%87%E3%83%83%E3%82%AD%E3%81%94%E3%81%A8%E3%81%AE%E6%97%A5%E6%AC%A1%E5%88%B6%E9%99%90">デッキごとの日次制限</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89">新しいカード</a>
-<ul>
-<li><a href="deck-options.html#%E5%AD%A6%E7%BF%92%E3%82%B9%E3%83%86%E3%83%83%E3%83%97">学習ステップ</a>
-<ul>
-<li><a href="deck-options.html#%E6%97%A5%E4%BB%98%E3%81%AE%E5%A2%83%E7%95%8C">日付の境界</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E5%8D%92%E6%A5%AD%E9%96%93%E9%9A%94">卒業間隔</a></li>
-<li><a href="deck-options.html#%E7%B0%A1%E5%8D%98%E9%96%93%E9%9A%94">簡単間隔</a></li>
-<li><a href="deck-options.html#%E6%8C%BF%E5%85%A5%E9%A0%86%E5%BA%8F">挿入順序</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E3%83%A9%E3%83%97%E3%82%B9">ラプス</a>
-<ul>
-<li><a href="deck-options.html#%E5%86%8D%E5%AD%A6%E7%BF%92%E3%82%B9%E3%83%86%E3%83%83%E3%83%97">再学習ステップ</a></li>
-<li><a href="deck-options.html#%E6%9C%80%E5%B0%8F%E9%96%93%E9%9A%94">最小間隔</a></li>
-<li><a href="deck-options.html#%E3%83%AA%E3%83%BC%E3%83%81">リーチ</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E8%A1%A8%E7%A4%BA%E9%A0%86%E5%BA%8F">表示順序</a>
-<ul>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E5%8F%8E%E9%9B%86%E9%A0%86%E5%BA%8F">新しいカードの収集順序</a></li>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E3%82%BD%E3%83%BC%E3%83%88%E9%A0%86%E5%BA%8F">新しいカードのソート順序</a></li>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E3%82%AB%E3%83%BC%E3%83%89%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%AE%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D">新しいカード/レビューの優先順位</a></li>
-<li><a href="deck-options.html#%E6%97%A5%E3%82%92%E3%81%BE%E3%81%9F%E3%81%90%E5%AD%A6%E7%BF%92%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%AE%E5%84%AA%E5%85%88%E9%A0%86%E4%BD%8D">日をまたぐ学習/レビューの優先順位</a></li>
-<li><a href="deck-options.html#%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%AE%E3%82%BD%E3%83%BC%E3%83%88%E9%A0%86%E5%BA%8F">レビューのソート順序</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E3%82%BF%E3%82%A4%E3%83%9E%E3%83%BC">タイマー</a></li>
-<li><a href="deck-options.html#%E8%87%AA%E5%8B%95%E9%80%B2%E8%A1%8C">自動進行</a></li>
-<li><a href="deck-options.html#%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF">埋め込み</a></li>
-<li><a href="deck-options.html#%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA">オーディオ</a></li>
-<li><a href="deck-options.html#%E9%AB%98%E5%BA%A6%E3%81%AA%E8%A8%AD%E5%AE%9A">高度な設定</a>
-<ul>
-<li><a href="deck-options.html#fsrs">FSRS</a>
-<ul>
-<li><a href="deck-options.html#fsrs%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">FSRSオプション</a></li>
-<li><a href="deck-options.html#%E5%AD%A6%E7%BF%92%E3%81%8A%E3%82%88%E3%81%B3%E5%86%8D%E5%AD%A6%E7%BF%92%E3%82%B9%E3%83%86%E3%83%83%E3%83%97">学習および再学習ステップ</a></li>
-<li><a href="deck-options.html#%E3%82%A2%E3%83%89%E3%82%AA%E3%83%B3%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7">アドオンの互換性</a></li>
-<li><a href="deck-options.html#%E8%A9%B3%E7%B4%B0">詳細</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E6%9C%80%E5%A4%A7%E9%96%93%E9%9A%94">最大間隔</a></li>
-<li><a href="deck-options.html#%E5%88%9D%E6%9C%9F%E3%81%AE%E5%AE%B9%E6%98%93%E3%81%95">初期の容易さ</a></li>
-<li><a href="deck-options.html#%E7%B0%A1%E5%8D%98%E3%83%9C%E3%83%BC%E3%83%8A%E3%82%B9">簡単ボーナス</a></li>
-<li><a href="deck-options.html#%E9%96%93%E9%9A%94%E4%BF%AE%E6%AD%A3%E5%80%A4">間隔修正値</a></li>
-<li><a href="deck-options.html#%E3%83%8F%E3%83%BC%E3%83%89%E9%96%93%E9%9A%94">ハード間隔</a></li>
-<li><a href="deck-options.html#%E6%96%B0%E3%81%97%E3%81%84%E9%96%93%E9%9A%94">新しい間隔</a></li>
-</ul>
-</li>
-<li><a href="deck-options.html#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0">カスタムスケジューリング</a></li>
-</ul>
+<!-- toc -->
 <p>デッキオプションは主にAnkiがカードをスケジュールする方法を制御します。Ankiの使い方に慣れるために、最初の数週間はデフォルト設定のままにしておくことをお勧めします。オプションを変更する前に、オプションの内容を理解していることを確認してください。間違った設定をすると、Ankiの効果が減少する可能性があります。</p>
 <p>デッキオプションにアクセスするには、次の方法があります：</p>
 <ul>
@@ -3956,17 +3704,7 @@ that preserving part of the delay can actually [be counter-productive](https://s
 
 Please see [this page](https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-and-custom-scheduling). -->
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ankiwebとの同期"><a class="header" href="#ankiwebとの同期">AnkiWebとの同期</a></h1>
-<ul>
-<li><a href="syncing.html#%E7%B4%B9%E4%BB%8B%E3%83%93%E3%83%87%E3%82%AA">紹介ビデオ</a></li>
-<li><a href="syncing.html#%E8%A8%AD%E5%AE%9A">設定</a></li>
-<li><a href="syncing.html#%E8%87%AA%E5%8B%95%E5%90%8C%E6%9C%9F">自動同期</a></li>
-<li><a href="syncing.html#%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%AE%E8%89%B2">ボタンの色</a></li>
-<li><a href="syncing.html#%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2">メディア</a></li>
-<li><a href="syncing.html#%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88">コンフリクト</a></li>
-<li><a href="syncing.html#%E3%82%B3%E3%83%B3%E3%83%95%E3%83%AA%E3%82%AF%E3%83%88%E3%81%AE%E3%83%9E%E3%83%BC%E3%82%B8">コンフリクトのマージ</a></li>
-<li><a href="syncing.html#%E3%83%95%E3%82%A1%E3%82%A4%E3%82%A2%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB">ファイアウォール</a></li>
-<li><a href="syncing.html#%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7">プロキシ</a></li>
-</ul>
+<!-- toc -->
 <p>AnkiWebは、複数のデバイス間でコレクションを同期し、オンラインで学習することを可能にするサービスです。以下の手順に従う前に、<a href="https://ankiweb.net/">無料アカウント</a>にサインアップしてください。</p>
 <h2 id="紹介ビデオ"><a class="header" href="#紹介ビデオ">紹介ビデオ</a></h2>
 <p>同期の簡単な紹介については、<a href="https://www.youtube.com/watch?v=YkiM4DPzSVc&amp;list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&amp;yt:cc=on">同期紹介ビデオ</a>をご覧ください。</p>
@@ -4041,36 +3779,7 @@ Please see [this page](https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-
 <li>コレクションのダウングレード。これは、以前のAnkiリリースで開きたい場合</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ブラウジング-1"><a class="header" href="#ブラウジング-1">ブラウジング</a></h1>
-<ul>
-<li><a href="browsing.html#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89">テーブルモード</a></li>
-<li><a href="browsing.html#%E3%82%B5%E3%82%A4%E3%83%89%E3%83%90%E3%83%BC">サイドバー</a>
-<ul>
-<li><a href="browsing.html#%E6%A4%9C%E7%B4%A2%E3%83%84%E3%83%BC%E3%83%AB">検索ツール</a></li>
-<li><a href="browsing.html#%E9%81%B8%E6%8A%9E%E3%83%84%E3%83%BC%E3%83%AB">選択ツール</a></li>
-<li><a href="browsing.html#%E4%BF%9D%E5%AD%98%E3%81%97%E3%81%9F%E6%A4%9C%E7%B4%A2%E6%9D%A1%E4%BB%B6">保存した検索条件</a></li>
-<li><a href="browsing.html#%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%AE%E7%B7%A8%E9%9B%86">アイテムの編集</a></li>
-<li><a href="browsing.html#%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%AE%E6%A4%9C%E7%B4%A2">アイテムの検索</a></li>
-</ul>
-</li>
-<li><a href="browsing.html#%E6%A4%9C%E7%B4%A2%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9">検索ボックス</a></li>
-<li><a href="browsing.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%83%8E%E3%83%BC%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB">カード/ノートテーブル</a>
-<ul>
-<li><a href="browsing.html#%E8%A1%8C">行</a></li>
-<li><a href="browsing.html#%E3%82%AB%E3%83%A9%E3%83%A0">カラム</a></li>
-</ul>
-</li>
-<li><a href="browsing.html#%E7%B7%A8%E9%9B%86%E3%82%A8%E3%83%AA%E3%82%A2">編集エリア</a></li>
-<li><a href="browsing.html#%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%81%A8%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">メニューとアクション</a>
-<ul>
-<li><a href="browsing.html#%E7%B7%A8%E9%9B%86">編集</a></li>
-<li><a href="browsing.html#%E3%83%8E%E3%83%BC%E3%83%88">ノート</a></li>
-<li><a href="browsing.html#%E3%82%AB%E3%83%BC%E3%83%89">カード</a></li>
-<li><a href="browsing.html#%E7%A7%BB%E5%8B%95">移動</a></li>
-</ul>
-</li>
-<li><a href="browsing.html#%E6%A4%9C%E7%B4%A2%E3%81%A8%E7%BD%AE%E6%8F%9B">検索と置換</a></li>
-<li><a href="browsing.html#%E9%87%8D%E8%A4%87%E3%81%AE%E6%A4%9C%E7%B4%A2">重複の検索</a></li>
-</ul>
+<!-- toc -->
 <p>ブラウザウィンドウでは、カードやノートを検索して編集することができます。
 メインウィンドウで「ブラウザ」をクリックするか、<kbd>B</kbd>を押すことで開くことができます。
 ブラウザウィンドウは、左側の「サイドバー」、右上の「カード/ノートテーブル」、右下の「編集エリア」の3つのセクションで構成されています。
@@ -4091,7 +3800,7 @@ Anki 2.1.45+では、検索バー、タグとデッキの編集機能、およ�
 <p>このツールでは、サイドバーは以前のバージョンと同様に動作します。
 アイテムをクリックすると、それに対して検索が実行されます。</p>
 <p><kbd>Ctrl</kbd>（Macでは<kbd>Command</kbd>）を押しながらクリックすると、クリックしたアイテムを現在の検索にAND条件で追加することができます。
-たとえば、ドイツのデッキにある「学習」カードを表示したい場合、&quot;学習&quot;をクリックし、その後<kbd>Ctrl</kbd>を押しながら&quot;ドイツ&quot;をクリックします。</p>
+たとえば、ドイツのデッキにある「学習」カードを表示したい場合、"学習"をクリックし、その後<kbd>Ctrl</kbd>を押しながら"ドイツ"をクリックします。</p>
 <p><kbd>Shift</kbd>を押しながらクリックすると、AND条件ではなくOR条件の検索が作成されます。
 たとえば、1つのデッキをクリックし、その後<kbd>Shift</kbd>を押しながら別のデッキをクリックすると、両方のデッキからのカードが同じビューに表示されます。</p>
 <p><kbd>Alt</kbd>（Macでは<kbd>Option</kbd>）を押すと、検索を逆にすることができます（先頭に<code>-</code>を追加）。
@@ -4205,7 +3914,7 @@ Anki 2.1.45+では、検索バー、タグとデッキの編集機能、およ�
 <tr><td>デッキ変更</td><td>現在選択されているカードを別のデッキに移動します。</td></tr>
 <tr><td>期限設定</td><td>カードを復習カードに変更し、特定の日付に期限を設定します。学習スケジュールが中断された場合に、数日前後にカードを移動するのに便利です。 <code>60-90</code> のような範囲を入力すると、選択したカードは現在から60日から90日後に期限が設定されます。新しいカードは同じ遅延時間で間隔が設定されますが、レビューは現在の間隔を変更せずに再スケジュールされます（範囲の末尾に '!' を含めると例外です）。 （手動でカードをスケジュールする場合、回答時間は記録されません。スケジュールはレビューの外でも実行できるため、Ankiはその時点でどのカードが表示されるかを認識していません。）</td></tr>
 <tr><td>忘却</td><td>現在選択されているカードを新しいキューの末尾に移動します。既存のレビュー履歴は保持されます。バージョン2.1.50以降では、元のカード位置を復元するオプションと、カードの遅延と繰り返しカウンターをリセットするオプションがあります。</td></tr>
-<tr><td>位置変更</td><td>新しいカードが表示される順序を変更します。<a href="browsing.html#cardnote-table">table</a> セクションで説明されているように、<em>due</em> 列を有効にすることで既存の位置を確認できます。複数のカードが選択されている場合、位置変更コマンドは順番に各カードに増加する番号を適用します。デフォルトでは、各カードごとに番号が1ずつ増加しますが、&quot;step&quot; 設定を変更することで調整できます。 <strong>既存のカードの位置をシフトする</strong> オプションを選択すると、現在存在するカードの間にカードを挿入し、現在存在するカードを分離します。たとえば、5つのカードがあり、1と2の間に3、4、5を移動したい場合、この設定を選択すると、カードの順序は1、3、4、5、2になります。一方、このオプションをオフにすると、1と2は同じ位置番号を取得します（したがって、同じ番号のカードのうちどのカードが最初に表示されるかは予測できません）。有効にすると、より高い位置のカードは変更され、変更されたカードは次回同期時に送信する必要があります。</td></tr>
+<tr><td>位置変更</td><td>新しいカードが表示される順序を変更します。<a href="browsing.html#cardnote-table">table</a> セクションで説明されているように、<em>due</em> 列を有効にすることで既存の位置を確認できます。複数のカードが選択されている場合、位置変更コマンドは順番に各カードに増加する番号を適用します。デフォルトでは、各カードごとに番号が1ずつ増加しますが、"step" 設定を変更することで調整できます。 <strong>既存のカードの位置をシフトする</strong> オプションを選択すると、現在存在するカードの間にカードを挿入し、現在存在するカードを分離します。たとえば、5つのカードがあり、1と2の間に3、4、5を移動したい場合、この設定を選択すると、カードの順序は1、3、4、5、2になります。一方、このオプションをオフにすると、1と2は同じ位置番号を取得します（したがって、同じ番号のカードのうちどのカードが最初に表示されるかは予測できません）。有効にすると、より高い位置のカードは変更され、変更されたカードは次回同期時に送信する必要があります。</td></tr>
 <tr><td>一時停止の切り替え</td><td>選択したすべてのカードの一時停止を切り替えます。現在のカードが一時停止されているかどうかによって、選択したカードの一時停止が解除されるかどうかが決まります。</td></tr>
 <tr><td>フラグ</td><td>選択したすべてのカードのフラグを切り替えます。現在のカードに選択したフラグが追加されるか削除されるかは、フラグの状態によります。</td></tr>
 <tr><td>情報</td><td>現在のカードに関するさまざまな情報を表示します。レビュー履歴を含む。詳細については、<a href="stats.html#card-info">Card Info</a> を参照してください。</td></tr>
@@ -4218,7 +3927,7 @@ Anki 2.1.45+では、検索バー、タグとデッキの編集機能、およ�
 <p>最初の入力フィールドは、置換されるテキストです。2番目のフィールドは、置換後のテキストです。次に、Ankiがテキストを置換する場所を指定するドロップダウンメニューがあります：ノートのタグ（Anki 2.1.45+が必要）、すべてのフィールド、または特定のフィールドのみ（選択したノートに属するフィールドのみがリストされます）。</p>
 <p>デフォルトでは、選択したノートのみが影響を受けます。この制限を解除したい場合は、「選択したノートのみ」のチェックボックスを外すことができます（Anki 2.1.45+が必要）。</p>
 <p>正規表現オプションを使用すると、複雑な置換を行うことができます。例えば、次のようなテキストがフィールドにあるとします：</p>
-<pre><code>&lt;img src=&quot;pic.jpg&quot; /&gt;
+<pre><code>&lt;img src="pic.jpg" /&gt;
 </code></pre>
 <p>次の設定を使用します：</p>
 <p><img src="media/find_and_replace.png" alt="検索と置換ダイアログ" /></p>
@@ -4235,10 +3944,10 @@ Anki 2.1.45+では、検索バー、タグとデッキの編集機能、およ�
 <p><strong>ノート &gt; 重複を検索</strong> オプションを使用して、同じ内容のノートを検索することができます。ウィンドウを開くと、Ankiはすべてのノートタイプを調べ、すべての可能なフィールドのリストを表示します。<em>Back</em> フィールドで重複を検索したい場合は、リストから選択して <strong>検索</strong> をクリックします。</p>
 <p>デフォルトでは、指定したフィールドを持つすべてのノートタイプで検索されます。これは、手動でカードを追加するときの重複チェックとは異なり、単一のノートタイプに限定されません。</p>
 <p><strong>オプションフィルター</strong>テキストボックスを使用すると、Ankiが重複を検索する範囲を絞り込むことができます。例えば、「French Vocab」と「French Verbs」のノートタイプでのみ重複を検索したい場合は、次のように入力します：</p>
-<pre><code>&quot;note:french vocab&quot; または &quot;note:french verbs&quot;
+<pre><code>"note:french vocab" または "note:french verbs"
 </code></pre>
 <p>または特定のデッキでのみ重複を検索したい場合は、次のように入力します：</p>
-<pre><code>&quot;deck:myDeck&quot;
+<pre><code>"deck:myDeck"
 </code></pre>
 <p>検索の構文は、ブラウザで検索するときと同じです。詳細については、<a href="searching.html">検索</a>を参照してください。</p>
 <p>検索結果リストのリンクをクリックすると、そのセット内の重複したノートが表示されます。検索結果が多数の重複を示す場合は、代わりに <strong>重複をタグ付け</strong> ボタンをクリックすることをお勧めします。これにより、すべての一致するノートに <em>duplicate</em> タグが付けられます。その後、ブラウザでこのタグを検索し、同じ画面からすべてを処理することができます。</p>
@@ -4559,18 +4268,7 @@ which will tag all matching notes with _duplicate_. You can then search
 for this tag in the browser and handle them all from the same screen.
 
 --><div style="break-before: page; page-break-before: always;"></div><h1 id="フィルターデッキと詰め込み学習"><a class="header" href="#フィルターデッキと詰め込み学習">フィルターデッキと詰め込み学習</a></h1>
-<ul>
-<li><a href="filtered-decks.html#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E5%AD%A6%E7%BF%92">カスタム学習</a></li>
-<li><a href="filtered-decks.html#%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%87%E3%83%83%E3%82%AD">ホームデッキ</a></li>
-<li><a href="filtered-decks.html#%E6%89%8B%E5%8B%95%E3%81%A7%E3%81%AE%E4%BD%9C%E6%88%90">手動での作成</a></li>
-<li><a href="filtered-decks.html#%E9%A0%86%E5%BA%8F">順序</a></li>
-<li><a href="filtered-decks.html#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%81%A8%E6%88%BB%E3%82%8B">ステップと戻る</a></li>
-<li><a href="filtered-decks.html#%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88">カウント</a></li>
-<li><a href="filtered-decks.html#%E6%9C%9F%E9%99%90%E3%81%AE%E3%81%82%E3%82%8B%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC">期限のあるレビュー</a></li>
-<li><a href="filtered-decks.html#%E5%85%88%E5%8F%96%E3%82%8A%E5%BE%A9%E7%BF%92">先取り復習</a></li>
-<li><a href="filtered-decks.html#%E5%86%8D%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0">再スケジューリング</a></li>
-<li><a href="filtered-decks.html#%E3%82%AD%E3%83%A3%E3%83%83%E3%83%81%E3%82%A2%E3%83%83%E3%83%97">キャッチアップ</a></li>
-</ul>
+<!-- toc -->
 <p>Ankiで通常のデッキを学習する場合、表示されるカードの数は限られています。Ankiが忘れそうだと考えるカードや、新しいカードの1日の制限です。これは一般的に有用で、必要以上に学習時間を費やさないようにします。しかし、テストのために復習する必要がある場合や、特定の教材に集中したい場合など、これらの通常の制限を超えることが有用な場合もあります。これを可能にするために、Ankiは「フィルターデッキ」と呼ばれる異なるタイプのデッキを提供しています。</p>
 <p>フィルターデッキは多くの可能性を提供します。カードのプレビュー、テスト前の詰め込み学習、特定のタグの学習、特定の並べ替え順でのバックログのキャッチアップ、予定より早い復習、その日の失敗カードの確認などに使用できます。</p>
 <h2 id="カスタム学習"><a class="header" href="#カスタム学習">カスタム学習</a></h2>
@@ -4659,9 +4357,9 @@ for this tag in the browser and handle them all from the same screen.
 <p>フィルターデッキは、レビューが遅れているときに追いつくのに役立ちます。あるAnkiユーザーは、フィルターデッキを使って追いつく方法を次のように説明しています：</p>
 <pre><code>私はフィルター付きサブデッキで800枚のカードのバックログを処理しました。非常にうまくいきました。
 
-Just Dueフィルター: &quot;is:due prop:due&gt;-7&quot;
+Just Dueフィルター: "is:due prop:due&gt;-7"
 
-Over Dueフィルター: &quot;is:due prop:due&lt;=-7&quot;
+Over Dueフィルター: "is:due prop:due&lt;=-7"
 
 Just Dueデッキには、過去1週間に期限が来たカードが含まれます。これは、定期的に期限が来るカードを含むため、毎日学習するべきデッキです。これにより、バックログがないかのように学習できます。
 
@@ -4669,29 +4367,7 @@ Over Dueデッキには、期限内に学習しなかったカードが含まれ
 
 どれくらいの時間がかかるかは、定期的に期限が来るカードに加えて、毎日どれだけの期限切れカードを学習するかによります。気が向いたときに一気に学習することもできますし、新しいカードと同じように1日に特定の数を学習することもできます。あなた次第です。</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="検索"><a class="header" href="#検索">検索</a></h1>
-<ul>
-<li><a href="searching.html#%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AA%E6%A4%9C%E7%B4%A2">シンプルな検索</a></li>
-<li><a href="searching.html#%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E9%99%90%E5%AE%9A%E3%81%99%E3%82%8B">フィールドに限定する</a></li>
-<li><a href="searching.html#%E3%82%BF%E3%82%B0%E3%83%87%E3%83%83%E3%82%AD%E3%82%AB%E3%83%BC%E3%83%89%E3%83%8E%E3%83%BC%E3%83%88">タグ、デッキ、カード、ノート</a></li>
-<li><a href="searching.html#%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%88%E7%B5%90%E5%90%88%E6%96%87%E5%AD%97%E3%82%92%E7%84%A1%E8%A6%96%E3%81%99%E3%82%8B">アクセント/結合文字を無視する</a></li>
-<li><a href="searching.html#%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE">正規表現</a></li>
-<li><a href="searching.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E7%8A%B6%E6%85%8B">カードの状態</a></li>
-<li><a href="searching.html#%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">カードのプロパティ</a></li>
-<li><a href="searching.html#%E6%9C%80%E8%BF%91%E3%81%AE%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">最近のイベント</a>
-<ul>
-<li><a href="searching.html#%E8%BF%BD%E5%8A%A0">追加</a></li>
-<li><a href="searching.html#%E7%B7%A8%E9%9B%86">編集</a></li>
-<li><a href="searching.html#%E5%9B%9E%E7%AD%94">回答</a></li>
-<li><a href="searching.html#%E6%9C%80%E5%88%9D%E3%81%AE%E5%9B%9E%E7%AD%94">最初の回答</a></li>
-</ul>
-</li>
-<li><a href="searching.html#%E7%89%B9%E6%AE%8A%E6%96%87%E5%AD%97%E3%81%AE%E4%B8%80%E8%87%B4">特殊文字の一致</a>
-<ul>
-<li><a href="searching.html#%E7%94%9F%E3%81%AE%E5%85%A5%E5%8A%9B">生の入力</a></li>
-</ul>
-</li>
-<li><a href="searching.html#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88id">オブジェクトID</a></li>
-</ul>
+<!-- toc -->
 <p>Ankiのブラウズ画面とフィルターデッキ機能は、特定のカードやノートを検索するための共通の方法を使用します。</p>
 <h2 id="シンプルな検索"><a class="header" href="#シンプルな検索">シンプルな検索</a></h2>
 <p>検索ボックスにテキストを入力すると、Ankiは一致するノートを見つけてそのカードを表示します。Ankiはノートのすべてのフィールドを検索しますが、タグは検索しません（タグの検索方法についてはこのセクションの後半を参照してください）。いくつかの例を示します：</p>
@@ -4709,9 +4385,9 @@ Over Dueデッキには、期限内に学習しなかったカードが含まれ
 「cat」も「mouse」も含まないノートを見つけます。</p>
 <p><code>-(cat or mouse)</code><br />
 上記と同じです。</p>
-<p><code>&quot;a dog&quot;</code><br />
+<p><code>"a dog"</code><br />
 「a dog」という正確な文字列を含むノートを見つけます。例えば、「atta dog」などですが、「dog a」や「adog」は含まれません。</p>
-<p><code>-&quot;a dog&quot;</code><br />
+<p><code>-"a dog"</code><br />
 「a dog」という正確なフレーズを含まないノートを見つけます。</p>
 <p><code>d_g</code><br />
 「d」と任意の1文字と「g」を含むノートを見つけます。例えば、dog、dig、dugなどです。</p>
@@ -4749,7 +4425,7 @@ Over Dueデッキには、期限内に学習しなかったカードが含まれ
 <p>特定のフィールドにテキストが含まれている場合にのみ一致させるようにAnkiに指示することもできます。上記の検索とは異なり、フィールド検索はデフォルトで「完全一致」を要求します。</p>
 <p><code>front:dog</code><br />
 Frontフィールドが正確に「dog」であるノートを見つけます。「a dog」と書かれているフィールドは一致しません。</p>
-<p><code>&quot;animal front:a dog&quot;</code><br />
+<p><code>"animal front:a dog"</code><br />
 「Animal Front」フィールドが正確に「a dog」であるノートを見つけます。ダブルクォートは必須です。詳細は<a href="searching.html#matching-special-characters">こちら</a>を参照してください。</p>
 <p><code>front:*dog*</code><br />
 Frontフィールドに「dog」が含まれているノートを見つけます。</p>
@@ -4772,9 +4448,9 @@ Frontフィールドが存在するノートを見つけます（空かどうか
 「French」デッキ、または「French::Vocab」のようなサブデッキにあるカードを見つけます。</p>
 <p><code>deck:french -deck:french::*</code><br />
 「French」デッキにあるが、サブデッキにはないカードを見つけます。</p>
-<p><code>deck:&quot;french vocab&quot;</code><br />
+<p><code>deck:"french vocab"</code><br />
 デッキ名にスペースが含まれる場合の検索。</p>
-<p><code>&quot;deck:french vocab&quot;</code><br />
+<p><code>"deck:french vocab"</code><br />
 これも同様に機能します。</p>
 <p><code>deck:filtered</code><br />
 フィルターデッキのみを検索します。</p>
@@ -4798,7 +4474,7 @@ Basicノートタイプのカードを検索します。</p>
 <p>Anki 2.1.24+ および AnkiMobile 2.0.60+ は、ノート内を「正規表現」で検索することをサポートしています。正規表現は、テキスト検索の標準かつ強力な方法です。</p>
 <p>検索を <code>re:</code> で始めると、正規表現で検索できます。Ankiはこれを<a href="searching.html#raw-input">生の入力</a>として扱うので、そこに記載されているルールを考慮してください。</p>
 <p>いくつかの例を示します：</p>
-<p><code>&quot;re:(some|another).*thing&quot;</code><br />
+<p><code>"re:(some|another).*thing"</code><br />
 「some」または「another」に続いて0文字以上の任意の文字があり、その後に「thing」が続くノートを見つけます。</p>
 <p><code>re:\d{3}</code><br />
 3つの連続した数字を含むノートを見つけます。</p>
@@ -4810,7 +4486,7 @@ Basicノートタイプのカードを検索します。</p>
 <p>Anki 2.1.50 ではタグの正規表現サポートが追加されました：</p>
 <p><code>tag:re:^parent$</code><br />
 「parent」という正確なタグを持つノートを見つけます。「parent::child」のような子タグは無視されます。</p>
-<p><code>&quot;tag:re:lesson-(1[7-9]|2[0-5])&quot;</code><br />
+<p><code>"tag:re:lesson-(1[7-9]|2[0-5])"</code><br />
 「lesson-17」から「lesson-25」までのタグを持つノートを見つけます。</p>
 <p>正規表現についての詳細は、こちらで学ぶことができます：<a href="https://regexone.com/lesson/introduction_abcs">https://regexone.com/lesson/introduction_abcs</a></p>
 <p>注意点：</p>
@@ -4908,14 +4584,14 @@ Basicノートタイプのカードを検索します。</p>
 過去365日以内に初めて回答されたカード</p>
 <h2 id="特殊文字の一致"><a class="header" href="#特殊文字の一致">特殊文字の一致</a></h2>
 <p>このセクションはAnki 2.1.36+用に書かれています。以前のバージョンでは、特定の状況で文字のエスケープをサポートしていませんでした。</p>
-<p>前のセクションで示したように、<code>*</code>、<code>_</code>、<code>&quot;</code>などの文字はAnkiで特別な意味を持ちます。これらの文字を検索で見つける必要がある場合、Ankiにそれらを特別扱いしないように指示する必要があります。</p>
+<p>前のセクションで示したように、<code>*</code>、<code>_</code>、<code>"</code>などの文字はAnkiで特別な意味を持ちます。これらの文字を検索で見つける必要がある場合、Ankiにそれらを特別扱いしないように指示する必要があります。</p>
 <ul>
 <li>
 <p><em>スペース</em><br />
-スペースを含むものに一致させるには、<code>&quot;全体の用語&quot;</code>を二重引用符で囲みます。コロン検索の場合、<code>コロンの後:&quot;の部分&quot;</code>だけを引用符で囲むこともできます（コロンの前にもスペースがある場合を除きます）。</p>
+スペースを含むものに一致させるには、<code>"全体の用語"</code>を二重引用符で囲みます。コロン検索の場合、<code>コロンの後:"の部分"</code>だけを引用符で囲むこともできます（コロンの前にもスペースがある場合を除きます）。</p>
 </li>
 <li>
-<p><code>&quot;</code>, <code>*</code> および <code>_</code><br />
+<p><code>"</code>, <code>*</code> および <code>_</code><br />
 これらの文字を文字通りに扱うには、文字の前にバックスラッシュを追加します。例えば、<code>_</code>は任意の1文字に一致しますが、<code>\_</code>は実際のアンダースコアにのみ一致します。</p>
 </li>
 <li>
@@ -4924,11 +4600,11 @@ Basicノートタイプのカードを検索します。</p>
 </li>
 <li>
 <p><code>(</code> および <code>)</code><br />
-括弧を検索するには、用語全体を引用符で囲むか、バックスラッシュを使用します。つまり、<code>&quot;some(text)&quot;</code>、<code>some\(text\)</code>、および<code>&quot;some\(text\)&quot;</code>はすべて同等ですが、<code>some(text)</code>はそうではありません。</p>
+括弧を検索するには、用語全体を引用符で囲むか、バックスラッシュを使用します。つまり、<code>"some(text)"</code>、<code>some\(text\)</code>、および<code>"some\(text\)"</code>はすべて同等ですが、<code>some(text)</code>はそうではありません。</p>
 </li>
 <li>
 <p><code>-</code><br />
-検索用語を<code>-</code>で始めると通常は反転します。例えば、<code>-dog</code>はdog以外のすべてに一致します。実際のハイフンを含めたい場合は、バックスラッシュを使用するか、テキストを引用符で囲むことができます。例えば、<code>\-.-</code>または<code>&quot;-.-&quot;</code>です。</p>
+検索用語を<code>-</code>で始めると通常は反転します。例えば、<code>-dog</code>はdog以外のすべてに一致します。実際のハイフンを含めたい場合は、バックスラッシュを使用するか、テキストを引用符で囲むことができます。例えば、<code>\-.-</code>または<code>"-.-"</code>です。</p>
 </li>
 <li>
 <p><code>:</code><br />
@@ -4943,7 +4619,7 @@ Basicノートタイプのカードを検索します。</p>
 <p>特定のキーワード（<code>re:</code>など）の前にあるテキストは、生の入力として扱われます。つまり、上記の文字は特別な意味をほとんど失います。このような文脈では、曖昧さを防ぐために最小限のエスケープが必要です：</p>
 <ul>
 <li>
-<p><code>&quot;</code> はエスケープする必要があります。</p>
+<p><code>"</code> はエスケープする必要があります。</p>
 </li>
 <li>
 <p>スペースとエスケープされていない括弧は、検索用語を引用符で囲む必要があります。</p>
@@ -4961,23 +4637,9 @@ Basicノートタイプのカードを検索します。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="importing"><a class="header" href="#importing">Importing</a></h1>
 <p>Anki can import text files, packaged Anki decks created by the export
 feature, Mnemosyne 2.0 .db files, and SuperMemo .xml files. To import a
-file, click the File menu and then &quot;Import&quot;.</p>
+file, click the File menu and then "Import".</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="text-files"><a class="header" href="#text-files">Text Files</a></h1>
-<ul>
-<li><a href="importing/text-files.html#spreadsheets-and-utf-8">Spreadsheets and UTF-8</a></li>
-<li><a href="importing/text-files.html#html">HTML</a></li>
-<li><a href="importing/text-files.html#importing-media">Importing Media</a></li>
-<li><a href="importing/text-files.html#bulk-media">Bulk Media</a></li>
-<li><a href="importing/text-files.html#adding-tags">Adding Tags</a></li>
-<li><a href="importing/text-files.html#duplicates-and-updating">Duplicates and Updating</a></li>
-<li><a href="importing/text-files.html#file-headers">File Headers</a>
-<ul>
-<li><a href="importing/text-files.html#notetype-column">Notetype Column</a></li>
-<li><a href="importing/text-files.html#deck-column">Deck Column</a></li>
-<li><a href="importing/text-files.html#guid-column">GUID Column</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <p>Any <strong>plain text</strong> file that contains fields separated by commas,
 semicolons or tabs can be imported into Anki, provided some conditions
 are met.</p>
@@ -5016,16 +4678,16 @@ some text;other text;yet more text
 <p>There are two ways to include newlines or the field separator in fields.</p>
 <p><strong>Escape the characters by placing the contents of the field in
 quotation marks</strong>:</p>
-<pre><code>hello;&quot;this is
-a two line answer&quot;
+<pre><code>hello;"this is
+a two line answer"
 two;this is a one line field
-&quot;this includes a ; (semicolon)&quot;;another field
+"this includes a ; (semicolon)";another field
 </code></pre>
 <p>Because quotes are used to mark where a field begins and ends, if you
 wish to include them inside your field, you need to replace a single
-doublequote with two doublequotes to &quot;escape&quot; them from the regular
+doublequote with two doublequotes to "escape" them from the regular
 handling, like so:</p>
-<pre><code>field one;&quot;field two with &quot;&quot;escaped quotes&quot;&quot; inside it&quot;
+<pre><code>field one;"field two with ""escaped quotes"" inside it"
 </code></pre>
 <p>When you use a spreadsheet program like Libreoffice to create the CSV
 file for you, it will automatically take care of escaping double quotes.</p>
@@ -5033,7 +4695,7 @@ file for you, it will automatically take care of escaping double quotes.</p>
 <pre><code>hello; this is&lt;br&gt;a two line answer
 two; this is a one line one
 </code></pre>
-<p>You need to turn on the &quot;allow HTML in fields&quot; checkbox in the import
+<p>You need to turn on the "allow HTML in fields" checkbox in the import
 dialog for HTML newlines to work.</p>
 <p>Escaped multi-lines will not work correctly if you are using cloze
 deletions that span multiple lines. In this case, please use HTML
@@ -5063,8 +4725,8 @@ can then import the saved file into Anki.</p>
 <p>Anki can treat text imported from text files as HTML (the language used
 for web pages). This means that text with bold, italics and other
 formatting can be exported to a text file and imported again. If you
-want to include HTML formatting, you can check the &quot;allow HTML in
-fields&quot; checkbox when importing. You may wish to turn this off if you’re
+want to include HTML formatting, you can check the "allow HTML in
+fields" checkbox when importing. You may wish to turn this off if you’re
 trying to import cards whose content contains angle brackets or other
 HTML syntax.</p>
 <p>If you wish to use HTML for formatting your file but also wish to
@@ -5081,20 +4743,20 @@ the files into the <a href="importing/../files.html">collection.media folder</a>
 subdirectories in the media folder, or some features will not work.</strong></p>
 <p>After you’ve copied the files, change one of the fields in your text
 file as follows.</p>
-<pre><code>&lt;img src=&quot;myimage.jpg&quot;&gt;
+<pre><code>&lt;img src="myimage.jpg"&gt;
 </code></pre>
 <p>or</p>
 <pre><code>[sound:myaudio.mp3]
 </code></pre>
 <p>Alternatively, you can use the <a href="importing/../browsing.html">find and replace</a> feature
 in the browse screen to update all the fields at once. If each field
-contains text like &quot;myaudio&quot;, and you wish to make it play a sound,
-you’d search for (.*) and replace it with &quot;[sound:\1.mp3]&quot;, with the
+contains text like "myaudio", and you wish to make it play a sound,
+you’d search for (.*) and replace it with "[sound:\1.mp3]", with the
 'regular expressions' option enabled.</p>
 <p>When importing a text file with these references, you must make sure to
-enable the &quot;Allow HTML&quot; option.</p>
+enable the "Allow HTML" option.</p>
 <p>You might be tempted to do this in a template, like:</p>
-<pre><code>&lt;img src=&quot;{{field name}}&quot;&gt;
+<pre><code>&lt;img src="{{field name}}"&gt;
 </code></pre>
 <p>Anki doesn’t support this for two reasons: searching for used media is
 expensive, as each card has to be rendered, and such functionality isn’t
@@ -5182,19 +4844,7 @@ in the first field, instead of assigning them to Anki's internal GUID. When impo
 Anki is able to use the first field for duplicate checking as well, so you do not
 need to make IDs a GUID in order to be able to update your notes.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="packaged-decks"><a class="header" href="#packaged-decks">Packaged Decks</a></h1>
-<ul>
-<li><a href="importing/packaged-decks.html#scheduling">Scheduling</a></li>
-<li><a href="importing/packaged-decks.html#updating">Updating</a>
-<ul>
-<li><a href="importing/packaged-decks.html#anki-2310-and-later">Anki 23.10 and Later</a>
-<ul>
-<li><a href="importing/packaged-decks.html#note-to-deck-authors">Note to Deck Authors</a></li>
-</ul>
-</li>
-<li><a href="importing/packaged-decks.html#workaround-for-anki-2166-and-earlier">Workaround for Anki 2.1.66 and Earlier</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <p>Anki packages (.apkg files) enable you to import decks, notes, notetypes, and cards from
 other users. They are commonly shared on <a href="https://ankiweb.net/shared/decks">AnkiWeb</a>.</p>
 <h2 id="scheduling"><a class="header" href="#scheduling">Scheduling</a></h2>
@@ -5243,16 +4893,16 @@ and note them down.</li>
 It will be the number on the last line.</li>
 </ul>
 <pre><code>nt = bcard().note().note_type()
-print(&quot;notetype&quot;, nt[&quot;name&quot;], &quot;has id&quot;, nt[&quot;id&quot;])
+print("notetype", nt["name"], "has id", nt["id"])
 </code></pre>
 <ul>
 <li>Return to your normal profile, locate the same card, and select it. Run the following
 in the debug console, replacing <code>xxx</code> with the ID you got above:</li>
 </ul>
 <pre><code>nt = bcard().note().note_type()
-print(&quot;current:&quot;, nt[&quot;name&quot;], &quot;has id&quot;, nt[&quot;id&quot;])
+print("current:", nt["name"], "has id", nt["id"])
 nt = mw.col.models.get(xxx)
-print(&quot;desired:&quot;, nt[&quot;name&quot;], &quot;has id&quot;, nt[&quot;id&quot;])
+print("desired:", nt["name"], "has id", nt["id"])
 </code></pre>
 <ul>
 <li>
@@ -5266,15 +4916,7 @@ more or less, and the spelling should be identical.</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="エクスポート"><a class="header" href="#エクスポート">エクスポート</a></h1>
-<ul>
-<li><a href="exporting.html#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">テキストファイル</a></li>
-<li><a href="exporting.html#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E3%83%87%E3%83%83%E3%82%AD">パッケージ化されたデッキ</a>
-<ul>
-<li><a href="exporting.html#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3-colpkg">コレクション (.colpkg)</a></li>
-<li><a href="exporting.html#%E3%83%87%E3%83%83%E3%82%AD-apkg">デッキ (.apkg)</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <p>エクスポートを使用すると、コレクションの一部をテキストファイルまたはパッケージ化されたAnkiデッキとして保存できます。エクスポートするには、ファイルメニューをクリックし、「エクスポート」を選択します。</p>
 <h2 id="テキストファイル"><a class="header" href="#テキストファイル">テキストファイル</a></h2>
 <p>「プレーンテキストのノート」を選択すると、Ankiはノートの内容をテキストファイルに書き込みます。各フィールドはタブで区切られています。結果として得られたファイルを編集し、最初のフィールドを変更しない場合、同じノートタイプにインポートすることで、Ankiは編集に基づいてノートを更新します。</p>
@@ -5365,23 +5007,7 @@ If you choose not to include scheduling information, Anki will assume
 that you are sharing the deck with other people, and will remove marked
 and leech tags so that they will have a clean copy of it. -->
 <div style="break-before: page; page-break-before: always;"></div><h1 id="バックアップ-1"><a class="header" href="#バックアップ-1">バックアップ</a></h1>
-<ul>
-<li><a href="backups.html#%E8%87%AA%E5%8B%95%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">自動バックアップ</a>
-<ul>
-<li><a href="backups.html#%E5%BE%A9%E5%85%83">復元</a></li>
-<li><a href="backups.html#anki-2150">Anki 2.1.50+</a></li>
-<li><a href="backups.html#%E5%8F%A4%E3%81%84anki%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3">古いAnkiバージョン</a></li>
-</ul>
-</li>
-<li><a href="backups.html#%E6%89%8B%E5%8B%95colpkg%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">手動colpkgバックアップ</a>
-<ul>
-<li><a href="backups.html#%E5%BE%A9%E5%85%83-1">復元</a></li>
-<li><a href="backups.html#%E4%BD%9C%E6%88%90">作成</a></li>
-</ul>
-</li>
-<li><a href="backups.html#ankiweb">AnkiWeb</a></li>
-<li><a href="backups.html#%E5%89%8A%E9%99%A4%E3%83%AD%E3%82%B0">削除ログ</a></li>
-</ul>
+<!-- toc -->
 <h2 id="自動バックアップ"><a class="header" href="#自動バックアップ">自動バックアップ</a></h2>
 <p>Ankiは、カードデータの自動バックアップを作成します。これには、カードのテキストとスケジュール情報が含まれますが、音声や画像ファイルは含まれません。</p>
 <p>自動バックアップは、ミスからの回復に役立つ場合がありますが、それだけに頼るべきではありません。デバイスが壊れたり盗まれたりした場合には保護されません。<a href="backups.html#manual-colpkg-backups">手動バックアップ</a>と組み合わせることをおすすめします。</p>
@@ -5511,24 +5137,7 @@ single note type at one time, so if you have deleted notes from
 different note types, you'll need to split the file into separate files
 for each note type first.
 --><div style="break-before: page; page-break-before: always;"></div><h1 id="ファイルとコレクションの管理"><a class="header" href="#ファイルとコレクションの管理">ファイルとコレクションの管理</a></h1>
-<ul>
-<li><a href="files.html#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF">コレクションのチェック</a></li>
-<li><a href="files.html#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%A0%B4%E6%89%80">ファイルの場所</a></li>
-<li><a href="files.html#%E8%B5%B7%E5%8B%95%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">起動オプション</a></li>
-<li><a href="files.html#dropbox%E3%81%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8C%E6%9C%9F">DropBoxとファイル同期</a></li>
-<li><a href="files.html#%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">ネットワークファイルシステム</a></li>
-<li><a href="files.html#%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%81%8B%E3%82%89%E3%81%AE%E5%AE%9F%E8%A1%8C">フラッシュドライブからの実行</a></li>
-<li><a href="files.html#%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">バックアップ</a></li>
-<li><a href="files.html#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E3%83%8F%E3%83%BC%E3%83%89%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF">アクセスできないハードディスク</a></li>
-<li><a href="files.html#%E4%B8%80%E6%99%82%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E6%A8%A9%E9%99%90">一時フォルダの権限</a></li>
-<li><a href="files.html#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%A0%B4%E6%90%8D">コレクションの破損</a>
-<ul>
-<li><a href="files.html#linuxmacos">Linux/macOS</a></li>
-<li><a href="files.html#windows">Windows</a></li>
-<li><a href="files.html#%E6%9C%80%E7%B5%82%E3%82%B9%E3%83%86%E3%83%83%E3%83%97">最終ステップ</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <h2 id="コレクションのチェック"><a class="header" href="#コレクションのチェック">コレクションのチェック</a></h2>
 <p>コレクションファイルに問題がないか定期的にチェックすることをお勧めします。これは、ツール&gt;データベースのチェックメニュー項目から行えます。データベースのチェックは、ファイルが破損していないことを確認し、内部構造を再構築し、ファイルを最適化します。</p>
 <p>データベースをチェックすると、タグリストも再構築されます。個々のデッキやカードを削除しても、Ankiは使用されているタグのリストを更新しません。使用されていない古いタグをリストから削除したい場合は、データベースをチェックすることが方法です。</p>
@@ -5560,22 +5169,22 @@ for each note type first.
 <p>-p some-fake-nameを渡すと、起動時にプロファイル画面が表示されます。プロファイルが指定されていない場合、最後に使用したプロファイルが読み込まれます。</p>
 </li>
 <li>
-<p>インターフェース言語を変更するには、-l &lt;iso 639-1 language code&gt;を使用します。例えば、日本語の場合は&quot;-l ja&quot;です。</p>
+<p>インターフェース言語を変更するには、-l &lt;iso 639-1 language code&gt;を使用します。例えば、日本語の場合は"-l ja"です。</p>
 </li>
 </ul>
-<p>常にカスタムフォルダーの場所を使用したい場合は、Ankiのショートカットを変更できます。Windowsでは、ショートカットを右クリックし、プロパティを選択し、ショートカットタブを選択して、プログラムのパスの後に&quot;-b \path\to\data\folder&quot;を追加します。これにより、次のようになります：</p>
-<pre><code>&quot;C:\Program Files\Anki\anki.exe&quot; -b &quot;C:\AnkiDataFolder&quot;
+<p>常にカスタムフォルダーの場所を使用したい場合は、Ankiのショートカットを変更できます。Windowsでは、ショートカットを右クリックし、プロパティを選択し、ショートカットタブを選択して、プログラムのパスの後に"-b \path\to\data\folder"を追加します。これにより、次のようになります：</p>
+<pre><code>"C:\Program Files\Anki\anki.exe" -b "C:\AnkiDataFolder"
 </code></pre>
 <p>この技術を使用して、-lオプションを使用してAnkiを異なる言語で簡単に使用することもできます。</p>
 <p>Windowsでは、スラッシュ（/）ではなくバックスラッシュ（\）を使用する必要があります。</p>
 <p>Macでは、Ankiアイコンをクリックしたときの動作を簡単に変更する方法はありませんが、ターミナルからカスタムベースフォルダーでAnkiを起動することは可能です：</p>
 <pre><code>open /Applications/Anki.app --args -b ~/myankifolder
 </code></pre>
-<p>または、環境変数&quot;ANKI_BASE&quot;を定義することもできます。Windowsでは、次のコマンドで環境変数を定義できます：</p>
-<pre><code>set &quot;ANKI_BASE=C:/path/to/AnkiDataFolder&quot;
+<p>または、環境変数"ANKI_BASE"を定義することもできます。Windowsでは、次のコマンドで環境変数を定義できます：</p>
+<pre><code>set "ANKI_BASE=C:/path/to/AnkiDataFolder"
 </code></pre>
 <p>LinuxおよびmacOSでは、次のコマンドを使用できます：</p>
-<pre><code>export ANKI_BASE=&quot;/path/to/AnkiDataFolder&quot;
+<pre><code>export ANKI_BASE="/path/to/AnkiDataFolder"
 </code></pre>
 <h2 id="dropboxとファイル同期"><a class="header" href="#dropboxとファイル同期">DropBoxとファイル同期</a></h2>
 <p>サードパーティの同期サービスでAnkiフォルダーを直接同期することはお勧めしません。ファイルが使用中に同期されると、データベースが破損する可能性があります。</p>
@@ -5671,21 +5280,7 @@ for each note type first.
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="カード情報グラフと統計"><a class="header" href="#カード情報グラフと統計">カード情報、グラフと統計</a></h1>
-<ul>
-<li><a href="stats.html#%E3%82%AB%E3%83%BC%E3%83%89%E6%83%85%E5%A0%B1">カード情報</a></li>
-<li><a href="stats.html#%E7%B5%B1%E8%A8%88">統計</a></li>
-<li><a href="stats.html#%E3%83%87%E3%83%83%E3%82%AD--%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E9%81%B8%E6%8A%9E">デッキ / コレクションの選択</a>
-<ul>
-<li><a href="stats.html#%E3%83%87%E3%83%83%E3%82%AD">デッキ</a></li>
-<li><a href="stats.html#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">コレクション</a></li>
-<li><a href="stats.html#%E5%B1%A5%E6%AD%B4">履歴</a></li>
-<li><a href="stats.html#%E3%81%9D%E3%81%AE%E4%BB%96">その他</a></li>
-</ul>
-</li>
-<li><a href="stats.html#%E4%BB%8A%E6%97%A5">今日</a></li>
-<li><a href="stats.html#%E3%82%B0%E3%83%A9%E3%83%95">グラフ</a></li>
-<li><a href="stats.html#%E6%89%8B%E5%8B%95%E5%88%86%E6%9E%90">手動分析</a></li>
-</ul>
+<!-- toc -->
 <h2 id="カード情報"><a class="header" href="#カード情報">カード情報</a></h2>
 <p>カードの情報を表示するには、カードのメニューから「情報」を選択するか、カードを右クリックして<strong>情報</strong>を選択するか、レビュー画面で<kbd>I</kbd>キーを押します。</p>
 <p><img src="media/card_info.png" alt="カード情報" /></p>
@@ -5788,23 +5383,7 @@ for each note type first.
 <h2 id="サポートされている形式"><a class="header" href="#サポートされている形式">サポートされている形式</a></h2>
 <p>Ankiは、mpv（およびフォールバックとしてmplayer）というプログラムを使用して、音声や動画をサポートしています。さまざまなファイル形式がサポートされていますが、これらの形式すべてがAnkiWebおよびモバイルクライアントで動作するわけではありません。MP3音声およびMP4動画が最も広くサポートされているようです。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="数学と記号"><a class="header" href="#数学と記号">数学と記号</a></h1>
-<ul>
-<li><a href="math.html#mathjax">MathJax</a></li>
-<li><a href="math.html#latex">LaTeX</a>
-<ul>
-<li><a href="math.html#%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AD%98">前提知識</a></li>
-<li><a href="math.html#web%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB">Web/モバイル</a></li>
-</ul>
-</li>
-<li><a href="math.html#%E4%BE%8B">例</a>
-<ul>
-<li><a href="math.html#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">パッケージ</a></li>
-<li><a href="math.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AE%E7%AB%B6%E5%90%88">テンプレートの競合</a></li>
-<li><a href="math.html#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E3%81%AE%E7%AB%B6%E5%90%88">クローズの競合</a></li>
-<li><a href="math.html#%E5%AE%89%E5%85%A8%E3%81%A7%E3%81%AA%E3%81%84%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89">安全でないコマンド</a></li>
-</ul>
-</li>
-</ul>
+<!-- toc -->
 <h2 id="mathjax"><a class="header" href="#mathjax">MathJax</a></h2>
 <p><a href="https://www.mathjax.org">MathJax</a>は、現代のブラウザベースの組版システムで、数学や化学の方程式に便利です。追加のソフトウェアをインストールする必要がないため、簡単に使用でき、ほとんどのユーザーに推奨されます。</p>
 <p>MathJaxはAnki 2.1+、AnkiMobile、およびAnkiDroid 2.9+で標準サポートされています。</p>
@@ -5950,11 +5529,7 @@ for each note type first.
 <h3 id="安全でないコマンド"><a class="header" href="#安全でないコマンド">安全でないコマンド</a></h3>
 <p>Ankiは、\inputや\defなどの特定のコマンドをカードやテンプレートで使用することを禁止しています。これらのコマンドを許可すると、悪意のある共有デッキがシステムに損害を与える可能性があるためです。（安全のため、これらのコマンドはコメント内でも禁止されています。そのため、このエラーが発生しているが使用していないと思われる場合は、ヘッダー、テンプレート、およびカード内のコメントを再確認してください。）これらのコマンドを使用する必要がある場合は、システムパッケージに追加し、前のセクションで説明したようにそのパッケージをインポートしてください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ヒル"><a class="header" href="#ヒル">ヒル</a></h1>
-<ul>
-<li><a href="leeches.html#%E7%B7%A8%E9%9B%86">編集</a></li>
-<li><a href="leeches.html#%E5%89%8A%E9%99%A4">削除</a></li>
-<li><a href="leeches.html#%E5%BE%85%E6%A9%9F">待機</a></li>
-</ul>
+<!-- toc -->
 <p>ヒル(Leech)とは、何度も忘れてしまうカードのことです。これらのカードは多くのレビューを必要とするため、他のカードに比べて多くの時間を費やすことになります。</p>
 <p>Ankiはヒルを特定するのに役立ちます。レビュー中のカードが「失敗」するたびにカウンターが増加します。このカウンターが8に達すると、Ankiはそのノートにヒルのタグを付け、カードを一時停止します。この閾値や一時停止するかどうかは<a href="deck-options.html">デッキオプション</a>で調整できます。</p>
 <p>そのカードに何度も失敗すると、Ankiは定期的にヒルについて警告を続けます。これらの警告は、初期のヒル閾値の半分の頻度で発生します。例えば、警告を8回の失敗に設定した場合、将来の警告は4回ごとに発生します（12回、16回など）。</p>
@@ -6050,7 +5625,7 @@ To learn how to write your own add-ons, please see the [add-on writing guide](ht
 <p>これは、バージョン2.1.57以降のデスクトップ版Ankiに組み込まれている同期サーバーを使用します。</p>
 <p>Windowsでは、cmd.exeセッションで以下を実行します：</p>
 <pre><code>set SYNC_USER1=user:pass
-&quot;\Program Files\anki\anki.exe&quot; --syncserver
+"\Program Files\anki\anki.exe" --syncserver
 </code></pre>
 <p>またはMacOSでは、Terminal.appで以下を実行します：</p>
 <pre><code>SYNC_USER1=user:pass /Applications/Anki.app/Contents/MacOS/anki --syncserver
@@ -6102,10 +5677,7 @@ cargo install --path rslib/sync
 <p>このサーバーはAnkiにバンドルされているため、シンプルさが設計目標です。個人や家族での使用を対象としており、REST APIや外部データベースなどを追加するPRは現時点では受け入れられない可能性が高いです。疑問がある場合は、PRの作業を開始する前にご連絡ください。</p>
 <p>既存のAPIソリューションをお探しの場合は、AnkiConnectアドオンがニーズを満たすかもしれません。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="その他-1"><a class="header" href="#その他-1">その他</a></h1>
-<ul>
-<li><a href="misc.html#%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88">メニューショートカット</a></li>
-<li><a href="misc.html#%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%82%B3%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%AB">デバッグコンソール</a></li>
-</ul>
+<!-- toc -->
 <h2 id="メニューショートカット"><a class="header" href="#メニューショートカット">メニューショートカット</a></h2>
 <p>Windows/Linuxでは、<kbd>Alt</kbd>キーを押しながらハイライトされた文字を押すことで、特定のメニューをアクティブにできます。</p>
 <p>macOSではこの機能はサポートされていませんが、代わりに特定のメニュー項目にショートカットを割り当てることができます。詳細については、<a href="https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac">https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac</a>を参照してください。</p>
@@ -6121,13 +5693,7 @@ cargo install --path rslib/sync
 <p>表示されたウィンドウの上部に、指示されたテキストを貼り付けてください。貼り付けたら、Ctrl+Return（MacではCommand+Return）を押すと、下部にテキストが表示されます。結果の出力を貼り付けるように求められた場合は、下部のエリアからコピーして、サポート担当者に貼り付けてください。</p>
 <p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>を押すと、Ankiは要求された動作を実行するのではなく、結果を表示しようとします。予期しないエラーが発生する場合は、<kbd>Shift</kbd>キーを押し続けていないことを確認してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="貢献"><a class="header" href="#貢献">貢献</a></h1>
-<ul>
-<li><a href="contrib.html#%E3%83%87%E3%83%83%E3%82%AD%E3%82%92%E5%85%AC%E9%96%8B%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B">デッキを公開で共有する</a></li>
-<li><a href="contrib.html#%E3%83%87%E3%83%83%E3%82%AD%E3%82%92%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%81%AB%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B">デッキをプライベートに共有する</a></li>
-<li><a href="contrib.html#%E3%82%A2%E3%83%89%E3%82%AA%E3%83%B3%E3%81%AE%E5%85%B1%E6%9C%89">アドオンの共有</a></li>
-<li><a href="contrib.html#anki%E3%81%AE%E7%BF%BB%E8%A8%B3">Ankiの翻訳</a></li>
-<li><a href="contrib.html#%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E8%B2%A2%E7%8C%AE">コードの貢献</a></li>
-</ul>
+<!-- toc -->
 <h2 id="デッキを公開で共有する"><a class="header" href="#デッキを公開で共有する">デッキを公開で共有する</a></h2>
 <p>デッキを一般公開で共有するには、AnkiWebと同期 (<a href="syncing.html">synchronize</a>)し、AnkiWebにログインして、共有したいデッキの横にあるメニューから「共有」をクリックします。</p>
 <p>以前にデッキを共有した場合（Ankiの以前のバージョンを含む）、上記のように「共有」をクリックして更新できます。共有デッキを更新しても、ダウンロード数や評価はリセットされません。アップロードした共有デッキは、共有デッキのページにある削除ボタンを使用して削除できます。</p>
@@ -6247,26 +5813,27 @@ Before contributing, please see [contributing.md](https://github.com/ankitects/a
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
 
+    </div>
     </body>
 </html>
