@@ -147,85 +147,68 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="installing--upgrading-anki-on-linux"><a class="header" href="#installing--upgrading-anki-on-linux">Installing &amp; Upgrading Anki on Linux</a></h1>
+                        <h1 id="linuxへのankiのインストールとアップグレード"><a class="header" href="#linuxへのankiのインストールとアップグレード">LinuxへのAnkiのインストールとアップグレード</a></h1>
 <ul>
-<li><a href="#requirements">Requirements</a></li>
-<li><a href="#installing">Installing</a></li>
+<li><a href="#%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6">必要条件</a></li>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">インストール</a></li>
 <li><a href="#qt5-vs-qt6">Qt5 vs. Qt6</a></li>
-<li><a href="#upgrading">Upgrading</a></li>
-<li><a href="#add-on-compatibility">Add-on Compatibility</a></li>
-<li><a href="#problems">Problems</a></li>
+<li><a href="#%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">アップグレード</a></li>
+<li><a href="#%E3%82%A2%E3%83%89%E3%82%AA%E3%83%B3%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7">アドオンの互換性</a></li>
+<li><a href="#%E5%95%8F%E9%A1%8C">問題</a></li>
 </ul>
-<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
-<p>The packaged version requires a recent 64 bit Intel/AMD Linux with glibc, and common
-libraries like libwayland-client and systemd. If you are on a different
-architecture (e.g ARM/AArch64), or a barebones Linux distro, you will not be able to use the
-packaged version, but you may be able to use the <a href="https://betas.ankiweb.net/#via-pypipip">Python wheels</a>
-instead.</p>
-<p>Debian and derivatives, such as Ubuntu and <a href="https://support.google.com/chromebook/answer/9145439?">Chromebooks with Linux enabled</a>, please use the following before
-installing:</p>
+<h2 id="必要条件"><a class="header" href="#必要条件">必要条件</a></h2>
+<p>パッケージ版は、最近の64ビットIntel/AMD Linuxでglibcやlibwayland-client、systemdなどの一般的なライブラリを必要とします。異なるアーキテクチャ（例：ARM/AArch64）や最小限のLinuxディストリビューションを使用している場合、パッケージ版を使用することはできませんが、代わりに<a href="https://betas.ankiweb.net/#via-pypipip">Pythonホイール</a>を使用できるかもしれません。</p>
+<p>Debianおよびその派生ディストリビューション（Ubuntuや<a href="https://support.google.com/chromebook/answer/9145439?">Linuxが有効になっているChromebook</a>など）を使用している場合、インストール前に以下を実行してください：</p>
 <pre><code class="language-shell">sudo apt install libxcb-xinerama0 libxcb-cursor0 libnss3
 </code></pre>
-<p>If Anki fails to start after installing, you may be <a href="./missing-libraries.html">missing other libraries</a>.</p>
-<p>If you're on Ubuntu 24.04, please see <a href="https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974">this thread</a>.</p>
-<p>Anki's build system only supports glibc, so musl-based distros are not currently supported.</p>
-<h2 id="installing"><a class="header" href="#installing">Installing</a></h2>
-<p>To install Anki:</p>
+<p>Ankiのインストール後に起動しない場合、<a href="./missing-libraries.html">他のライブラリが不足している</a>可能性があります。</p>
+<p>Ubuntu 24.04を使用している場合は、<a href="https://forums.ankiweb.net/t/issues-running-on-ubuntu-24-04/40974">このスレッド</a>を参照してください。</p>
+<p>Ankiのビルドシステムはglibcのみをサポートしているため、muslベースのディストリビューションは現在サポートされていません。</p>
+<h2 id="インストール"><a class="header" href="#インストール">インストール</a></h2>
+<p>Ankiをインストールするには：</p>
 <ol>
-<li>Download Anki from <a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a> to your Downloads folder. See the next section
-for how to choose between -qt5 and -qt6.</li>
-<li>If zstd is not already installed on your system, you'll need to install it (e.g <code>sudo apt install zstd</code>).</li>
-<li>Open a terminal and run the following commands, replacing the filename as appropriate.</li>
+<li><a href="https://apps.ankiweb.net">https://apps.ankiweb.net</a> からAnkiをダウンロードして、ダウンロードフォルダに保存します。-qt5と-qt6のどちらを選ぶかについては次のセクションを参照してください。</li>
+<li>システムにzstdがインストールされていない場合は、インストールする必要があります（例：<code>sudo apt install zstd</code>）。</li>
+<li>ターミナルを開き、適切なファイル名に置き換えて次のコマンドを実行します。</li>
 </ol>
 <pre><code class="language-shell">tar xaf Downloads/anki-2XXX-linux-qt6.tar.zst
 cd anki-2XXX-linux-qt6
 sudo ./install.sh
 </code></pre>
-<p>On some Linux systems, you may need to use <code>tar xaf --use-compress-program=unzstd</code>.</p>
+<p>一部のLinuxシステムでは、<code>tar xaf --use-compress-program=unzstd</code>を使用する必要があるかもしれません。</p>
 <ol start="4">
-<li>You can then start Anki by typing 'anki' and hitting enter. If you encounter
-any issues, please see the links on the left.</li>
+<li>その後、'anki'と入力してEnterキーを押すことでAnkiを起動できます。問題が発生した場合は、左側のリンクを参照してください。</li>
 </ol>
 <h2 id="qt5-vs-qt6"><a class="header" href="#qt5-vs-qt6">Qt5 vs. Qt6</a></h2>
-<p>Recent Anki versions come in separate Qt5 and Qt6 variants. The Qt6 version
-is recommended for most users.</p>
-<p>Advantages of the Qt6 version:</p>
+<p>最近のAnkiバージョンは、Qt5とQt6の別々のバリアントで提供されています。ほとんどのユーザーにはQt6バージョンが推奨されます。</p>
+<p>Qt6バージョンの利点：</p>
 <ul>
-<li>Compatibility with recent glibc versions (fixes <a href="./blank-window.html">blank screens on recent distros</a>).</li>
-<li>Better HiDPI support.</li>
-<li>Better Wayland support.</li>
-<li>Various bugfixes, including things like better support for less common languages.</li>
-<li>Security updates. Support for the Qt5 library was discontinued in Nov 2020,
-meaning that any security flaws discovered since then will remain unfixed.</li>
+<li>最近のglibcバージョンとの互換性（最近のディストリビューションでの<a href="./blank-window.html">空白画面の修正</a>）。</li>
+<li>より良いHiDPIサポート。</li>
+<li>より良いWaylandサポート。</li>
+<li>様々なバグ修正、例えば、あまり一般的でない言語のサポートの向上。</li>
+<li>セキュリティアップデート。Qt5ライブラリのサポートは2020年11月に終了しており、それ以降に発見されたセキュリティの欠陥は修正されません。</li>
 </ul>
-<p>Disadvantages of the Qt6 version include:</p>
+<p>Qt6バージョンの欠点：</p>
 <ul>
-<li>Some add-ons currently only work with the Qt5 version.</li>
+<li>一部のアドオンは現在Qt5バージョンでのみ動作します。</li>
 </ul>
-<h2 id="upgrading"><a class="header" href="#upgrading">Upgrading</a></h2>
-<p>If you were running Anki from a .deb/.rpm/etc in the past, please make
-sure to remove the system version before installing the package
-provided here.</p>
-<p>If you're upgrading from a previous package, simply repeat the
-installation steps to upgrade to the latest version. Your user data
-will be preserved.</p>
-<p>If you wish to downgrade to a previous version, please make sure you
-<a href="http://changes.ankiweb.net">downgrade first</a>.</p>
-<h2 id="add-on-compatibility"><a class="header" href="#add-on-compatibility">Add-on Compatibility</a></h2>
-<p>Some add-ons may not always work with the latest Anki release. If you upgrade to
-the latest Anki version and find an add-on you cannot live without stops working,
-you can download older Anki versions from the <a href="https://github.com/ankitects/anki/releases">releases page</a>.</p>
-<h2 id="problems"><a class="header" href="#problems">Problems</a></h2>
-<p>If you encounter any issues when installing or starting Anki, please see the
-following pages:</p>
+<h2 id="アップグレード"><a class="header" href="#アップグレード">アップグレード</a></h2>
+<p>以前に.deb/.rpmなどからAnkiを実行していた場合は、ここで提供されているパッケージをインストールする前にシステムバージョンを削除してください。</p>
+<p>以前のパッケージからアップグレードする場合は、インストール手順を繰り返して最新バージョンにアップグレードするだけです。ユーザーデータは保持されます。</p>
+<p>以前のバージョンにダウングレードしたい場合は、まず<a href="http://changes.ankiweb.net">ダウングレード</a>を行ってください。</p>
+<h2 id="アドオンの互換性"><a class="header" href="#アドオンの互換性">アドオンの互換性</a></h2>
+<p>一部のアドオンは最新のAnkiリリースで常に動作するとは限りません。最新のAnkiバージョンにアップグレードして、どうしても必要なアドオンが動作しなくなった場合は、<a href="https://github.com/ankitects/anki/releases">リリースページ</a>から古いAnkiバージョンをダウンロードできます。</p>
+<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
+<p>Ankiのインストールや起動時に問題が発生した場合は、以下のページを参照してください：</p>
 <ul>
-<li><a href="https://docs.ankiweb.net/platform/linux/missing-libraries.html">Missing Libraries</a></li>
-<li><a href="https://docs.ankiweb.net/platform/linux/display-issues.html">Display Issues</a></li>
-<li><a href="https://docs.ankiweb.net/platform/linux/blank-window.html">Blank Main Window</a></li>
-<li><a href="https://docs.ankiweb.net/platform/linux/distro-packages.html">Linux Distro Packages</a></li>
-<li><a href="https://docs.ankiweb.net/platform/linux/gtk-theme.html">Incorrect GTK Theme</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/missing-libraries.html">不足しているライブラリ</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/display-issues.html">表示の問題</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/blank-window.html">空白のメインウィンドウ</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/distro-packages.html">Linuxディストリビューションのパッケージ</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/gtk-theme.html">不正なGTKテーマ</a></li>
 <li><a href="https://docs.ankiweb.net/platform/linux/wayland.html">Wayland</a></li>
-<li><a href="https://docs.ankiweb.net/platform/linux/input-methods.html">Input Methods</a></li>
+<li><a href="https://docs.ankiweb.net/platform/linux/input-methods.html">入力方法</a></li>
 </ul>
 
                     </main>

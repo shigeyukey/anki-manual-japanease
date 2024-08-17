@@ -147,28 +147,21 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="text-size"><a class="header" href="#text-size">Text Size</a></h1>
-<p>If you find the text is the wrong size, there are two environmental
-variables you can try:</p>
+                        <h1 id="テキストサイズ"><a class="header" href="#テキストサイズ">テキストサイズ</a></h1>
+<p>テキストのサイズが適切でない場合、以下の環境変数を試すことができます：</p>
 <ul>
 <li>
-<p>ANKI_NOHIGHDPI=1 will turn off some of Qt’s high dpi support</p>
+<p>ANKI_NOHIGHDPI=1 はQtの高DPIサポートの一部をオフにします。</p>
 </li>
 <li>
-<p>ANKI_WEBSCALE=1 will alter the scale of Anki’s web views (like the
-deck list, study screen, etc), while leaving interface elements like
-the menu bar alone. Replace 1 with the desired scale, such as 1.5 or
-0.75.</p>
+<p>ANKI_WEBSCALE=1 は、メニューバーのようなインターフェース要素をそのままにして、Ankiのウェブビュー（デッキリスト、学習画面など）のスケールを変更します。1を1.5や0.75など、希望するスケールに置き換えてください。</p>
 </li>
 </ul>
-<p>On Windows you can add these to a batch file to make it easier to start
-Anki. For example, create a file called startanki.bat on your desktop
-with the following text:</p>
+<p>Windowsでは、これらをバッチファイルに追加してAnkiを起動しやすくすることができます。例えば、デスクトップにstartanki.batというファイルを作成し、次のテキストを入力します：</p>
 <pre><code>set ANKI_WEBSCALE=0.75
 start &quot;Anki&quot; &quot;C:\Program Files\Anki\anki&quot;
 </code></pre>
-<p>After saving, you can double click on the file to start Anki with that
-setting.</p>
+<p>保存後、そのファイルをダブルクリックすると、その設定でAnkiを起動できます。</p>
 
                     </main>
 

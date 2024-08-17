@@ -147,26 +147,17 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="display-issues-on-linux"><a class="header" href="#display-issues-on-linux">Display Issues on Linux</a></h2>
+                        <h2 id="linuxでの表示の問題"><a class="header" href="#linuxでの表示の問題">Linuxでの表示の問題</a></h2>
 <h3 id="qt5"><a class="header" href="#qt5">Qt5</a></h3>
-<p>Hardware acceleration defaults to off. Enabling it in the preferences screen and
-restarting Anki may make Anki’s interface more responsive, but some users may
-experience missing menubars, blank windows or crashes when it is enabled.
-(Blank windows may also be caused by <a href="./blank-window.html">this problem</a>.)</p>
-<p>You can adjust the display driver in Anki's Preferences screen. We
-recommend you try both settings, and see which one works best for you.</p>
-<p>If you're unable to open Anki, you can adjust the driver in a terminal, by
-writing either <code>auto</code> or <code>software</code> into <code>~/.local/share/Anki2/gldriver</code>. Please
-note that if you’re using nouveau, it is known to be buggy, and it only supports
-software mode.</p>
+<p>ハードウェアアクセラレーションはデフォルトでオフになっています。設定画面で有効にしてAnkiを再起動すると、インターフェースがより応答性を持つようになる場合がありますが、有効にするとメニューバーが消えたり、ウィンドウが空白になったり、クラッシュしたりすることがあります。（空白のウィンドウは<a href="./blank-window.html">この問題</a>によっても引き起こされる可能性があります。）</p>
+<p>Ankiの設定画面で表示ドライバを調整できます。両方の設定を試して、どちらが最適か確認することをお勧めします。</p>
+<p>Ankiを開くことができない場合は、ターミナルでドライバを調整できます。<code>~/.local/share/Anki2/gldriver</code>に<code>auto</code>または<code>software</code>と書き込んでください。nouveauを使用している場合、バグが多いことが知られており、ソフトウェアモードのみをサポートしていることに注意してください。</p>
 <h3 id="qt6"><a class="header" href="#qt6">Qt6</a></h3>
-<p>Hardware acceleration defaults to on. If you experience blank screens
-or display issues, you can try enabling software rendering using the terminal:</p>
+<p>ハードウェアアクセラレーションはデフォルトでオンになっています。画面が空白になったり表示の問題が発生した場合は、ターミナルを使用してソフトウェアレンダリングを有効にしてみてください：</p>
 <pre><code>echo software &gt; ~/.local/share/Anki2/gldriver6
 </code></pre>
-<p>If you wish to switch back to the default, change <code>software</code> to <code>auto</code>, or
-remove that file.</p>
-<p>In Anki 23.10+, you can also change the graphics driver from preferences screen.</p>
+<p>デフォルトに戻したい場合は、「software」を「auto」に変更するか、そのファイルを削除してください。</p>
+<p>Anki 23.10+ では、設定画面からグラフィックドライバを変更することもできます。</p>
 
                     </main>
 

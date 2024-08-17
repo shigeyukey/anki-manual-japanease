@@ -147,69 +147,47 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="checks-and-errors"><a class="header" href="#checks-and-errors">Checks and Errors</a></h1>
+                        <h1 id="チェックとエラー"><a class="header" href="#チェックとエラー">チェックとエラー</a></h1>
 <ul>
-<li><a href="#basics">Basics</a></li>
-<li><a href="#specific-issues">Specific Issues</a>
+<li><a href="#%E5%9F%BA%E6%9C%AC">基本</a></li>
+<li><a href="#%E7%89%B9%E5%AE%9A%E3%81%AE%E5%95%8F%E9%A1%8C">特定の問題</a>
 <ul>
-<li><a href="#template-syntax-error">Template Syntax Error</a></li>
-<li><a href="#identical-front-sides">Identical Front Sides</a></li>
-<li><a href="#no-field-replacement-on-front-side">No Field Replacement on Front Side</a></li>
-<li><a href="#cloze-filter-outside-cloze-notetype">Cloze Filter Outside Cloze Notetype</a></li>
-<li><a href="#no-cloze-filter-on-cloze-notetype">No Cloze Filter on Cloze Notetype</a></li>
+<li><a href="#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E6%A7%8B%E6%96%87%E3%82%A8%E3%83%A9%E3%83%BC">テンプレート構文エラー</a></li>
+<li><a href="#%E5%90%8C%E4%B8%80%E3%81%AE%E8%A1%A8%E9%9D%A2">同一の表面</a></li>
+<li><a href="#%E8%A1%A8%E9%9D%A2%E3%81%AB%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E7%BD%AE%E6%8F%9B%E3%81%8C%E3%81%AA%E3%81%84">表面にフィールド置換がない</a></li>
+<li><a href="#cloze-%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E5%A4%96%E3%81%AE-cloze-%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC">Cloze ノートタイプ外の Cloze フィルター</a></li>
+<li><a href="#%E3%82%AF%E3%83%AD%E3%82%BA%E3%83%8E%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AB%E3%82%AF%E3%83%AD%E3%82%BA%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%E3%81%8C%E3%81%AA%E3%81%84">クロズノートタイプにクロズフィルターがない</a></li>
 </ul>
 </li>
 </ul>
-<p>When you save changes to a notetype or export a deck, Anki 2.1.45+ checks
-for some common errors. These errors will cause issues later on when anyone studies
-the affected cards, so Anki won't let you proceed before you have fixed them.</p>
-<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
-<p>Please see <a href="../getting-started.html#key-concepts">Key Concepts</a> before reading further.</p>
-<p>Most of the errors below will require you to modify your notetype/card template. To do so:</p>
+<p>ノートタイプを保存したりデッキをエクスポートしたりすると、Anki 2.1.45+ は
+一般的なエラーをチェックします。これらのエラーは、影響を受けたカードを誰かが学習する際に
+問題を引き起こすため、Anki はそれらを修正するまで先に進むことを許しません。</p>
+<h2 id="基本"><a class="header" href="#基本">基本</a></h2>
+<p>さらに読み進める前に、<a href="../getting-started.html#%E9%87%8D%E8%A6%81%E3%81%AA%E6%A6%82%E5%BF%B5">重要な概念</a> をご覧ください。</p>
+<p>以下のエラーのほとんどは、ノートタイプ/カードテンプレートを修正する必要があります。修正するには：</p>
 <ul>
-<li>Open the Browse screen, and look at the items on the left.</li>
-<li>Locate the notetype mentioned in error message. You can use the search bar at the top left
-if necessary.</li>
-<li>Click on the notetype, to show its cards/notes on the right.</li>
-<li>Click the Cards... button at the top of the editing area to open the <a href="./intro.html#the-templates-screen">templates screen</a>.</li>
+<li>ブラウズ画面を開き、左側の項目を確認します。</li>
+<li>エラーメッセージに記載されているノートタイプを見つけます。必要に応じて左上の検索バーを使用できます。</li>
+<li>ノートタイプをクリックして、右側にそのカード/ノートを表示します。</li>
+<li>編集エリアの上部にある「カード...」ボタンをクリックして、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a> を開きます。</li>
 </ul>
-<h2 id="specific-issues"><a class="header" href="#specific-issues">Specific Issues</a></h2>
-<h3 id="template-syntax-error"><a class="header" href="#template-syntax-error">Template Syntax Error</a></h3>
-<p>This kind of error indicates an incorrect usage of the <a href="./fields.html">field replacement</a>
-syntax. Visit the <a href="./intro.html#the-templates-screen">templates screen</a> for the
-reported note and card type, and look at the preview area for more information.
-Some <a href="https://faqs.ankiweb.net/card-template-has-a-problem.html">more information</a> about
-template problems is available.</p>
-<h3 id="identical-front-sides"><a class="header" href="#identical-front-sides">Identical Front Sides</a></h3>
-<p>You have Anki configured to create two identical questions for each input. This can
-happen if you add a new card type without making any adjustments to it. Identical
-cards double your workload, and make Anki's scheduling less effective.</p>
-<p>To fix this, open the <a href="./intro.html#the-templates-screen">templates screen</a>, and
-select one of the duplicates at the top. Then use the button on the top right to
-remove the selected card type. This will delete all the duplicate cards/notes that
-were using the card type as well.</p>
-<h3 id="no-field-replacement-on-front-side"><a class="header" href="#no-field-replacement-on-front-side">No Field Replacement on Front Side</a></h3>
-<p>If you don't use a <a href="./fields.html">field replacement</a> in the front template of a
-card type, every card created from it will look the same on the question side,
-regardless of its note. It would then be impossible to answer the card, as you
-wouldn't know what answer is expected.</p>
-<p>To resolve the issue, open the <a href="./intro.html#the-templates-screen">templates screen</a>,
-and click the Add Field button to add one or more fields to the front.</p>
-<h3 id="cloze-filter-outside-cloze-notetype"><a class="header" href="#cloze-filter-outside-cloze-notetype">Cloze Filter Outside Cloze Notetype</a></h3>
-<p>The <a href="../editing.html#cloze-deletion">cloze</a> filter (as in <code>{{cloze:Some Field}}</code>)
-may only be used on the cloze notetype, and on those created by cloning it.</p>
-<p>If you get this error, you can remove the cloze filter from the template.</p>
-<p>If you have notes with cloze deletions that are using that notetype, you can select
-them in the Browse screen, and use the Change Notetype action to assign them to
-a standard Cloze notetype instead.</p>
-<p>Older Anki versions did not complain when you attempted to use cloze deletions on
-a normal notetype, but this was never a use case that was intended to be supported.
-If you want to combine cloze deletions with regular cards, you may find an add-on
-like the Closet add-on provides some alternatives.</p>
-<h3 id="no-cloze-filter-on-cloze-notetype"><a class="header" href="#no-cloze-filter-on-cloze-notetype">No Cloze Filter on Cloze Notetype</a></h3>
-<p>A Cloze notetype's front and back templates should have a <a href="../editing.html#cloze-deletion">cloze</a>
-filter. If one is missing, you will need to add it back so that Anki can create cloze cards
-correctly.</p>
+<h2 id="特定の問題"><a class="header" href="#特定の問題">特定の問題</a></h2>
+<h3 id="テンプレート構文エラー"><a class="header" href="#テンプレート構文エラー">テンプレート構文エラー</a></h3>
+<p>この種のエラーは、<a href="./fields.html">フィールド置換</a> 構文の誤った使用を示しています。報告されたノートとカードタイプについては、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a> を参照し、プレビューエリアで詳細を確認してください。テンプレートの問題に関する<a href="https://faqs.ankiweb.net/card-template-has-a-problem.html">詳細情報</a>も利用可能です。</p>
+<h3 id="同一の表面"><a class="header" href="#同一の表面">同一の表面</a></h3>
+<p>Anki が各入力に対して同一の質問を2つ作成するように設定されています。これは、新しいカードタイプを追加しても何も調整しなかった場合に発生することがあります。同一のカードは作業量を倍増させ、Anki のスケジューリングを効果的でなくします。</p>
+<p>これを修正するには、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a> を開き、上部で重複しているものの1つを選択します。次に、右上のボタンを使用して選択したカードタイプを削除します。これにより、そのカードタイプを使用していたすべての重複カード/ノートが削除されます。</p>
+<h3 id="表面にフィールド置換がない"><a class="header" href="#表面にフィールド置換がない">表面にフィールド置換がない</a></h3>
+<p>カードタイプの表テンプレートに<a href="./fields.html">フィールド置換</a>を使用しない場合、そのノートに関係なく、作成されたすべてのカードは質問側で同じように見えます。そのため、どの答えが期待されているのかわからず、カードに答えることができなくなります。</p>
+<p>この問題を解決するには、<a href="./intro.html#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2">テンプレート画面</a>を開き、「フィールド追加」ボタンをクリックして、表面に1つ以上のフィールドを追加します。</p>
+<h3 id="cloze-ノートタイプ外の-cloze-フィルター"><a class="header" href="#cloze-ノートタイプ外の-cloze-フィルター">Cloze ノートタイプ外の Cloze フィルター</a></h3>
+<p><a href="../editing.html#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E5%89%8A%E9%99%A4">クローズ削除</a>フィルター（<code>{{cloze:Some Field}}</code>のように）は、クロズノートタイプおよびそれをクローンして作成されたノートタイプでのみ使用できます。</p>
+<p>このエラーが発生した場合、テンプレートからクロズフィルターを削除できます。</p>
+<p>クロズ削除を使用しているノートがそのノートタイプを使用している場合、ブラウズ画面でそれらを選択し、「ノートタイプの変更」アクションを使用して標準のクロズノートタイプに割り当てることができます。</p>
+<p>古いバージョンのAnkiでは、通常のノートタイプでクロズ削除を使用しようとした場合にエラーが発生しませんでしたが、これはサポートされることを意図した使用ケースではありませんでした。クロズ削除と通常のカードを組み合わせたい場合は、Closetアドオンのようなアドオンがいくつかの代替手段を提供するかもしれません。</p>
+<h3 id="クロズノートタイプにクロズフィルターがない"><a class="header" href="#クロズノートタイプにクロズフィルターがない">クロズノートタイプにクロズフィルターがない</a></h3>
+<p>クロズノートタイプの表面および裏面のテンプレートには、<a href="../editing.html#%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E5%89%8A%E9%99%A4">クローズ削除</a>フィルターが必要です。フィルターが欠けている場合、Ankiがクロズカードを正しく作成できるように、それを追加する必要があります。</p>
 
                     </main>
 

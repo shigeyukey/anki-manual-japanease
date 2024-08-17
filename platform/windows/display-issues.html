@@ -147,48 +147,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="windows-display-issues"><a class="header" href="#windows-display-issues">Windows display issues</a></h1>
+                        <h1 id="windowsでの表示の問題"><a class="header" href="#windowsでの表示の問題">Windowsでの表示の問題</a></h1>
 <ul>
 <li><a href="#qt5">Qt5</a></li>
 <li><a href="#qt6">Qt6</a></li>
-<li><a href="#full-screen">Full screen</a></li>
+<li><a href="#%E3%83%95%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3">フルスクリーン</a></li>
 </ul>
-<p>On Windows, there are three ways of content being displayed on screen. The
-default is <em>software</em>, which is slower, but the most compatible. There are two
-other options that are faster: <em>OpenGL</em> and <em>ANGLE</em>. They are faster, but they
-may not work, or may cause display issues such as missing menubars, blank
-windows, and so on. Which one works best will depend on your computer.</p>
-<p>If and how you can change this display method depends on which Anki version you
-are using, more precisely on the version of the used Qt toolkit.</p>
+<p>Windowsでは、画面にコンテンツを表示する方法が3つあります。デフォルトはソフトウェアで、これは遅いですが最も互換性があります。他に2つのオプションがあり、それらはより高速です：OpenGLとANGLE。これらは高速ですが、動作しない場合や、メニューバーが表示されない、ウィンドウが空白になるなどの表示問題を引き起こすことがあります。どれが最適かはコンピュータによります。</p>
+<p>この表示方法を変更できるかどうか、およびその方法は、使用しているAnkiのバージョン、正確には使用されているQtツールキットのバージョンによります。</p>
 <h2 id="qt5"><a class="header" href="#qt5">Qt5</a></h2>
-<p>This toolkit is used by all Anki versions prior to 2.1.50.
-Here, the display driver can be adjusted via the Tools&gt;Preferences menu. Make sure
-you restart Anki after adjusting it.</p>
-<p>If you’re unable to get to Anki’s preferences screen, and restarting Anki a few
-times does not help, you may need to manually adjust the graphics driver. You
-can do this by starting cmd.exe and typing the following:</p>
+<p>このツールキットは、2.1.50以前のすべてのAnkiバージョンで使用されています。
+ここでは、表示ドライバはツール &gt; 設定メニューから調整できます。調整後、Ankiを再起動してください。</p>
+<p>Ankiの設定画面にアクセスできない場合や、Ankiを数回再起動しても問題が解決しない場合は、グラフィックドライバを手動で調整する必要があるかもしれません。これを行うには、cmd.exeを起動し、次のように入力します：</p>
 <pre><code class="language-bat">echo auto &gt; %APPDATA%\Anki2\gldriver
 </code></pre>
-<p>It will not print anything. You can then start Anki again.</p>
-<p>The default is <code>software</code>; the other two drivers you can try are <code>angle</code> and <code>auto</code>.</p>
+<p>何も表示されません。その後、再度Ankiを起動できます。</p>
+<p>デフォルトは <code>software</code> です。他に試せるドライバは <code>angle</code> と <code>auto</code> です。</p>
 <h2 id="qt6"><a class="header" href="#qt6">Qt6</a></h2>
-<p>Anki 2.1.50+ is available with the more recent Qt6 toolkit. The new toolkit
-defaults to having graphics acceleration enabled. If you run into display issues,
-you can try switching to software mode via cmd:</p>
+<p>Anki 2.1.50+ は、より新しいQt6ツールキットを使用しています。新しいツールキットでは、グラフィックアクセラレーションがデフォルトで有効になっています。表示の問題が発生した場合は、cmdを使用してソフトウェアモードに切り替えてみてください：</p>
 <pre><code class="language-bat">echo software &gt; %APPDATA%\Anki2\gldriver6
 </code></pre>
-<p>Or you can do it via PowerShell:</p>
+<p>または、PowerShellを使用して行うこともできます：</p>
 <pre><code class="language-powershell">echo software &gt; $env:APPDATA\Anki2\gldriver6
 </code></pre>
-<p>It will not print anything. You can then start Anki again.</p>
-<p>To revert to the default behaviour, change <code>software</code> to <code>auto</code>, or delete that file.</p>
-<p>In Anki 23.10+, you can also change the graphics driver from preferences screen.</p>
-<h2 id="full-screen"><a class="header" href="#full-screen">Full screen</a></h2>
-<p>Anki 2.1.50+ comes with a full screen mode, but due to various issues, it had to
-be disabled while <code>OpenGL</code> is used. Turning on software rendering as described
-above will allow the full screen option to be used, though please bear in mind
-that rendering performance may suffer.</p>
-<p>In Anki 23.10+, full screen mode is supported with the default Direct3D driver.</p>
+<p>何も表示されません。その後、再度Ankiを起動できます。</p>
+<p>デフォルトの動作に戻すには、「software」を「auto」に変更するか、そのファイルを削除してください。</p>
+<p>Anki 23.10+ では、設定画面からグラフィックドライバを変更することもできます。</p>
+<h2 id="フルスクリーン"><a class="header" href="#フルスクリーン">フルスクリーン</a></h2>
+<p>Anki 2.1.50+ にはフルスクリーンモードが搭載されていますが、さまざまな問題により、<code>OpenGL</code> を使用している場合は無効にする必要がありました。上記のようにソフトウェアレンダリングをオンにすると、フルスクリーンオプションを使用できるようになりますが、レンダリングパフォーマンスが低下する可能性があることに注意してください。</p>
+<p>Anki 23.10+ では、デフォルトの Direct3D ドライバでフルスクリーンモードがサポートされています。</p>
 
                     </main>
 
