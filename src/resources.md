@@ -1,15 +1,9 @@
-# Resources
+# リソース
 
-The SuperMemo site has a lot of good information about spaced repetition
-and memory: <https://supermemo.guru/wiki/SuperMemo_Guru>
+SuperMemoのサイトには、間隔反復と記憶に関する多くの良い情報があります：<https://supermemo.guru/wiki/SuperMemo_Guru>
 
-Michael Nielsen has written a [thorough piece](http://augmentingcognition.com/ltm.html)
-about long term memory and how he uses Anki. He also provides a
-[condensed version](https://twitter.com/michael_nielsen/status/957763229454774272)
-as a series of tweets.
+Michael Nielsenは、長期記憶とAnkiの使用方法について[詳細な記事](http://augmentingcognition.com/ltm.html)を書いています。また、[要約版](https://twitter.com/michael_nielsen/status/957763229454774272)を一連のツイートとして提供しています。
 
-Some medical students have banded together to make a paid-for guide focusing on
-the use of Anki in medical school: <https://www.theanking.com/anki-mastery-course>
+一部の医学生は、医学校でのAnkiの使用に焦点を当てた有料ガイドを作成しました：<https://www.theanking.com/anki-mastery-course>
 
-Soren Bjornstad has written [a series of extensive articles](https://controlaltbackspace.org/categories/memory/)
-about memory, SRS and how to use Anki effectively.
+Soren Bjornstadは、記憶、SRS、およびAnkiの効果的な使用方法について[一連の詳細な記事](https://controlaltbackspace.org/categories/memory/)を書いています。

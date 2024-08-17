@@ -1,17 +1,17 @@
-# Introduction
+# はじめに
 
-## Quickstart
+## クイックスタート
 
-In a hurry? Jump straight to [Getting Started](getting-started.md).
+急いでいますか？[はじめに](getting-started.md)に直接進んでください。
 
-## Getting Help
+## ヘルプを得る
 
-Looking for help? Please see [Getting Help](./getting-help.md).
+ヘルプを探していますか？[ヘルプを得る](./getting-help.md)を参照してください。
 
-## Translations
+## 翻訳
 
-Volunteers have contributed translations of this manual. The
-translations may not always be up to date.
+ボランティアによってこのマニュアルの翻訳が提供されています。
+翻訳は常に最新であるとは限りません。
 
 - [Bahasa Indonesia](https://apps.ankiweb.net/docs/manual.id.html)
 - [Deutsch](http://www.dennisproksch.de/anki)
@@ -26,5 +26,4 @@ translations may not always be up to date.
 - [日本語](http://wikiwiki.jp/rage2050/)
 - [简体中文](http://www.ankichina.net/manual/anki/)
 
-If you would like to help translate the manual into a different language,
-please see the [translation docs](https://translating.ankiweb.net/anki/manual.html).
+マニュアルの翻訳を手伝いたい場合は、[翻訳ドキュメント](https://translating.ankiweb.net/anki/manual.html)を参照してください。

@@ -1,241 +1,132 @@
-# Card Info, Graphs and Statistics
+# カード情報、グラフと統計
 
 <!-- toc -->
 
-## Card Info
+## カード情報
 
-You can display information about a card by using the Cards&gt;Info menu item,
-by right-clicking on the card and then selecting **Info**, or by pressing
-<kbd>I</kbd> on the review screen.
+カードの情報を表示するには、カードのメニューから「情報」を選択するか、カードを右クリックして**情報**を選択するか、レビュー画面で<kbd>I</kbd>キーを押します。
 
-![Card Info](media/card_info.png)
+![カード情報](media/card_info.png)
 
-A few notes:
+いくつかの注意点：
 
-**Position**\
-It shows the order the card will appear
-in relative to other new cards. The position can be changed in the
-browser. Once a card has been studied, the position is not used, unless
-the card is manually reset to new again.
+**位置**\
+他の新しいカードに対してカードが表示される順序を示します。位置はブラウザで変更できます。一度カードが学習されると、カードが手動で新しい状態にリセットされない限り、位置は使用されません。
 
-**Interval**\
-The delay from one review to the next. Times are abbreviated; "0s, 1m,
-3h, 4d, 5mo, 6y" refers to seconds, minutes, hours, days, months and
-years respectively.
+**間隔**\
+次のレビューまでの遅延時間。時間は省略されて表示されます。「0s, 1m, 3h, 4d, 5mo, 6y」はそれぞれ秒、分、時間、日、月、年を指します。
 
-**Ease**\
-The approximate amount the interval will grow when you answer a review
-card with the "Good" button.
+**イーズ**\
+レビューカードに「良い」ボタンで回答したときに、間隔がどの程度伸びるかの概算値です。
 
-The bottom section shows the review history for the card. Rating denotes
-the button (1 = Again, 4 = Easy). When cards are manually rescheduled using
-the "reset" or "set due date" actions, the type will be listed as Manual
-and the rating as 0.
+下部のセクションには、カードのレビュー履歴が表示されます。評価はボタンを示します（1 = 再学習、4 = 簡単）。カードが「リセット」または「期限設定」アクションを使用して手動で再スケジュールされた場合、タイプは手動として表示され、評価は0になります。
 
-## Statistics
+## 統計
 
-The statistics window is accessed by clicking on **Stats** button at the
-top of the main window, or by pressing <kbd>T</kbd>.
+統計ウィンドウは、メインウィンドウの上部にある**統計**ボタンをクリックするか、<kbd>T</kbd>キーを押すことでアクセスできます。
 
-![Statistics screen](media/Statistics.png)
+![統計画面](media/Statistics.png)
 
-## Selecting Decks / Collection
+## デッキ / コレクションの選択
 
-### Deck.
+### デッキ
 
-By default, the statistics window will show statistics from the currently selected deck and any
-subdecks it may contain, but you can select any deck from your collection by typing its name in the
-text box at the top of the screen or (from Anki 2.1.61), by using the deck selector at the bottom.
+デフォルトでは、統計ウィンドウは現在選択されているデッキとそのサブデッキの統計を表示しますが、画面上部のテキストボックスにデッキ名を入力するか（Anki 2.1.61以降）、下部のデッキセレクターを使用して、コレクション内の任意のデッキを選択できます。
 
-### Collection
+### コレクション
 
-If you select this checkbox, statistics will be shown for your entire collection. You can also display graphs
-for arbitrary searches by adding filters in the search box at the top (2.1.28+).
+このチェックボックスを選択すると、コレクション全体の統計が表示されます。また、検索ボックスにフィルターを追加することで、任意の検索結果に対してグラフを表示することもできます（2.1.28+）。
 
-### History
+### 履歴
 
-By default, Anki 2.1.28+ will show you statistics for the last 12 months.
-You can change this to all history scope or deck life scope at the top. (The
-"today" section at the top remains of course unaffected by this selection.)
+デフォルトでは、Anki 2.1.28+は過去12ヶ月の統計を表示します。これを全履歴スコープまたはデッキのライフスコープに変更することができます（「今日」のセクションはこの選択に影響されません）。
 
-Older versions of Anki will by default show you statistics for
-the previous month. You can change this to a year scope or deck life scope
-at the bottom. (Again, the “today” section at the top is unaffected
-by this selection.)
+古いバージョンのAnkiでは、デフォルトで前月の統計が表示されます。これを1年スコープまたはデッキのライフスコープに変更することができます（「今日」のセクションはこの選択に影響されません）。
 
-### More
+### その他
 
-- Clicking on "Save PDF" at the bottom will save a PDF document of the statistics to a file
-  on your desktop to make it easy to share your statistics with others.
+- 下部の「PDFを保存」をクリックすると、統計情報のPDFドキュメントがデスクトップに保存され、他の人と統計情報を簡単に共有できます。
 
-- When you delete notes, their review history is maintained in Anki. It
-  will not be included when looking at statistics for a specific deck (as
-  Anki has no way of knowing which deck the deleted cards belonged to),
-  but will be included when you look at statistics for the whole
-  collection.
+- ノートを削除すると、そのレビュー履歴はAnkiに保持されます。特定のデッキの統計を見るときには含まれません（削除されたカードがどのデッキに属していたかをAnkiが知る方法がないため）が、コレクション全体の統計を見るときには含まれます。
 
-- Anki 2.1.28+ introduced redesigned graphs. The old graphs are still
-  accessible with a <kbd>Shift</kbd>-click on the Stats button.
+- Anki 2.1.28+では、グラフが再設計されました。古いグラフは、<kbd>Shift</kbd>キーを押しながら統計ボタンをクリックすることで引き続きアクセスできます。
 
-## Today
+## 今日
 
-At the top of the statistics window is a brief list of textual
-statistics about the reviews that you have completed today. A “review”
-in this context is 'one answering of a card', so a card might count as
-multiple reviews if it needed to be seen multiple times, and a learning
-card answered also counts as a “review.” A couple of the stats whose
-meaning may not be immediately obvious:
+統計ウィンドウの上部には、今日完了したレビューに関する簡単なテキスト統計のリストがあります。この文脈での「レビュー」は「カードの1回の回答」を意味するため、カードが複数回表示される必要があった場合、それは複数のレビューとしてカウントされます。また、学習カードの回答も「レビュー」としてカウントされます。意味がすぐにはわからないかもしれない統計のいくつかを以下に示します：
 
-**Again Count**\
-This is the number of reviews that you have failed (i.e., pressed Again
-on). The correct percentage listed afterwards is the number of cards you
-did 'not' fail divided by the total number of cards you studied.
+**再学習回数**\
+これは、失敗したレビューの回数（つまり、「再学習」を押した回数）です。その後に表示される正解率は、失敗しなかったカードの数を学習したカードの総数で割ったものです。
 
-**Learn, Review, Relearn, Filtered**\
-The number of reviews that were learning cards, review cards, relearning
-cards, or studied in a filtered deck when not due.
+**学習、レビュー、再学習、フィルターデッキ**\
+学習カード、レビューカード、再学習カード、または期限が来ていないフィルターデッキで学習したレビューの数です。
 
-The stats for the current day are not a good overall indicator of your
-learning progress; everyone has bad days and good days, and seeing that
-you got a lower percentage correct on a particular day should not be
-cause for concern. The remainder of the stats, which take longer periods
-of time into account, will give more useful information if you wish to
-try to change your study habits or scheduling settings based on your
-performance.
+現在の日の統計は、学習の進捗状況を全体的に示す良い指標ではありません。誰にでも悪い日や良い日があり、特定の日に正解率が低かったとしても、それを気にする必要はありません。残りの統計は、より長い期間を考慮に入れているため、学習習慣やスケジュール設定をパフォーマンスに基づいて変更したい場合に、より有用な情報を提供します。
 
-The “today” statistics are unaffected by the time period selected at the
-bottom of the window.
+「今日」の統計は、ウィンドウの下部で選択された期間には影響されません。
 
-## The Graphs
+## グラフ
 
-**Future Due**\
-This graph shows an estimated number of reviews that will be due on a
-given day in the future if you learn no new cards and fail no cards. The
-bars and the left axis show the number of cards due on each day if you
-study all cards each day, while the line and the right axis show the
-number of cards due on that day if you don’t study at all until then.
-Note that the forecast graph does not count reviews that are currently
-overdue, so if you have a large backlog, the overdue cards will not be
-displayed.
+**将来の予定**\
+このグラフは、新しいカードを学習せず、カードに失敗しなかった場合に、将来の特定の日に予定されているレビューの推定数を示します。バーと左軸は、毎日すべてのカードを学習した場合に各日に予定されているカードの数を示し、線と右軸は、その日まで全く学習しなかった場合にその日に予定されているカードの数を示します。予測グラフには現在期限切れのレビューはカウントされないため、大量の未処理カードがある場合、それらのカードは表示されません。
 
-**Calendar**
-This graph shows past card review activity. Hovering the mouse over a specific item
-allows you to view the number of revisions made that day. Click on a day of the
-week to make that the starting day.
+**カレンダー**\
+このグラフは過去のカードレビュー活動を示します。特定の日にマウスをホバーすると、その日に行ったレビューの数を表示できます。曜日をクリックすると、その曜日を週の開始日に設定できます。
 
-**Reviews**\
-This graph counts the number of card reviews you have done. The bars may
-correspond to days, weeks, or months, depending on the time period
-you’ve selected at the bottom of the screen. The differently colored
-blocks show how many of the cards you answered on each day were
-[mature](getting-started.md#types-of-cards), young, relearning, or learning cards.
-There is also a separate group for cards answered in a filtered/cram
-deck while they were not due. The line and the right axis shows the
-cumulative total for each type of review as time progresses across the
-graph (so at 0 days, it would display the number for the entire time
-period displayed on the graph).
+**レビュー**\
+このグラフは、行ったカードレビューの数をカウントします。バーは、画面下部で選択した期間に応じて、日、週、または月に対応します。異なる色のブロックは、各日に回答したカードが[成熟カード](getting-started.md#types-of-cards)、若いカード、再学習カード、または学習カードのどれであったかを示します。また、期限が来ていないフィルターデッキ/詰め込みデッキで回答したカードのための別のグループもあります。線と右軸は、時間が経過するにつれて各タイプのレビューの累積合計を示します（したがって、0日目では、グラフに表示されている全期間の数を表示します）。
 
-**Card Counts**\
-This pie chart shows what percentage of your deck or collection consists
-of mature, unseen, young/learn, and suspended cards. If you wish to
-calculate a more precise percentage, the key shows the exact number of
-cards in each section, and the total number of cards is displayed to the
-side.
+**カード数**\
+この円グラフは、デッキまたはコレクションの中で成熟カード、未見カード、若い/学習カード、および一時停止カードが占める割合を示します。より正確な割合を計算したい場合は、キーに各セクションの正確なカード数が表示され、総カード数が横に表示されます。
 
-**Review Time**\
-This graph works exactly like Review Count, except that it deals with
-the amount of time you spent on each card rather than the number of
-cards answered.
+**レビュー時間**\
+このグラフはレビュー数と同じように機能しますが、回答したカードの数ではなく、各カードに費やした時間を扱います。
 
-**Review Intervals**\
-This graph displays the number of cards that have a given interval (the
-delay between two reviews). The line and the right axis tell you what
-percentage of your cards have an interval of less than or equal to the
-time below that point. The time scope has a different effect on this
-graph than other graphs: rather than changing which cards or period of
-studying is included, it limits how far out the intervals are displayed
-to (so 14-month intervals are not displayed at all on a 1-year graph).
+**レビュー間隔**\
+このグラフは、特定の間隔（2つのレビュー間の遅延）を持つカードの数を表示します。線と右軸は、そのポイント以下の間隔を持つカードの割合を示します。このグラフでは、他のグラフとは異なる時間範囲の効果があります：表示される間隔の範囲を制限するため、1年のグラフでは14ヶ月の間隔は表示されません。
 
-**Card Ease**
-This graph shows the number of cards that have a specific ease factor.
-Average ease of the selected deck / collection is also displayed here.
+**カードのイーズ**\
+このグラフは、特定のイーズファクターを持つカードの数を示します。選択したデッキ/コレクションの平均イーズもここに表示されます。
 
-**Hourly Breakdown**\
-This graph shows what percentage of total reviews you have passed (i.e.,
-not pressed Again on) during given hours. The larger, darker bars and
-left axis show the success rate; the thinner, lighter bars and right
-axis show the number of reviews you’ve made at that hour (so you know
-how significant the results are).
+**時間別の内訳**\
+このグラフは、特定の時間帯に合格した（つまり、「再学習」を押さなかった）レビューの割合を示します。大きくて濃いバーと左軸は成功率を示し、細くて薄いバーと右軸はその時間帯に行ったレビューの数を示します（結果の重要性を把握するため）。
 
-**Answer Buttons**\
-This graph shows how many times you’ve chosen the Again, Hard, Good, or
-Easy button while studying learning/new, young, and
-[mature](getting-started.md#types-of-cards) cards. Anki also displays the percentage
-of correct reviews for each type of card.
+**回答ボタン**\
+このグラフは、学習/新規カード、若いカード、および[成熟カード](getting-started.md#types-of-cards)に対して、「再学習」、「難しい」、「良い」、または「簡単」ボタンを選択した回数を示します。Ankiはまた、各タイプのカードに対する正解率も表示します。
 
-## Manual Analysis
+## 手動分析
 
-If you’re interested in getting information from your statistics other
-than what Anki provides, it is possible to access the data directly.
-Because of the complexity involved, this is not something we can provide
-any support for.
+Ankiが提供する以外の統計情報を取得したい場合、データに直接アクセスすることが可能です。ただし、複雑さが伴うため、これに関するサポートは提供できません。
 
-One option is to [write an add-on](addons.md) that adds another graph or
-more details to the statistics window. There are several add-ons of this
-sort on AnkiWeb already, which you can look at to get an idea of how it
-works.
+一つの方法は、[アドオンを書く](addons.md)ことで、統計ウィンドウに別のグラフや詳細を追加することです。この種のアドオンはすでにAnkiWebにいくつかあり、それらを参考にして仕組みを理解することができます。
 
-A more powerful and more complex option is to extract the review log
-information directly from Anki’s database and analyze it in an external
-program. Anki uses a database format called SQLite. There are many tools
-available for working with SQLite databases; one of the easiest to start
-with is called [SQLite Browser](http://sqlitebrowser.org/), which will
-allow you to look around the database as well as export a CSV version of
-tables for import into another program.
+より強力で複雑な方法として、Ankiのデータベースから直接レビューのログ情報を抽出し、外部プログラムで分析することが挙げられます。AnkiはSQLiteというデータベース形式を使用しています。SQLiteデータベースを扱うためのツールは多数ありますが、最初に試すのに最も簡単なものの一つは[SQLite Browser](http://sqlitebrowser.org/)です。これを使うと、データベースを閲覧したり、テーブルのCSVバージョンをエクスポートして他のプログラムにインポートすることができます。
 
-The most important table for statistics is the 'revlog' table, which
-stores an entry for each review that you conduct. The columns are as
-follows:
+統計にとって最も重要なテーブルは「revlog」テーブルで、ここには各レビューのエントリが保存されます。カラムは以下の通りです：
 
 **id**\
-The time at which the review was conducted, as the number of
-milliseconds that had passed since midnight UTC on January 1, 1970.
-(This is sometimes known as 'Unix epoch time', especially when in
-straight seconds instead of milliseconds.)
+レビューが行われた時間を、1970年1月1日午前0時（UTC）からの経過ミリ秒数で示します。（これは「Unixエポックタイム」として知られることがありますが、特に秒単位の場合にそう呼ばれます。）
 
 **cid**\
-The ID of the card that was reviewed. You can look up this value in the
-id field of the 'cards' table to get more information about the card,
-although note that the card could have changed between when the revlog
-entry was recorded and when you are looking it up. It is also the
-millisecond timestamp of the card’s creation time.
+レビューされたカードのIDです。この値を「cards」テーブルのidフィールドで調べると、カードに関する詳細情報を得ることができます。ただし、revlogエントリが記録された時点と調べている時点でカードが変更されている可能性があることに注意してください。また、これはカードの作成時間のミリ秒単位のタイムスタンプでもあります。
 
 **usn**\
-This column is used to keep track of the sync state of reviews and
-provides no useful information for analysis.
+このカラムはレビューの同期状態を追跡するために使用され、分析には役立ちません。
 
 **ease**\
-Which button you pressed at the end of the review (1 for Again, 4 for
-Easy).
+レビューの最後に押したボタン（1は「再学習」、4は「簡単」）。
 
 **ivl**\
-The new interval that the card was pushed to after the review. Positive
-values are in days; negative values are in seconds (for learning cards).
+レビュー後にカードが設定された新しい間隔。正の値は日数、負の値は秒数（学習カードの場合）です。
 
 **lastIvl**\
-The interval the card had before the review. Cards introduced for the
-first time have a last interval equal to the Again delay.
+レビュー前のカードの間隔。初めて導入されたカードは、再学習の遅延と同じ間隔を持ちます。
 
 **factor**\
-The new ease factor of the card in permille (parts per thousand). If the
-ease factor is 2500, the card’s interval will be multiplied by 2.5 the
-next time you press Good.
+カードの新しいイーズファクターをパーミル（千分率）で示します。イーズファクターが2500の場合、次に「良い」を押すとカードの間隔は2.5倍になります。
 
 **time**\
-The amount of time (in milliseconds) you spent on the question and
-answer sides of the card before selecting an ease button.
+質問と回答の両方の側面に費やした時間（ミリ秒単位）を示します。
 
 **type**\
-This is 0 for learning cards, 1 for review cards, 2 for relearning cards,
-and 3 for early "cram" cards (cards being studied in a filtered deck when they
-are not due).
+これは学習カードの場合は0、レビューカードの場合は1、再学習カードの場合は2、早期「詰め込み」カード（期限が来ていないフィルターデッキで学習されているカード）の場合は3です。

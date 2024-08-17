@@ -1,3 +1,3 @@
-# Frequently Asked Questions
+# よくある質問
 
-Please see <https://faqs.ankiweb.net>
+<https://faqs.ankiweb.net>をご覧ください。

@@ -1,67 +1,57 @@
-# Getting help
+# ヘルプを得る
 
-## Asking good questions
+## 良い質問をする
 
-With the exception of AnkiMobile, Anki and its support is provided free of
-charge, by people who generously volunteer their time. Please bear this in mind
-when posting - if you are rude and demanding, or have made no effort to solve
-the problem on your own, people are less likely to want to help you.
+AnkiMobileを除いて、Ankiとそのサポートは無料で提供されており、時間を惜しまずボランティアで支援してくれる人々によって成り立っています。このことを念頭に置いて投稿してください。無礼で要求が多かったり、自分で問題を解決しようとしなかったりすると、人々は助けたいと思わなくなります。
 
-Please start by trying to resolve the issue on your own:
+まずは自分で問題を解決しようとしてください：
 
-- Read the [getting started](./getting-started.md) section
-  of the manual, and check out the intro videos.
-- If you've encountered a bug, please follow [these steps](./troubleshooting.md).
-- Use the search button on this page to search frequently asked questions.
-- Use the search button in the manual.
-- Use the search button on the forums.
-- Google the issue.
+- マニュアルの[はじめに](./getting-started.md)セクションを読み、紹介ビデオをチェックしてください。
+- バグに遭遇した場合は、[これらの手順](./troubleshooting.md)に従ってください。
+- このページの検索ボタンを使って、よくある質問を検索してください。
+- マニュアルの検索ボタンを使ってください。
+- フォーラムの検索ボタンを使ってください。
+- Googleで問題を検索してください。
 
-If you have tried the above and are still stuck, it's time to ask for help.
-When writing a post, please explain the problem you are having clearly, and in detail.
+上記の手順を試してもまだ解決しない場合は、ヘルプを求める時です。
+投稿を書く際には、問題を明確かつ詳細に説明してください。
 
-Please avoid vague questions like:
+曖昧な質問は避けてください。例えば：
 
-> "My Anki doesn't work, what should I do?"
+> 「Ankiが動作しません。どうすればいいですか？」
 
-Instead, please provide as much detail as you can. For example:
+代わりに、できるだけ詳細を提供してください。例えば：
 
-> "When I double-click on the Anki icon, an error message pops up. I tried
-> searching for the error on Google, but couldn't find anything useful. I have
-> copied and pasted the error message to the bottom of my post. I followed the
-> steps on the 'When problems occur' page, but the error message does not go
-> away. What should I do?"
+> 「Ankiのアイコンをダブルクリックすると、エラーメッセージが表示されます。
+> Googleでエラーを検索しましたが、有用な情報が見つかりませんでした。
+> エラーメッセージを投稿の下部にコピー＆ペーストしました。
+> '問題が発生した場合' ページの手順に従いましたが、エラーメッセージは消えません。
+> どうすればいいですか？」
 
-This is a much better question. It tells us:
+これははるかに良い質問です。以下の情報が含まれています：
 
-- What you have tried.
-- What steps you are taking when the problem happens.
-- What problems/errors you are getting when things go wrong.
+- 試したこと
+- 問題が発生する際の手順
+- 問題が発生したときのエラーや問題
 
-Knowing these things makes it much easier to answer your question.
+これらの情報があると、質問に答えるのがはるかに簡単になります。
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ユーザーフォーラムはAnkiWebとは異なるログインを使用しているため、初めての場合はアカウントを作成してください。
 
-## Anki Desktop (the computer version) and AnkiWeb
+## Anki デスクトップ（コンピュータ版）および AnkiWeb
 
-After reading the above section, please post on the
-[user forums](https://forums.ankiweb.net) for assistance.
+上記のセクションを読んだ後、サポートが必要な場合は[ユーザーフォーラム](https://forums.ankiweb.net)に投稿してください。
 
-The user forums use a different login to AnkiWeb, so please create an
-account there if it's your first time.
+ユーザーフォーラムは AnkiWeb とは異なるログインを使用しているため、初めての場合はアカウントを作成してください。
 
-## AnkiDroid (Android devices)
+## AnkiDroid（Android デバイス）
 
-Please see [AnkiDroid's support page](https://docs.ankidroid.org/help.html).
+[AnkiDroid のサポートページ](https://docs.ankidroid.org/help.html)を参照してください。
 
-## AnkiMobile (iPhone/iPad)
+## AnkiMobile（iPhone/iPad）
 
-Please see [AnkiMobile's support page](https://docs.ankimobile.net/support.html).
+[AnkiMobile のサポートページ](https://docs.ankimobile.net/support.html)を参照してください。
 
-## Private questions
+## プライベートな質問
 
-For security reports and business enquiries, you can post a private ticket
-[here](https://anki.tenderapp.com/discussions/private). If you have a question
-about Anki, AnkiWeb or AnkiDroid, please use the [user forums](https://forums.ankiweb.net)
-instead.
+セキュリティレポートやビジネスに関する問い合わせについては、[こちら](https://anki.tenderapp.com/discussions/private)からプライベートチケットを投稿できます。Anki、AnkiWeb、または AnkiDroid に関する質問がある場合は、代わりに[ユーザーフォーラム](https://forums.ankiweb.net)を使用してください。

@@ -1,58 +1,26 @@
-# Media
+# メディア
 
-Anki stores the sounds and images used in your notes in a folder next to
-the collection. For more on the folder location, please see the [file locations](files.md#file-locations) section. When you add media within Anki, either by
-using the paperclip icon in the [editor](editing.md) or by pasting it into
-a field, Anki will copy it from its original location into the media
-folder. This makes it easy to back up your collection’s media or move it
-to another computer.
+Ankiは、ノートで使用される音声や画像をコレクションの隣にあるフォルダに保存します。フォルダの場所については、[ファイルの場所](files.md#file-locations)セクションを参照してください。Anki内でメディアを追加する場合、クリップアイコンを使用するか、フィールドに貼り付けることで、元の場所からメディアフォルダにコピーされます。これにより、コレクションのメディアをバックアップしたり、別のコンピュータに移動したりすることが簡単になります。
 
-If your media filenames contain spaces or other special characters such
-as percentage signs, the way the filenames appear in the HTML editor will
-differ from the way the filenames appear on disk. For example, a file called
-`hello 100%.jpg` will appear as `hello%20100%25.jpg` in the HTML editor.
-Internally, Anki still uses the original filenames, so if you would like to
-[search](searching.md) for the file or modify the filename with [Find&Replace](browsing.md#find-and-replace), you will
-need to use the name as it appears on disk, not as it appears in the
-HTML editor. Exporting to a text file is another way to see the underlying
-representation.
+メディアのファイル名にスペースやパーセント記号などの特殊文字が含まれている場合、HTMLエディタでのファイル名の表示方法は、ディスク上のファイル名の表示方法とは異なります。例えば、`hello 100%.jpg`というファイルは、HTMLエディタでは`hello%20100%25.jpg`として表示されます。内部的には、Ankiは元のファイル名を使用しているため、ファイルを[検索](searching.md)したり、ファイル名を[検索と置換](browsing.md#find-and-replace)で変更したりする場合は、HTMLエディタに表示される名前ではなく、ディスク上の名前を使用する必要があります。テキストファイルにエクスポートすることで、基礎となる表現を見ることもできます。
 
-## Checking Media
+## メディアの確認
 
-You can use the Tools&gt;Check Media menu option to scan your notes and
-media folder. It will generate a report of files in the media folder
-that are not used by any notes, and media referenced in notes but
-missing from your media folder. It also allows you:
+ツール > メディアの確認メニューオプションを使用して、ノートとメディアフォルダをスキャンできます。これにより、メディアフォルダ内のノートで使用されていないファイルや、ノートで参照されているがメディアフォルダに存在しないメディアのレポートが生成されます。また、以下のことが可能です：
 
-- To delete unused media files.
-- To tag notes that refer to missing media files.
-- To empty your trash folder.
-- To restore the deleted files back to your media folder.
+- 未使用のメディアファイルを削除する。
+- メディアファイルが欠けているノートにタグを付ける。
+- ゴミ箱フォルダを空にする。
+- 削除されたファイルをメディアフォルダに復元する。
 
-This tool does not scan question or answer
-templates, which is why you can’t place media references to fields in
-the template. If you need a static image or sound on every card, name it
-with a leading \_ (e.g., `\_dog.jpg`) to tell Anki to ignore it when
-checking for media. If you delete media using the unused media check,
-Anki will move it into your operating system’s trash folder, so you can
-recover if you accidentally delete media that shouldn’t have been
-deleted.
+このツールは質問や回答のテンプレートをスキャンしないため、テンプレートにフィールドへのメディア参照を配置することはできません。すべてのカードに静的な画像や音声が必要な場合は、先頭にアンダースコア（例：`\_dog.jpg`）を付けて名前を付け、メディアの確認時にAnkiが無視するようにします。未使用のメディアチェックを使用してメディアを削除すると、Ankiはそれをオペレーティングシステムのゴミ箱フォルダに移動するため、誤って削除したメディアを回復することができます。
 
-## Manually Adding Media
+## メディアの手動追加
 
-When you add media via Anki's interface, Anki takes care of ensuring the
-filenames are encoded in a way that should work across different devices,
-removing characters that won't work on certain operating systems,
-and truncating very long filenames.
+Ankiのインターフェースを介してメディアを追加する場合、Ankiはファイル名が異なるデバイス間で動作するようにエンコードされることを保証し、特定のオペレーティングシステムで動作しない文字を削除し、非常に長いファイル名を切り詰めます。
 
-If you manually add files to your [media folder](files.md#file-locations),
-you should use Tools&gt;Check Media afterwards, to ensure the filenames are
-encoded correctly. If you skip this step, any filenames that are not compatible
-will be skipped when syncing.
+[メディアフォルダ](files.md#file-locations)に手動でファイルを追加する場合は、後でツール > メディアの確認を使用して、ファイル名が正しくエンコードされていることを確認する必要があります。この手順をスキップすると、互換性のないファイル名が同期時にスキップされます。
 
-## Supported Formats
+## サポートされている形式
 
-Anki uses a program called mpv (and mplayer as a fallback) in order to support
-sounds and videos. A wide variety of file formats are supported, but not all of
-these formats will work on AnkiWeb and the mobile clients. MP3 audio and
-MP4 video seems to be the most universally supported.
+Ankiは、mpv（およびフォールバックとしてmplayer）というプログラムを使用して、音声や動画をサポートしています。さまざまなファイル形式がサポートされていますが、これらの形式すべてがAnkiWebおよびモバイルクライアントで動作するわけではありません。MP3音声およびMP4動画が最も広くサポートされているようです。

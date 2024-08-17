@@ -1,301 +1,159 @@
-# Filtered Decks & Cramming
+# フィルターデッキと詰め込み学習
 
 <!-- toc -->
 
-When you study a regular deck in Anki, only a limited number of cards
-are shown: the cards Anki thinks you are about to forget, and a daily
-limit of new cards. This is generally useful, as it ensures you don't
-spend more time studying than necessary. But sometimes it can be useful
-to step outside of these normal limits, such as when you need to review
-for a test, focus on particular material, and so on. To make this
-possible, Anki provides a different type of deck called a 'filtered
-deck'.
-
-Filtered decks offer a lot of possibilities. They can be used for
-previewing cards, cramming cards before a test, studying particular
-tags, catching up on a backlog with a particular sort order, reviewing
-ahead of schedule, going over the day's failed cards, and more.
-
-## Custom Study
-
-The easiest way to create a filtered deck is with the Custom Study
-button, which appears at the bottom of the screen when you click on a
-deck. It offers some convenient preset filters for common tasks like reviewing
-the cards that you have failed that day. It will create a filtered deck called
-"Custom Study Session" and automatically open it for you.
-
-If an existing "Custom Study Session" deck exists, it will be emptied
-before a new one is created. If you wish to keep a custom study deck,
-you can rename it from the deck list.
-
-Here is a summary of each of the options:
-
-**Increase today's new card limit**\
-Add more new cards to the deck you are currently studying. Note that
-unlike other options, this does 'not' create a new filtered deck, it
-modifies the existing deck.
-
-**Increase today's review card limit**\
-If not all reviews due today were shown because of the daily review limit,
-this option allows you to show more of them. As with the new cards
-option, this modifies the existing deck.
-
-**Review forgotten cards**\
-Show all the cards, for which you've answered Again (1) within the number of days
-you specify.
-
-**Review ahead**\
-Show cards that will be due in the near future (the number of days you
-specify). This is useful for working through some of your older cards
-before a vacation, but it will not help with cards you have learnt
-recently. Please see the [reviewing ahead](#reviewing-ahead) section
-below for more info.
-
-**Preview new cards**\
-Show cards that you have recently added, without converting them to
-review cards as they are answered.
-
-**Study by card state or tag**\
-Select a certain number of cards from the current deck to study. You can
-choose to select new cards only, due cards only, or all cards; after you
-click "Choose Tags", you can also limit the selected cards by tags. If
-you wish to see all the cards in the deck (for instance, to study before
-a big test), you can set the number of cards to more than the number of
-cards in the deck.
-
-## Home Decks
-
-When a card is moved to a filtered deck, it retains a link to the deck,
-from which it came. That previous deck is said to be the card's 'home
-deck'.
-
-Cards automatically return to their home deck after they are studied in
-the filtered deck. This can be after a single review, or after multiple
-reviews, depending on your settings.
-
-It is also possible to move all cards back to their home decks at once:
-
-- The "Empty" button in the study overview moves all cards in the
-  filtered deck back to their home deck, but does not delete the empty
-  filtered deck. This can be useful if you want to fill it again later
-  (using the Rebuild button).
-
-- Deleting a filtered deck does the same thing as "Empty" does, but
-  also removes the emptied deck from the deck list. No cards are
-  deleted when you delete a filtered deck.
-
-In the old scheduler, if you create, rebuild, empty, or delete a
-filtered deck while cards are still in learning, they will be turned
-back into new cards. In the case of failed reviews in relearning, any
-remaining relearning steps will be skipped. This was fixed in the
-[v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html) so cards
-are no longer reset.
-
-## Creating Manually
-
-Advanced users can create filtered decks with arbitrary search strings
-(or 'filters'),
-instead of relying on the preset filters. To create a filtered deck manually,
-choose Create Filtered Deck from the Tools menu.
-
-When you click the Build button, Anki finds cards that match the
-settings you specified, and temporarily moves them from their existing
-decks into your new filtered deck for study.
-
-If you wish to fetch cards again using the same filter options (for
-instance, if you want to study all cards with a particular tag every
-day), you can use the Rebuild button at the bottom of the deck's
-overview screen.
+Ankiで通常のデッキを学習する場合、表示されるカードの数は限られています。Ankiが忘れそうだと考えるカードや、新しいカードの1日の制限です。これは一般的に有用で、必要以上に学習時間を費やさないようにします。しかし、テストのために復習する必要がある場合や、特定の教材に集中したい場合など、これらの通常の制限を超えることが有用な場合もあります。これを可能にするために、Ankiは「フィルターデッキ」と呼ばれる異なるタイプのデッキを提供しています。
 
-The **search** area controls what cards Anki will gather. All of the
-searches possible in the browser are also possible for filtered decks,
-such as limiting to tags, finding cards forgotten a certain number of
-times, and so on. Please see the [searching](searching.md) section of the
-manual for more information on the different possibilities.
-
-Filtered decks cannot pull in cards that are suspended, buried, or already in a
-different filtered deck. And if you are using the v1 scheduler, cards in
-(re)learning will not be included either. For this reason, a search in the
-browser may reveal cards that do not end up in the filtered deck.
+フィルターデッキは多くの可能性を提供します。カードのプレビュー、テスト前の詰め込み学習、特定のタグの学習、特定の並べ替え順でのバックログのキャッチアップ、予定より早い復習、その日の失敗カードの確認などに使用できます。
 
-The **limit** option controls how many cards will be gathered into the
-deck. The order you select controls both the order cards are gathered
-in, and the order they will be reviewed in. If you select "most lapses"
-and a limit of 20 for example, then Anki will show you only the 20 most
-lapsed cards.
-
-The **enable second filter** option allows you to create a filtered deck
-comprised of two different searches, so that you can, for example, include
-due cards with one order, and a smaller amount of new cards with a different order.
-
-## Order
+## カスタム学習
 
-The "cards selected by" option controls the order that cards will appear
-in. If the maximum number of cards you select is lower than the number
-of cards that match the filter criteria, Anki will exclude the cards at
-the end of this sorted list first.
-
-**Oldest seen first**\
-Display those cards first, that you haven't seen in reviews for the longest
-time.
-
-**Random**\
-Randomize the order of all cards that match the filter criteria (use no
-set order).
-
-**Increasing intervals**\
-Display cards that have the smallest interval first.
-
-**Decreasing intervals**\
-Display cards that have the largest interval first.
-
-**Most lapses**\
-Display those cards first, that you have failed the most times.
-
-**Order added**\
-Display cards that you added first (i.e. those cards that have the earliest
-creation date).
-
-**Order due**\
-Display cards with the earliest due date first.
-
-**Latest added first**\
-Display cards that you have most recently added to the deck first.
-(This is the opposite of 'Order added'.)
-
-**Relative overdueness**\
-Display cards that you're most likely to have forgotten first. This is useful if
-you have a large backlog that may take some time to get through, and you want to
-reduce the chances of forgetting more cards.
-
-When using the SM-2 scheduler, overduessness is determined by comparing how
-overdue cards are, and how long their interval is. For example, a card with a
-current interval of 5 days that is overdue by 2 days, will display before a card
-with a current interval of 10 days that is overdue by 3 days.
-
-When using FSRS, overdueness is calculated based on on each card's retrievability,
-and the desired retention in the deck preset.
-
-## Steps & Returning
-
-Please see the section on [learning](studying.md#learningrelearning-cards) as a reminder of how
-steps work.
-
-By default, Anki will use the steps of a card’s home deck. If a new card
-would normally be reviewed twice when being learnt, the same thing will
-happen when you study it in a filtered deck.
-
-Cards return to their home deck when (re)learning is complete. Thus if
-you have 3 learning steps, a new card will return to its home deck upon
-three presses of "Good" or a single press of "Easy".
-
-**v1 and v2 scheduler**
-
-In the v1 scheduler, the **custom steps** option allows you to override the
-home deck’s steps and provide your own steps instead. The provided steps apply to both
-cards being learnt, lapsed reviews, and reviews ahead of time. Please note, however, that
-from the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)
-filtered decks [no longer support custom steps](https://forums.ankiweb.net/t/filtered-deck-interval-problem/11834/8).
-
-**v3 scheduler**
-
-Filtered decks with rescheduling disabled show 4 buttons in the
-[v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html) - the provided
-delay applies to the Again button, and Hard/Good will use 1.5x and 2x the
-provided delay. Easy will remove the card.
-
-## Counts
-
-In a filtered deck, reviews that were already due are displayed in the
-review count as normal. Learning cards and non-due reviews are counted
-in the new card count, due to how the underlying implementation works.
-Reviews that were not due are not scheduled like new cards however:
-Anki uses a special algorithm that takes into account how close they
-were to their normal due time when reviewed.
-
-## Due Reviews
-
-If the filtered deck includes cards that were due for review, they will
-be shown like they would have been in their original deck: they appear
-in the review card count at the bottom of the screen, and there are four
-choices for how well you remembered. Upon a correct answer, the card
-will be moved back to its home deck, and its next delay adjusted using
-the home deck's settings. If you forget the card, it will be shown
-according to the relearning steps defined in the home deck.
-
-## Reviewing Ahead
-
-If your search included cards that are not due, Anki will show the
-reviews ahead of time.
-
-Anki uses a special algorithm for these reviews that takes into account
-how early you are reviewing. If the cards were almost due to be shown,
-they will be given a new delay similar to what they would have received
-if you had reviewed them on time. If the cards are reviewed soon after
-they were scheduled however, their new delay will be similar to their
-previous delay. This calculation works on a sliding scale.
-
-Because reviewing a card shortly after it is scheduled has little impact
-on scheduling (e.g. a card due tomorrow with a one day interval will
-remain due tomorrow if reviewed early), **the "review ahead" custom
-study setting is not appropriate for repeated use**. If used to go
-through a week's worth of cards before a trip, the mature cards will be
-rescheduled into the future and the new cards will remain at small
-intervals, because you don't know them well enough for them to be
-rescheduled further. If you review ahead again the next day, all you'll
-end up doing is going through those same new cards again, to little
-benefit.
-
-Early reviews are included in the new card count rather than the review
-count, and will be shown according to the number of relearning steps
-defined in the home deck (unless you have provided custom steps). This
-means that if you have customized the number of relearning steps in the
-home deck, the non-due card may be shown more than once.
-
-If you have multiple steps, Anki will only consider the first answer
-when deciding the next delay, and like relearning in normal decks,
-"Good" and "Easy" differ only in the step change and not the resulting
-delay.
-
-## Rescheduling
-
-By default, Anki will return cards to their home decks with altered scheduling,
-based on your performance in the filtered deck. There is a **reschedule
-cards based on my answers** option available which alters this behaviour.
-
-From the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-when rescheduling is disabled, cards are shown in a simple "preview mode", and
-when they are returned to the original deck, they are returned exactly as they
-started.
-
-In the v1 scheduler, cards were presented more similarly to how they normally
-are, but studying cards had side effects, and the original position of new cards
-was lost when you studied them.
-
-## Catching Up
-
-Filtered decks can be useful for catching up when you've fallen behind
-in your reviews. One Anki user describes the way they use the filtered
-decks to catch up as follows:
-
-    I did this for a backlog of 800 cards with filtered subdecks. Worked
-    very well for me.
-
-    Just Due filter with: "is:due prop:due>-7"
-
-    Over Due filter with: "is:due prop:due<=-7"
-
-    The Just Due deck will then contain cards that became due in the past
-    week. That's the deck you should study every day as it gets the cards
-    that become due regularly. With this you can study as if there weren't
-    any backlog.
-
-    The Over Due deck will contain your backlog — cards which you didn't
-    study in time. You can study them the same way you would study new
-    cards. They go back into the regular cards, so the number of overdue
-    will never grow as long as you keep your Just Due deck in check.
-
-    How long it takes depends on how many overdue cards you study each day
-    in addition to the ones that become due regularly. You can still motor
-    through them when you feel like it - or you can do a specific number per
-    day like you would for new cards. Up to you.
+フィルターデッキを作成する最も簡単な方法は、デッキをクリックしたときに画面の下部に表示されるカスタム学習ボタンを使用することです。これは、その日に失敗したカードの復習など、一般的なタスクのための便利なプリセットフィルターを提供します。これにより、「カスタム学習セッション」と呼ばれるフィルターデッキが作成され、自動的に開かれます。
+
+既存の「カスタム学習セッション」デッキが存在する場合、新しいデッキが作成される前に空になります。カスタム学習デッキを保持したい場合は、デッキリストから名前を変更できます。
+
+各オプションの概要は次のとおりです：
+
+**今日の新しいカードの制限を増やす**\
+現在学習しているデッキに新しいカードを追加します。他のオプションとは異なり、新しいフィルターデッキを作成するのではなく、既存のデッキを変更します。
+
+**今日の復習カードの制限を増やす**\
+今日の復習カードが日々の復習制限のためにすべて表示されなかった場合、このオプションを使用すると、さらに多くのカードを表示できます。新しいカードのオプションと同様に、既存のデッキを変更します。
+
+**忘れたカードを復習する**\
+指定した日数内に「もう一度（1）」と回答したすべてのカードを表示します。
+
+**先取り復習**\
+近い将来に期限が来るカードを表示します（指定した日数内）。これは、休暇前に古いカードを処理するのに役立ちますが、最近学習したカードには役立ちません。詳細については、以下の[先取り復習](#reviewing-ahead)セクションを参照してください。
+
+**新しいカードをプレビューする**\
+最近追加したカードを表示し、回答しても復習カードに変換しません。
+
+**カードの状態やタグで学習する**\
+現在のデッキから特定の数のカードを選択して学習します。新しいカードのみ、期限のあるカードのみ、またはすべてのカードを選択できます。「タグを選択」をクリックした後、タグで選択したカードを制限することもできます。すべてのカードを表示したい場合（例えば、大きなテストの前に学習するため）、デッキ内のカードの数よりも多くのカード数を設定できます。
+
+## ホームデッキ
+
+カードがフィルターデッキに移動されると、元のデッキへのリンクが保持されます。その元のデッキはカードの「ホームデッキ」と呼ばれます。
+
+カードはフィルターデッキで学習された後、自動的にホームデッキに戻ります。これは、設定に応じて、単一のレビュー後または複数のレビュー後に行われます。
+
+すべてのカードを一度にホームデッキに戻すことも可能です：
+
+- 学習概要の「空にする」ボタンは、フィルターデッキ内のすべてのカードをホームデッキに戻しますが、空のフィルターデッキは削除しません。これは、後で再構築ボタンを使用して再度フィルターデッキを埋めたい場合に便利です。
+
+- フィルターデッキを削除すると、「空にする」と同じことが行われますが、空になったデッキもデッキリストから削除されます。フィルターデッキを削除してもカードは削除されません。
+
+古いスケジューラでは、カードがまだ学習中の状態でフィルターデッキを作成、再構築、空にする、または削除すると、それらのカードは新しいカードに戻されます。再学習中の失敗したレビューの場合、残りの再学習ステップはスキップされます。これは[v2スケジューラ](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)で修正され、カードはリセットされなくなりました。
+
+## 手動での作成
+
+上級ユーザーは、プリセットフィルターに頼らずに、任意の検索文字列（または「フィルター」）を使用してフィルターデッキを作成できます。手動でフィルターデッキを作成するには、ツールメニューから「フィルターデッキの作成」を選択します。
+
+ビルドボタンをクリックすると、Ankiは指定した設定に一致するカードを見つけ、それらを既存のデッキから新しいフィルターデッキに一時的に移動して学習します。
+
+同じフィルターオプションを使用して再度カードを取得したい場合（例えば、特定のタグを持つすべてのカードを毎日学習したい場合）、デッキの概要画面の下部にある再構築ボタンを使用できます。
+
+**検索**エリアは、Ankiが収集するカードを制御します。ブラウザで可能なすべての検索は、フィルターデッキでも可能です。タグの制限、特定の回数忘れたカードの検索などです。さまざまな可能性については、マニュアルの[検索](searching.md)セクションを参照してください。
+
+フィルターデッキは、保留中、埋められた、または別のフィルターデッキに既に含まれているカードを取り込むことはできません。また、v1スケジューラを使用している場合、（再）学習中のカードも含まれません。このため、ブラウザでの検索では、フィルターデッキに含まれないカードが表示されることがあります。
+
+**制限**オプションは、デッキに収集されるカードの数を制御します。選択した順序は、カードが収集される順序とレビューされる順序の両方を制御します。例えば、「最も多くの失敗」と制限を20に設定すると、Ankiは最も多く失敗した20枚のカードのみを表示します。
+
+**2番目のフィルターを有効にする**オプションを使用すると、2つの異なる検索で構成されるフィルターデッキを作成できます。例えば、1つの順序で期限のあるカードを含め、別の順序で少量の新しいカードを含めることができます。
+
+## 順序
+
+「カードの選択基準」オプションは、カードが表示される順序を制御します。選択したカードの最大数がフィルター条件に一致するカードの数よりも少ない場合、Ankiはこのソートされたリストの最後のカードから除外します。
+
+**最も古く見たものから**\
+最も長い間レビューで見ていないカードを最初に表示します。
+
+**ランダム**\
+フィルター条件に一致するすべてのカードの順序をランダムにします（特定の順序を使用しません）。
+
+**インターバルの増加**\
+最も短いインターバルのカードを最初に表示します。
+
+**インターバルの降順**\
+最も長いインターバルのカードを最初に表示します。
+
+**最も多くの失敗**\
+最も多く失敗したカードを最初に表示します。
+
+**追加順**\
+最初に追加したカードを表示します（つまり、作成日が最も早いカード）。
+
+**期限順**\
+最も早い期限のカードを最初に表示します。
+
+**最新の追加順**\
+デッキに最近追加したカードを最初に表示します。
+（これは「追加順」の逆です。）
+
+**相対的な期限超過**\
+忘れている可能性が最も高いカードを最初に表示します。これは、大量のバックログがあり、それを処理するのに時間がかかる場合に、忘れる可能性を減らしたい場合に役立ちます。
+
+SM-2スケジューラを使用する場合、期限超過はカードがどれだけ期限を過ぎているかと、その間隔の長さを比較して決定されます。例えば、現在の間隔が5日で2日遅れているカードは、現在の間隔が10日で3日遅れているカードよりも先に表示されます。
+
+FSRSを使用する場合、期限超過は各カードの再取得可能性とデッキプリセットでの望ましい保持率に基づいて計算されます。
+
+## ステップと戻る
+
+ステップの仕組みについては、[学習](studying.md#learningrelearning-cards)セクションを参照してください。
+
+デフォルトでは、Ankiはカードのホームデッキのステップを使用します。新しいカードが通常学習中に2回レビューされる場合、フィルターデッキで学習する場合も同じことが起こります。
+
+カードは（再）学習が完了するとホームデッキに戻ります。したがって、3つの学習ステップがある場合、新しいカードは「良い」を3回押すか、「簡単」を1回押すとホームデッキに戻ります。
+
+**v1およびv2スケジューラ**
+
+v1スケジューラでは、**カスタムステップ**オプションを使用してホームデッキのステップを上書きし、独自のステップを提供できます。提供されたステップは、学習中のカード、失敗したレビュー、および予定より早いレビューに適用されます。ただし、[v2スケジューラ](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)からは、フィルターデッキは[カスタムステップをサポートしなくなりました](https://forums.ankiweb.net/t/filtered-deck-interval-problem/11834/8)ので注意してください。
+
+**v3スケジューラ**
+
+[v3スケジューラ](https://faqs.ankiweb.net/the-2021-scheduler.html)では、再スケジューリングが無効になっているフィルターデッキには4つのボタンが表示されます。提供された遅延は「もう一度」ボタンに適用され、「難しい/良い」は提供された遅延の1.5倍と2倍を使用します。「簡単」はカードを削除します。
+
+## カウント
+
+フィルターデッキでは、既に期限が来ているレビューは通常通りレビューカウントに表示されます。学習カードと期限が来ていないレビューは、基礎となる実装の仕組みにより、新しいカードのカウントに含まれます。ただし、期限が来ていないレビューは新しいカードのようにスケジュールされません。Ankiは、レビュー時に通常の期限にどれだけ近かったかを考慮する特別なアルゴリズムを使用します。
+
+## 期限のあるレビュー
+
+フィルターデッキに期限のあるレビューが含まれている場合、それらは元のデッキで表示されるように表示されます。画面下部のレビューカードカウントに表示され、覚えていたかどうかの4つの選択肢があります。正解すると、カードはホームデッキに戻され、次の遅延はホームデッキの設定を使用して調整されます。カードを忘れた場合は、ホームデッキで定義された再学習ステップに従って表示されます。
+
+## 先取り復習
+
+検索に期限が来ていないカードが含まれている場合、Ankiはそのレビューを前もって表示します。
+
+Ankiはこれらのレビューに対して、どれだけ早くレビューしているかを考慮する特別なアルゴリズムを使用します。カードがほぼ期限に近い場合、それらは期限通りにレビューした場合と同様の新しい遅延が与えられます。しかし、カードが予定された直後にレビューされた場合、それらの新しい遅延は以前の遅延と同様になります。この計算はスライディングスケールで機能します。
+
+カードが予定された直後にレビューすることはスケジューリングにほとんど影響を与えないため（例えば、1日間隔で明日が期限のカードは早めにレビューしても明日が期限のままです）、**「先取り復習」カスタムスタディ設定は繰り返し使用するのに適していません**。旅行前に1週間分のカードを処理するために使用すると、成熟したカードは将来に再スケジュールされ、新しいカードは小さな間隔のままになります。なぜなら、それらを再スケジュールするには十分に知られていないからです。次の日に再び先取り復習を行うと、同じ新しいカードを再び処理することになり、ほとんど利益がありません。
+
+早期レビューはレビュー数ではなく新しいカード数に含まれ、ホームデッキで定義された再学習ステップの数に従って表示されます（カスタムステップを提供していない場合）。これは、ホームデッキで再学習ステップの数をカスタマイズしている場合、期限が来ていないカードが複数回表示される可能性があることを意味します。
+
+複数のステップがある場合、Ankiは次の遅延を決定する際に最初の回答のみを考慮し、通常のデッキでの再学習と同様に、「良い」と「簡単」はステップの変更のみが異なり、結果の遅延は異なりません。
+
+## 再スケジューリング
+
+デフォルトでは、Ankiはフィルターデッキでのパフォーマンスに基づいてスケジュールを変更し、カードをホームデッキに戻します。この動作を変更する**回答に基づいてカードを再スケジュールする**オプションがあります。
+
+[v2スケジューラ](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)からは、再スケジューリングが無効になっている場合、カードは単純な「プレビューモード」で表示され、元のデッキに戻るときには、開始時と全く同じ状態で戻ります。
+
+v1スケジューラでは、カードは通常の表示に近い形で提示されましたが、カードを学習することで副作用が生じ、新しいカードの元の位置が失われました。
+
+## キャッチアップ
+
+フィルターデッキは、レビューが遅れているときに追いつくのに役立ちます。あるAnkiユーザーは、フィルターデッキを使って追いつく方法を次のように説明しています：
+
+    私はフィルター付きサブデッキで800枚のカードのバックログを処理しました。非常にうまくいきました。
+
+    Just Dueフィルター: "is:due prop:due>-7"
+
+    Over Dueフィルター: "is:due prop:due<=-7"
+
+    Just Dueデッキには、過去1週間に期限が来たカードが含まれます。これは、定期的に期限が来るカードを含むため、毎日学習するべきデッキです。これにより、バックログがないかのように学習できます。
+
+    Over Dueデッキには、期限内に学習しなかったカードが含まれます。これらのカードは新しいカードと同じように学習できます。これらのカードは通常のカードに戻るため、Just Dueデッキを管理している限り、期限切れのカードの数は増えません。
+
+    どれくらいの時間がかかるかは、定期的に期限が来るカードに加えて、毎日どれだけの期限切れカードを学習するかによります。気が向いたときに一気に学習することもできますし、新しいカードと同じように1日に特定の数を学習することもできます。あなた次第です。

@@ -1,180 +1,137 @@
-# Preferences
+# 設定
 
 <!-- toc -->
 
-The preferences are available from the Tools menu on Windows/Linux, or
-the Anki menu on a Mac.
+設定は、Windows/Linuxではツールメニューから、MacではAnkiメニューからアクセスできます。
 
-## Appearance
+## 外観
 
-### General
+### 一般
 
-**Language**\
-Change your display language. You can help to improve translations [here](https://translating.ankiweb.net/)
+**言語**\
+表示言語を変更します。翻訳の改善に協力することができます[こちら](https://translating.ankiweb.net/)
 
-### User Interface
+### ユーザーインターフェース
 
-**Theme**\
-Dark (night) mode will make Anki's interface dark, and will cause cards to be shown as white text on a
-black background. Some card templates may need to be modified to work
-properly with this option enabled - please see [night mode styling](templates/styling.md#night-mode) for more information.
+**テーマ**\
+ダーク（ナイト）モードにすると、Ankiのインターフェースが暗くなり、カードは黒い背景に白いテキストで表示されます。このオプションを有効にすると、いくつかのカードテンプレートを適切に動作させるために修正が必要になる場合があります。詳細については、[ナイトモードのスタイリング](templates/styling.md#night-mode)を参照してください。
 
-From 2.1.50+ there is an option to switch to day or night mode automatically.
+バージョン2.1.50以降では、日中モードとナイトモードを自動的に切り替えるオプションがあります。
 
-**User interface size**\
-If you find that the interface elements are too small for you, you can
-try to increase this setting.
+**ユーザーインターフェースのサイズ**\
+インターフェース要素が小さすぎると感じる場合は、この設定を増やしてみてください。
 
-**Reset Windows Sizes**\
-This will reset all windows sizes and locations to the default settings.
+**ウィンドウサイズのリセット**\
+すべてのウィンドウサイズと位置をデフォルト設定にリセットします。
 
-**Video driver**\
-Anki's libraries need a video driver to draw content on the screen.
-Due to different hardware and software configurations, the driver that
-works best on your machine may vary. ANGLE and OpenGL will perform better
-than the software option, but they may not function correctly on some
-systems. On Macs, you will almost always want to use the OpenGL option.
+**ビデオドライバー**\
+Ankiのライブラリは、画面にコンテンツを描画するためにビデオドライバーを必要とします。異なるハードウェアおよびソフトウェア構成により、最適なドライバーは異なる場合があります。ANGLEおよびOpenGLはソフトウェアオプションよりもパフォーマンスが向上しますが、一部のシステムでは正しく機能しない場合があります。Macでは、ほとんどの場合、OpenGLオプションを使用することをお勧めします。
 
-Note: If you're using 2.1.50+ (Qt6), please, check [this page](./platform/windows/display-issues.md#qt6).
+注: バージョン2.1.50+（Qt6）を使用している場合は、[このページ](./platform/windows/display-issues.md#qt6)を確認してください。
 
-### Distractions
+### 気を散らす要素の削減
 
-These options allow you to remove some unnecessary elements from the screen during reviews. You can:
+これらのオプションを使用すると、レビュー中に不要な要素を画面から削除できます。以下のことが可能です：
 
-- Hide the top and bottom bar during reviews.
-- Enable the "minimalist" mode, making the interface more compact/less fancy.
-- Reduce motion, to disable some transitions/animations.
-- Switching between native styling and the Anki theme (only on Mac/Linux).
+- レビュー中に上部および下部のバーを非表示にする。
+- インターフェースをよりコンパクト/シンプルにする「ミニマリスト」モードを有効にする。
+- 一部のトランジション/アニメーションを無効にするためにモーションを減らす。
+- ネイティブスタイリングとAnkiテーマの切り替え（Mac/Linuxのみ）。
 
-## Review
+## レビュー
 
-### Scheduler
+### スケジューラー
 
-**v3 Scheduler**\
-Using the Anki v3 scheduler is recommended if you don't use AnkiDroid. It's documented here:\
+**v3 スケジューラー**\
+AnkiDroidを使用していない場合は、Anki v3スケジューラーの使用をお勧めします。詳細はこちらに記載されています：\
 <https://faqs.ankiweb.net/the-2021-scheduler.html>
 
-**Show learning cards with larger steps before**\
-Only shown when the 2.1 scheduler is enabled. Normally learning cards with a 1+
-day delay are shown after normal reviews. If checked, Anki will show them before
-normal reviews instead.
+**大きなステップの学習カードを先に表示**\
+2.1スケジューラーが有効な場合にのみ表示されます。通常、1日以上の遅延がある学習カードは通常のレビューの後に表示されます。チェックすると、Ankiはそれらを通常のレビューの前に表示します。
 
-**Legacy timezone handling**\
-Please see here:
+**レガシータイムゾーン処理**\
+詳細はこちらをご覧ください：\
 <https://faqs.ankiweb.net/timezone-handling-changes.html>
 
-**Next day starts at**\
-Controls when Anki should start showing the next day’s cards. The default
-setting of 4AM ensures that if you’re studying around midnight, you won’t have
-two days' worth of cards shown to you in one session. If you stay up very late
-or wake up very early, you may want to adjust this to a time you’re usually
-sleeping. Note that the start of the next day is relative to your current timezone.
-Also note that any cards that cross a day boundary [will appear at the start of
-the day they are scheduled for](./deck-options.md#day-boundaries), just like review cards do.
+**次の日の開始時刻**\
+Ankiが次の日のカードを表示し始める時間を制御します。デフォルト設定の午前4時は、真夜中頃に勉強している場合に、1回のセッションで2日分のカードが表示されないようにします。非常に遅くまで起きているか、非常に早く起きる場合は、通常寝ている時間に調整することをお勧めします。次の日の開始は現在のタイムゾーンに依存することに注意してください。また、日付の境界を越えるカードは、レビューカードと同様に[予定された日の開始時に表示される](./deck-options.md#day-boundaries)ことにも注意してください。
 
-**Learn ahead limit**\
-Tells Anki how to behave when there is nothing left to study in the current deck
-but cards in learning. The default setting of 20 minutes tells Anki that cards
-should be shown early if they have a delay of less than 20 minutes and there’s
-nothing else to do. If you set this to 0, Anki will always wait the full delay,
-showing the congratulations screen until the remaining cards are ready to be
-reviewed.
+**先取り学習の制限**\
+現在のデッキで学習するものがなくなったが、学習中のカードがある場合にAnkiがどのように動作するかを指定します。デフォルト設定の20分は、他にすることがない場合、20分未満の遅延があるカードを早めに表示するようにAnkiに指示します。これを0に設定すると、Ankiは常に完全な遅延を待ち、残りのカードがレビューの準備ができるまでおめでとう画面を表示します。
 
-**Timebox time limit**\
-Timeboxing is a technique to help you focus by dividing a longer activity (such
-as a 30 minute study session) into smaller blocks. If you set the timebox time
-limit to a non-zero number of minutes, Anki will periodically show you how many
-cards you’ve managed to study during the prescribed time limit.
+**タイムボックスの時間制限**\
+タイムボックスは、長い活動（例えば30分の勉強セッション）を小さなブロックに分割して集中力を高めるための技法です。タイムボックスの時間制限を0以外の分数に設定すると、Ankiは定期的に指定された時間内にどれだけのカードを学習できたかを表示します。
 
-**Mix new cards and reviews**:
-Only shown when the v1/v2 schedulers are enabled. This drop-down box controls when
-new cards are shown: either mixed with, before, or after all reviews.
+**新しいカードとレビューを混ぜる**\
+v1/v2スケジューラーが有効な場合にのみ表示されます。このドロップダウンボックスは、新しいカードがいつ表示されるかを制御します：レビューと混ぜる、レビューの前、またはレビューの後のいずれかです。
 
-### Review
+### レビュー
 
-**Show play buttons on cards with audio**\
-Whether a clickable (re)play button will be shown in the review screen
-for cards with audio.
+**音声付きカードに再生ボタンを表示**\
+音声付きカードのレビュー画面にクリック可能な（再）再生ボタンを表示するかどうかを指定します。
 
-**Interrupt current audio when answering**\
-Whether a currently playing audio file should be stopped when answering
-a card.
+**回答時に現在の音声を中断**\
+カードに回答する際に、現在再生中の音声ファイルを停止するかどうかを指定します。
 
-**Show remaining card count**\
-Disable this option to hide the card count at the bottom of the screen.
+**残りのカード数を表示**\
+画面下部のカード数を非表示にするには、このオプションを無効にします。
 
-**Show next review time above answer buttons**\
-Useful to know how far in the future your cards are being pushed.
+**回答ボタンの上に次のレビュー時間を表示**\
+カードがどれくらい先にスケジュールされているかを知るのに便利です。
 
-## Editing
+## 編集
 
-### Editing
+### 編集
 
-**Paste clipboard images as PNG**\
-By default Anki pastes images on the clipboard as JPG files, to save disk space.
-You can use the option to paste as PNG images instead. PNG images support
-transparent backgrounds and are lossless, but they usually result in much larger
-file sizes.
+**クリップボードの画像をPNGとして貼り付け**\
+デフォルトでは、Ankiはクリップボードの画像をJPGファイルとして貼り付けてディスクスペースを節約します。このオプションを使用すると、代わりにPNG画像として貼り付けることができます。PNG画像は透明な背景をサポートし、ロスレスですが、通常はファイルサイズが大きくなります。
 
-**Paste without Shift strips formatting**\
-By default, formatting like bold and colors are kept when pasting,
-unless the <kbd>Shift</kbd> key is held down. This option reverses the behaviour.
+**Shiftキーを押さずに貼り付けると書式が削除される**\
+デフォルトでは、太字や色などの書式は貼り付け時に保持されますが、<kbd>Shift</kbd>キーを押している場合は除外されます。このオプションはその動作を逆にします。
 
-**Default deck**\
-Controls how note types and decks interact. The default of "When adding, default
-to current deck" means that Anki saves the last-used note type for each deck and
-selects it again then next time you choose the deck (and, in addition, will
-start with the current deck selected when choosing Add from anywhere). The other
-option, "Change deck depending on note type," saves the last-used deck for each
-note type (and opens the add window to the last-used note type when you choose
-Add). This may be more convenient if you always use a single note type for each
-deck.
+**デフォルトデッキ**\
+ノートタイプとデッキの相互作用を制御します。デフォルトの「追加時に現在のデッキをデフォルトにする」は、Ankiが各デッキに対して最後に使用したノートタイプを保存し、次回そのデッキを選択したときに再度選択します（さらに、どこからでも追加を選択したときに現在のデッキが選択されます）。もう一つのオプション「ノートタイプに応じてデッキを変更する」は、各ノートタイプに対して最後に使用したデッキを保存します（追加を選択したときに追加ウィンドウを最後に使用したノートタイプに開きます）。各デッキに対して常に単一のノートタイプを使用する場合、こちらの方が便利かもしれません。
 
-The last used deck/notetype is updated when you add a card. If you change the deck
-and close the add window without adding a card, it won't be saved.
+最後に使用したデッキ/ノートタイプはカードを追加したときに更新されます。デッキを変更してカードを追加せずに追加ウィンドウを閉じた場合、それは保存されません。
 
-### Browsing
+### ブラウジング
 
-**Default search text**\
-Allows you to customize the starting search text in the browser (eg, to start
-with "deck:current").
+**デフォルトの検索テキスト**\
+ブラウザでの開始検索テキストをカスタマイズできます（例：「deck:current」で開始する）。
 
-**Ignore accents in search (slower)**\
-When enabled, simple text searches automatically [ignore accents](./searching.md#ignoring-accentscombining-characters).
+**検索時にアクセントを無視する（遅くなる）**\
+有効にすると、単純なテキスト検索で自動的に[アクセントを無視](./searching.md#ignoring-accentscombining-characters)します。
 
-### Import/Export
+### インポート/エクスポート
 
-**Legacy import/export handling**\
-If enabled, legacy (pre 2.1.55) import / export code will be used. It is recommended to deactivate this option.
+**レガシーインポート/エクスポート処理**\
+有効にすると、レガシー（2.1.55以前）のインポート/エクスポートコードが使用されます。このオプションは無効にすることをお勧めします。
 
-## Syncing
+## 同期
 
-This tab contains options related to syncing with AnkiWeb.
+このタブには、AnkiWebとの同期に関連するオプションが含まれています。
 
-### Synchronisation
+### 同期
 
-**Synchronize audio and images too**\
-When enabled, media will also be synced with AnkiWeb.
+**音声と画像も同期する**\
+有効にすると、メディアもAnkiWebと同期されます。
 
-**Automatically sync on profile open/close**\
-Disable this if you don't want an automatic sync with AnkiWeb when opening / closing a [profile](./profiles.md).
+**プロファイルの開閉時に自動同期**\
+プロファイルを開く/閉じるときにAnkiWebと自動同期したくない場合は、これを無効にします。
 
-**Periodically sync media**
+**定期的にメディアを同期する**
 
-**On next sync, force changes on one direction**\
-When this option is enabled, the next sync will
-ask you whether you wish to upload or download. This is useful if
-you have made some changes accidentally, and wish to overwrite them
-with an older version that is on AnkiWeb.
+**次回の同期時に一方向に変更を強制する**\
+このオプションが有効な場合、次回の同期時にアップロードまたはダウンロードするかどうかを尋ねられます。これは、誤って変更を加えた場合に、AnkiWebにある古いバージョンで上書きしたいときに便利です。
 
-### AnkiWeb Account
+### AnkiWebアカウント
 
-When logged in, clicking on Log Out will log you out.
+ログインしている場合、ログアウトをクリックするとログアウトします。
 
-### Self-hosted Sync Server
+### 自己ホスト型同期サーバー
 
-For info on the custom sync server option, see [this section](./sync-server.md).
+カスタム同期サーバーオプションの詳細については、[このセクション](./sync-server.md)を参照してください。
 
-## Backups
+## バックアップ
 
-Please see [this](backups.md#automatic-backups) section of the manual.
+自動バックアップの詳細については、マニュアルの[こちら](backups.md#automatic-backups)のセクションを参照してください。

@@ -1,210 +1,111 @@
-# Syncing with AnkiWeb
+# AnkiWebとの同期
 
 <!-- toc -->
 
-AnkiWeb is a service that allows you to keep your collection
-synchronized across multiple devices, and to study online. Please sign
-up for a [free account](https://ankiweb.net/) before following the steps
-below.
+AnkiWebは、複数のデバイス間でコレクションを同期し、オンラインで学習することを可能にするサービスです。以下の手順に従う前に、[無料アカウント](https://ankiweb.net/)にサインアップしてください。
 
-## Intro Videos
+## 紹介ビデオ
 
-For a quick introduction to syncing, please check out the
-[syncing intro videos](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on).
+同期の簡単な紹介については、[同期紹介ビデオ](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)をご覧ください。
 
-## Setup
+## 設定
 
-To start syncing your collection across devices, click the sync button
-(the top right one on the [main screen](studying.md#decks), or press 'y' on your keyboard.
-You’ll be prompted for your AnkiWeb ID and password, which you created
-in the signup process.
+コレクションをデバイス間で同期するには、同期ボタンをクリックします（[メイン画面](studying.md#decks)の右上にあるボタン、またはキーボードの 'y' を押します）。サインアッププロセスで作成したAnkiWeb IDとパスワードを入力するよう求められます。
 
-When you synchronize your collection for the first time, Anki will ask
-you if you want to upload or download. If you have cards on your
-computer and your AnkiWeb account is empty, choose "upload" to send your
-data to AnkiWeb. If you have cards on AnkiWeb from another device, and
-no cards on your computer, choose "download" to replace the empty local
-collection with the cards that are on AnkiWeb. If you have different
-cards on both devices, [more work is required](#merging-conflicts) to
-avoid losing data.
+コレクションを初めて同期する際、Ankiはアップロードするかダウンロードするかを尋ねます。コンピュータにカードがあり、AnkiWebアカウントが空の場合は、「アップロード」を選択してデータをAnkiWebに送信します。別のデバイスからAnkiWebにカードがあり、コンピュータにカードがない場合は、「ダウンロード」を選択して、空のローカルコレクションをAnkiWeb上のカードで置き換えます。両方のデバイスに異なるカードがある場合は、データを失わないようにするために[追加の作業が必要です](#merging-conflicts)。
 
-Once the initial one way sync is completed, Anki will be able to merge
-changes from multiple locations with a few exceptions.
+初回の一方向同期が完了すると、いくつかの例外を除いて、Ankiは複数の場所からの変更をマージできるようになります。
 
-If you have multiple people using Anki on one machine and have created a
-profile for each user, each user will need to create their own AnkiWeb
-account to sync with. If you attempt to synchronize multiple profiles
-with a single AnkiWeb account, you will lose data.
+1台のマシンで複数の人がAnkiを使用しており、各ユーザーのプロファイルを作成している場合、各ユーザーは同期するために自分のAnkiWebアカウントを作成する必要があります。複数のプロファイルを単一のAnkiWebアカウントで同期しようとすると、データが失われます。
 
-## Automatic Syncing
+## 自動同期
 
-Once syncing is enabled, Anki will automatically sync each time your
-collection is closed or opened. If you would prefer to synchronize
-manually, you can disable automatic syncing in Anki’s [preferences.](preferences.md#syncing)
+同期が有効になると、Ankiはコレクションを閉じたり開いたりするたびに自動的に同期します。手動で同期したい場合は、Ankiの[設定](preferences.md#syncing)で自動同期を無効にできます。
 
-## Button Color
+## ボタンの色
 
-The sync button will change to blue when a normal sync is required,
-and red when a full sync is required.
+通常の同期が必要な場合、同期ボタンは青色に変わります。
+完全な同期が必要な場合、赤色に変わります。
 
-## Media
+## メディア
 
-Related video: <https://www.youtube.com/watch?v=phP9GGG-PxY>
+関連ビデオ: <https://www.youtube.com/watch?v=phP9GGG-PxY>
 
-Anki will synchronize any sounds and images used by your notes. It will
-notice when media has been added or removed from your [media folder](files.md#file-locations), but
-will not notice if you have edited some existing files without adding or
-removing any. To get your edits noticed, you need to add or remove a
-file as well.
+Ankiは、ノートで使用される音声や画像を同期します。メディアフォルダにファイルが追加または削除された場合は検出されますが、既存のファイルを編集しても追加や削除がない限り検出されません。編集を検出させるには、ファイルを追加または削除する必要があります。
 
-One-way syncs (where you're prompted to upload or download) have no influence over how media
-syncs - media changes are always merged.
+一方向同期（アップロードまたはダウンロードを促される場合）は、メディアの同期方法には影響しません。メディアの変更は常にマージされます。
 
-To prevent accidental data loss, deletions will only sync to other devices if they are made after
-media is fully in sync. If you delete files before your device is fully in sync, and the deleted
-files are already on AnkiWeb, they will be downloaded the next time you sync.
+誤ってデータを失うのを防ぐために、削除はメディアが完全に同期された後に行われた場合にのみ他のデバイスに同期されます。デバイスが完全に同期される前にファイルを削除すると、削除されたファイルがAnkiWebに既に存在する場合、次回の同期時にそれらがダウンロードされます。
 
-If you’re running Anki off a [USB flash drive](files.md#running-from-a-flash-drive), you should use an NTFS
-file system, as Anki may not be able to detect media changes on a FAT32
-filesystem.
+Ankiを[USBフラッシュドライブ](files.md#running-from-a-flash-drive)から実行している場合、NTFSファイルシステムを使用する必要があります。FAT32ファイルシステムでは、Ankiがメディアの変更を検出できない場合があります。
 
-## Conflicts
+## コンフリクト
 
-Related video: <https://www.youtube.com/watch?v=UEAcpfMQnjo>
+関連ビデオ: <https://www.youtube.com/watch?v=UEAcpfMQnjo>
 
-Under normal circumstances, reviews and note edits can be merged, so if
-you review or edit on two different devices before syncing, Anki will
-preserve your changes from both locations. If the same card has been
-reviewed in two different locations, both reviews will be marked in the
-revision history, and the card will be kept in the state it was when it
-was most recently answered.
+通常の状況では、レビューやノートの編集はマージできます。そのため、同期する前に異なるデバイスでレビューや編集を行った場合でも、Ankiは両方の場所での変更を保持します。同じカードが異なる場所でレビューされた場合、両方のレビューが履歴に記録され、カードは最後に回答された状態に保たれます。
 
-There are certain changes that Anki is unable to merge. These mainly
-relate to the format of notes: things like adding a new field, or
-removing a card template. When you perform an operation that can’t be
-merged, Anki will warn you, and give you the option of aborting the
-operation. If you choose to continue, you’ll be asked to choose whether
-to keep the local copy or the copy on AnkiWeb when your collection is
-next synchronized.
+Ankiがマージできない変更もあります。これらは主にノートの形式に関連するもので、新しいフィールドの追加やカードテンプレートの削除などです。マージできない操作を実行すると、Ankiは警告を表示し、操作を中止するオプションを提供します。続行することを選択した場合、次回コレクションを同期する際にローカルコピーを保持するか、AnkiWeb上のコピーを保持するかを選択するよう求められます。
 
-If certain problems are detected while syncing, it will also force a one
-way sync. If you find this consistently happens, please post on our
-support site.
+同期中に特定の問題が検出されると、一方向同期が強制されることがあります。これが頻繁に発生する場合は、サポートサイトに投稿してください。
 
-When a one way sync is required, you need to choose whether you wish to
-keep the collection on your local device, or the collection on AnkiWeb.
-If changes have been made on both ends, only changes on one end can be
-preserved.
+一方向同期が必要な場合、ローカルデバイス上のコレクションを保持するか、AnkiWeb上のコレクションを保持するかを選択する必要があります。両方の端で変更が行われた場合、一方の端の変更のみが保持されます。
 
-If you choose Upload, the content on your local device will be sent to
-AnkiWeb. You then need to sync your other devices, and choose "Download"
-to have them grab a copy of that content.
+「アップロード」を選択すると、ローカルデバイスの内容がAnkiWebに送信されます。その後、他のデバイスを同期し、「ダウンロード」を選択してその内容のコピーを取得する必要があります。
 
-If you choose Download, it will replace any local changes you’ve made
-with the data that is on AnkiWeb.
+「ダウンロード」を選択すると、ローカルで行った変更がAnkiWeb上のデータで置き換えられます。
 
-Once all devices are in sync, future syncs will return to the normal
-behaviour of merging changes from both ends.
+すべてのデバイスが同期されると、将来の同期は両端の変更をマージする通常の動作に戻ります。
 
-If you wish to force a full upload or download (for example, because you
-accidentally deleted a deck on one side and want to restore the deck
-rather than having its deletion synchronized), you can check the "On
-next sync, force changes in one direction" box in
-Tools&gt;Preferences&gt;Network, then sync as usual. (You’ll be given
-the option to choose which side you want to use.)
+完全なアップロードまたはダウンロードを強制したい場合（例えば、一方の端でデッキを誤って削除し、その削除を同期させるのではなくデッキを復元したい場合）、[ツール] > [設定] > [ネットワーク] で「次回の同期で一方向に変更を強制する」ボックスをチェックし、通常通り同期します。（どちらの端を使用するか選択するオプションが表示されます。）
 
-Forcing a one way sync only affects card syncing - media is synced as
-normal. If you have files that you want to remove from AnkiWeb, please
-ensure your client is fully in sync first. After syncing is up to date,
-any files you remove (e.g via the Check Media function) will be removed
-from AnkiWeb on the following sync.
+一方向同期を強制してもカードの同期にのみ影響し、メディアは通常通り同期されます。AnkiWebから削除したいファイルがある場合は、まずクライアントが完全に同期されていることを確認してください。同期が最新の状態になった後、削除したファイル（例：メディアのチェック機能を使用して）を次回の同期時にAnkiWebから削除します。
 
-## Merging Conflicts
+## コンフリクトのマージ
 
-Because the [first sync](#setup) can only sync changes in one
-direction, if you have added different content to different devices or
-profiles before setting syncing up, content on one device will be lost
-if you overwrite it with the content from the other device. With some
-work, it is possible to manually merge data into a single collection.
+[最初の同期](#setup)は一方向にしか変更を同期できないため、同期を設定する前に異なるデバイスやプロファイルに異なるコンテンツを追加した場合、一方のデバイスのコンテンツを他方のデバイスのコンテンツで上書きすると、そのデバイスのコンテンツが失われます。少し手間をかければ、手動でデータを1つのコレクションにマージすることが可能です。
 
-Start by taking a backup on each device/profile, in case something goes
-wrong. With the computer version you can use File&gt;Export to export
-"all decks" with scheduling information and media files included, and
-save the file somewhere safe. In AnkiMobile, the Add/Export button on
-the decks list screen will let you export all decks with media.
+まず、何か問題が発生した場合に備えて、各デバイス/プロファイルでバックアップを取ります。コンピュータ版では、[ファイル] > [エクスポート] を使用して、スケジューリング情報とメディアファイルを含む「すべてのデッキ」をエクスポートし、安全な場所にファイルを保存します。AnkiMobileでは、デッキリスト画面の[追加/エクスポート]ボタンを使用して、メディアを含むすべてのデッキをエクスポートできます。
 
-Next, if one of your devices is a mobile device, synchronize it first.
-If there’s a conflict, choose "upload" to overwrite any existing data on
-AnkiWeb with the data from your mobile device. If both devices/profiles
-are on your computer, synchronize the device/profile with the most
-number of decks first.
+次に、デバイスの1つがモバイルデバイスである場合は、まずそれを同期します。コンフリクトが発生した場合は、「アップロード」を選択して、モバイルデバイスのデータでAnkiWeb上の既存データを上書きします。両方のデバイス/プロファイルがコンピュータ上にある場合は、最も多くのデッキを持つデバイス/プロファイルを最初に同期します。
 
-Now return to the other device/profile. If automatic syncing is enabled,
-a message may pop up asking if you want to upload or download. Click the
-cancel button - we don’t want to sync yet.
+次に、他のデバイス/プロファイルに戻ります。自動同期が有効になっている場合、アップロードまたはダウンロードするかどうかを尋ねるメッセージが表示されることがあります。キャンセルボタンをクリックします - まだ同期したくありません。
 
-Once you’re looking at the deck list, click the cog icon next to the
-first deck, and choose "export". Export the content with scheduling
-information and media included, and save the .apkg file somewhere. Now
-you’ll need to repeat this for each top-level deck.
+デッキリストを表示したら、最初のデッキの横にある歯車アイコンをクリックし、「エクスポート」を選択します。スケジューリング情報とメディアを含むコンテンツをエクスポートし、.apkgファイルをどこかに保存します。これを各トップレベルデッキに対して繰り返す必要があります。
 
-Once all top-level decks have been exported, click the sync button at
-the top right, and choose "download", which will overwrite the local
-content with the content you synced from your other device.
+すべてのトップレベルデッキをエクスポートしたら、右上の同期ボタンをクリックし、「ダウンロード」を選択して、ローカルコンテンツを他のデバイスから同期したコンテンツで上書きします。
 
-You can now use File&gt;Import to import the .apkg files you exported
-earlier, which will merge the exported content with the existing
-content, so everything will be in one place.
+次に、[ファイル] > [インポート] を使用して、先ほどエクスポートした.apkgファイルをインポートします。これにより、エクスポートしたコンテンツが既存のコンテンツとマージされ、すべてが1つの場所にまとまります。
 
-## Firewalls
+## ファイアウォール
 
-Anki needs to be able to make outbound HTTPS connections to sync. It must be
-able to connect to ankiweb.net, sync.ankiweb.net, sync2.ankiweb.net, and so on.
-These domains may change over time, and the IP addresses they point to may also
-change, so we recommend you allow wildcard access to \*.ankiweb.net to reduce
-the chance of the firewall rules needing to be updated in the future.
+Ankiが同期するためには、アウトバウンドHTTPS接続が必要です。ankiweb.net、sync.ankiweb.net、sync2.ankiweb.netなどに接続できる必要があります。これらのドメインは時間とともに変更される可能性があり、それらが指すIPアドレスも変更される可能性があるため、将来的にファイアウォールルールを更新する必要性を減らすために、\*.ankiweb.net へのワイルドカードアクセスを許可することをお勧めします。
 
-If you have a firewall on your machine, you should add an exception for
-Anki. If you are on a work or school network, please contact your
-network administrator for assistance - it is not something we can help
-you with.
+マシンにファイアウォールがある場合は、Ankiの例外を追加する必要があります。職場や学校のネットワークを使用している場合は、ネットワーク管理者に連絡して支援を求めてください。これは私たちが支援できることではありません。
 
-## Proxies
+## プロキシ
 
-If you need a proxy to access the internet, Anki should automatically
-pick up your system proxy settings if you’re on Windows or macOS, and
-will honour the HTTP_PROXY environment variable if you’re on another
-platform.
+インターネットにアクセスするためにプロキシが必要な場合、WindowsまたはmacOSを使用している場合は、Ankiが自動的にシステムプロキシ設定を取得し、他のプラットフォームを使用している場合はHTTP_PROXY環境変数を尊重します。
 
-Anki will only be able to pick up your system settings if a proxy is
-manually configured, and does not require a password. If your system
-uses automatic proxy setup, or uses a proxy that requires a username and
-password, you will need to manually tell Anki the proxy configuration.
+Ankiは、プロキシが手動で設定され、パスワードを必要としない場合にのみシステム設定を取得できます。システムが自動プロキシ設定を使用している場合、またはユーザー名とパスワードを必要とするプロキシを使用している場合は、Ankiにプロキシ設定を手動で伝える必要があります。
 
-To tell Anki your proxy settings, define a HTTPS_PROXY environmental
-variable that points to the proxy server. It will look like:
+Ankiにプロキシ設定を伝えるには、プロキシサーバーを指すHTTPS_PROXY環境変数を定義します。以下のようになります：
 
     http://user:pass@proxy.company.com:8080
 
-If your username or password contains an @ (e.g `user@workdomain.com`),
-you need to change it to %40, like so:
+ユーザー名またはパスワードに @ が含まれている場合（例：`user@workdomain.com`）、それを %40 に変更する必要があります。以下のようになります：
 
     http://user%40workdomain.com:pass@proxy.company.com:8080
 
-Anki 2.0 expects to find HTTP_PROXY instead of HTTPS_PROXY.
+Anki 2.0はHTTPS_PROXYの代わりにHTTP_PROXYを期待します。
 
-To set environmental variables on Windows, please see
+Windowsで環境変数を設定する方法については、以下を参照してください：
 <https://www.google.com/search?q=windows+set+environmental+variable>
 
-If you’re on a Mac, please see
+Macを使用している場合は、以下を参照してください：
 <http://stackoverflow.com/questions/135688/setting-environment-variables-in-os-x>
 
-Heavily locked down networks that intercept secure connections and
-present their own certificate instead may cause Anki to throw up SSL
-errors. In such environments, you may be able to work around the errors
-with <https://ankiweb.net/shared/info/878367706>
+セキュアな接続を傍受し、自分の証明書を提示する厳重にロックダウンされたネットワークでは、AnkiがSSLエラーを表示することがあります。そのような環境では、以下を使用してエラーを回避できる場合があります：
+<https://ankiweb.net/shared/info/878367706>
 
-An alternative solution is to install a local proxy server, and point
-that proxy server at your normal proxy server. You can then tell Anki to
-use the local proxy, which will redirect requests to the proxy you
-normally use.
+別の解決策として、ローカルプロキシサーバーをインストールし、そのプロキシサーバーを通常使用するプロキシサーバーに向けることができます。その後、Ankiにローカルプロキシを使用するように指示し、リクエストを通常使用するプロキシにリダイレクトできます。

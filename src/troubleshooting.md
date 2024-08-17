@@ -1,49 +1,45 @@
-# Troubleshooting
+# トラブルシューティング
 
-If you encounter a problem with Anki, please try the following steps in order:
+Ankiで問題が発生した場合、以下の手順を順番に試してください：
 
-**1. Restart Anki**
+**1. Ankiを再起動する**
 
-Please close Anki, then start it again.
+Ankiを閉じてから、再度起動してください。
 
-If you are unable to close Anki because of an error message, you can either terminate Anki using your task manager, or restart your computer. Anki saves periodically, so you should not lose more than a few minutes of work in most circumstances.
+エラーメッセージのためにAnkiを閉じることができない場合は、タスクマネージャーを使用してAnkiを終了するか、コンピュータを再起動してください。Ankiは定期的に保存するため、ほとんどの場合、数分以上の作業が失われることはありません。
 
-If the problem does not occur again, you can skip the following steps.
+問題が再発しない場合は、以下の手順をスキップできます。
 
-**2. Check add-ons**
+**2. アドオンを確認する**
 
-Please close Anki, then start it again while holding down the shift key. If the problem goes away, that indicates an add-on is causing the problem. Remove any add-ons you don't need, and disable half of the others. If the problem continues, try the other half. Repeat
-the process until you've figured out which add-on is causing the problem. Then please report the issue to the add-on author, using the Copy Debug Info button, and pasting that into the report.
+Ankiを閉じて、Shiftキーを押しながら再起動してください。問題が解消される場合、アドオンが原因であることを示しています。不要なアドオンを削除し、残りのアドオンの半分を無効にしてください。問題が続く場合は、もう半分を試してください。このプロセスを繰り返して、どのアドオンが問題を引き起こしているかを特定します。その後、デバッグ情報をコピーするボタンを使用して、その情報をレポートに貼り付け、アドオンの作者に問題を報告してください。
 
-**3. Check your Anki version**
+**3. Ankiのバージョンを確認する**
 
-You can find the version you're using in the Help>About or Anki>About menu. If the version you're using is not the latest version published on <https://apps.ankiweb.net>, please close Anki, install the latest version, and then start Anki again to see if the problem has gone away.
+使用しているバージョンは、ヘルプ>バージョン情報またはAnki>バージョン情報メニューで確認できます。使用しているバージョンが<https://apps.ankiweb.net>に公開されている最新バージョンでない場合は、Ankiを閉じて最新バージョンをインストールし、再度Ankiを起動して問題が解消されたか確認してください。
 
-If you're using Linux, please make sure you can reproduce the error using the packaged version on the Anki website, as distros often distribute [broken versions](https://anki.tenderapp.com/kb/anki-ecosystem/third-party-linux-packages-and-source-builds-are-not-supported).
+Linuxを使用している場合は、Ankiのウェブサイトで提供されているパッケージ版でエラーを再現できることを確認してください。ディストリビューションによっては[壊れたバージョン](https://anki.tenderapp.com/kb/anki-ecosystem/third-party-linux-packages-and-source-builds-are-not-supported)を配布していることがあります。
 
-**4. Check your database**
+**4. データベースを確認する**
 
-After restarting Anki, please try the Tools>Check Database menu item to make sure your collection doesn't have any problems.
+Ankiを再起動した後、ツール>データベースの確認メニュー項目を試して、コレクションに問題がないか確認してください。
 
-**5. Restart your computer**
+**5. コンピュータを再起動する**
 
-Sometimes restarting your computer may help.
+コンピュータを再起動すると問題が解決する場合があります。
 
-**6. Change the Video Driver**
+**6. ビデオドライバを変更する**
 
-Crashes and display issues can be caused by the video driver. Changing to a
-different video driver in the preferences screen or via the gldriver file may
-help. Make sure you try all three options.
+クラッシュや表示の問題はビデオドライバが原因であることがあります。設定画面やgldriverファイルを使用して、別のビデオドライバに変更すると役立つ場合があります。すべてのオプションを試してください。
 
 - [Windows](https://docs.ankiweb.net/platform/windows/display-issues.html)
 - [Mac](https://docs.ankiweb.net/platform/mac/display-issues.html)
 - [Linux](https://docs.ankiweb.net/platform/linux/display-issues.html)
 
-**7. Reset window sizes**
+**7. ウィンドウサイズをリセットする**
 
-Sometimes pressing 'reset window sizes' button in the preferences screen
-immediately after starting Anki will help.
+Ankiを起動した直後に設定画面で「ウィンドウサイズをリセット」ボタンを押すと、問題が解決する場合があります。
 
-**8. If the problem remains**
+**8. 問題が解決しない場合**
 
-If you're confirmed you are using the latest Anki version, and are still receiving errors when starting Anki while holding down the shift key, please [report the problem](./getting-help.md), including the next error you receive in your post.
+最新のAnkiバージョンを使用していることを確認し、Shiftキーを押しながらAnkiを起動してもエラーが発生する場合は、[問題を報告](./getting-help.md)してください。次に受け取るエラーメッセージを投稿に含めてください。

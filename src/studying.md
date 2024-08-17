@@ -1,364 +1,192 @@
-# Studying
+# 学習
 
 <!-- toc -->
 
-When you have found a deck you like or entered some notes in, it’s time
-to start studying.
+気に入ったデッキを見つけた場合や、いくつかのノートを入力した場合は、学習を始める時です。
 
-## Decks
+## デッキ
 
-Study in Anki is limited to the currently selected deck as well as any
-subdecks it contains.
+Ankiでの学習は、現在選択されているデッキおよびそのサブデッキに限定されます。
 
-On the decks screen, your decks and subdecks will be displayed in a list. [New, Learn and Due (To Review)](getting-started.md#types-of-cards)
-cards for that day will be also displayed here.
+デッキ画面では、デッキとサブデッキがリストに表示されます。その日の[新規、学習中、および復習予定](getting-started.md#types-of-cards)のカードもここに表示されます。
 
-![Decks screen](media/decks_screen.png)
+![デッキ画面](media/decks_screen.png)
 
-When you click on a deck, it will become the 'current deck', and Anki
-will change to the study screen. You can return to the deck list to
-change the currently selected deck at any time by clicking on “Decks” at
-the top of the main window. (You can also use the Study
-Deck action in the menu to select a new deck from the keyboard, or you
-can press the <kbd>s</kbd> key to study the currently selected deck.)
+デッキをクリックすると、それが「現在のデッキ」となり、Ankiは学習画面に切り替わります。メインウィンドウの上部にある「デッキ」をクリックすることで、いつでもデッキリストに戻り、現在選択されているデッキを変更できます。（メニューの「デッキを学習」アクションを使用して、キーボードから新しいデッキを選択することもできますし、<kbd>s</kbd>キーを押して現在選択されているデッキを学習することもできます。）
 
-You can click the gears button to the right of a deck to rename or
-delete a deck, change its [options](deck-options.md), or [export](exporting.md) it.
+デッキの右側にある歯車ボタンをクリックすると、デッキの名前を変更したり、削除したり、[オプション](deck-options.md)を変更したり、[エクスポート](exporting.md)することができます。
 
-## Study Overview
+## 学習概要
 
-After clicking on a deck to study, you’ll see a screen that shows you
-how many cards are due today. This is called the 'deck overview' screen:
+デッキをクリックして学習を開始すると、今日のカードの予定数が表示される画面が表示されます。これを「デッキ概要」画面と呼びます：
 
-![Study overview](media/study_overview.png)
+![学習概要](media/study_overview.png)
 
-The cards are split into [three types](getting-started.md#types-of-cards): New, Learning, and To Review.
-If you have [Bury siblings](#siblings-and-burying) activated in your deck options, you
-may see how many cards will be buried in grey:
+カードは[3つのタイプ](getting-started.md#types-of-cards)に分かれています：新規、学習中、および復習予定。
+デッキオプションで[兄弟カードを埋める](#siblings-and-burying)を有効にしている場合、埋められるカードの数が灰色で表示されることがあります：
 
-![Study overview (Buried Cards)](media/study_overview_buried_cards.png)
+![学習概要（埋められたカード）](media/study_overview_buried_cards.png)
 
-To start a study session, click the **Study Now** button. Anki will
-proceed to show you cards until the cards to be shown for the day have
-run out.
+学習セッションを開始するには、**今すぐ学習**ボタンをクリックします。Ankiはその日のカードがなくなるまでカードを表示し続けます。
 
-While studying, you can return to the overview by pressing the <kbd>s</kbd> key
-on your keyboard.
+学習中に、キーボードの<kbd>s</kbd>キーを押すと、概要に戻ることができます。
 
-## Questions
+## 質問
 
-When a card is shown, only the question is shown at first. After
-thinking about the answer, either click the **Show Answer** button, or
-press the spacebar. The answer will then be shown. It’s okay if it takes
-you a little while to recall the answer, but as a general rule if you
-can’t answer within about 10 seconds, it’s probably better to give up
-and show the answer than keep struggling to remember.
+カードが表示されるとき、最初に表示されるのは質問のみです。答えを考えた後、**答えを表示**ボタンをクリックするか、スペースバーを押します。すると答えが表示されます。答えを思い出すのに少し時間がかかっても構いませんが、一般的なルールとして、約10秒以内に答えられない場合は、無理に思い出そうとするよりも答えを表示した方が良いでしょう。
 
-When the answer is shown, you should compare the answer you thought of
-with the answer which is shown and tell Anki how well you remembered. If
-you don’t trust yourself to compare your answer accurately, you can ask
-Anki to [prompt you to type in the answer](templates/fields.md#checking-your-answer) rather than
-just showing it to you.
+答えが表示されたら、自分が考えた答えと表示された答えを比較し、どれだけ覚えていたかをAnkiに伝える必要があります。自分の答えを正確に比較する自信がない場合は、Ankiに[答えを入力するように促す](templates/fields.md#checking-your-answer)こともできます。
 
-## Learning/Relearning Cards
+## 学習/再学習カード
 
-When learning new cards, or when relearning cards that you have
-forgotten, Anki will show you the cards one or more times to help you
-memorize them. Each time is called a 'learning step'. By default there
-are two steps: 1 minute and 10 minutes. You can change the number of
-steps and the delays between them in the [deck options](deck-options.md#new-cards).
+新しいカードを学習する場合や、忘れてしまったカードを再学習する場合、Ankiはカードを1回以上表示して覚えるのを助けます。各回は「学習ステップ」と呼ばれます。デフォルトでは、1分と10分の2つのステップがあります。ステップの数とその間の遅延は[デッキオプション](deck-options.md#new-cards)で変更できます。
 
-There are four rating buttons when learning:
+学習中には4つの評価ボタンがあります：
 
-- **Again** moves the card back to the first step.
+- **再学習**はカードを最初のステップに戻します。
 
-- **Hard** repeats the current step.
-  - If the card is on the first (and the only) step, the delay is 50% larger than the step. But, this delay is at most one day larger than the step.
-  - If the card is on the first step and the you have configured more than one step, the delay will be the average of Again and Good, i.e., the average of the first two steps.
-  - If the card is on any subsequent step, Hard repeats the previous delay.
+- **難しい**は現在のステップを繰り返します。
+  - カードが最初（かつ唯一）のステップにある場合、遅延はステップの50%長くなります。ただし、この遅延はステップより1日以上長くなることはありません。
+  - カードが最初のステップにあり、複数のステップを設定している場合、遅延は「再学習」と「良い」の平均、つまり最初の2つのステップの平均になります。
+  - カードが次のステップにある場合、「難しい」は前の遅延を繰り返します。
 
-- **Good** moves the card to the [next step](deck-options.md#learning-steps). If the card was on the final
-  step, the card is converted into a review card (it 'graduates'). By
-  default, once the card has reached the end of the learning steps, the
-  card will be shown again the next day, then at increasingly long delays
-  (see the next section).
+- **良い**はカードを[次のステップ](deck-options.md#learning-steps)に進めます。カードが最終ステップにある場合、カードは復習カードに変わります（「卒業」します）。デフォルトでは、カードが学習ステップの最後に達すると、翌日に再び表示され、その後は徐々に長い遅延で表示されます（次のセクションを参照）。
 
-- **Easy** immediately converts the card into a review card, even if there
-  were steps remaining. [By default](deck-options.md#easy-interval), the card will be shown again 4 days
-  later, and then at increasingly long delays. In the v1 scheduler, the "Easy" button will not be
-  shown if you are in relearning mode as it would give the same interval
-  as “Good.” With the [v2 scheduler+](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-  when cards are in relearning, the "Easy" button boosts the interval by 1 day.
+- **簡単**は残りのステップがあってもカードを即座に復習カードに変えます。[デフォルトでは](deck-options.md#easy-interval)、カードは4日後に再び表示され、その後は徐々に長い遅延で表示されます。v1スケジューラーでは、「簡単」ボタンは再学習モードでは表示されません。これは「良い」と同じ間隔を与えるためです。 [v2スケジューラー+](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)では、再学習中のカードに対して「簡単」ボタンは間隔を1日延ばします。
 
-When cards are seen for the first time, they start at step one. This
-means answering **Good** on a card for the first time will show it one
-more time in 10 minutes, and the initial 1 minute step will be skipped.
-If you push Again, though, the card will come back in 1 minute.
+カードが初めて表示されるとき、ステップ1から始まります。つまり、カードに対して初めて**良い**を選択すると、10分後にもう一度表示され、最初の1分のステップはスキップされます。しかし、**再学習**を選択すると、カードは1分後に再び表示されます。
 
-You can use the <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd> and <kbd>4</kbd> keys on your keyboard to select a particular
-button, where <kbd>1</kbd> is **Again**. Pressing <kbd>Space</kbd> or <kbd>Enter</kbd> will select
-**Good**.
+キーボードの<kbd>1</kbd>、<kbd>2</kbd>、<kbd>3</kbd>、<kbd>4</kbd>キーを使用して特定のボタンを選択できます。<kbd>1</kbd>は**再学習**に対応しています。<kbd>Space</kbd>または<kbd>Enter</kbd>を押すと**良い**が選択されます。
 
-If there are no other cards to show you, Anki will show learning cards
-again even if their delay has not elapsed completely. If you’d prefer to
-wait the full learning delay, you can change this behaviour in
-[Preferences>Scheduling>Learn Ahead Limit](preferences.md).
+他に表示するカードがない場合、Ankiは遅延が完全に経過していなくても学習カードを再び表示します。完全な学習遅延を待ちたい場合は、[設定>スケジューリング>学習先行制限](preferences.md)でこの動作を変更できます。
 
-## Review Cards
+## 復習カード
 
-When a card has been previously learnt and is ready to be reviewed
-again, there are four buttons to rate your answer:
+カードが以前に学習され、再び復習する準備ができたとき、回答を評価するための4つのボタンがあります：
 
-- **Again** marks your answer as incorrect and asks Anki to show the card
-  more frequently in the future. The card is said to have 'lapsed'. Please
-  see the [lapses](deck-options.md#lapses) section for more information about how lapsed
-  reviews are handled.
+- **再学習**は回答を不正解としてマークし、Ankiにそのカードを将来より頻繁に表示するように指示します。このカードは「失敗した」と見なされます。失敗したレビューの処理方法については、[失敗](deck-options.md#lapses)セクションを参照してください。
 
-- **Hard** by default, shows the card at a [slightly longer delay](deck-options.md#hard-interval)
-  than last time, and tells Anki to show the card more frequently in the future.
+- **難しい**はデフォルトで、前回よりも[少し長い遅延](deck-options.md#hard-interval)でカードを表示し、Ankiにそのカードを将来より頻繁に表示するように指示します。
 
-- **Good** tells Anki that the last delay was about right, and the card
-  easiness doesn’t need to be adjusted down or up. At the [default starting easiness](deck-options.md#starting-ease), the card will be shown again approximately 2 1/2 times longer
-  than the previous time, so if you had waited 10 days to see the card
-  previously, the next delay would be about 25 days.
+- **良い**は、前回の遅延がちょうど良かったことをAnkiに伝え、カードのイーズを上下に調整する必要がないことを示します。[デフォルトの開始イーズ](deck-options.md#starting-ease)では、カードは前回の約2.5倍の遅延で再び表示されます。例えば、前回カードを見るのに10日待った場合、次の遅延は約25日になります。
 
-- **Easy** tells Anki you found the delay too short. The card will be
-  scheduled [further into the future than 'Good'](deck-options.md#easy-bonus), and Anki will schedule
-  the card less frequently in the future. Because 'Easy' rapidly increases
-  the delay, it’s best used for only the easiest of cards. Usually you
-  should find yourself answering 'Good' instead.
+- **簡単**は、遅延が短すぎたことをAnkiに伝えます。カードは[「良い」よりもさらに先の未来](deck-options.md#easy-bonus)にスケジュールされ、Ankiは将来そのカードを表示する頻度を減らします。「簡単」は遅延を急速に増加させるため、最も簡単なカードにのみ使用するのが最適です。通常は「良い」を選択することが多いでしょう。
 
-As with learning cards, you can use <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd> and <kbd>4</kbd> on the keyboard to select an
-answer. Pressing the <kbd>spacebar</kbd> or <kbd>Enter</kbd> will select **Good**.
+学習カードと同様に、キーボードの<kbd>1</kbd>、<kbd>2</kbd>、<kbd>3</kbd>、<kbd>4</kbd>キーを使用して回答を選択できます。<kbd>スペースバー</kbd>または<kbd>Enter</kbd>を押すと**良い**が選択されます。
 
-See [Deck Options](deck-options.md) and the [FAQ](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html)
-to learn more about how the algorithm works.
+アルゴリズムの仕組みについて詳しくは、[デッキオプション](deck-options.md)および[FAQ](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html)をご覧ください。
 
-## Due Counts
+## 予定数
 
-When only the question is shown, Anki shows three numbers like 6 + 9 + 59
-at the bottom of the screen. These represent the new cards (blue), cards in
-learning (orange), and cards to review (green). If you’d prefer not to see the numbers,
-you can turn them off in Anki’s [preferences.](preferences.md)
+質問のみが表示されているとき、Ankiは画面の下部に6 + 9 + 59のような3つの数字を表示します。これらは新しいカード（青）、学習中のカード（オレンジ）、および復習するカード（緑）を表しています。これらの数字を見たくない場合は、Ankiの[設定](preferences.md)でオフにすることができます。
 
-![Due Counts](media/due_counts.png)
+![予定数](media/due_counts.png)
 
-In the v1 scheduler, the numbers count _reviews_ needed to finish all the
-cards in that queue, not the number of _cards_. If you have multiple
-steps configured for lapsed cards, the number will increase by more than
-one when you fail a card, since that card needs to be shown several times.
+v1スケジューラーでは、これらの数字はそのキュー内のすべてのカードを完了するために必要な_レビュー_の数を示しており、_カード_の数ではありません。失敗したカードに対して複数のステップが設定されている場合、そのカードを何度も表示する必要があるため、失敗すると数字は1以上増加します。
 
-From the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html), the numbers count _cards_, so the number will always
-increase by one regardless of the steps remaining.
+[v2スケジューラー](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)では、これらの数字は_カード_の数を示しているため、残りのステップに関係なく数字は常に1ずつ増加します。
 
-When the answer is shown, Anki shows an estimate of the next time a card
-will be shown above each button. If you’d prefer not to see the
-estimates, you can disable them in Anki’s [preferences](preferences.md).
+答えが表示されると、Ankiは各ボタンの上に次にカードが表示される予定時間の推定値を表示します。推定値を見たくない場合は、Ankiの[設定](preferences.md)で無効にすることができます。
 
-## Fuzz Factor
+## ファズファクター
 
-When you select an ease button on a review card, Anki also applies a small amount of random “fuzz”
-to prevent cards that were introduced at the same time and given the same ratings
-from sticking together and always coming up for review on the same day. This fuzz
-will appear on the answer buttons when the [v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html) is enabled, so if
-you are using a previous version and you’re noticing a slight discrepancy between
-what you select and the intervals your cards actually get, this is probably the
-cause.
+レビューカードでイーズボタンを選択すると、Ankiはカードが同時に導入され、同じ評価を受けた場合に一緒に固まって常に同じ日にレビューされるのを防ぐために、少量のランダムな「ファズ」を適用します。このファズは[v3スケジューラー](https://faqs.ankiweb.net/the-2021-scheduler.html)が有効になっている場合に回答ボタンに表示されます。そのため、以前のバージョンを使用していて、選択したものと実際のカードの間隔にわずかなずれがある場合は、これが原因である可能性があります。
 
-Learning cards are also given up to 5 minutes of extra delay so that they
-don’t always appear in the same order, but answer buttons won't reflect that. It
-is not possible to turn this feature off.
+学習カードにも最大5分の追加遅延が与えられ、常に同じ順序で表示されないようにしますが、回答ボタンには反映されません。この機能をオフにすることはできません。
 
-## Editing and More
+## 編集とその他
 
-You can click the **Edit** button in the bottom left to edit the current
-note. When you finish editing, you’ll be returned to study. The editing
-screen works very similarly to the [add notes](editing.md) screen.
+左下の**編集**ボタンをクリックすると、現在のノートを編集できます。編集を終えると、学習画面に戻ります。編集画面は[ノートの追加](editing.md)画面と非常に似ています。
 
-At the bottom right of the review screen is a button labeled **More**.
-This button provides some other operations you can do on the current
-card or note:
+レビュー画面の右下には**その他**とラベル付けされたボタンがあります。このボタンをクリックすると、現在のカードやノートに対して行える他の操作が表示されます：
 
-- [**Flag Card**](editing.md#using-flags): Adds a colored marker to the card, or toggles it off. Flags will appear during
-  study, and you can search for flagged cards in the Browse screen. This is useful
-  when you want to take some action on the card at a later date, such as looking
-  up a word when you get home. If you're using Anki 2.1.45+, you can also rename flags
-  from the [browser](browsing.md).
+- [**カードにフラグを付ける**](editing.md#using-flags)：カードに色付きのマーカーを追加するか、オフに切り替えます。フラグは学習中に表示され、ブラウズ画面でフラグ付きカードを検索できます。これは、後でカードに対して何らかのアクションを実行したい場合（例えば、家に帰ってから単語を調べるなど）に便利です。Anki 2.1.45以降を使用している場合、[ブラウザ](browsing.md)からフラグの名前を変更することもできます。
 
-- **Bury Card / Note**: Hides a card or all of the note’s cards from review until the next day.
-  (If you want to unbury cards before then, you can click the “unbury”
-  button on the [deck overview](studying.md#study-overview) screen.) This is useful if
-  you cannot answer the card at the moment or you want to come back to it
-  another time. Burying can also [happen automatically](studying.md#siblings-and-burying) for
-  cards of the same note.
+- **カード/ノートを埋める**: カードまたはノートのすべてのカードを翌日までレビューから隠します。
+  （それまでにカードを表示したい場合は、[デッキ概要](studying.md#study-overview)画面で「埋めたカードを表示」ボタンをクリックできます。）この機能は、今すぐにカードに答えられない場合や、後で再度確認したい場合に便利です。同じノートのカードに対しても[自動的に埋める](studying.md#siblings-and-burying)ことができます。
 
-  With the old scheduler, if cards were in learning when they were buried,
-  they were moved back to the new card queue or review queue prior to being
-  buried.
+  旧スケジューラーでは、カードが埋められたときに学習中であった場合、それらは埋められる前に新しいカードキューまたはレビューキューに戻されました。
 
-  With the [2.1 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-  however, burying cards does not reset a card's learning steps.
+  しかし、[2.1スケジューラー](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)では、カードを埋めてもカードの学習ステップはリセットされません。
 
-- **Forget card**: Move current card to [the end of the new queue](browsing.md#cards).
+- **カードを忘れる**: 現在のカードを[新しいキューの最後](browsing.md#cards)に移動します。
 
-  From Anki 2.1.50+, Anki will remember the original order of a new card when it is first studied
-  with the v3 scheduler. The "Restore original position" option allows you to reset the card back
-  to its original position when you forget it.
+  Anki 2.1.50以降、v3スケジューラーを使用して最初に学習したときに、新しいカードの元の順序をAnkiが記憶します。「元の位置に戻す」オプションを使用すると、カードを忘れたときに元の位置にリセットできます。
 
-  The "Reset repetition and lapse count" option, if enabled, will set the review and failure counters
-  for the card back to zero. It does not remove the review history that is shown at the bottom of the
-  card info screen.
+  「繰り返し回数と失敗回数をリセット」オプションを有効にすると、カードのレビューおよび失敗カウンターがゼロにリセットされます。これは、カード情報画面の下部に表示されるレビュー履歴を削除するものではありません。
 
-- **Set Due Date**: Put cards in the review queue, and [make them due on a certain date.](browsing.md#cards)
+- **期限を設定**: カードをレビューキューに入れ、[特定の日に期限を設定します。](browsing.md#cards)
 
-- **Suspend Card / Note**: Hides a card or all of the note’s cards from review until they are
-  manually unsuspended (by clicking the suspend button in the browser).
-  This is useful if you want to avoid reviewing the note for some time,
-  but don’t want to delete it.
-  With the old scheduler, if cards were in learning when they are
-  suspended, they are moved back to the new card queue or review queue
-  prior to being suspended.
+- **カード/ノートを一時停止**: カードまたはノートのすべてのカードを手動で一時停止解除するまでレビューから隠します（ブラウザで一時停止ボタンをクリックして解除します）。これは、しばらくの間ノートをレビューしたくないが、削除したくない場合に便利です。旧スケジューラーでは、カードが学習中に一時停止された場合、それらは一時停止される前に新しいカードキューまたはレビューキューに戻されました。
 
-  With the [2.1 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-  however, suspending cards does not reset a card's learning steps.
+  しかし、[2.1スケジューラー](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)では、カードを一時停止してもカードの学習ステップはリセットされません。
 
-- **Options**: Edit the [options](deck-options.md) for the current deck.
+- **オプション**: 現在のデッキの[オプション](deck-options.md)を編集します。
 
-- **Card Info**: Displays [statistical information](stats.md#card-info) about the card.
+- **カード情報**: カードに関する[統計情報](stats.md#card-info)を表示します。
 
-- **Previous Card Info**: Displays [statistical information](stats.md#card-info) about the previous card.
+- **前のカード情報**: 前のカードに関する[統計情報](stats.md#card-info)を表示します。
 
-- [**Mark Note**](editing.md#the-marked-tag): Adds a “marked” tag to the current note, so it can be easily found in the
-  browser. This is similar to flagging individual cards, but works with a tag
-  instead, so if the note has multiple cards, all cards will appear in a search
-  for the marked tag. Most users will want to use flags instead.
+- [**ノートにマークを付ける**](editing.md#the-marked-tag): 現在のノートに「マーク済み」タグを追加し、ブラウザで簡単に見つけられるようにします。これは個々のカードにフラグを付けるのと似ていますが、タグを使用するため、ノートに複数のカードがある場合、すべてのカードがマーク済みタグの検索に表示されます。ほとんどのユーザーはフラグを使用することをお勧めします。
 
-- **Create Copy**: Opens a [duplicate](browsing.md#finding-duplicates) of the current
-  note in the editor, which can be slightly modified to easily obtain variations of your cards.
-  By default, the duplicate card will be created in the same deck as the original.
+- **コピーを作成**: 現在のノートの[複製](browsing.md#finding-duplicates)をエディタで開きます。これにより、カードのバリエーションを簡単に取得するために少し修正することができます。デフォルトでは、複製カードは元のカードと同じデッキに作成されます。
 
-- **Delete Note**: Deletes the note and all of its cards.
+- **ノートを削除**: ノートとそのすべてのカードを削除します。
 
-- **Replay Audio**: If the card has audio on the front or back, play it again.
+- **オーディオを再生**: カードの表または裏にオーディオがある場合、それを再生します。
 
-- **Pause Audio**: Pauses the audio if it is playing.
+- **オーディオを一時停止**: 再生中のオーディオを一時停止します。
 
-- **Audio -5s / +5s**: Jump backwards / forward 5 seconds in the currently playing audio.
+- **オーディオ -5秒 / +5秒**: 現在再生中のオーディオを5秒戻す/進める。
 
-- **Record Own Voice**: Record from your microphone for the purposes of checking your
-  pronunciation. This recording is temporary and will go away when you
-  move to the next card. If you want to add audio to a card permanently,
-  you can do that in the edit window.
+- **自分の声を録音**: 発音を確認するためにマイクから録音します。この録音は一時的なもので、次のカードに移動すると消えます。カードに音声を永久に追加したい場合は、編集ウィンドウで行うことができます。
 
-- **Replay Own Voice**: Replay the previous recording of your voice (presumably after showing
-  the answer).
+- **自分の声を再生**: 自分の声の前回の録音を再生します（答えを表示した後に再生することを想定しています）。
 
-## Display Order
+## 表示順序
 
-Studying will show cards from the selected deck and any decks it
-contains. Thus, if you select your “French” deck, the subdecks
-“French::Vocab” and “French::My Textbook::Lesson 1” will be shown as
-well.
+学習では、選択したデッキおよびその中に含まれるデッキのカードが表示されます。したがって、「フランス語」デッキを選択すると、「フランス語::語彙」や「フランス語::私の教科書::レッスン1」のサブデッキも表示されます。
 
-The way Anki fetches cards from the decks depends on the algorithm used:
+Ankiがデッキからカードを取得する方法は、使用されるアルゴリズムによって異なります：
 
-- With the v1 scheduler, when a deck has subdecks, the cards will appear from [each deck in turn](studying.md#display-order).
+- v1スケジューラーを使用している場合、デッキにサブデッキがあると、カードは[各デッキから順番に](studying.md#display-order)表示されます。
 
-- With the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-  when a deck has subdecks, reviews are taken from all children decks
-  at once. The review limit of the child decks is ignored - only the limit of the
-  deck you clicked on applies.
+- [v2スケジューラー](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)を使用している場合、デッキにサブデッキがあると、レビューはすべての子デッキから一度に取得されます。子デッキのレビュー制限は無視され、クリックしたデッキの制限のみが適用されます。
 
-- With the [v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html)
-  each child deck's limit is also enforced, and you do not need to see the cards
-  in deck order either. See the [deck options](deck-options.md#review-sort-order) section of the manual for more information.
+- [v3スケジューラー](https://faqs.ankiweb.net/the-2021-scheduler.html)を使用している場合、各子デッキの制限も適用され、デッキ順にカードを表示する必要もありません。詳細については、マニュアルの[デッキオプション](deck-options.md#review-sort-order)セクションを参照してください。
 
-By default, for new cards, Anki fetches cards from the decks in
-alphabetical order. So in the above example, you would get cards first
-from “French”, then “My Textbook”, and finally “Vocab”. You can use this
-to control the order cards appear in, placing high priority cards in
-decks that appear higher in the list. When computers sort text
-alphabetically, the “-” character comes before alphabetical characters,
-and “\~” comes after them. So you could call the deck “-Vocab” to make
-them appear first, and you could call the other deck “\~My Textbook” to
-force it to appear after everything else.
+デフォルトでは、新しいカードの場合、Ankiはデッキからアルファベット順にカードを取得します。したがって、上記の例では、最初に「French」から、次に「My Textbook」、最後に「Vocab」からカードが取得されます。これを利用して、リストの上位に表示されるデッキに高優先度のカードを配置することで、カードの表示順序を制御できます。コンピュータがテキストをアルファベット順に並べ替えるとき、「-」文字はアルファベット文字の前に来て、「~」はその後に来ます。したがって、デッキを「-Vocab」と呼ぶことで最初に表示されるようにし、他のデッキを「~My Textbook」と呼ぶことで、すべての後に表示されるようにすることができます。
 
-New cards and reviews are fetched separately, and Anki won’t wait until
-both queues are empty before moving on to the next deck, so it’s
-possible you’ll be exposed to new cards from one deck while seeing
-reviews from another deck, or vice versa. If you don’t want this, click
-directly on the deck you want to study instead of one of the parent
-decks.
+新しいカードとレビューは別々に取得され、Ankiは両方のキューが空になるまで次のデッキに進むのを待たないため、あるデッキの新しいカードを見ている間に別のデッキのレビューを見ることがあるかもしれません。これを避けたい場合は、親デッキの代わりに直接学習したいデッキをクリックしてください。
 
-Since cards in learning are somewhat time-critical, they are fetched
-from all decks at once and shown in the order they are due.
+学習中のカードは時間に敏感なため、すべてのデッキから一度に取得され、期限順に表示されます。
 
-To control the order reviews from a given deck appear in, or change new
-cards from ordered to random order, please see the [deck options](deck-options.md). For more fine-grained ordering of new cards, you
-can change the order in the [browser](browsing.md).
+特定のデッキからのレビューの表示順序を制御したり、新しいカードを順序付きからランダムに変更したりするには、[デッキオプション](deck-options.md)を参照してください。新しいカードのより細かい順序付けについては、[ブラウザ](browsing.md)で順序を変更できます。
 
-## Siblings and Burying
+## 兄弟カードと埋める
 
-Recall from [the basics](getting-started.md) that Anki can create more than one
-card for each thing you input, such as a front→back card and a
-back→front card, or two different cloze deletions from the same text.
-These related cards are called 'siblings'.
+[基本](getting-started.md)から思い出してください。Ankiは、入力した内容に対して複数のカードを作成できます。例えば、表→裏のカードや裏→表のカード、または同じテキストからの2つの異なるクローズ削除などです。これらの関連カードは「兄弟カード」と呼ばれます。
 
-When you answer a card that has siblings, Anki can prevent the card’s
-siblings from being shown in the same session by automatically 'burying'
-them. Buried cards are hidden from review until the clock rolls over to
-a new day or you manually unbury them using the “Unbury” button that’s
-visible at the bottom of the [deck overview](studying.md#study-overview) screen. Anki
-will bury siblings even if the siblings are not in the same deck (for
-instance, if you use the [deck override](templates/intro.md) feature).
+兄弟カードを持つカードに回答すると、Ankiはそのカードの兄弟カードが同じセッションで表示されないように自動的に「埋める」ことができます。埋められたカードは、新しい日になるまで、または[デッキ概要](studying.md#study-overview)画面の下部に表示される「埋めたカードを表示」ボタンを使用して手動で埋め戻すまで、レビューから隠されます。兄弟カードが同じデッキにない場合でも（例えば、[デッキオーバーライド](templates/intro.md)機能を使用している場合）、Ankiは兄弟カードを埋めます。
 
-You can enable burying from the [deck options](deck-options.md) screen -
-there are separate settings for new cards and reviews.
+埋める機能は[デッキオプション](deck-options.md)画面から有効にできます。新しいカードとレビューのための個別の設定があります。
 
-Anki will only bury siblings that are new or review cards. It will not
-hide cards in learning, as time is of the essence for those cards. On
-the other hand, when you study a learning card, any new/review siblings
-will be buried.
+Ankiは、新しいカードやレビューカードのみを埋めます。学習中のカードは時間が重要なため、隠されません。一方、学習中のカードを学習すると、新しいカードやレビューカードの兄弟カードは埋められます。
 
-Note: A card cannot be buried and suspended at the same time. Suspending a
-buried card will unbury it. Burying a suspended card does not work on Anki
-2.1.49+, whereas on earlier versions, it will unsuspend the card.
+注意：カードは同時に埋められたり一時停止されたりすることはできません。埋められたカードを一時停止すると、そのカードは埋め戻されます。Anki 2.1.49以降では、一時停止されたカードを埋めることはできませんが、以前のバージョンではカードが一時停止解除されます。
 
-## Keyboard Shortcuts
+## キーボードショートカット
 
-Most of the common operations in Anki have keyboard shortcuts. Most of
-them are discoverable in the interface: menu items list their shortcuts
-next to them, and hovering the mouse cursor over a button will generally
-show its shortcut in a tooltip.
+Ankiのほとんどの一般的な操作にはキーボードショートカットがあります。ほとんどのショートカットはインターフェースで確認できます：メニュー項目の横にショートカットが表示され、ボタンにマウスカーソルを合わせると、一般的にツールチップにショートカットが表示されます。
 
-When studying, either <kbd>Space</kbd> or <kbd>Enter</kbd> will show the answer. When the
-answer is shown, you can use <kbd>Space</kbd> or <kbd>Enter</kbd> to select the Good button.
-You can use the <kbd>1</kbd>-<kbd>4</kbd> keys to select a specific ease button. Many people
-find it convenient to answer most cards with <kbd>Space</kbd> and keep one finger
-on <kbd>1</kbd> for when they forget.
+学習中は、<kbd>Space</kbd>または<kbd>Enter</kbd>を押すと答えが表示されます。答えが表示された後、<kbd>Space</kbd>または<kbd>Enter</kbd>を押すと「良い」ボタンが選択されます。<kbd>1</kbd>から<kbd>4</kbd>のキーを使用して特定の評価ボタンを選択することもできます。多くの人は、ほとんどのカードに<kbd>Space</kbd>で答え、忘れたときのために指を<kbd>1</kbd>に置いておくと便利だと感じています。
 
-The "Study Deck" item in the Tools menu allows you to quickly switch to
-a deck with the keyboard. You can trigger it with the '/' key. When
-opened, it will display all of your decks and show a filter area at the
-top. As you type characters, Anki will display only decks matching the
-characters you type. You can add a space to separate multiple search
-terms, and Anki will show only decks that match all the terms. So “ja 1”
-or “on1 ja” would both match a deck called “Japanese::Lesson1”.
+ツールメニューの「デッキを学習」項目を使用すると、キーボードでデッキを素早く切り替えることができます。'/'キーでこれをトリガーできます。開くと、すべてのデッキが表示され、上部にフィルターエリアが表示されます。文字を入力すると、Ankiは入力した文字に一致するデッキのみを表示します。スペースを追加して複数の検索語を区切ることができ、Ankiはすべての検索語に一致するデッキのみを表示します。例えば、「ja 1」や「on1 ja」はどちらも「Japanese::Lesson1」というデッキに一致します。
 
-## Falling Behind
+## レビューが遅れる場合
 
-If you fall behind in your reviews, Anki will prioritize cards that have
-been waiting the longest. It does this by taking the cards that have
-been waiting the longest and showing them to you in a random order up
-until your daily review limit. This ordering ensures that no cards will
-be left waiting indefinitely, but it means that if you introduce new
-cards, their reviews won’t appear until you’ve gotten through your
-backlog.
+レビューが遅れると、Ankiは最も長く待っているカードを優先します。これは、最も長く待っているカードを取り、それらをランダムな順序で表示し、1日のレビュー制限に達するまで続けます。この順序付けにより、カードが無期限に待たされることはありませんが、新しいカードを導入すると、バックログを処理するまでそのレビューは表示されません。
 
-If you wish to change the order of the overdue reviews, you can do so by
-creating a [filtered deck](filtered-decks.md).
+遅延したレビューの順序を変更したい場合は、[フィルターデッキ](filtered-decks.md)を作成することで可能です。
 
-When you answer cards that have been waiting for a while, Anki factors
-in that delay when determining the next time a card should be shown.
-Please see the section on Anki’s spaced-repetition
-[algorithm](https://faqs.ankiweb.net/due-times-after-a-break.html) for more information.
+長い間待っていたカードに回答するとき、Ankiは次にカードを表示する時間を決定する際にその遅延を考慮に入れます。詳細については、Ankiの間隔反復[アルゴリズム](https://faqs.ankiweb.net/due-times-after-a-break.html)に関するセクションを参照してください。

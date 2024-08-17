@@ -1,33 +1,20 @@
-# Profiles
+# プロファイル
 
-If more than one person wants to use Anki on your computer, you can set
-up a separate profile for each user. Each user profile has their own
-collection, and own program settings. Add-ons are shared across profiles.
-Profiles are configured by going to the File menu and choosing "Switch Profile".
+複数の人があなたのコンピュータでAnkiを使用したい場合、各ユーザーのために別々のプロファイルを設定できます。各ユーザープロファイルには独自のコレクションとプログラム設定があります。アドオンはプロファイル間で共有されます。プロファイルは、ファイルメニューに移動し、「プロファイルの切り替え」を選択して設定します。
 
-**Only a single profile can be synced to an AnkiWeb account.**
-If you have different users on your computer, each user will
-need to set up a separate AnkiWeb account for their profile. If you attempt
-to link two or more profiles to the same AnkiWeb account, you will overwrite
-the data from one profile with the data from the other.
+**AnkiWebアカウントに同期できるプロファイルは1つだけです。**
+コンピュータに異なるユーザーがいる場合、各ユーザーは自分のプロファイルのために別々のAnkiWebアカウントを設定する必要があります。2つ以上のプロファイルを同じAnkiWebアカウントにリンクしようとすると、1つのプロファイルのデータが他のプロファイルのデータで上書きされます。
 
-Profiles are primarily intended to be used by different people, and are not
-recommended for splitting up your own content.
-If you have created multiple profiles for yourself, the best option is to
-merge them into a single profile. You can do so by exporting one deck from
-profile A, and then importing it into profile B, repeating for any other decks
-in profile A, until everything is in profile B.
+プロファイルは主に異なる人が使用することを目的としており、自分のコンテンツを分割するために使用することは推奨されません。
+自分用に複数のプロファイルを作成した場合、最善の方法はそれらを1つのプロファイルに統合することです。プロファイルAからデッキをエクスポートし、プロファイルBにインポートすることで、プロファイルAのすべてのデッキがプロファイルBに統合されるまでこの手順を繰り返します。
 
-AnkiDroid does not support profiles.
+AnkiDroidはプロファイルをサポートしていません。
 
-## Profiles window
+## プロファイルウィンドウ
 
-From the Profiles window (accessible via File>Switch Profile from the main window), you can:
+プロファイルウィンドウ（メインウィンドウのファイル > プロファイルの切り替えからアクセス可能）からは、以下のことができます：
 
-- Open / Add / Rename / Delete user profiles.
-- Quit the program.
-- Restore an [automatic backup.](./backups.md)
-- Downgrade your collection, which is necessary if you want to open it with
-  an earlier Anki release. If you skip this step, you may get an error message
-  when opening your collection in an older Anki version, and you will need to
-  return to this version, downgrade, then try again.
+- ユーザープロファイルの開く / 追加 / 名前変更 / 削除。
+- プログラムの終了。
+- [自動バックアップ](./backups.md)の復元。
+- コレクションのダウングレード。これは、以前のAnkiリリースで開きたい場合

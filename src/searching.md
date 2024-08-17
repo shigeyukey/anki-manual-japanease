@@ -1,430 +1,363 @@
-# Searching
+# 検索
 
 <!-- toc -->
 
-Anki's Browse screen and the Filtered Deck feature use a common method
-of searching for specific cards/notes.
+Ankiのブラウズ画面とフィルターデッキ機能は、特定のカードやノートを検索するための共通の方法を使用します。
 
-## Simple searches
+## シンプルな検索
 
-When you type some text into the search box, Anki finds matching notes
-and displays their cards. Anki searches in all fields of the notes, but
-does not search for tags (see later in this section for how to search
-for tags). Some examples:
+検索ボックスにテキストを入力すると、Ankiは一致するノートを見つけてそのカードを表示します。Ankiはノートのすべてのフィールドを検索しますが、タグは検索しません（タグの検索方法についてはこのセクションの後半を参照してください）。いくつかの例を示します：
 
 `dog`\
-search for "dog" - will match words like "doggy" and "underdog" too.
+「dog」を検索します - 「doggy」や「underdog」のような単語も一致します。
 
 `dog cat`\
-finds notes that have both "dog" and "cat" on them, such as "raining
-cats and dogs".
+「dog」と「cat」の両方を含むノートを見つけます。例えば、「raining cats and dogs」などです。
 
 `dog or cat`\
-finds notes with either "dog" or "cat".
+「dog」または「cat」を含むノートを見つけます。
 
 `dog (cat or mouse)`\
-finds notes with dog and cat, or dog and mouse.
+「dog」と「cat」、または「dog」と「mouse」を含むノートを見つけます。
 
 `-cat`\
-finds notes without the word "cat".
+「cat」という単語を含まないノートを見つけます。
 
 `-cat -mouse`\
-finds notes with neither "cat" nor "mouse".
+「cat」も「mouse」も含まないノートを見つけます。
 
 `-(cat or mouse)`\
-same as the above.
+上記と同じです。
 
 `"a dog"`\
-finds notes with the exact sequence of characters "a dog" on them, such
-as "atta dog", but not "dog a" or "adog".
+「a dog」という正確な文字列を含むノートを見つけます。例えば、「atta dog」などですが、「dog a」や「adog」は含まれません。
 
 `-"a dog"`\
-finds notes without the exact phrase "a dog"
+「a dog」という正確なフレーズを含まないノートを見つけます。
 
 `d_g`\
-finds notes with d, &lt;a letter&gt;, g, like dog, dig, dug, and so on.
+「d」と任意の1文字と「g」を含むノートを見つけます。例えば、dog、dig、dugなどです。
 
 `d*g`\
-finds notes with d, &lt;zero or more letters&gt;, g, like dg, dog, dung,
-etc.
-
-`w:dog`\
-search for "dog" on a word boundary - will match "dog", but not "doggy"
-or "underdog". Requires Anki 2.1.24+ or AnkiMobile 2.1.61+. Note that
-formatting changes may be interpreted as word boundaries e.g. searching
-for `w:exam` will match **exam**ple.
+「d」と0文字以上の任意の文字列と「g」を含むノートを見つけます。例えば、dg、dog、dungなどです。
 
 `w:dog*`\
-will match "dog" and "doggy", but not "underdog".
+「dog」と「doggy」には一致しますが、「underdog」には一致しません。
 
 `w:*dog`\
-will match "dog" and "underdog", but not "doggy".
+「dog」と「underdog」には一致しますが、「doggy」には一致しません。
 
-Things to note from the above:
+上記の点に注意してください：
 
-- Search terms are separated by spaces.
+- 検索用語はスペースで区切られます。
 
-- When multiple search terms are provided, Anki looks for notes that
-  match all of the terms - an implicit 'and' is inserted between each
-  term. On Anki 2.1.24+ and AnkiMobile 2.0.60+ you can be explicit
-  if you like ("dog and cat" is the same as "dog cat"), but older
-  Anki versions will treat "and" as just another word to search for.
+- 複数の検索用語が提供された場合、Ankiはすべての用語に一致するノートを探します。各用語の間に暗黙の「and」が挿入されます。Anki 2.1.24+およびAnkiMobile 2.0.60+では、明示的に指定することもできます（「dog and cat」は「dog cat」と同じです）が、古いAnkiバージョンでは「and」を単なる検索用語として扱います。
 
-- You can use "or" if you only need one of the terms to match.
+- 用語のいずれか一つに一致するだけでよい場合は、「or」を使用できます。
 
-- You can prepend a minus sign to a term to find notes that don’t
-  match.
+- 用語の前にマイナス記号を付けると、その用語に一致しないノートを見つけることができます。
 
-- You can group search terms by placing them in parentheses, as in the
-  **dog (cat or mouse)** example. This becomes important when
-  combining OR and AND searches — in the example, with the
-  parentheses, it matches either 'dog cat' or 'dog mouse', whereas
-  without them it would match either 'dog and cat' or 'mouse'.
+- 検索用語を括弧で囲むことでグループ化できます。例えば、**dog (cat or mouse)** のようにします。これは、OR検索とAND検索を組み合わせる際に重要になります。この例では、括弧があると「dog cat」または「dog mouse」に一致しますが、括弧がないと「dog and cat」または「mouse」に一致します。
 
-- Anki is only able to search within formatting in the [sort field](editing.md#customizing-fields) you’ve configured. For example, if you add
-  "**exa**mple" to one of your fields, this will not be matched when
-  searching for "example" unless that field is the sort field. If a
-  word is not formatted, or the formatting does not change in the
-  middle of the word, then Anki will be able to find it in any field.
+- Ankiは、設定した[ソートフィールド](editing.md#customizing-fields)内の書式設定に対してのみ検索を行うことができます。例えば、フィールドの一つに「**exa**mple」と追加した場合、そのフィールドがソートフィールドでない限り、「example」を検索しても一致しません。単語が書式設定されていない場合、または単語の途中で書式設定が変更されない場合、Ankiは任意のフィールドでそれを見つけることができます。
 
-- Standard searches are case insensitive for Latin characters - a-z will
-  match A-Z, and vice versa. Other characters such as Cyrillic are case sensitive
-  in a standard search, but can be made case insensitive by searching on a word
-  boundary or regular expression (`w:`, `re:`).
+- 標準の検索はラテン文字に対して大文字小文字を区別しません。a-zはA-Zと一致し、その逆も同様です。キリル文字などの他の文字は標準の検索では大文字小文字を区別しますが、単語境界や正規表現（`w:`, `re:`）で検索することで大文字小文字を区別しないようにできます。
 
-## Limiting to a field
+## フィールドに限定する
 
-You can also ask Anki to match only if a particular field contains some
-text. Unlike the searches above, searching on fields requires an 'exact
-match' by default.
+特定のフィールドにテキストが含まれている場合にのみ一致させるようにAnkiに指示することもできます。上記の検索とは異なり、フィールド検索はデフォルトで「完全一致」を要求します。
 
 `front:dog`\
-find notes with a Front field of exactly "dog". A field that says "a
-dog" will not match.
+Frontフィールドが正確に「dog」であるノートを見つけます。「a dog」と書かれているフィールドは一致しません。
 
 `"animal front:a dog"`\
-find notes where the "Animal Front" field is exactly "a dog". The double quotes are
-mandatory, see [below](#matching-special-characters).
+「Animal Front」フィールドが正確に「a dog」であるノートを見つけます。ダブルクォートは必須です。詳細は[こちら](#matching-special-characters)を参照してください。
 
 `front:*dog*`\
-find notes with Front field containing dog somewhere
+Frontフィールドに「dog」が含まれているノートを見つけます。
 
 `front:`\
-find notes that have an empty Front field
+Frontフィールドが空のノートを見つけます。
 
 `front:_*`\
-find notes that have a non-empty Front field
+Frontフィールドが空でないノートを見つけます。
 
 `front:*`\
-find notes that have a Front field, empty or not
+Frontフィールドが存在するノートを見つけます（空かどうかは問いません）。
 
 `fr*:text`\
-find notes in a field starting with "fr". Requires Anki 2.1.24+ or AnkiMobile 2.1.60+.
+「fr」で始まるフィールドに「text」が含まれているノートを見つけます。Anki 2.1.24+またはAnkiMobile 2.1.60+が必要です。
 
-## Tags, decks, cards and notes
+## タグ、デッキ、カード、ノート
 
 `tag:animal`\
-find notes with the tag "animal", or subtags like "animal::mammal"
+「animal」タグ、または「animal::mammal」のようなサブタグを持つノートを見つけます。
 
 `tag:none`\
-find notes with no tags
+タグがないノートを見つけます。
 
 `tag:ani*`\
-find notes with tags starting with ani
+「ani」で始まるタグを持つノートを見つけます。
 
 `deck:french`\
-find cards in a French deck, or subdecks like French::Vocab
+「French」デッキ、または「French::Vocab」のようなサブデッキにあるカードを見つけます。
 
 `deck:french -deck:french::*`\
-find cards in French, but not subdecks
+「French」デッキにあるが、サブデッキにはないカードを見つけます。
 
 `deck:"french vocab"`\
-searching when a deck has a space
+デッキ名にスペースが含まれる場合の検索。
 
 `"deck:french vocab"`\
-also ok
+これも同様に機能します。
 
 `deck:filtered`\
-filtered decks only
+フィルターデッキのみを検索します。
 
 `-deck:filtered`\
-normal decks only
+通常のデッキのみを検索します。
 
 `card:forward`\
-search for Forward cards
+「Forward」カードを検索します。
 
 `card:1`\
-search for cards by template number - eg, to find the second cloze
-deletion for a note, you’d use `card:2`
+テンプレート番号でカードを検索します。例えば、ノートの2番目のクローズ削除を見つけるには、`card:2`を使用します。
 
 `note:basic`\
-search for cards with a Basic note type
+Basicノートタイプのカードを検索します。
 
-## Ignoring accents/combining characters
+## アクセント/結合文字を無視する
 
-Requires Anki 2.1.24+ or AnkiMobile 2.0.60+.
+Anki 2.1.24+ または AnkiMobile 2.0.60+ が必要です。
 
-You can use `nc:` to remove combining characters ("no combining"). For example:
+`nc:` を使用して結合文字を削除できます（「結合なし」）。例えば：
 
 `nc:uber`\
-matches notes with "uber", "über", "Über" and so on.
+「uber」、「über」、「Über」などを含むノートに一致します。
 
 `nc:は`\
-matches "は", "ば", and "ぱ"
+「は」、「ば」、「ぱ」に一致します。
 
-Searches that ignore combining characters are slower than regular searches.
+結合文字を無視する検索は、通常の検索よりも遅くなります。
 
-## Regular expressions
+## 正規表現
 
-Anki 2.1.24+ and AnkiMobile 2.0.60+ support searching in notes with "regular expressions",
-a standard and powerful way of searching in text.
+Anki 2.1.24+ および AnkiMobile 2.0.60+ は、ノート内を「正規表現」で検索することをサポートしています。正規表現は、テキスト検索の標準かつ強力な方法です。
 
-Start a search with `re:` to search by regular expression. To make things easier, Anki will
-treat the following as [raw input](#raw-input), so bear in mind the rules listed there.
+検索を `re:` で始めると、正規表現で検索できます。Ankiはこれを[生の入力](#raw-input)として扱うので、そこに記載されているルールを考慮してください。
 
-Some examples:
+いくつかの例を示します：
 
 `"re:(some|another).*thing"`\
-find notes that have "some" or "another" on them, followed by 0 or more characters, and then "thing"
+「some」または「another」に続いて0文字以上の任意の文字があり、その後に「thing」が続くノートを見つけます。
 
 `re:\d{3}`\
-find notes that have 3 digits in a row
+3つの連続した数字を含むノートを見つけます。
 
-Regular expressions can also be limited to a specific field. Please note that unlike the normal searches
-in a specific field, regular expressions in fields don't require an exact match. Eg:
+正規表現は特定のフィールドに限定することもできます。通常の特定フィールド検索とは異なり、フィールド内の正規表現は完全一致を必要としないことに注意してください。例えば：
 
 `front:re:[a-c]1`\
-matches uppercase or lowercase a1, B1 or c1 that occurs anywhere in the "Front" field
+「Front」フィールド内の任意の場所に大文字または小文字のa1、B1、c1が含まれるノートに一致します。
 
 `front:re:^[a-c]1$`\
-like the above, but will not match if any other text falls before or after a1/b1/c1.
+上記と似ていますが、a1/b1/c1の前後に他のテキストがある場合は一致しません。
 
-Anki 2.1.50 added regex support for tags:
+Anki 2.1.50 ではタグの正規表現サポートが追加されました：
 
 `tag:re:^parent$`\
-find notes with the exact tag "parent", disregarding any child tags like "parent::child"
+「parent」という正確なタグを持つノートを見つけます。「parent::child」のような子タグは無視されます。
 
 `"tag:re:lesson-(1[7-9]|2[0-5])"`\
-find notes with tags "lesson-17" through "lesson-25"
+「lesson-17」から「lesson-25」までのタグを持つノートを見つけます。
 
-You can learn more about regular expressions here: <https://regexone.com/lesson/introduction_abcs>
+正規表現についての詳細は、こちらで学ぶことができます：<https://regexone.com/lesson/introduction_abcs>
 
-Some things to be aware of:
+注意点：
 
-- The search is case-insensitive by default; use `(?-i)` at the start to turn on case sensitivity.
-- Some text like spaces and newlines may be represented differently in HTML - you can
-  use the HTML editor in the editing screen to see the underlying HTML contents.
-- For the specifics of Anki's regex support, please see the regex crate documentation: <https://docs.rs/regex/1.3.9/regex/#syntax>
+- 検索はデフォルトで大文字小文字を区別しません。大文字小文字を区別するには、先頭に `(?-i)` を追加します。
+- スペースや改行などの一部のテキストはHTMLで異なる表現をされる場合があります。編集画面のHTMLエディタを使用して、基礎となるHTML内容を確認できます。
+- Ankiの正規表現サポートの詳細については、regex crateのドキュメントを参照してください：<https://docs.rs/regex/1.3.9/regex/#syntax>
 
-## Card state
+## カードの状態
 
 `is:due`\
-review cards and learning cards waiting to be studied
+レビューカードと学習待ちのカード
 
 `is:new`\
-new cards
+新しいカード
 
 `is:learn`\
-cards in learning
+学習中のカード
 
 `is:review`\
-reviews (both due and not due) and lapsed cards
+レビュー（期限があるものとないもの）および失効したカード
 
 `is:suspended`\
-cards that have been manually suspended
+手動で一時停止されたカード
 
 `is:buried`\
-cards that have been buried, either [automatically](studying.md#siblings-and-burying) or
-manually
+[自動的](studying.md#siblings-and-burying)または手動で埋められたカード
 
-Note that with the [new scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
-Anki now distinguishes between manually and automatically buried cards so you can
-unbury one set without the other.
+新しいスケジューラーでは、手動で埋められたカードと自動的に埋められたカードを区別するため、一方を解除しても他方は解除されません。
 
-Cards that have lapsed fall into several of these categories, so it may
-be useful to combine them to get more precise results:
+失効したカードはこれらのカテゴリのいくつかに該当するため、より正確な結果を得るためにそれらを組み合わせると便利です：
 
 `is:learn is:review`\
-cards that have lapsed and are awaiting relearning
+失効して再学習待ちのカード
 
 `-is:learn is:review`\
-review cards, not including lapsed cards
+失効カードを含まないレビューカード
 
 `is:learn -is:review`\
-cards that are in learning for the first time
+初めて学習中のカード
 
 `flag:1`\
-cards with a red flag
+赤いフラグが付いたカード
 
 `flag:2`\
-cards with an orange flag
+オレンジ色のフラグが付いたカード
 
 `flag:3`\
-cards with a green flag
+緑色のフラグが付いたカード
 
 `flag:4`\
-cards with a blue flag
+青いフラグが付いたカード
 
 `flag:5`\
-cards with a pink flag
+ピンク色のフラグが付いたカード
 
 `flag:6`\
-cards with a turquoise flag
+ターコイズ色のフラグが付いたカード
 
 `flag:7`\
-cards with a purple flag
+紫色のフラグが付いたカード
 
-## Card properties
+## カードのプロパティ
 
 `prop:ivl>=10`\
-cards with interval of 10 days or more
+間隔が10日以上のカード
 
 `prop:due=1`\
-cards due tomorrow
+明日が期限のカード
 
 `prop:due=-1`\
-cards due yesterday that haven’t been answered yet
+昨日が期限でまだ回答されていないカード
 
 `prop:due>-1 prop:due<1`\
-cards due between yesterday and tomorrow
+昨日から明日までの間に期限があるカード
 
 `prop:reps<10`\
-cards that have been answered less than 10 times
+回答回数が10回未満のカード
 
 `prop:lapses>3`\
-cards that have moved into relearning more than 3 times
+再学習に移行した回数が3回を超えるカード
 
 `prop:ease!=2.5`\
-cards easier or harder than default
+デフォルトよりも簡単または難しいカード
 
-`prop:cdn:d>5` (Requires Anki 2.1.64+.)\
-cards with the value of `d` in custom data (usually refers to Difficulty in FSRS) greater than 5
+`prop:cdn:d>5`（Anki 2.1.64+が必要です。）\
+カスタムデータ内の `d` の値（通常はFSRSの難易度を指します）が5を超えるカード
 
-`prop:cds:v=reschedule` (Requires Anki 23.10+.)\
-cards with the string `v` in custom data equal to `reschedule`
+`prop:cds:v=reschedule`（Anki 23.10+が必要です。）\
+カスタムデータ内の文字列 `v` が `reschedule` と等しいカード
 
-`prop:s>21` (Requires Anki 23.10+ and FSRS enabled.)\
-cards with stability greater than 21 days
+`prop:s>21`（Anki 23.10+およびFSRSが有効であることが必要です。）\
+安定性が21日を超えるカード
 
-`prop:d>0.3` (Requires Anki 23.10+ and FSRS enabled.)\
-cards with difficulty greater than 0.3
+`prop:d>0.3`（Anki 23.10+およびFSRSが有効であることが必要です。）\
+難易度が0.3を超えるカード
 
-`prop:r<0.9` (Requires Anki 23.10+ and FSRS enabled.)\
-cards with retention less than 0.9
+`prop:r<0.9`（Anki 23.10+およびFSRSが有効であることが必要です。）\
+保持率が0.9未満のカード
 
-## Recent Events
+## 最近のイベント
 
-### Added
+### 追加
 
 `added:1`\
-cards added today
+今日追加されたカード
 
 `added:7`\
-cards added in last week
+過去1週間に追加されたカード
 
-The check is made against card creation time rather than note creation
-time, so cards that were generated within the time frame will be
-included even if their notes were added a long time ago.
+このチェックはノートの作成時間ではなくカードの作成時間に対して行われるため、ノートが長い間前に追加されていても、指定された期間内に生成されたカードが含まれます。
 
-### Edited
+### 編集
 
 `edited:n`\
-cards where the note text was added/edited in the last n days.
+ノートのテキストが過去n日以内に追加/編集されたカード。
 
-This requires Anki 2.1.28+ / AnkiMobile 2.0.64+.
+これにはAnki 2.1.28+ / AnkiMobile 2.0.64+が必要です。
 
-### Answered
+### 回答
 
 `rated:1`\
-cards answered today
+今日回答されたカード
 
 `rated:1:2`\
-cards answered Hard (2) today
+今日「難しい (2)」と評価されたカード
 
 `rated:7:1`\
-cards answered Again (1) over the last 7 days
+過去7日間に「再学習 (1)」と評価されたカード
 
 `rated:31:4`\
-cards answered Easy (4) in the last month
+過去1ヶ月間に「簡単 (4)」と評価されたカード
 
-Rating searches had been limited to 31 days before version 2.1.39.
+評価検索はバージョン2.1.39以前では31日間に制限されていました。
 
-### First Answered
+### 最初の回答
 
-On version 2.1.45+, you can also search for the very first review only:
+バージョン2.1.45+では、最初のレビューのみを検索することもできます：
 
 `introduced:1`\
-cards answered for the first time today
+今日初めて回答されたカード
 
 `introduced:365`\
-cards answered for the first time within the last 365 days
+過去365日以内に初めて回答されたカード
 
-## Matching special characters
+## 特殊文字の一致
 
-This section was written for Anki 2.1.36+ - earlier versions did not support escaping
-characters in certain situations.
+このセクションはAnki 2.1.36+用に書かれています。以前のバージョンでは、特定の状況で文字のエスケープをサポートしていませんでした。
 
-As shown in the previous section, some characters like `*`, `_` and `"` have a
-special meaning in Anki. If you need to locate those characters in a search,
-you need to tell Anki not to treat them specially.
+前のセクションで示したように、`*`、`_`、`"`などの文字はAnkiで特別な意味を持ちます。これらの文字を検索で見つける必要がある場合、Ankiにそれらを特別扱いしないように指示する必要があります。
 
-- _Space_\
-  To match something including spaces, enclose the `"entire term"` in double
-  quotes. If it is a colon search, you also have the option to only quote the
-  `part:"after the colon"` (unless there are spaces before the colon as well).
+- _スペース_\
+  スペースを含むものに一致させるには、`"全体の用語"`を二重引用符で囲みます。コロン検索の場合、`コロンの後:"の部分"`だけを引用符で囲むこともできます（コロンの前にもスペースがある場合を除きます）。
 
-- `"`, `*` and `_`\
-  Add a backslash before these characters to treat them literally. For example,
-  `_` will match any single character, but `\_` matches only an actual underscore.
+- `"`, `*` および `_`\
+  これらの文字を文字通りに扱うには、文字の前にバックスラッシュを追加します。例えば、`_`は任意の1文字に一致しますが、`\_`は実際のアンダースコアにのみ一致します。
 
 - `\`\
-  Because a backlash is used to remove the special meaning from other characters,
-  it too is treated specially. If you need to search for an actual backslash,
-  use `\\` instead of `\`.
+  バックスラッシュは他の文字の特別な意味を取り除くために使用されるため、それ自体も特別に扱われます。実際のバックスラッシュを検索する必要がある場合は、`\`の代わりに`\\`を使用します。
 
-- `(` and `)`\
-  You can search for parentheses either by enclosing the full term in quotes,
-  and/or by using a backslash. That is, `"some(text)"`, `some\(text\)` and
-  `"some\(text\)"` are all equivalent, but `some(text)` is not.
+- `(` および `)`\
+  括弧を検索するには、用語全体を引用符で囲むか、バックスラッシュを使用します。つまり、`"some(text)"`、`some\(text\)`、および`"some\(text\)"`はすべて同等ですが、`some(text)`はそうではありません。
 
 - `-`\
-  Starting a search term with `-` usually inverts it: `-dog` matches everything
-  except dog for example. If you instead wish to include an actual hyphen,
-  you can either use a backslash, or include the text in quotes, such as
-  `\-.-` or `"-.-"`.
+  検索用語を`-`で始めると通常は反転します。例えば、`-dog`はdog以外のすべてに一致します。実際のハイフンを含めたい場合は、バックスラッシュを使用するか、テキストを引用符で囲むことができます。例えば、`\-.-`または`"-.-"`です。
 
 - `:`\
-  Colons have to be escaped unless they are preceded by another, unescaped colon.
-  So `w:e:b` is a word boundary search for `e:b`, `w\:e\:b` searches literally for
-  `w:e:b` and `w\:e:b` searches the field `w:e` for `b` (see
-  [field searches](#limiting-to-a-field)).
+  コロンは、他のエスケープされていないコロンの後に続かない限り、エスケープする必要があります。したがって、`w:e:b`は`e:b`の単語境界検索であり、`w\:e\:b`は文字通り`w:e:b`を検索し、`w\:e:b`はフィールド`w:e`で`b`を検索します（[フィールド検索](#limiting-to-a-field)を参照）。
 
-- `&`, `<`, and `>`\
-  `&`, `<`, and `>` are treated as HTML when searching in Anki, and as such searches
-  containing them don't work as expected. However, you can search for them by using their
-  corresponding HTML entity names (`&amp;` for `&`, `&lt;` for `<`, and `&gt;` for `>`).
-  For example, searching `&lt;&amp;text&gt;` searches for a card with `<&text>` in a field.
+- `&`、`<`、および `>`\
+  `&`、`<`、および `>`はAnkiで検索する際にHTMLとして扱われるため、これらを含む検索は期待通りに動作しません。ただし、対応するHTMLエンティティ名（`&`は`&amp;`、`<`は`&lt;`、`>`は`&gt;`）を使用して検索することができます。例えば、`&lt;&amp;text&gt;`を検索すると、フィールドに`<&text>`が含まれるカードが検索されます。
 
-### Raw input
+### 生の入力
 
-Text preceded by certain keywords (like `re:`) will be treated as raw input. That is,
-the characters listed above largely lose their special meaning. In such a context, only
-a minimum of escaping is required to prevent ambiguity:
+特定のキーワード（`re:`など）の前にあるテキストは、生の入力として扱われます。つまり、上記の文字は特別な意味をほとんど失います。このような文脈では、曖昧さを防ぐために最小限のエスケープが必要です：
 
-- `"` must be escaped.
+- `"` はエスケープする必要があります。
 
-- Spaces and unescaped parentheses require the search term to be quoted.
+- スペースとエスケープされていない括弧は、検索用語を引用符で囲む必要があります。
 
-- The search term must not end in an odd number of backslashes.
+- 検索用語は奇数個のバックスラッシュで終わってはいけません。
 
-## Object IDs
+## オブジェクトID
 
 `nid:123`\
-the note with note id 123
+ノートIDが123のノート
 
 `cid:123,456,789`\
-all cards with card ids 123, 456 or 789
+カードIDが123、456、789のすべてのカード
 
-Note and card IDs can be found in the [card info](stats.md) dialog in the
-browser. These searches may also be helpful when doing add-on
-development or otherwise working closely with the database.
+ノートおよびカードIDは、ブラウザの[カード情報](stats.md)ダイアログで確認できます。これらの検索は、アドオンの開発やデータベースと密接に連携する場合にも役立ちます。

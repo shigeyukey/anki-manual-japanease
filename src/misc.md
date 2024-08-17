@@ -1,48 +1,31 @@
-# Miscellanea
+# その他
 
 <!-- toc -->
 
-## Menu Shortcuts
+## メニューショートカット
 
-On Windows/Linux you can hold down the <kbd>Alt</kbd> key and press a highlighted
-letter to activate a particular menu.
+Windows/Linuxでは、<kbd>Alt</kbd>キーを押しながらハイライトされた文字を押すことで、特定のメニューをアクティブにできます。
 
-Although macOS doesn’t support this feature, it does allow you instead to assign
-shortcuts to specific menu items. Please see
-<https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac>
-for more information.
+macOSではこの機能はサポートされていませんが、代わりに特定のメニュー項目にショートカットを割り当てることができます。詳細については、<https://support.apple.com/en-au/guide/mac-help/mchlp2271/mac>を参照してください。
 
-## Debug Console
+## デバッグコンソール
 
-Sometimes you may be asked to use the debug console to change a setting
-or check something. Unless asked to enter text in the "debug console",
-you will probably not need this. Advanced users may like to read more
-about it in the [add-on writing guide](https://addon-docs.ankiweb.net/debugging.html#debug-console).
+設定を変更したり、何かを確認するためにデバッグコンソールを使用するように求められることがあります。「デバッグコンソール」にテキストを入力するように求められない限り、これを使用する必要はないでしょう。上級ユーザーは[アドオン作成ガイド](https://addon-docs.ankiweb.net/debugging.html#debug-console)で詳細を読むことができます。
 
-When asked to enter text into the "debug console", please start Anki,
-and in the main window, press
+「デバッグコンソール」にテキストを入力するように求められた場合、Ankiを起動し、メインウィンドウで
 
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the control key, shift key, and semi-colon key at the same time)
+（Ctrlキー、Shiftキー、セミコロンキーを同時に押します）
 
-On a Mac, press
+Macでは、
 
 <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>
 
-(the command key, shift key, and semi-colon key at the same time)
+（Commandキー、Shiftキー、セミコロンキーを同時に押します）
 
-On some non-English keyboards, you may need to press <kbd>:</kbd> or <kbd>+</kbd> instead
-of <kbd>;</kbd>.
+一部の非英語キーボードでは、<kbd>;</kbd>の代わりに<kbd>:</kbd>や<kbd>+</kbd>を押す必要があるかもしれません。
 
-In the window that has popped up, please paste the text you were asked
-to paste in the top section. When you’ve done so, please press
-Ctrl+Return (Command+Return on a Mac), and some text should appear in
-the bottom section. If you’ve been asked to paste the resulting output,
-please copy it from the bottom area, and paste it back to the support
-person.
+表示されたウィンドウの上部に、指示されたテキストを貼り付けてください。貼り付けたら、Ctrl+Return（MacではCommand+Return）を押すと、下部にテキストが表示されます。結果の出力を貼り付けるように求められた場合は、下部のエリアからコピーして、サポート担当者に貼り付けてください。
 
-If you press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd> instead of just <kbd>Ctrl</kbd>+<kbd>Return</kbd>, Anki will
-try to print the result rather than doing what you asked it to. If you
-are getting unexpected errors, please make sure you’re not holding down
-the <kbd>Shift</kbd> key.
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Return</kbd>を押すと、Ankiは要求された動作を実行するのではなく、結果を表示しようとします。予期しないエラーが発生する場合は、<kbd>Shift</kbd>キーを押し続けていないことを確認してください。

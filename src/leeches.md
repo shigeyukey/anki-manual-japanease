@@ -1,55 +1,25 @@
-# Leeches
+# ヒル
 
 <!-- toc -->
 
-Leeches are cards that you keep forgetting. Because they require so
-many reviews, they take up a lot more of your time, compared to other cards.
+ヒル(Leech)とは、何度も忘れてしまうカードのことです。これらのカードは多くのレビューを必要とするため、他のカードに比べて多くの時間を費やすことになります。
 
-Anki can help you identify leeches. Each time a review card 'lapses' (is 
-failed while it is in review mode), a counter increases. When this counter
-reaches 8, Anki tags the note as a leech and suspends the card. The 
-threshold, and whether to suspend or not, can be adjusted in the
-[deck options](deck-options.md).
+Ankiはヒルを特定するのに役立ちます。レビュー中のカードが「失敗」するたびにカウンターが増加します。このカウンターが8に達すると、Ankiはそのノートにヒルのタグを付け、カードを一時停止します。この閾値や一時停止するかどうかは[デッキオプション](deck-options.md)で調整できます。
 
-If you keep failing that card, Anki will continue to alert you about the 
-leech periodically. These warnings occur at half the initial leech 
-threshold. For example, if you set the warning at 8 lapses, future 
-warnings will happen every 4 lapses (at 12, 16, and so on).
+そのカードに何度も失敗すると、Ankiは定期的にヒルについて警告を続けます。これらの警告は、初期のヒル閾値の半分の頻度で発生します。例えば、警告を8回の失敗に設定した場合、将来の警告は4回ごとに発生します（12回、16回など）。
 
-Once a leech is found, there are several ways to handle it.
+ヒルが見つかった場合、対処方法はいくつかあります。
 
-## Editing
+## 編集
 
-The most efficient method to deal with leeches is to change how the
-information is presented. Maybe your cards have too much information, or 
-you’re trying to memorize something without fully understanding it. Often, 
-it helps to follow the [20 rules of formulating 
-knowledge](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation),
-proposed by Dr Piotr Wozniak, the creator of SuperMemo. Some cards can 
-benefit from a mnemonic. Even some well-written cards may need a boost in 
-coherence, e.g. by adding cards for related concepts. However, it takes a 
-lot of experience to know how to formulate the material properly, break it 
-down into smallest possible components, and use mnemonic techniques.
+ヒルに対処する最も効率的な方法は、情報の提示方法を変更することです。カードに情報が多すぎるか、完全に理解せずに暗記しようとしている可能性があります。しばしば、Dr. Piotr Wozniak（SuperMemoの創設者）が提案する[知識の定式化の20のルール](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation)に従うと役立ちます。いくつかのカードは記憶術から恩恵を受けることができます。よく書かれたカードでも、関連する概念のカードを追加することで一貫性を高める必要があるかもしれません。しかし、資料を適切に定式化し、可能な限り小さなコンポーネントに分解し、記憶術を使用する方法を知るには多くの経験が必要です。
 
-## Deleting
+## 削除
 
-If the material you’re struggling with isn't important enough to justify 
-the time spent, you can simply delete the card. By selectively deleting
-difficult and obscure items, you can spend more time learning other 
-material, making studying more enjoyable. If you think the card might be 
-useful for future reference, you can leave it suspended.
+取り組んでいる資料が時間を費やす価値がない場合は、カードを削除することができます。難しくて曖昧な項目を選択的に削除することで、他の資料を学習する時間を増やし、学習をより楽しいものにすることができます。将来的にカードが役立つと思う場合は、一時停止のままにしておくこともできます。
 
-## Waiting
+## 待機
 
-Some leeches are caused by 'interference'. For example, an English
-learner may have recently learnt the words "disappoint" and "disappear".
-As they look similar, the learner may find themselves confusing the two
-when trying to answer. In such situations, it’s often helpful to
-concentrate on one idea at a time. Once that idea is firmly ingrained in 
-your mind, you can then start learning the other idea. So, in these
-situations, you might want to leave one of the words suspended until you
-have learnt the other one well, and then unsuspend it.
+いくつかのヒルは「干渉」によって引き起こされます。例えば、英語学習者が最近「disappoint」と「disappear」という単語を学んだとします。これらは似ているため、学習者は答えようとするときに2つを混同するかもしれません。このような状況では、一度に1つのアイデアに集中することが役立つことがよくあります。そのアイデアがしっかりと頭に刻まれたら、次のアイデアを学び始めることができます。したがって、このような状況では、1つの単語をよく学ぶまで一時停止しておき、学んだ後に再開することが望ましいかもしれません。
 
-For a more detailed discussion, you can refer to the article "[Dealing 
-with Leeches](https://controlaltbackspace.org/leech/)", written by Soren 
-Bjornstad.
+より詳細な議論については、Soren Bjornstadによって書かれた記事「[ヒルの対処](https://controlaltbackspace.org/leech/)」を参照してください。

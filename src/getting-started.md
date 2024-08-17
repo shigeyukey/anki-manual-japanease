@@ -1,334 +1,192 @@
-# Getting Started
+# はじめに
 
 <!-- toc -->
 
-## Installing & Upgrading
+## インストールとアップグレード
 
-Please see the instructions for your computer:
+お使いのコンピュータに応じた手順をご覧ください：
 
 - [Windows](./platform/windows/installing.md)
 - [Mac](./platform/mac/installing.md)
 - [Linux](./platform/linux/installing.md)
 
-## Videos
+## ビデオ
 
-For a quick way to dive into Anki, please have a look at these intro
-videos. Some were made with a previous Anki version, but the concepts
-are the same.
+Ankiをすぐに始めるための方法として、これらの紹介ビデオをご覧ください。いくつかは以前のバージョンのAnkiで作成されていますが、概念は同じです。
 
-- [Shared Decks and Review Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
+- [共有デッキとレビューの基本](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)
 
-- [Syncing](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
+- [同期](https://www.youtube.com/watch?v=YkiM4DPzSVc&list=PLGgmaKOIHykFoomqkBJAyGiDQ2kyiuTao&yt:cc=on)
 
-- [Switching Card Order](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
+- [カードの順序を変更する](http://www.youtube.com/watch?v=DnbKwHEQ1mA&yt:cc=on)
 
-- [Styling Cards](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
+- [カードのスタイリング](http://www.youtube.com/watch?v=F1j1Zx0mXME&yt:cc=on)
 
-- [Typing in the Answer](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
+- [答えを入力する](http://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on)
 
-If YouTube is unavailable in your country, you can [download the videos](https://apps.ankiweb.net/downloads/archive/screencasts/2.0/)
-instead.
+YouTubeがご利用いただけない場合は、[ビデオをダウンロード](https://apps.ankiweb.net/downloads/archive/screencasts/2.0/)することもできます。
 
-## Key Concepts
+## 重要な概念
 
-### Cards
+### カード
 
-A question and answer pair is called a 'card'. This is based on a paper
-flashcard with a question on one side and the answer on the back. In
-Anki a card doesn’t actually look like a physical card, and when you
-show the answer the question remains visible by default. For example, if
-you’re studying basic chemistry, you might see a question like:
+質問と回答のペアは「カード」と呼ばれます。これは、片面に質問、裏面に回答が書かれた紙のフラッシュカードに基づいています。Ankiでは、カードは実際には物理的なカードのようには見えません。回答を表示すると、デフォルトで質問も表示されたままになります。例えば、基本的な化学を勉強している場合、次のような質問が表示されるかもしれません：
 
-    Q: Chemical symbol for oxygen?
+    Q: 酸素の化学記号は？
 
-After thinking about it, and deciding the answer is O, you click the
-show answer button, and Anki shows you:
+考えた後、答えが「O」であると決めたら、回答を表示するボタンをクリックします。するとAnkiは次のように表示します：
 
-    Q: Chemical symbol for oxygen?
+    Q: 酸素の化学記号は？
     A: O
 
-After confirming that you are correct, you can tell Anki how well you
-remembered, and Anki will choose a next time to show you again.
+正解を確認した後、どれだけ覚えていたかをAnkiに伝えることができ、Ankiは次に表示するタイミングを選びます。
 
-#### Types of Cards
+#### カードの種類
 
-- **New:** A new card is one that you have downloaded or entered in, but have never studied before.
+- **新規:** 新規カードとは、ダウンロードまたは入力したが、まだ一度も学習していないカードのことです。
 
-- **Learning:** Cards that were seen for the first time recently, and are still being learnt.
+- **学習中:** 最近初めて見たカードで、まだ学習中のカードです。
 
-- **Review:** Cards that were previously learnt, and now need to be reviewed so you don’t forget them.
-  There are two types of review cards:
-    - **Young:** A young card is one that has an interval of less than 21 days, but is
-   not in learning.
-    - **Mature:** A mature card is one that has an interval of 21 days or greater.
+- **復習:** 以前に学習したカードで、忘れないように復習が必要なカードです。
+  復習カードには2種類あります：
+    - **若い:** 若いカードとは、間隔が21日未満のカードで、学習中ではないものです。
+    - **成熟:** 成熟カードとは、間隔が21日以上のカードです。
 
-- **Relearn:** A relearning card is a card that you have failed in review mode, thus
-  returning it to learning mode to be relearned.
+- **再学習:** 再学習カードとは、復習モードで失敗したカードで、再学習するために学習モードに戻されたカードです。
 
-### Decks
+### デッキ
 
-A 'deck' is a group of cards. You can place cards in different decks to
-study parts of your card collection instead of studying everything at
-once. Each deck can have different settings, such as how many new cards
-to show each day, or how long to wait until cards are shown again.
+「デッキ」とは、カードのグループのことです。カードを異なるデッキに配置することで、カードコレクションの一部を学習することができ、すべてを一度に学習する必要がなくなります。各デッキには、毎日表示する新しいカードの数や、カードが再表示されるまでの待ち時間など、異なる設定を持たせることができます。
 
-Decks can contain other decks, which allows you to organize decks into a
-tree. Anki uses “::” to show different levels. A deck called
-“Chinese::Hanzi” refers to a “Hanzi” deck, which is part of a “Chinese”
-deck. If you select “Hanzi” then only the Hanzi cards will be shown; if
-you select “Chinese” then all Chinese cards, including Hanzi cards, will
-be shown.
+デッキは他のデッキを含むことができ、これによりデッキをツリー状に整理することができます。Ankiは「::」を使用して異なるレベルを表示します。例えば、「Chinese::Hanzi」というデッキは、「Chinese」デッキの一部である「Hanzi」デッキを指します。「Hanzi」を選択すると、Hanziカードのみが表示されます。「Chinese」を選択すると、Hanziカードを含むすべてのChineseカードが表示されます。
 
-To place decks into a tree, you can either name them with “::” between
-each level, or drag and drop them from the deck list. Decks that have
-been nested under another deck (that is, that have at least one “::” in
-their names) are often called 'subdecks', and top-level decks are
-sometimes called 'superdecks' or 'parent decks'.
+デッキをツリーに配置するには、各レベルの間に「::」を入れて名前を付けるか、デッキリストからドラッグアンドドロップします。別のデッキの下にネストされたデッキ（つまり、名前に少なくとも1つの「::」が含まれているデッキ）は、しばしば「サブデッキ」と呼ばれ、トップレベルのデッキは「スーパーデッキ」または「親デッキ」と呼ばれることがあります。
 
-Anki starts with a deck called “default”; any cards which have somehow
-become separated from other decks will go here. Anki will hide the
-default deck if it contains no cards and you have added other decks.
-Alternatively, you may rename this deck and use it for other cards.
+Ankiは「default」というデッキから始まります。他のデッキから何らかの理由で分離されたカードはここに入ります。Ankiは、デフォルトデッキにカードが含まれておらず、他のデッキを追加した場合、デフォルトデッキを非表示にします。あるいは、このデッキの名前を変更して他のカードに使用することもできます。
 
-Decks are displayed in the deck list alphabetically. This can result in
-a surprising order if your decks contain numbers - for example, "My Deck 10"
-will come before "My Deck 9", as 1 comes before 9. If you wish to number your
-decks, you can add a "0" in front of single-digit numbers, e.g. "Deck 01",
-"Deck 02" .. "Deck 10".
+デッキはデッキリストにアルファベット順に表示されます。デッキに数字が含まれている場合、驚くような順序になることがあります。例えば、「My Deck 10」は「My Deck 9」の前に来ます。これは、1が9の前に来るためです。デッキに番号を付けたい場合は、1桁の数字の前に「0」を追加することができます。例えば、「Deck 01」、「Deck 02」・・「Deck 10」のようにします。
 
-Decks are best used to hold broad categories of cards, rather than
-specific topics such as “food verbs” or “lesson 1”. For more info on
-this, please see the [using decks appropriately](editing.md#using-decks-appropriately) section.
+デッキは、「食べ物の動詞」や「レッスン1」などの特定のトピックではなく、広範なカテゴリのカードを保持するために使用するのが最適です。これについての詳細は、[デッキの適切な使用](editing.md#using-decks-appropriately)セクションを参照してください。
 
-For information on how decks affect the order cards are displayed in,
-please see the [display order](studying.md#display-order) section.
+デッキがカードの表示順にどのように影響するかについては、[表示順](studying.md#display-order)セクションを参照してください。
 
-### Notes & Fields
+### ノートとフィールド
 
-When making flashcards, it’s often desirable to make more than one card
-that relates to some information. For example, if you’re learning
-French, and you learn that the word “bonjour” means “hello”, you may
-wish to create one card that shows you “bonjour” and asks you to
-remember “hello”, and another card that shows you “hello” and asks you
-to remember “bonjour”. One card is testing your ability to recognize the
-foreign word, and the other card is testing your ability to produce it.
+フラッシュカードを作成する際には、ある情報に関連する複数のカードを作成することが望ましい場合があります。例えば、フランス語を学んでいて、「bonjour」という単語が「こんにちは」を意味することを学んだとします。この場合、「bonjour」を表示して「こんにちは」を思い出させるカードと、「こんにちは」を表示して「bonjour」を思い出させるカードを作成したいかもしれません。一方のカードは外国語の単語を認識する能力をテストし、もう一方のカードはその単語を生成する能力をテストします。
 
-When using paper flashcards, your only option in this case is to write
-out the information twice, once for each card. Some computer flashcard
-programs make life easier by providing a feature to flip the front and
-back sides. This is an improvement over the paper situation, but there
-are two major downsides:
+紙のフラッシュカードを使用する場合、この場合の唯一の選択肢は、各カードに対して情報を2回書き出すことです。一部のコンピュータフラッシュカードプログラムは、表と裏を反転させる機能を提供することで生活を楽にします。これは紙の状況に比べて改善されていますが、2つの大きな欠点があります：
 
-- Because such programs don’t track your performance of recognition
-  and production separately, cards will tend not to be shown to you at
-  the optimum time, meaning you forget more than you’d like, or you
-  study more than is necessary.
+- そのようなプログラムは認識と生成のパフォーマンスを別々に追跡しないため、カードは最適なタイミングで表示されない傾向があり、忘れることが多くなったり、必要以上に勉強することになります。
 
-- Reversing the question and answer only works when you want exactly
-  the same content on each side. This means it’s not possible to
-  display extra info on the back of each card for example.
+- 質問と回答を反転させる機能は、各面にまったく同じ内容を表示したい場合にのみ機能します。例えば、各カードの裏面に追加情報を表示することはできません。
 
-Anki solves these problems by allowing you to split the content of your
-cards up into separate pieces of information. You can then tell Anki
-which pieces of information you want on each card, and Anki will take
-care of creating the cards for you and updating them if you make any
-edits in the future.
+Ankiは、カードの内容を別々の情報の断片に分割できるようにすることで、これらの問題を解決します。各カードにどの情報を表示するかをAnkiに指示すると、Ankiはカードを作成し、将来編集を加えた場合にはそれらを更新してくれます。
 
-Imagine we want to study French vocabulary, and we want to include the
-page number on the back of each card. We want our cards to look like
-this:
+例えば、フランス語の語彙を学習したいとし、各カードの裏面にページ番号を含めたいとします。カードは次のようになります：
 
     Q: Bonjour
     A: Hello
        Page #12
 
-And:
+そして：
 
     Q: Hello
     A: Bonjour
        Page #12
 
-In this example, we have three pieces of related information: a French
-word, an English meaning, and a page number. If we put them together,
-they’d look like this:
+この例では、3つの関連する情報があります：フランス語の単語、英語の意味、ページ番号です。これらをまとめると、次のようになります：
 
     French: Bonjour
     English: Hello
     Page: 12
 
-In Anki, this related information is called a 'note', and each piece of
-information is called a 'field'. So we can say that this type of note
-has three fields: French, English, and Page.
+Ankiでは、この関連する情報を「ノート」と呼び、各情報の断片を「フィールド」と呼びます。したがって、このタイプのノートには3つのフィールドがあると言えます：フランス語、英語、ページ。
 
-To add and edit fields, click the “Fields…​” button while adding or
-editing notes. For more information on fields, please see the
-[Customizing Fields](editing.md#customizing-fields) section.
+フィールドを追加および編集するには、ノートを追加または編集する際に「フィールド…​」ボタンをクリックします。フィールドの詳細については、[フィールドのカスタマイズ](editing.md#customizing-fields)セクションを参照してください。
 
-### Card Types
+### カードタイプ
 
-In order for Anki to create cards based on our notes, we need to give it
-a blueprint that says which fields should be displayed on the front or
-back of each card. This blueprint is called a 'card type'. Each type of
-note can have one or more card types; when you add a note, Anki will
-create one card for each card type.
+Ankiがノートに基づいてカードを作成するためには、どのフィールドを各カードの表または裏に表示するかを指定する設計図を提供する必要があります。この設計図は「カードタイプ」と呼ばれます。各ノートタイプには1つ以上のカードタイプを持つことができ、ノートを追加すると、Ankiは各カードタイプに対して1枚のカードを作成します。
 
-Each card type has two 'templates', one for the question and one for the
-answer. In the above French example, we wanted the recognition card to
-look like this:
+各カードタイプには、質問用と回答用の2つの「テンプレート」があります。上記のフランス語の例では、認識カードを次のように表示したいとします：
 
     Q: Bonjour
     A: Hello
        Page #12
 
-To do this, we can set the question and answer templates to:
+これを実現するために、質問と回答のテンプレートを次のように設定できます：
 
     Q: {{French}}
     A: {{English}}<br>
        Page #{{Page}}
 
-By surrounding a field name in double curly brackets, we tell Anki to
-replace that section with the actual information in the field. Anything
-not surrounded by curly brackets remains the same on each card. (For
-instance, we don’t have to type “Page \#” into the Page field when
-adding material – it’s added automatically to every card.) &lt;br&gt; is
-a special code that tells Anki to move to the next line; more details
-are available in the [templates](templates/intro.md) section.
+フィールド名を二重の中括弧で囲むことで、その部分をフィールド内の実際の情報に置き換えるようにAnkiに指示します。中括弧で囲まれていない部分は各カードで同じままです。（例えば、素材を追加する際に「Page \#」をページフィールドに入力する必要はありません。これは各カードに自動的に追加されます。）&lt;br&gt;はAnkiに次の行に移動するよう指示する特別なコードです。詳細は[テンプレート](templates/intro.md)セクションにあります。
 
-The production card templates work in a similar way:
+生成カードのテンプレートも同様の方法で動作します：
 
     Q: {{English}}
     A: {{French}}<br>
        Page #{{Page}}
 
-Once a card type has been created, every time you add a new note, a card
-will be created based on that card type. Card types make it easy to keep
-the formatting of your cards consistent and can greatly reduce the
-amount of effort involved in adding information. They also mean Anki can
-ensure related cards don’t appear too close to each other, and they
-allow you to fix a typing mistake or factual error once and have all the
-related cards updated at once.
+カードタイプが作成されると、新しいノートを追加するたびに、そのカードタイプに基づいてカードが作成されます。カードタイプを使用すると、カードのフォーマットを一貫して保つことが容易になり、情報の追加にかかる労力を大幅に削減できます。また、関連するカードが近すぎて表示されないようにAnkiが調整でき、タイプミスや事実誤りを一度修正するだけで、関連するすべてのカードが更新されるようになります。
 
-To add and edit card types, click the “Cards…​” button while adding or
-editing notes. For more information on card types, please see the [Cards and Templates](templates/intro.md) section.
+カードタイプを追加および編集するには、ノートを追加または編集する際に「カード…​」ボタンをクリックします。カードタイプの詳細については、[カードとテンプレート](templates/intro.md)セクションを参照してください。
 
-### Note Types
+### ノートタイプ
 
-Anki allows you to create different types of notes for different
-material. Each type of note has its own set of fields and card types.
-It’s a good idea to create a separate note type for each broad topic
-you’re studying. In the above French example, we might create a note
-type called “French” for that. If we wanted to learn capital cities, we
-could create a separate note type for that as well, with fields such as
-“Country” and “Capital City”.
+Ankiでは、異なる教材に対して異なる種類のノートを作成することができます。各ノートタイプには独自のフィールドとカードタイプのセットがあります。学習している各広範なトピックに対して別々のノートタイプを作成するのが良いでしょう。上記のフランス語の例では、「フランス語」というノートタイプを作成するかもしれません。首都を学びたい場合は、「国」と「首都」といったフィールドを持つ別のノートタイプを作成することができます。
 
-When Anki checks for duplicates, it only compares other notes of the
-same type. Thus if you add a capital city called “Orange” using the
-capital city note type, you won’t see a duplicate message when it comes
-time to learn how to say “orange” in French.
+Ankiが重複をチェックする際には、同じタイプの他のノートとだけ比較します。したがって、首都ノートタイプを使用して「オレンジ」という首都を追加しても、フランス語で「オレンジ」を学ぶ際に重複メッセージは表示されません。
 
-When you create a new collection, Anki automatically adds some standard
-note types to it. These note types are provided to make Anki easier for
-new users, but in the long run it’s recommended you define your own note
-types for the content you are learning. The standard note types are as
-follows:
+新しいコレクションを作成すると、Ankiは自動的にいくつかの標準ノートタイプを追加します。これらのノートタイプは新しいユーザーがAnkiを使いやすくするために提供されていますが、長期的には学習している内容に合わせて独自のノートタイプを定義することをお勧めします。標準ノートタイプは以下の通りです：
 
-- **Basic**\
-  Has Front and Back fields, and will create one card. Text you enter in
-  Front will appear on the front of the card, and text you enter in Back
-  will appear on the back of the card.
+- **基本**\
+  表面と裏面のフィールドがあり、1枚のカードを作成します。表面に入力したテキストはカードの表面に表示され、裏面に入力したテキストはカードの裏面に表示されます。
 
-- **Basic (and reversed card)**\
-  Like Basic, but creates two cards for the text you enter: one from
-  front→back and one from back→front.
+- **基本（逆カード付き）**\
+  基本と同様ですが、入力したテキストから2枚のカードを作成します：1枚は表→裏、もう1枚は裏→表です。
 
-- **Basic (optional reversed card)**\
-  This is a front→back card, and optionally a back→front card. To do this,
-  it has a third field called “Add Reverse.” If you enter any text into
-  that field, a reverse card will be created. More information about this
-  is available in the [Cards and Templates](templates/intro.md) section.
+- **基本（オプションの逆カード付き）**\
+  これは表→裏のカードで、オプションで裏→表のカードも作成します。これを実現するために、「逆カードを追加」という3つ目のフィールドがあります。そのフィールドにテキストを入力すると、逆カードが作成されます。詳細は[カードとテンプレート](templates/intro.md)セクションにあります。
 
-- **Basic (type in the answer)**\
-  This is essentially Basic, with an extra text box on the front where you
-  can type your answer in, after flipping to the back your input would be
-  checked and compared with the answer. More information is available in the
-  [Checking Your Answer](templates/fields.md#checking-your-answer) section.
+- **基本（答えを入力）**\
+  これは基本とほぼ同じですが、表面に答えを入力するためのテキストボックスが追加されています。裏面にフリップした後、入力した内容が答えと比較されます。詳細は[答えの確認](templates/fields.md#checking-your-answer)セクションにあります。
 
-- **Cloze**\
-  A note type which makes it easy to select text and turn it into a cloze
-  deletion (e.g., “Man landed on the moon in \[…​\]” → “Man landed on the
-  moon in 1969”). More information is available in the [cloze deletion](editing.md#cloze-deletion) section.
+- **クローズ**\
+  テキストを選択してクローズ削除に変換するのが簡単なノートタイプです（例：「人類が月に着陸したのは \[…​\]」→「人類が月に着陸したのは1969年」）。詳細は[クローズ削除](editing.md#cloze-deletion)セクションにあります。
 
-- **Image Occlusion**\
-  Like the cloze notetype, but it works with images instead of text,
-  which is especially useful when studying material that heavily relies on images,
-  such as anatomy, geography, and more. For details, please see the [Image Occlusion](editing.md#image-occlusion)
-  section of the manual. 
+- **画像隠し**\
+  クローズノートタイプに似ていますが、テキストの代わりに画像で動作します。特に解剖学や地理学など、画像に大きく依存する教材を学ぶ際に便利です。詳細はマニュアルの[画像隠し](editing.md#image-occlusion)セクションを参照してください。
 
-To add your own note types and modify existing ones, you can use Tools →
-Manage Note Types from the main Anki window.
+独自のノートタイプを追加および既存のノートタイプを変更するには、Ankiのメインウィンドウから「ツール」→「ノートタイプの管理」を使用します。
 
-Notes and note types are common to your whole collection rather than
-limited to an individual deck. This means you can use many different
-types of notes in a particular deck, or have different cards generated
-from a particular note in different decks. When you add notes using the
-Add window, you can select what note type to use and what deck to use,
-and these choices are completely independent of each other. You can also
-change the note type of some notes [after you’ve already created them](browsing.md).
+ノートとノートタイプはコレクション全体で共通であり、個々のデッキに限定されません。これにより、特定のデッキで多くの異なる種類のノートを使用したり、特定のノートから異なるデッキにカードを生成したりすることができます。追加ウィンドウを使用してノートを追加する際には、使用するノートタイプとデッキを選択でき、これらの選択は完全に独立しています。また、[既に作成したノートのノートタイプを変更する](browsing.md)こともできます。
 
-### Collection
+### コレクション
 
-Your 'collection' is all the material stored in Anki – your cards,
-notes, decks, note types, deck options, and so on.
+「コレクション」とは、Ankiに保存されているすべての教材（カード、ノート、デッキ、ノートタイプ、デッキオプションなど）のことです。
 
-## Shared Decks
+## 共有デッキ
 
-You can watch [a video about Shared Decks and Review
-Basics](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on) on YouTube.
+YouTubeで[共有デッキとレビューの基本](http://www.youtube.com/watch?v=QS2G-k2hQyg&yt:cc=on)に関するビデオを見ることができます。
 
-The easiest way to get started with Anki is to download a deck of cards
-someone has shared:
+Ankiを始める最も簡単な方法は、誰かが共有しているデッキをダウンロードすることです：
 
-1. Click the “Get Shared” button at the bottom of the deck list.
+1. デッキリストの下部にある「共有デッキを取得」ボタンをクリックします。
 
-2. When you’ve found a deck you’re interested in, click the “Download”
-   button to download a deck package.
+2. 興味のあるデッキが見つかったら、「ダウンロード」ボタンをクリックしてデッキパッケージをダウンロードします。
 
-3. Double-click on the downloaded package to load it into Anki, or
-   File→Import it.
+3. ダウンロードしたパッケージをダブルクリックしてAnkiに読み込むか、ファイル→インポートを選択します。
 
-Please note that it’s not currently possible to add shared decks
-directly to your AnkiWeb account. You need to import them with the
-desktop program, then synchronize to upload them to AnkiWeb.
+現在、共有デッキを直接AnkiWebアカウントに追加することはできません。デスクトッププログラムでインポートし、その後同期してAnkiWebにアップロードする必要があります。
 
-Creating your own deck is the most effective way to learn a complex
-subject. Subjects like languages and the sciences can’t be understood
-simply by memorizing facts — they require explanation and context to
-learn effectively. Furthermore, inputting the information yourself
-forces you to decide what the key points are, leading to a better
-understanding.
+複雑な科目を学ぶ最も効果的な方法は、自分自身でデッキを作成することです。言語や科学のような科目は、単に事実を暗記するだけでは理解できません。効果的に学ぶためには、説明と文脈が必要です。さらに、自分で情報を入力することで、重要なポイントを決定する必要があり、より良い理解につながります。
 
-If you are a language learner, you may be tempted to download a long
-list of words and their translations, but this won’t teach you a
-language any more than memorizing scientific equations will teach you
-astrophysics. To learn properly, you need textbooks, teachers, or
-exposure to real-world sentences.
+言語学習者の場合、単語とその翻訳の長いリストをダウンロードしたくなるかもしれませんが、これは科学の方程式を暗記するだけで天体物理学を学ぶのと同じくらい無意味です。正しく学ぶためには、教科書、教師、または実際の文章に触れることが必要です。
 
-    Do not learn if you do not understand.
+    理解しないまま学習しないでください。
     --SuperMemo
 
-Most shared decks are created by people who are learning material
-outside of Anki – from textbooks, classes, TV, etc. They select the
-interesting points from what they learn and put them into Anki. They
-make no effort to add background information or explanations to the
-cards, because they already understand the material. So when someone
-else downloads their deck and tries to use it, they’ll find it very
-difficult as the background information and explanations are missing.
+ほとんどの共有デッキは、Anki以外の教材（教科書、授業、テレビなど）から学んでいる人々によって作成されています。彼らは学んだことから興味深いポイントを選び出し、それをAnkiに入力します。彼らは既に教材を理解しているため、カードに背景情報や説明を追加する努力をしません。そのため、他の人がそのデッキをダウンロードして使用しようとすると、背景情報や説明が欠けているため、非常に難しく感じるでしょう。
 
-That is not to say shared decks are useless – simply that for complex
-subjects, they should be used as a 'supplement' to external material,
-not as a 'replacement' for it. If you’re studying textbook ABC and
-someone has shared a deck of ideas from ABC, that’s a great way to save
-some time. And for simple subjects that are basically a list of facts,
-such as capital city names or pub quiz trivia, you probably don’t need
-external material. But if you attempt to study complex subjects without
-external material, you will probably meet with disappointing results.
+これは共有デッキが無意味だということではありません。単に、複雑な科目に対しては、外部の教材の「補足」として使用すべきであり、それ自体を「代替」として使用すべきではないということです。もしあなたが教科書ABCを勉強していて、誰かがABCからのアイデアを共有したデッキを持っているなら、それは時間を節約する素晴らしい方法です。そして、首都名やクイズのトリビアのような事実のリストに過ぎない簡単な科目に対しては、外部の教材はおそらく必要ありません。しかし、外部の教材なしで複雑な科目を学ぼうとすると、失望する結果に終わる可能性が高いです。
