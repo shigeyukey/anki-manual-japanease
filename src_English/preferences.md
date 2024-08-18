@@ -52,7 +52,7 @@ These options allow you to remove some unnecessary elements from the screen duri
 
 **v3 Scheduler**\
 Using the Anki v3 scheduler is recommended if you don't use AnkiDroid. It's documented here:\
-<https://faqs.ankiweb.net/the-2021-scheduler.html>
+<https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html>
 
 **Show learning cards with larger steps before**\
 Only shown when the 2.1 scheduler is enabled. Normally learning cards with a 1+
@@ -61,7 +61,7 @@ normal reviews instead.
 
 **Legacy timezone handling**\
 Please see here:
-<https://faqs.ankiweb.net/timezone-handling-changes.html>
+<https://shigeyukey.github.io/Anki-faqs-jp/timezone-handling-changes.html>
 
 **Next day starts at**\
 Controls when Anki should start showing the next day’s cards. The default

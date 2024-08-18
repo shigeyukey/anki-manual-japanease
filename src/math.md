@@ -29,7 +29,7 @@ MathJax式で改行を使用したい場合は、通常の改行ではMathJaxが
 Ankiには化学方程式をレンダリングするためのmhchemの組み込みサポートが含まれています。詳細については、「化学方程式」セクションおよび以下のセクションを参照してください：
 <https://mhchem.github.io/MathJax-mhchem/>
 
-いくつかの設定を[カスタマイズすること](https://faqs.ankiweb.net/customizing-mathjax.html)も可能です。
+いくつかの設定を[カスタマイズすること](https://shigeyukey.github.io/Anki-faqs-jp/customizing-mathjax.html)も可能です。
 
 ## LaTeX
 

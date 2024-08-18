@@ -88,7 +88,7 @@ In the old scheduler, if you create, rebuild, empty, or delete a
 filtered deck while cards are still in learning, they will be turned
 back into new cards. In the case of failed reviews in relearning, any
 remaining relearning steps will be skipped. This was fixed in the
-[v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html) so cards
+[v2 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html) so cards
 are no longer reset.
 
 ## Creating Manually
@@ -194,13 +194,13 @@ three presses of "Good" or a single press of "Easy".
 In the v1 scheduler, the **custom steps** option allows you to override the
 home deck’s steps and provide your own steps instead. The provided steps apply to both
 cards being learnt, lapsed reviews, and reviews ahead of time. Please note, however, that
-from the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html)
+from the [v2 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html)
 filtered decks [no longer support custom steps](https://forums.ankiweb.net/t/filtered-deck-interval-problem/11834/8).
 
 **v3 scheduler**
 
 Filtered decks with rescheduling disabled show 4 buttons in the
-[v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html) - the provided
+[v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html) - the provided
 delay applies to the Again button, and Hard/Good will use 1.5x and 2x the
 provided delay. Easy will remove the card.
 
@@ -263,7 +263,7 @@ By default, Anki will return cards to their home decks with altered scheduling,
 based on your performance in the filtered deck. There is a **reschedule
 cards based on my answers** option available which alters this behaviour.
 
-From the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
+From the [v2 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html),
 when rescheduling is disabled, cards are shown in a simple "preview mode", and
 when they are returned to the original deck, they are returned exactly as they
 started.

@@ -59,7 +59,7 @@ SuperMemoは学習分野に大きな影響を与えましたが､問題もあ�
 
 Ankiはこれらの問題に対処しています。Ankiには様々なデバイスで利用できる無料ソフトウェアがあり、予算が苦しい苦学生や教師も利用できます。Ankiはオープンソースであり、ボランティアによって開発されたアドオン(拡張機能)の豊富なライブラリがすでに存在しています。Windows、macOS、Linux/FreeBSD、一部のモバイルデバイスで動作します。そして、SuperMemoよりもはるかに使いやすいです。
 
-Ankiの分散学習システムは、SuperMemoの古いバージョンである[SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm)アルゴリズムに基づいています。最近、[FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs)という新しいアルゴリズムが、SM-2アルゴリズムの代替としてAnkiに統合されました。
+Ankiの分散学習システムは、SuperMemoの古いバージョンである[SM-2](https://shigeyukey.github.io/Anki-faqs-jp/what-spaced-repetition-algorithm)アルゴリズムに基づいています。最近、[FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs)という新しいアルゴリズムが、SM-2アルゴリズムの代替としてAnkiに統合されました。
 
 
 
@@ -206,7 +206,7 @@ multi-platform, running on Windows, macOS, Linux/FreeBSD, and some
 mobile devices. And it is considerably easier to use than SuperMemo.
 
 Anki's spaced repetition system is based on an older version of the
-SuperMemo algorithm called [SM-2](https://faqs.ankiweb.net/what-spaced-repetition-algorithm). Recently, a new algorithm called [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) has been integrated as an alternative to the legacy SM-2 algorithm.
+SuperMemo algorithm called [SM-2](https://shigeyukey.github.io/Anki-faqs-jp/what-spaced-repetition-algorithm). Recently, a new algorithm called [FSRS](https://docs.ankiweb.net/deck-options.html?highlight=FSRS#fsrs) has been integrated as an alternative to the legacy SM-2 algorithm.
 
 
 

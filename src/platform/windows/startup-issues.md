@@ -69,5 +69,5 @@ cd \program files\anki & anki-console
 
 上記の回避策を試してもAnkiを起動できない場合、次の2つのオプションがあります：
 
-- [Pythonから実行する](https://faqs.ankiweb.net/running-from-python.html)ことを試すことができます。
+- [Pythonから実行する](https://shigeyukey.github.io/Anki-faqs-jp/running-from-python.html)ことを試すことができます。
 - 古いツールキットでビルドされた古いAnkiバージョン（例：2.1.35-alternateや2.1.15）を試すことができます。

@@ -87,7 +87,7 @@ There are four rating buttons when learning:
   were steps remaining. [By default](deck-options.md#easy-interval), the card will be shown again 4 days
   later, and then at increasingly long delays. In the v1 scheduler, the "Easy" button will not be
   shown if you are in relearning mode as it would give the same interval
-  as “Good.” With the [v2 scheduler+](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
+  as “Good.” With the [v2 scheduler+](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html),
   when cards are in relearning, the "Easy" button boosts the interval by 1 day.
 
 When cards are seen for the first time, they start at step one. This
@@ -131,7 +131,7 @@ again, there are four buttons to rate your answer:
 As with learning cards, you can use <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd> and <kbd>4</kbd> on the keyboard to select an
 answer. Pressing the <kbd>spacebar</kbd> or <kbd>Enter</kbd> will select **Good**.
 
-See [Deck Options](deck-options.md) and the [FAQ](https://faqs.ankiweb.net/what-spaced-repetition-algorithm.html)
+See [Deck Options](deck-options.md) and the [FAQ](https://shigeyukey.github.io/Anki-faqs-jp/what-spaced-repetition-algorithm.html)
 to learn more about how the algorithm works.
 
 ## Due Counts
@@ -148,7 +148,7 @@ cards in that queue, not the number of _cards_. If you have multiple
 steps configured for lapsed cards, the number will increase by more than
 one when you fail a card, since that card needs to be shown several times.
 
-From the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html), the numbers count _cards_, so the number will always
+From the [v2 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html), the numbers count _cards_, so the number will always
 increase by one regardless of the steps remaining.
 
 When the answer is shown, Anki shows an estimate of the next time a card
@@ -160,7 +160,7 @@ estimates, you can disable them in Anki’s [preferences](preferences.md).
 When you select an ease button on a review card, Anki also applies a small amount of random “fuzz”
 to prevent cards that were introduced at the same time and given the same ratings
 from sticking together and always coming up for review on the same day. This fuzz
-will appear on the answer buttons when the [v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html) is enabled, so if
+will appear on the answer buttons when the [v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html) is enabled, so if
 you are using a previous version and you’re noticing a slight discrepancy between
 what you select and the intervals your cards actually get, this is probably the
 cause.
@@ -196,7 +196,7 @@ card or note:
   they were moved back to the new card queue or review queue prior to being
   buried.
 
-  With the [2.1 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
+  With the [2.1 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html),
   however, burying cards does not reset a card's learning steps.
 
 - **Forget card**: Move current card to [the end of the new queue](browsing.md#cards).
@@ -219,7 +219,7 @@ card or note:
   suspended, they are moved back to the new card queue or review queue
   prior to being suspended.
 
-  With the [2.1 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
+  With the [2.1 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html),
   however, suspending cards does not reset a card's learning steps.
 
 - **Options**: Edit the [options](deck-options.md) for the current deck.
@@ -264,12 +264,12 @@ The way Anki fetches cards from the decks depends on the algorithm used:
 
 - With the v1 scheduler, when a deck has subdecks, the cards will appear from [each deck in turn](studying.md#display-order).
 
-- With the [v2 scheduler](https://faqs.ankiweb.net/the-anki-2.1-scheduler.html),
+- With the [v2 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-anki-2.1-scheduler.html),
   when a deck has subdecks, reviews are taken from all children decks
   at once. The review limit of the child decks is ignored - only the limit of the
   deck you clicked on applies.
 
-- With the [v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html)
+- With the [v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html)
   each child deck's limit is also enforced, and you do not need to see the cards
   in deck order either. See the [deck options](deck-options.md#review-sort-order) section of the manual for more information.
 
@@ -361,4 +361,4 @@ creating a [filtered deck](filtered-decks.md).
 When you answer cards that have been waiting for a while, Anki factors
 in that delay when determining the next time a card should be shown.
 Please see the section on Anki’s spaced-repetition
-[algorithm](https://faqs.ankiweb.net/due-times-after-a-break.html) for more information.
+[algorithm](https://shigeyukey.github.io/Anki-faqs-jp/due-times-after-a-break.html) for more information.

@@ -78,7 +78,7 @@ Ankiでは、異なるデッキ間でオプションを共有することがで�
 - v2は、新しいカードに関してはv1と同様に動作します。レビューに関しては、クリックしたデッキの制限のみが適用されます。
 - v3は、クリックしたデッキとその内部のデッキの制限を尊重します。クリックしたデッキの上位の親デッキの制限は無視されます。
 
-詳細については、[v3スケジューラ](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits)のページをご覧ください。
+詳細については、[v3スケジューラ](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#日時制限)のページをご覧ください。
 
 新しいカードを学習すると、一時的に1日に必要なレビューの数が増加します。新しく学習した素材は、繰り返しの間隔が大幅に増加する前に何度も繰り返す必要があるためです。毎日20枚の新しいカードを一貫して学習している場合、1日のレビュー数は約200枚になると予想されます。毎日導入する新しいカードの数を減らすか、新しいカードの表示をオフにしてレビューの負担が減るまで待つことで、必要なレビュー数を減らすことができます。多くのAnkiユーザーは、プログラムを使い始めた最初の数日間で何百枚もの新しいカードを興奮して学習し、その後必要なレビューに圧倒されることがあります。
 
@@ -86,7 +86,7 @@ Ankiでは、異なるデッキ間でオプションを共有することがで�
 
 毎日表示するレビューの上限を設定できます。この制限に達すると、Ankiはその日のレビューカードをこれ以上表示しません。たとえ待機中のカードがあってもです。一貫して学習する場合、この設定は時折発生するレビューカードのピークを平準化し、1週間の休暇後にAnkiに戻ったときに心臓発作を防ぐのに役立ちます。このオプションによってレビューが隠された場合、祝福画面にメッセージが表示され、時間があれば制限を増やすことを検討するよう提案されます。
 
-[v3スケジューラ](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits)およびv1スケジューラでは、新しいカードと同様に、親/選択されたデッキによってカウントが影響を受けます。
+[v3スケジューラ](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#日次制限)およびv1スケジューラでは、新しいカードと同様に、親/選択されたデッキによってカウントが影響を受けます。
 
 v2スケジューラでは、制限は選択したデッキからのみ取得され、親デッキや子デッキの制限は無視されます。
 
@@ -94,7 +94,7 @@ v3スケジューラには、1日以上の遅延がある学習カードもレ�
 
 ### 新しいカードがレビュー制限を無視
 
-[v3スケジューラ](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits)を使用している場合、新しいカードのカウントはデフォルトでレビューカウントによって制限されることに注意してください。レビュー制限が200に設定されていて、190のレビューが待機している場合、最大で10枚の新しいカードが導入されます。レビュー制限に達した場合、新しいカードは表示されません。レビューのバックログがあり、それでも新しいカードを導入したい場合は、レビューを一時停止するか、レビュー制限を増やすことで可能です。しかし、遅れを取り戻すまで新しいカードの導入を控えることをお勧めします。遅れているときに新しいカードを導入すると、バックログがさらに悪化するだけです。
+[v3スケジューラ](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html##日次制限)を使用している場合、新しいカードのカウントはデフォルトでレビューカウントによって制限されることに注意してください。レビュー制限が200に設定されていて、190のレビューが待機している場合、最大で10枚の新しいカードが導入されます。レビュー制限に達した場合、新しいカードは表示されません。レビューのバックログがあり、それでも新しいカードを導入したい場合は、レビューを一時停止するか、レビュー制限を増やすことで可能です。しかし、遅れを取り戻すまで新しいカードの導入を控えることをお勧めします。遅れているときに新しいカードを導入すると、バックログがさらに悪化するだけです。
 
 Anki 2.1.61以降、この機能はオプションであり、デッキオプション画面からグローバルに無効化できます。
 
@@ -171,7 +171,7 @@ Ankiがリーチを処理する方法を制御します。詳細については�
 
 このセクションのオプションは、現在表示されているカードのデッキではなく、学習するために選択したデッキから取得されます。
 
-このセクションは、[v3スケジューラ](https://faqs.ankiweb.net/the-2021-scheduler.html)が有効になっている場合にのみ利用可能です。
+このセクションは、[v3スケジューラ](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html)が有効になっている場合にのみ利用可能です。
 
 表示順序に関するさらなる情報は、[学習セクション](studying.md#表示順序)で確認できます。
 
@@ -403,7 +403,7 @@ Googleを使用して[計算する](https://www.google.com/search?q=log(90%25)+%
 
 ## カスタムスケジューリング
 
-[このページ](https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-and-custom-scheduling)をご覧ください。
+[このページ](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#アドオンとカスタムスケジューリング)をご覧ください。
 
 
 
@@ -513,7 +513,7 @@ the way the limits are applied depends on the scheduler version.
 - v3 honors the limits of the deck you click on, and any decks inside it.
   Limits from parents above the deck you clicked on are ignored.
 
-For more information, please see the [v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits) page.
+For more information, please see the [v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#daily-limits) page.
 
 Studying new cards will temporarily increase the number of reviews you need to
 do a day, as freshly learnt material needs to be repeated a number of times
@@ -535,7 +535,7 @@ heart attack when returning to Anki after a week off. When reviews have been
 hidden due to this option, a message will appear in the congratulations screen,
 suggesting you consider increasing the limit if you have time.
 
-In [the v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits) and
+In [the v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#daily-limits) and
 v1 schedulers, the counts are affected by parents/selected decks in the same way
 as new cards.
 
@@ -547,7 +547,7 @@ so those learning cards will be subject to the daily limit.
 
 ### New Cards Ignore Review Limit
 
-If using [the v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html#daily-limits),
+If using [the v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#daily-limits),
 please keep in mind that the new count is capped by the review count by default. If your
 review limit is set to 200, and you have 190 reviews waiting, a maximum of 10
 new cards will be introduced. If your review limit has been reached, no new
@@ -687,7 +687,7 @@ section for more information.
 The options in this section are taken from the deck you select to study, not
 the deck of the currently displayed card.
 
-This section is only available when you have [the v3 scheduler](https://faqs.ankiweb.net/the-2021-scheduler.html) enabled.
+This section is only available when you have [the v3 scheduler](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html) enabled.
 
 Some further information about display order is available in the [studying section](studying.md#display-order).
 
@@ -1092,4 +1092,4 @@ that preserving part of the delay can actually [be counter-productive](https://s
 
 ## Custom Scheduling
 
-Please see [this page](https://faqs.ankiweb.net/the-2021-scheduler.html#add-ons-and-custom-scheduling). -->
+Please see [this page](https://shigeyukey.github.io/Anki-faqs-jp/the-2021-scheduler.html#add-ons-and-custom-scheduling). -->

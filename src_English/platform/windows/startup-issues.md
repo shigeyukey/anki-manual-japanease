@@ -87,6 +87,6 @@ what is causing the problem.
 If you are unable to start Anki after trying the above workarounds, you have
 two remaining options:
 
-- You can try [running from Python](https://faqs.ankiweb.net/running-from-python.html).
+- You can try [running from Python](https://shigeyukey.github.io/Anki-faqs-jp/running-from-python.html).
 - You can try an older Anki version built with an older toolkit, such as
   2.1.35-alternate, and 2.1.15.

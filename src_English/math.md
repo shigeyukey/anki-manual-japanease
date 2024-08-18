@@ -42,7 +42,7 @@ equations. Please see the 'chemical equations' section and the following
 sections for more information:
 <https://mhchem.github.io/MathJax-mhchem/>
 
-It is possible to [customize some settings](https://faqs.ankiweb.net/customizing-mathjax.html).
+It is possible to [customize some settings](https://shigeyukey.github.io/Anki-faqs-jp/customizing-mathjax.html).
 
 ## LaTeX
 

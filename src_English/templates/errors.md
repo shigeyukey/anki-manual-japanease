@@ -25,7 +25,7 @@ Most of the errors below will require you to modify your notetype/card template.
 This kind of error indicates an incorrect usage of the [field replacement](./fields.md)
 syntax. Visit the [templates screen](./intro.md#the-templates-screen) for the
 reported note and card type, and look at the preview area for more information.
-Some [more information](https://faqs.ankiweb.net/card-template-has-a-problem.html) about
+Some [more information](https://shigeyukey.github.io/Anki-faqs-jp/card-template-has-a-problem.html) about
 template problems is available.
 
 ### Identical Front Sides
