@@ -27,3 +27,4 @@
 - [简体中文](http://www.ankichina.net/manual/anki/)
 
 マニュアルの翻訳を手伝いたい場合は、[翻訳ドキュメント](https://translating.ankiweb.net/anki/manual.html)を参照してください。
+

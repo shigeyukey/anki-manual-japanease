@@ -17,7 +17,8 @@ renderer = ["html"]
 command = "mdbook-linkcheck"
 
 [output.html]
-git-repository-url = "https://github.com/shigeyukey/anki-manual-jp"
+git-repository-url = "https://forms.gle/jbnPepH378mVb2Sz5"
+git-repository-icon = "fa-envelope"
 additional-css = ["css/misc.css", "css/kbd.css"]
 
 [output.linkcheck]
