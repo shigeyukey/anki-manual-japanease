@@ -267,7 +267,7 @@ Frontフィールドが存在するノートを見つけます（空かどうか
 <p><code>card:forward</code><br />
 「Forward」カードを検索します。</p>
 <p><code>card:1</code><br />
-テンプレート番号でカードを検索します。例えば、ノートの2番目のクローズ削除を見つけるには、<code>card:2</code>を使用します。</p>
+テンプレート番号でカードを検索します。例えば、ノートの2番目の穴埋め問題を見つけるには、<code>card:2</code>を使用します。</p>
 <p><code>note:basic</code><br />
 Basicノートタイプのカードを検索します。</p>
 <h2 id="アクセント-結合文字を無視する"><a class="header" href="#アクセント-結合文字を無視する">アクセント 結合文字を無視する</a></h2>
@@ -305,13 +305,13 @@ Basicノートタイプのカードを検索します。</p>
 </ul>
 <h2 id="カードの状態"><a class="header" href="#カードの状態">カードの状態</a></h2>
 <p><code>is:due</code><br />
-レビューカードと学習待ちのカード</p>
+復習カードと学習待ちのカード</p>
 <p><code>is:new</code><br />
 新しいカード</p>
 <p><code>is:learn</code><br />
-学習中のカード</p>
+習得中のカード</p>
 <p><code>is:review</code><br />
-レビュー（期限があるものとないもの）および失効したカード</p>
+復習（期限があるものとないもの）および失効したカード</p>
 <p><code>is:suspended</code><br />
 手動で一時停止されたカード</p>
 <p><code>is:buried</code><br />
@@ -321,9 +321,9 @@ Basicノートタイプのカードを検索します。</p>
 <p><code>is:learn is:review</code><br />
 失効して再学習待ちのカード</p>
 <p><code>-is:learn is:review</code><br />
-失効カードを含まないレビューカード</p>
+失効カードを含まない復習カード</p>
 <p><code>is:learn -is:review</code><br />
-初めて学習中のカード</p>
+初めて習得中のカード</p>
 <p><code>flag:1</code><br />
 赤いフラグが付いたカード</p>
 <p><code>flag:2</code><br />
@@ -385,7 +385,7 @@ Basicノートタイプのカードを検索します。</p>
 過去1ヶ月間に「簡単 (4)」と評価されたカード</p>
 <p>評価検索はバージョン2.1.39以前では31日間に制限されていました。</p>
 <h3 id="最初の回答"><a class="header" href="#最初の回答">最初の回答</a></h3>
-<p>バージョン2.1.45+では、最初のレビューのみを検索することもできます：</p>
+<p>バージョン2.1.45+では、最初の復習のみを検索することもできます：</p>
 <p><code>introduced:1</code><br />
 今日初めて回答されたカード</p>
 <p><code>introduced:365</code><br />
