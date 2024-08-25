@@ -8,7 +8,7 @@
 * このページの英語版原文はこちら→ [AnkiManual](https://docs.ankiweb.net/)
 * その他のAnki日本語翻訳版はこちら  →  [Anki翻訳版まとめ](https://shigeyukey.github.io/Anki-Manuals-jp/anki_manuals_jp.html)  
 
-最終更新日: 2024-08-19
+最終更新日: 2024-08-25
 
 ----
 </small>
