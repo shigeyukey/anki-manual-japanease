@@ -48,7 +48,7 @@
 - [統計](stats.md)
 - [メディア](media.md)
 - [数式と記号](math.md)
-- [リーチ](leeches.md)
+- [苦戦（忘却多発）](leeches.md)
 - [アドオン](addons.md)
 - [トラブルシューティング](troubleshooting.md)
 - [同期サーバー](sync-server.md)
